@@ -1,16 +1,37 @@
 import React, { Component } from "react";
-import { View, TouchableOpacity, Image, Text } from "react-native";
+import { View, TouchableOpacity, ScrollView, Image, Text, } from "react-native";
 
 import s from "./TempStyle";
 
 class Temp extends Component {
     render() {
         return (
-            <View style={s.box}>
-               
-               <Text style={s.h1}>Temp Datei für FE-Tests</Text>
+            <ScrollView style={s.box}>
 
-            </View>
+                <TouchableOpacity>
+                    <Text style={s.h1}>Beiträge:</Text>
+                </TouchableOpacity>
+
+                <TouchableOpacity>
+                    <Text style={s.link}>+ Neue Umfrage</Text>
+                </TouchableOpacity>
+
+                <View style={s.pPost}>
+                    <View style={s.pPostHeader}>
+                        <TouchableOpacity>
+                            <Image style={s.pPB} src={require('../assets/img/pb.jpg')}/>
+                        </TouchableOpacity>
+                        <View style={s.pPostHeaderText}>
+                            <Text style={s.pTitle}>Titel der Umfrage</Text>
+                            <Text style={s.pSubtitle}>Koni vor 32 Minuten</Text>
+                        </View>
+                    </View>
+
+
+                </View>
+
+
+            </ScrollView>
         );
     }
 }
