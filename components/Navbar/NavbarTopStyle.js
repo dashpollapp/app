@@ -24,7 +24,7 @@ export default StyleSheet.create({
         justifyContent: "space-between",
         alignItems: "center",
         borderBottomWidth: 1,
-        borderColor: "#aaa",
+        borderColor: "#ddd",
     },
     mainItem: {
         display: "flex"

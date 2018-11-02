@@ -16,7 +16,9 @@ export default StyleSheet.create({
             height: 1,
             width: 0
         },
-        backgroundColor: "#fff"
+        backgroundColor: "#fff",
+        borderTopWidth: 1,
+        borderColor: "#ddd",
     },
     mainItem: {
         flex: 1,
