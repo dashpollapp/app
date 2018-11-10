@@ -1,8 +1,8 @@
 import React from "react";
-import { Font } from "expo";
+import { Font, AppLoading, Asset, SplashScreen } from "expo";
 import db from "./utils/db";
 import axios from "axios";
-import { View, Text, StyleSheet, Dimensions } from "react-native";
+import { View, Text, StyleSheet, Dimensions, Image } from "react-native";
 import { connect } from "react-redux";
 import * as action from "./constants/actionTypes";
 import * as screenNames from "./constants/screenNames";
@@ -28,12 +28,35 @@ function loadFonts() {
     });
 }
 
+function cacheResourcesAsync() {
+    return new Promise((resolve, reject) => {
+        const images = [
+            require('./assets/img/splash.png'),
+            require('./assets/img/login/PWhide.png'),
+            require('./assets/img/login/PWshow.png'),
+            require('./assets/img/navbar/bottom/chat_off.png'),
+            require('./assets/img/navbar/bottom/chat.png'),
+            require('./assets/img/navbar/bottom/poll_off.png'),
+            require('./assets/img/navbar/bottom/poll.png'),
+            require('./assets/img/navbar/top/logo.png'),
+            require('./assets/img/navbar/top/logo2.png'),
+            require('./assets/img/corner.png'),
+            require('./assets/img/hide.png'),
+            require('./assets/img/pb.jpg'),
+        ];
+        const cacheImages = images.map(image => Asset.fromModule(image).downloadAsync());
+        Promise.all(cacheImages)
+            .then(() => resolve());
+
+    })
+}
+
 function getUserFromDb() {
     return new Promise((resolve, reject) => {
         db.get("user")
             .then(user => {
                 //console.log(user);
-                resolve(user);
+                resolve(user)
             })
             .catch(err => {
 
@@ -46,26 +69,54 @@ class RootApp extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            isLoading: true
+            isSplashReady: false,
+            isAppReady: false
         }
     }
 
     componentDidMount() {
         //APP Start
-        Promise.all([loadFonts(), getUserFromDb()])
+        Promise.all([loadFonts(), getUserFromDb(), cacheResourcesAsync()])
             .then(results => {
                 const [, user] = results;
 
                 console.log(user);
                 if (user) this.props.set_current_user(user);
 
-                this.setState({ isLoading: false })
+                this.setState({ isAppReady: true }, () => { SplashScreen.hide() })
             });
     }
 
+    _cacheSplashResourcesAsync = async () => {
+        const png = require('./assets/img/splash.png');
+        return Asset.fromModule(png).downloadAsync()
+    }
+
     render() {
+        if (!this.state.isSplashReady) {
+            return (
+                <AppLoading
+                    startAsync={this._cacheSplashResourcesAsync}
+                    onFinish={() => this.setState({ isSplashReady: true })}
+                    onError={console.warn}
+                    autoHideSplash={false}
+                />
+            );
+        }
+
+        //Wird nur angezeigt, falls Promise.all länger braucht als _cacheSplashResourcesAsync, um flackern zu vermeiden
+        if (!this.state.isAppReady) {
+
+            return (
+                <View style={{ flex: 1 }}>
+                    <Image
+                        source={require('./assets/img/splash.png')}
+                    />
+                </View>
+            );
+        }
+
         const isLoggedIn = this.props.user;
-        if (this.state.isLoading) return (<View><Text style={{ textAlign: "center", fontSize: 18, marginTop: 100 }}>App startet...</Text></View>);
         return (
             <View style={styles.containerWraper}>
                 {isLoggedIn
