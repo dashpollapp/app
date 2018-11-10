@@ -1,23 +1,4 @@
-<<<<<<< HEAD
-import { StyleSheet,Platform } from "react-native";
-
-export default StyleSheet.create({
-    box: {
-        padding: 16,
-    },
-
-
-
-
-    h1: {
-        fontSize: 26,
-        fontFamily: Platform.OS === "ios" ? "Arial" : "Roboto",
-        color: "#000",
-        fontWeight: "500",
-    },
-});
-=======
-import { StyleSheet,Platform } from "react-native";
+import { StyleSheet, Platform } from "react-native";
 
 export default StyleSheet.create({
     box: {
@@ -79,8 +60,7 @@ export default StyleSheet.create({
         alignItems: "center",
     },
 
-    pPostHeaderText:{
+    pPostHeaderText: {
         marginLeft: 12,
     }
 });
->>>>>>> 61fdfb5654f4b48d74675c8ba61557e4711834ff

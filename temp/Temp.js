@@ -1,23 +1,3 @@
-<<<<<<< HEAD
-import React, { Component } from "react";
-import { View, TouchableOpacity, Image, Text } from "react-native";
-
-import s from "./TempStyle";
-
-class Temp extends Component {
-    render() {
-        return (
-            <View>
-
-                <Text>Temp Datei für FE-Tests</Text>
-
-            </View>
-        );
-    }
-}
-
-export default Temp;
-=======
 import React, { Component } from "react";
 import { View, TouchableOpacity, ScrollView, Image, Text, } from "react-native";
 
@@ -39,7 +19,7 @@ class Temp extends Component {
                 <View style={s.pPost}>
                     <View style={s.pPostHeader}>
                         <TouchableOpacity>
-                            <Image style={s.pPB} src={require('../assets/img/pb.jpg')}/>
+                            <Image style={s.pPB} src={require('../assets/img/pb.jpg')} />
                         </TouchableOpacity>
                         <View style={s.pPostHeaderText}>
                             <Text style={s.pTitle}>Titel der Umfrage</Text>
@@ -57,4 +37,3 @@ class Temp extends Component {
 }
 
 export default Temp;
->>>>>>> 61fdfb5654f4b48d74675c8ba61557e4711834ff

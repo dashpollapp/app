@@ -10,13 +10,17 @@ import pbImg from "../../assets/img/pb.jpg";
 class NavbarTop extends Component {
     render() {
         return (
-            <View style={nt.box}>
-                <TouchableOpacity style={nt.mainItem}>
-                    <Image style={nt.mainItemLogoImg} source={logoImg} />
-                </TouchableOpacity>
-                <TouchableOpacity onPress={() => this.props.navigation.navigate("Settings")} style={nt.mainItem}>
-                    <Image style={nt.mainItemPbImg} source={pbImg} />
-                </TouchableOpacity>
+            <View>
+                <View style={nt.box}>
+                    <TouchableOpacity style={nt.mainItem}>
+                        <Image style={nt.mainItemLogoImg} source={logoImg} />
+                    </TouchableOpacity>
+                    <TouchableOpacity onPress={() => this.props.navigation.navigate("Settings")} style={nt.mainItem}>
+                        <Image style={nt.mainItemPbImg} source={pbImg} />
+                    </TouchableOpacity>
+
+                </View>
+                <View style={nt.push}></View>
             </View>
         );
     }

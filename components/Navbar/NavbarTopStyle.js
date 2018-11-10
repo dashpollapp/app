@@ -40,5 +40,10 @@ export default StyleSheet.create({
     },
     pageInfo: {
         flex: 1
+    },
+    push: {
+        height: 64, //82 bei android
+        width: "100%",
+
     }
 });

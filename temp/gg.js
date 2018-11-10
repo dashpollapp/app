@@ -19,7 +19,7 @@ class Temp extends Component {
                 <View style={s.pPost}>
                     <View style={s.pPostHeader}>
                         <TouchableOpacity>
-                            <Image style={s.pPB} src={require('../assets/img/pb.jpg')}/>
+                            <Image style={s.pPB} src={require('../assets/img/pb.jpg')} />
                         </TouchableOpacity>
                         <View style={s.pPostHeaderText}>
                             <Text style={s.pTitle}>Titel der Umfrage</Text>
