@@ -9,9 +9,21 @@
         "eject": "expo eject"
     },
     "dependencies": {
+        "axios": "^0.18.0",
         "expo": "^30.0.1",
+        "pouchdb-adapter-react-native-sqlite": "^1.0.3",
+        "pouchdb-find": "^7.0.0",
+        "pouchdb-react-native": "^6.4.1",
+        "pouchdb-upsert": "^2.2.0",
         "react": "16.3.1",
-        "react-native": "https://github.com/expo/react-native/archive/sdk-30.0.0.tar.gz"
+        "react-native": "https://github.com/expo/react-native/archive/sdk-30.0.0.tar.gz",
+        "react-native-dimension": "^1.0.6",
+        "react-navigation": "^2.18.2",
+        "react-redux": "^5.1.0",
+        "redux": "^4.0.1",
+        "redux-axios-middleware": "^4.0.0",
+        "redux-thunk": "^2.3.0",
+        "remote-redux-devtools": "^0.5.13"
     },
     "prettier": {
         "tabWidth": 4,

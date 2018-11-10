@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { View, TouchableOpacity, Image } from "react-native";
+import * as screenNames from "../../constants/screenNames";
 
 import nt from "./NavbarTopStyle";
 
@@ -13,7 +14,7 @@ class NavbarTop extends Component {
                 <TouchableOpacity style={nt.mainItem}>
                     <Image style={nt.mainItemLogoImg} source={logoImg} />
                 </TouchableOpacity>
-                <TouchableOpacity style={nt.mainItem}>
+                <TouchableOpacity onPress={() => this.props.navigation.navigate("Settings")} style={nt.mainItem}>
                     <Image style={nt.mainItemPbImg} source={pbImg} />
                 </TouchableOpacity>
             </View>

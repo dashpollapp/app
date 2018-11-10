@@ -1,17 +1,43 @@
-import rootReducer from "./reducers";
+import rootReducer from "../reducer";
 import { createStore, applyMiddleware, compose } from "redux";
 import thunk from "redux-thunk";
 import { composeWithDevTools } from "remote-redux-devtools";
+import axios from "axios";
+import axiosMiddleware from "redux-axios-middleware";
+
 
 //Anfangs Redux State
 const initialState = {
-  user: false
+	user: false
 };
 
+function getUserToken() {
+	const token = store.getState().user.token;
+	if (!token) return false;
+	return "Bearer " + token;
+}
+
+
+export let httpClient = axios.create({
+	baseURL: 'https://api.dashpoll.net',
+	responseType: 'json',
+	headers: {
+		"Content-Type": "application/json;charset=utf-8"
+	},
+	transformRequest: [
+		(data, headers) => {
+			const token = getUserToken();
+			console.log(token);
+			if (token) headers['Authorization'] = token;
+			return JSON.stringify(data);
+		}
+	],
+
+});
+
+const middleware = [thunk, axiosMiddleware(httpClient)];
 const enhancer = composeWithDevTools(applyMiddleware(...middleware));
 
-const middleware = [thunk];
-
-const store = createStore(rootReducer, initialState, enhancer);
+const store = createStore(rootReducer, enhancer);
 
 export default store;

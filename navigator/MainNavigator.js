@@ -1,16 +1,17 @@
-import { createSwitchNavigator } from "react-navigation";
-import LoginNavigator from "./LoginNavigator";
-import HomeNavigator from "./HomeNavigator";
-import AppLoading from "./AppLoading";
+import { createStackNavigator } from "react-navigation";
+import Settings from "./container/Settings";
+import Create from "./container/Create";
+import Polls from "./container/Polls";
 import * as screenName from "../constants/screenNames";
 
-export default createSwitchNavigator(
+export default createStackNavigator(
     {
-        [screenName.MAIN]: MainNavigator,
-        [screenName.LOGIN]: LoginNavigator,
-        [screenName.APP_LOADING]: AppLoading
+        [screenName.POLLS]: Polls,
+        [screenName.SETTINGS]: Settings,
+        [screenName.CREATE]: Create
     },
     {
-        initialRouteName: screenName.APP_LOADING
+        headerMode: "none",
+        initialRouteName: "Polls"
     }
 );

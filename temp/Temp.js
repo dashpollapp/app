@@ -6,9 +6,9 @@ import s from "./TempStyle";
 class Temp extends Component {
     render() {
         return (
-            <View style={s.box}>
-               
-               <Text style={s.h1}>Temp Datei für FE-Tests</Text>
+            <View>
+
+                <Text>Temp Datei für FE-Tests</Text>
 
             </View>
         );
