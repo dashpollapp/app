@@ -32,10 +32,6 @@ class Login extends React.Component {
         this.inputs[id].focus();
     }
 
-    componentWillReceiveProps() {
-
-    }
-
     componentDidUpdate() {
         console.log("CWRP");
         if (this.props.userLoggedIn) {

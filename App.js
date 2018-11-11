@@ -6,7 +6,6 @@ import { Provider } from "react-redux";
 import RootApp from "./RootApp";
 import Temp from "./temp/Temp";
 import NavbarTop from "./components/Navbar/NavbarTop";
-import NavbarBottom from "./components/Navbar/NavbarBottom";
 import Corner from "./components/Corner";
 
 export default class App extends React.Component {

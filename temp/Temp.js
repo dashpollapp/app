@@ -1,9 +1,15 @@
 import React, { Component } from "react";
 import { View, TouchableOpacity, ScrollView, Image, Text, } from "react-native";
+import * as screenNames from "../constants/screenNames";
 
 import s from "./TempStyle";
 
 class Temp extends Component {
+    constructor(props) {
+        super(props)
+        console.log(props)
+    }
+
     render() {
         return (
             <ScrollView style={s.box}>
@@ -12,7 +18,7 @@ class Temp extends Component {
                     <Text style={s.h1}>Beiträge:</Text>
                 </TouchableOpacity>
 
-                <TouchableOpacity>
+                <TouchableOpacity onPress={() => this.props.screenProps.parentNavigation.navigate(screenNames.CREATE)}>
                     <Text style={s.link}>+ Neue Umfrage</Text>
                 </TouchableOpacity>
 

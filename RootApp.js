@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from 'prop-types';
 import { Font, AppLoading, Asset, SplashScreen } from "expo";
 import db from "./utils/db";
 import axios from "axios";
@@ -129,7 +130,6 @@ class RootApp extends React.Component {
     }
 }
 
-
 const styles = StyleSheet.create({
     container: {
         flex: 1,
@@ -143,6 +143,14 @@ const styles = StyleSheet.create({
     }
 });
 
+
+RootApp.propTypes = {
+    set_current_user: PropTypes.func.isRequired,
+    user: PropTypes.oneOfType([
+        PropTypes.bool,
+        PropTypes.object,
+    ]).isRequired,
+}
 
 const mapStateToProps = state => {
     return {

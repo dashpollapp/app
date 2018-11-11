@@ -7,3 +7,4 @@ export const SETTINGS = "SETTINGS";
 export const CREATE = "CREATE";
 export const POLLS = "POLLS";
 export const CHAT = "CHAT";
+export const USER = "USER";

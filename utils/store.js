@@ -5,12 +5,6 @@ import { composeWithDevTools } from "remote-redux-devtools";
 import axios from "axios";
 import axiosMiddleware from "redux-axios-middleware";
 
-
-//Anfangs Redux State
-const initialState = {
-	user: false
-};
-
 function getUserToken() {
 	const token = store.getState().user.token;
 	if (!token) return false;
