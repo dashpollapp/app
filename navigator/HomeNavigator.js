@@ -4,7 +4,7 @@ import { ChatOverview } from "../container/Chat";
 import * as screenName from "../constants/screenNames";
 import React from "react";
 import { View, Image, Dimensions } from "react-native";
-
+import PropTypes from "prop-types";
 import chatImg from "../assets/img/navbar/bottom/chat_off.png";
 import pollImg from "../assets/img/navbar/bottom/poll.png";
 
@@ -69,10 +69,6 @@ const Navigator = createMaterialTopTabNavigator(
 
 export default class HomeNavigator extends React.Component {
 
-    constructor(props) {
-        super(props)
-    }
-
     //Wird gebraucht, um den Focus auf SettingsNavigator zu stellen, falls man in SETTINGS ist (this.props.navigation)
     static router = Navigator.router;
 
@@ -85,4 +81,8 @@ export default class HomeNavigator extends React.Component {
         )
     }
 
+}
+
+HomeNavigator.propTypes = {
+    navigation: PropTypes.object.isRequired
 }

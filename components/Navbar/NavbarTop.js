@@ -1,13 +1,13 @@
 import React, { Component } from "react";
 import { View, TouchableOpacity, Image } from "react-native";
 import * as screenNames from "../../constants/screenNames";
-
+import PropTypes from 'prop-types';
 import nt from "./NavbarTopStyle";
 
 import logoImg from "../../assets/img/navbar/top/logo.png";
 import pbImg from "../../assets/img/pb.jpg";
 
-class NavbarTop extends Component {
+export default class NavbarTop extends Component {
     render() {
         return (
             <View>
@@ -26,4 +26,6 @@ class NavbarTop extends Component {
     }
 }
 
-export default NavbarTop;
+NavbarTop.propTypes = {
+    navigation: PropTypes.object.isRequired,
+}

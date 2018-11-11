@@ -6,6 +6,7 @@ import { login, pc, css } from "./SignInStyle";
 import { connect } from "react-redux";
 import db from "../../utils/db";
 import * as screenNames from "../../constants/screenNames";
+import PropTypes from "prop-types";
 import { user_search, auth_login, set_current_user } from "../../actions";
 
 const pwShow = "../../assets/img/login/PWshow.png",
@@ -235,6 +236,19 @@ class Login extends React.Component {
         );
     }
 }
+
+Login.propTypes = {
+    set_current_user: PropTypes.func.isRequired,
+    user_search: PropTypes.func.isRequired,
+    auth_login: PropTypes.func.isRequired,
+    navigation: PropTypes.object.isRequired,
+    foundUsers: PropTypes.object.isRequired,
+    userLoggedIn: PropTypes.oneOfType([
+        PropTypes.bool,
+        PropTypes.object,
+    ]).isRequired,
+}
+
 
 const mapStateToProps = state => {
     return {

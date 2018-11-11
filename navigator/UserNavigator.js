@@ -1,7 +1,7 @@
 import { createMaterialTopTabNavigator } from "react-navigation";
 import React from "react";
 import { Dimensions, Image } from "react-native";
-
+import PropTypes from "prop-types";
 import Chat from "../container/User/Chat";
 import Polls from "../temp/Temp";
 import Profile from "../container/User/Profile";
@@ -75,5 +75,10 @@ class UserNavigator extends React.Component {
         return <Navigator screenProps={this.props.screenProps} />;
     }
 }
+
+UserNavigator.propTypes = {
+    screenProps: PropTypes.object.isRequired
+}
+
 
 export default UserNavigator;

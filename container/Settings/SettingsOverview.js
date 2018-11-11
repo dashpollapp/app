@@ -1,10 +1,7 @@
 import React from "react";
-import { StatusBar, TouchableOpacity, Image, ScrollView, Text, View, Alert } from "react-native";
-
+import { StatusBar, TouchableOpacity, ScrollView, Text, View } from "react-native";
+import PropTypes from "prop-types";
 import { settings, csss, pc, css } from "./SettingsStyle";
-import db from "../../utils/db";
-import store from "../../utils/store";
-import { connect } from "react-redux";
 
 class Settings extends React.Component {
 
@@ -124,6 +121,11 @@ class Settings extends React.Component {
             </View>
         );
     }
+}
+
+Settings.propTypes = {
+    navigation: PropTypes.object.isRequired,
+    screenProps: PropTypes.object.isRequired
 }
 
 export default Settings;

@@ -16,6 +16,7 @@ import {
 } from "react-native";
 import { BlurView } from "expo";
 import { connect } from "react-redux";
+import PropTypes from "prop-types";
 
 class Chat extends React.Component {
     constructor(props) {
@@ -179,6 +180,10 @@ class Chat extends React.Component {
             </View>
         );
     }
+}
+
+Chat.propTypes = {
+    screenProps: PropTypes.object.isRequired
 }
 
 export default connect()(Chat);

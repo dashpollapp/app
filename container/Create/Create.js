@@ -5,11 +5,12 @@ import { css } from "./Style";
 import Createe from "./CreatePage";
 import Types from "./Types";
 import * as screenNames from "../../constants/screenNames";
+import PropTypes from 'prop-types';
 
 import PlusImg from "../../assets/img/navbar/top/plus.png";
 import BackImg from "../../assets/img/navbar/top/back.png";
 
-class Create extends React.Component {
+export default class Create extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -77,4 +78,6 @@ class Create extends React.Component {
     }
 }
 
-export default Create;
+Create.PropTypes = {
+    navigation: PropTypes.object.isRequired,
+}

@@ -1,9 +1,9 @@
-import { BlurView } from "expo";
 import React from "react";
-import { BackHandler, Image, Platform, StatusBar, Text, TouchableOpacity, View } from "react-native";
+import { View } from "react-native";
 import { css } from "./Style";
 import UserTabs from "../../navigator/UserNavigator";
 import UserNavbarTop from "../../components/Navbar/User/NavbarTop";
+import PropTypes from "prop-types";
 
 class User extends React.Component {
 
@@ -29,5 +29,10 @@ class User extends React.Component {
         );
     }
 }
+
+User.propTypes = {
+    navigation: PropTypes.object.isRequired
+}
+
 
 export default User;

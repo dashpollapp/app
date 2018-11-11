@@ -2,6 +2,7 @@ import React from "react";
 import { StatusBar, Text, View, ScrollView, TextInput, Image, Alert, KeyboardAvoidingView, TouchableOpacity } from "react-native";
 import { LinearGradient } from "expo";
 import db from "../../utils/db";
+import PropTypes from "prop-types";
 
 // Stylesheets
 import { login, loader, cc, profile, pc, css } from "./SignUpStyle";
@@ -15,7 +16,7 @@ const pwShow = "../../assets/img/login/PWshow.png", // Password Show Image
 
 const corner = "../../assets/img/corner.png"; // Corner Image
 
-class Register extends React.Component {
+class SignUp extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -182,4 +183,9 @@ class Register extends React.Component {
     }
 }
 
-export default connect()(Register);
+SignUp.propTypes = {
+    navigation: PropTypes.object.isRequired
+}
+
+
+export default connect()(SignUp);

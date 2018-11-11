@@ -1,9 +1,9 @@
 import React from 'react';
 import { Platform, StatusBar, StyleSheet, Text, View, ScrollView, TouchableOpacity, Image, KeyboardAvoidingView, ImageBackground, Dimensions } from 'react-native';
 import { LinearGradient, Font, AppLoading } from 'expo';
+import PropTypes from 'prop-types';
 
-
-export default class App extends React.Component {
+export default class ChatOverview extends React.Component {
 
     render() {
         return (
@@ -287,6 +287,11 @@ export default class App extends React.Component {
         );
     }
 }
+
+ChatOverview.propTypes = {
+    navigation: PropTypes.object.isRequired,
+}
+
 const css = StyleSheet.create({
 
 
