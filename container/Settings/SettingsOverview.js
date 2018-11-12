@@ -2,6 +2,8 @@ import React from "react";
 import { StatusBar, TouchableOpacity, ScrollView, Text, View } from "react-native";
 import PropTypes from "prop-types";
 import { settings, csss, pc, css } from "./SettingsStyle";
+import { connect } from "react-redux";
+import { auth_logout } from "../../actions"
 
 class Settings extends React.Component {
 
@@ -89,7 +91,7 @@ class Settings extends React.Component {
                             </Text>
                         </TouchableOpacity>
 
-                        <TouchableOpacity onPress={() => this.logout()} style={[settings.item, settings.logout]}>
+                        <TouchableOpacity onPress={() => this.props.auth_logout(this.props.user)} style={[settings.item, settings.logout]}>
                             <Text style={settings.name}>Abmelden</Text>
                             <Text style={settings.description} numberOfLines={1}>
                                 Melde dich von diesem Gerät ab
@@ -125,7 +127,27 @@ class Settings extends React.Component {
 
 Settings.propTypes = {
     navigation: PropTypes.object.isRequired,
-    screenProps: PropTypes.object.isRequired
+    screenProps: PropTypes.object.isRequired,
+    auth_logout: PropTypes.func.isRequired,
+    user: PropTypes.oneOfType([
+        PropTypes.bool,
+        PropTypes.object,
+    ]).isRequired,
 }
 
-export default Settings;
+const mapStateToProps = state => {
+    return {
+        user: state.user.user
+    }
+}
+
+const mapDispatchToProps = dispatch => {
+    return {
+        auth_logout: user => {
+            dispatch(auth_logout(user));
+        }
+    };
+};
+
+
+export default connect(mapStateToProps, mapDispatchToProps)(Settings);

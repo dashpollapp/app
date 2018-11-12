@@ -7,7 +7,7 @@ import axiosMiddleware from "redux-axios-middleware";
 
 function getUserToken() {
 	const token = store.getState().user.token;
-	if (!token) return false;
+	if (typeof token != typeof "") return false;
 	return "Bearer " + token;
 }
 

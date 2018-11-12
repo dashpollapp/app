@@ -3,7 +3,7 @@ import { USER_SEARCH, USER_SEARCH_SUCCESS, USER_SEARCH_FAIL } from "../constants
 export default function (state = { users: [] }, action) {
     switch (action.type) {
         case USER_SEARCH:
-            return { loading: true };
+            return { ...state, loading: true };
         case USER_SEARCH_SUCCESS:
             return { loading: false, users: action.payload.data };
 

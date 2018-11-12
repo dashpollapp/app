@@ -33,13 +33,6 @@ class Login extends React.Component {
         this.inputs[id].focus();
     }
 
-    componentDidUpdate() {
-        console.log("CWRP");
-        if (this.props.userLoggedIn) {
-            this.props.set_current_user(this.props.userLoggedIn);
-        }
-    }
-
 
     _onUserInputChange(search) {
         this.props.user_search(search)
@@ -47,36 +40,6 @@ class Login extends React.Component {
 
     _onPasswordInputChange(password) {
         this.props.auth_login(this.state.markered, password);
-        /*axios
-            .post("https://api.dashpoll.net/login", {
-                username: this.state.markered,
-                password
-            })
-            .then(res => {
-                const response = res.data;
-                if (response.status === "SUCCESSFULLY_LOGGED_IN") {
-                    console.log("LOGGED IN");
-                    db.put(
-                        {
-                            _id: "user",
-                            ...response.user,
-                            token: response.token
-                        },
-                        { force: true }
-                    )
-                        .then(() => {
-                            axios.defaults.headers.common["Authorization"] = "Bearer " + response.token;
-                            this.props.dispatch({
-                                type: "updateUser",
-                                payload: response.user
-                            });
-                            //sconnect();
-                            this.props.navigation.navigate(screenNames.MAIN);
-                        })
-                        .catch(err => console.error(err));
-                }
-            })
-            .catch(err => { });*/
     }
 
 
@@ -238,15 +201,10 @@ class Login extends React.Component {
 }
 
 Login.propTypes = {
-    set_current_user: PropTypes.func.isRequired,
     user_search: PropTypes.func.isRequired,
     auth_login: PropTypes.func.isRequired,
     navigation: PropTypes.object.isRequired,
-    foundUsers: PropTypes.object.isRequired,
-    userLoggedIn: PropTypes.oneOfType([
-        PropTypes.bool,
-        PropTypes.object,
-    ]).isRequired,
+    foundUsers: PropTypes.array.isRequired,
 }
 
 
@@ -254,7 +212,6 @@ const mapStateToProps = state => {
     return {
         foundUsers: state.user_search.users,
         loadingUsers: state.user_search.loading,
-        userLoggedIn: state.auth_login.user
     }
 }
 
@@ -265,9 +222,6 @@ const mapDispatchToProps = dispatch => {
         },
         auth_login: (username, password) => {
             dispatch(auth_login(username, password))
-        },
-        set_current_user: user => {
-            dispatch(set_current_user(user));
         }
     };
 }

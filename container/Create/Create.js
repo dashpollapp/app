@@ -78,6 +78,6 @@ export default class Create extends React.Component {
     }
 }
 
-Create.PropTypes = {
+Create.propTypes = {
     navigation: PropTypes.object.isRequired,
 }
