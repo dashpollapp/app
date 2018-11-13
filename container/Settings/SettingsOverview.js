@@ -1,9 +1,10 @@
 import React from "react";
 import { StatusBar, TouchableOpacity, ScrollView, Text, View } from "react-native";
 import PropTypes from "prop-types";
-import { settings, csss, pc, css } from "./SettingsStyle";
 import { connect } from "react-redux";
+
 import { auth_logout } from "../../actions"
+import { settings, csss, pc, css } from "./SettingsStyle";
 
 class Settings extends React.Component {
 

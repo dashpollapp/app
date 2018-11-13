@@ -1,18 +1,17 @@
 import React from "react";
 import { StatusBar, FlatList, Text, View, Alert, TextInput, Image, KeyboardAvoidingView, TouchableOpacity } from "react-native";
 import { LinearGradient } from "expo";
-import axios from "axios";
-import { login, pc, css } from "./SignInStyle";
 import { connect } from "react-redux";
-import db from "../../utils/db";
-import * as screenNames from "../../constants/screenNames";
 import PropTypes from "prop-types";
-import { user_search, auth_login, set_current_user } from "../../actions";
 
-const pwShow = "../../assets/img/login/PWshow.png",
-    pwHide = "../../assets/img/login/PWhide.png";
+import { user_search, auth_login } from "../../actions";
+import { login, pc, css } from "./SignInStyle";
+import * as screenNames from "../../constants/screenNames";
 
-const corner = "../../assets/img/corner.png";
+//Images
+import pwShow from "../../assets/img/login/PWshow.png";
+import pwHide from "../../assets/img/login/PWhide.png";
+import corner from "../../assets/img/corner.png";
 
 class Login extends React.Component {
     constructor(props) {
@@ -35,7 +34,7 @@ class Login extends React.Component {
 
 
     _onUserInputChange(search) {
-        this.props.user_search(search)
+        if (search.length > 0) this.props.user_search(search)
     }
 
     _onPasswordInputChange(password) {
@@ -147,9 +146,9 @@ class Login extends React.Component {
                                                 }}
                                             >
                                                 {this.state.passwordImg ? (
-                                                    <Image style={login.PasswordInputToggleImg} source={require(pwShow)} />
+                                                    <Image style={login.PasswordInputToggleImg} source={pwShow} />
                                                 ) : (
-                                                        <Image style={login.PasswordInputToggleImg} source={require(pwHide)} />
+                                                        <Image style={login.PasswordInputToggleImg} source={pwHide} />
                                                     )}
                                             </TouchableOpacity>
                                         </View>
@@ -190,11 +189,10 @@ class Login extends React.Component {
                     </View>
                 </View>
 
-                <Image style={[css.cornerTL, css.corner]} source={require(corner)} />
-                <Image style={[css.cornerTR, css.corner]} source={require(corner)} />
-
-                <Image style={[css.cornerBL, css.corner]} source={require(corner)} />
-                <Image style={[css.cornerBR, css.corner]} source={require(corner)} />
+                <Image style={[css.cornerTL, css.corner]} source={corner} />
+                <Image style={[css.cornerTR, css.corner]} source={corner} />
+                <Image style={[css.cornerBL, css.corner]} source={corner} />
+                <Image style={[css.cornerBR, css.corner]} source={corner} />
             </View>
         );
     }

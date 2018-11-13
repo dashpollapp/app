@@ -1,14 +1,16 @@
 import { createMaterialTopTabNavigator } from "react-navigation";
-import Polls from "../temp/Temp";
-import { ChatOverview } from "../container/Chat";
-import * as screenName from "../constants/screenNames";
 import React from "react";
 import { View, Image, Dimensions } from "react-native";
 import PropTypes from "prop-types";
+
+import NavbarTop from "../components/Navbar/NavbarTop";
+import Polls from "../temp/Temp";
+import { ChatOverview } from "../container/Chat";
+import * as screenName from "../constants/screenNames";
+
 import chatImg from "../assets/img/navbar/bottom/chat_off.png";
 import pollImg from "../assets/img/navbar/bottom/poll.png";
 
-import NavbarTop from "../components/Navbar/NavbarTop";
 
 const Navigator = createMaterialTopTabNavigator(
     {

@@ -1,19 +1,5 @@
 import React from "react";
-import {
-    ActivityIndicator,
-    Platform,
-    StatusBar,
-    StyleSheet,
-    Text,
-    View,
-    ScrollView,
-    TextInput,
-    Image,
-    KeyboardAvoidingView,
-    ImageBackground,
-    Dimensions,
-    TouchableOpacity
-} from "react-native";
+import { Platform, StatusBar, StyleSheet, Text, View, ScrollView, TextInput, Image, KeyboardAvoidingView, ImageBackground, Dimensions, TouchableOpacity } from "react-native";
 import { BlurView } from "expo";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";

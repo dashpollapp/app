@@ -1,8 +1,5 @@
 import { StyleSheet } from "react-native";
 import { Dimensions, Platform } from "react-native";
-import { totalSize } from "react-native-dimension";
-
-/* Creative Board */
 
 /* Polltype Auswahl */
 export var settings = StyleSheet.create({

@@ -1,9 +1,10 @@
 import React from "react";
 import { View } from "react-native";
+import PropTypes from "prop-types";
+
 import { css } from "./Style";
 import UserTabs from "../../navigator/UserNavigator";
 import UserNavbarTop from "../../components/Navbar/User/NavbarTop";
-import PropTypes from "prop-types";
 
 class User extends React.Component {
 

@@ -1,20 +1,19 @@
 import React from "react";
-import { StatusBar, Text, View, ScrollView, TextInput, Image, Alert, KeyboardAvoidingView, TouchableOpacity } from "react-native";
+import { StatusBar, Text, View, ScrollView, TextInput, Image, KeyboardAvoidingView, TouchableOpacity } from "react-native";
 import { LinearGradient } from "expo";
-import db from "../../utils/db";
 import PropTypes from "prop-types";
 
 // Stylesheets
-import { login, loader, cc, profile, pc, css } from "./SignUpStyle";
+import { login, pc, css } from "./SignUpStyle";
 import { connect } from "react-redux";
-import axios from "axios";
 import * as screenNames from "../../constants/screenNames";
+import { auth_register } from "../../actions"
 
 // Images
-const pwShow = "../../assets/img/login/PWshow.png", // Password Show Image
-    pwHide = "../../assets/img/login/PWhide.png"; // Password Hide Image
-
-const corner = "../../assets/img/corner.png"; // Corner Image
+import pwShow from "../../assets/img/login/PWshow.png"; // Password Show Image
+import pwHide from "../../assets/img/login/PWhide.png"; // Password Hide Image
+import LogoPng from "../../assets/img/navbar/top/logo2.png";
+import corner from "../../assets/img/corner.png"; // Corner Image
 
 class SignUp extends React.Component {
     constructor(props) {
@@ -23,11 +22,8 @@ class SignUp extends React.Component {
             passwordImg: true,
             username: "",
             fullname: "",
-            password: "",
-            inviteCode: ""
+            password: ""
         };
-
-        db.allDocs({}).then(doc => console.log(doc));
 
         this.focusNextField = this.focusNextField.bind(this);
         this._register = this._register.bind(this);
@@ -39,21 +35,8 @@ class SignUp extends React.Component {
     }
 
     _register() {
-        const { username, fullname, inviteCode, password } = this.state;
-        console.log(username);
-        axios
-            .post("https://api.dashpoll.net/user", { username, fullname, inviteCode, password })
-            .then(res => {
-                const response = res.data;
-                if (response.status === "ok") {
-                    axios.defaults.headers.common["Authorization"] = "Bearer " + response.token;
-                    this.props.dispatch({ type: "updateUser", payload: response.user });
-                }
-            })
-            .catch(err => {
-                console.log(err.response);
-                Alert.alert(JSON.stringify(err.response.data));
-            });
+        const { username, fullname, password } = this.state;
+        this.props.auth_register(username, fullname, password)
     }
 
     render() {
@@ -86,14 +69,14 @@ class SignUp extends React.Component {
                                 placeholder={"Beispiel: Hans Berger"}
                             />
 
-                            <Text style={login.TextError}>Einladungscode</Text>
+                            {/*<Text style={login.TextError}>Einladungscode</Text>
                             <Text style={login.TextErrorDescription}>Der Einladungscode "1234-1234-1234-1234" ist ungültig.</Text>
                             <TextInput
                                 onChangeText={inviteCode => this.setState({ inviteCode })}
                                 underlineColorAndroid={"transparent"}
                                 style={login.Input}
                                 placeholder={"siehe Einladung"}
-                            />
+                            />*/}
 
                             <Text style={login.Text}>Passwort</Text>
 
@@ -107,15 +90,13 @@ class SignUp extends React.Component {
                                 />
                                 <TouchableOpacity
                                     style={login.PasswordInputToggle}
-                                    onPress={() => {
-                                        this.setState({ passwordImg: !this.state.passwordImg });
-                                    }}
+                                    onPress={() => { this.setState({ passwordImg: !this.state.passwordImg }) }}
                                 >
-                                    {this.state.passwordImg ? (
-                                        <Image style={login.PasswordInputToggleImg} source={require(pwShow)} />
-                                    ) : (
-                                            <Image style={login.PasswordInputToggleImg} source={require(pwHide)} />
-                                        )}
+                                    {this.state.passwordImg
+                                        ? <Image style={login.PasswordInputToggleImg} source={pwShow} />
+                                        : <Image style={login.PasswordInputToggleImg} source={pwHide} />
+                                    }
+
                                 </TouchableOpacity>
                             </View>
 
@@ -125,7 +106,6 @@ class SignUp extends React.Component {
                             </Text>
                             <TouchableOpacity onPress={this._register} style={[{ marginTop: 12 }]}>
                                 <View style={[{ overflow: "hidden", borderRadius: 12 }]}>
-                                    {/*Bereit: colors={['#ce6b7f', '#3b85db']}    EIngabe noch nicht fertig: colors={['#edcbd2', '#adcff7']} */}
                                     <LinearGradient
                                         style={login.button}
                                         borderRadius={12}
@@ -143,49 +123,53 @@ class SignUp extends React.Component {
                         </ScrollView>
                     </KeyboardAvoidingView>
 
-                    {/*=Navbar top*/}
-                    {/* linear-Gradient border radius bug:   colors={['#e8f5f7', '#edf7f1']} start={[0, 1]} end={[1, 1]}*/}
-
-                    <LinearGradient
-                        style={[css.navTop]}
-                        colors={["rgba(255, 255, 255, 0.98)", "rgba(255, 255, 255, 0.98)"]}
-                        start={[0, 1]}
-                        end={[1, 1]}
-                    >
+                    <LinearGradient style={[css.navTop]} colors={["rgba(255, 255, 255, 0.98)", "rgba(255, 255, 255, 0.98)"]} start={[0, 1]} end={[1, 1]}>
                         <View style={css.navTopCenter}>
-                            {/*<Text style={css.windowTitle}>Umrafge erstellen</Text>*/}
-                            <Image style={css.logo} source={require("../../assets/img/navbar/top/logo2.png")} />
+                            <Image style={css.logo} source={LogoPng} />
                         </View>
                     </LinearGradient>
 
-                    {/*=Navbar unten*/}
                     <View style={css.bottom}>
                         <TouchableOpacity>
                             <Text style={pc.textContinue}>Hilfe</Text>
                         </TouchableOpacity>
-                        <TouchableOpacity
-                            onPress={() => {
-                                this.props.navigation.navigate(screenNames.SIGN_IN);
-                            }}
-                        >
+                        <TouchableOpacity onPress={() => { this.props.navigation.navigate(screenNames.SIGN_IN) }}>
                             <Text style={pc.textPublic}>Bereits Registriert?</Text>
                         </TouchableOpacity>
                     </View>
                 </View>
 
-                <Image style={[css.cornerTL, css.corner]} source={require(corner)} />
-                <Image style={[css.cornerTR, css.corner]} source={require(corner)} />
+                <Image style={[css.cornerTL, css.corner]} source={corner} />
+                <Image style={[css.cornerTR, css.corner]} source={corner} />
 
-                <Image style={[css.cornerBL, css.corner]} source={require(corner)} />
-                <Image style={[css.cornerBR, css.corner]} source={require(corner)} />
+                <Image style={[css.cornerBL, css.corner]} source={corner} />
+                <Image style={[css.cornerBR, css.corner]} source={corner} />
             </View>
         );
     }
 }
 
 SignUp.propTypes = {
-    navigation: PropTypes.object.isRequired
+    navigation: PropTypes.object.isRequired,
+    auth_register: PropTypes.func.isRequired,
+    loading: PropTypes.bool.isRequired,
+    error: PropTypes.string
+}
+
+const mapStateToProps = state => {
+    return {
+        loading: state.user.loading,
+        error: state.user.error
+    }
+}
+
+const mapDispatchToProps = dispatch => {
+    return {
+        auth_register: (username, fullname, password) => {
+            dispatch(auth_register(username, fullname, password))
+        }
+    }
 }
 
 
-export default connect()(SignUp);
+export default connect(mapStateToProps, mapDispatchToProps)(SignUp);

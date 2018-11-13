@@ -1,11 +1,12 @@
 import React from "react";
 import { TouchableOpacity, Text, View, Image } from "react-native";
 import { TabView, SceneMap } from "react-native-tab-view";
+import PropTypes from 'prop-types';
+
 import { css } from "./Style";
 import Createe from "./CreatePage";
 import Types from "./Types";
 import * as screenNames from "../../constants/screenNames";
-import PropTypes from 'prop-types';
 
 import PlusImg from "../../assets/img/navbar/top/plus.png";
 import BackImg from "../../assets/img/navbar/top/back.png";

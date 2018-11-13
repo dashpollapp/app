@@ -1,16 +1,19 @@
-import { SET_CURRENT_USER, AUTH_LOGOUT, AUTH_LOGIN, AUTH_LOGIN_SUCCESS, AUTH_LOGIN_FAIL } from "../constants/actionTypes";
+import { SET_CURRENT_USER, AUTH_LOGOUT, AUTH_LOGIN, AUTH_LOGIN_SUCCESS, AUTH_LOGIN_FAIL, AUTH_REGISTER, AUTH_REGISTER_FAIL, AUTH_REGISTER_SUCCESS } from "../constants/actionTypes";
 import db from "../utils/db";
 
 const initialState = { loading: false, user: false };
 
 export default function (state = initialState, action) {
     switch (action.type) {
+
         case SET_CURRENT_USER:
             return { loading: false, user: action.payload };
+
+
         case AUTH_LOGIN:
             return { ...state, loading: true };
         case AUTH_LOGIN_SUCCESS:
-            const user = { ...action.payload.data.user, token: action.payload.data.token, loading: false }
+            let user = { ...action.payload.data.user, token: action.payload.data.token, loading: false }
             saveUserToDb(user);
             return { loading: false, user };
         case AUTH_LOGIN_FAIL:
@@ -19,9 +22,26 @@ export default function (state = initialState, action) {
                 loading: false,
                 error: 'Error while login in',
             };
+
+        case AUTH_REGISTER:
+            return { ...state, loading: true };
+        case AUTH_REGISTER_SUCCESS:
+            let registeredUser = { ...action.payload.data.user, token: action.payload.data.token, loading: false }
+            saveUserToDb(registeredUser);
+            return { loading: false, user: registeredUser };
+        case AUTH_REGISTER_FAIL:
+            return {
+                user: false,
+                loading: false,
+                error: 'Error while login in',
+            };
+
+
         case AUTH_LOGOUT:
             deleteUserFromDb();
             return { loading: false, user: false };
+
+
         default:
             return state;
     }

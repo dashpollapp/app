@@ -1,21 +1,6 @@
 import React from "react";
-import {
-    Platform,
-    StatusBar,
-    StyleSheet,
-    Text,
-    View,
-    ScrollView,
-    TextInput,
-    Image,
-    KeyboardAvoidingView,
-    ImageBackground,
-    Dimensions,
-    TouchableHighlight,
-    TouchableOpacity,
-    Button
-} from "react-native";
-import { LinearGradient, Font, AppLoading, BlurView } from "expo";
+import { Platform, StatusBar, StyleSheet, Text, View, ScrollView, Image, Dimensions, TouchableHighlight, TouchableOpacity } from "react-native";
+import { BlurView } from "expo";
 
 const scrollDownPosition = Dimensions.get("window").width - 72;
 

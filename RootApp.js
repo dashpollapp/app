@@ -1,12 +1,10 @@
 import React from "react";
-import PropTypes from 'prop-types';
 import { Font, AppLoading, Asset, SplashScreen } from "expo";
-import db from "./utils/db";
-import axios from "axios";
-import { View, Text, StyleSheet, Dimensions, Image } from "react-native";
+import PropTypes from 'prop-types';
+import { View, StyleSheet, Dimensions, Image } from "react-native";
 import { connect } from "react-redux";
-import * as action from "./constants/actionTypes";
-import * as screenNames from "./constants/screenNames";
+
+import db from "./utils/db";
 import { set_current_user } from "./actions";
 
 import LoginNavigator from "./navigator/LoginNavigator";

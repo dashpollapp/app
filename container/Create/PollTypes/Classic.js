@@ -1,7 +1,8 @@
 import React from 'react';
-import { Platform, StatusBar, Alert, Button, TouchableOpacity, StyleSheet, Text, View, ScrollView, TextInput, Image, KeyboardAvoidingView, ImageBackground, Dimensions } from 'react-native';
-import { LinearGradient, Font, AppLoading, BlurView } from 'expo';
-import { pcSelect, pc, profile, login, loader, cc, css } from '../Style';
+import { TouchableOpacity, Text, View, TextInput } from 'react-native';
+import { LinearGradient } from 'expo';
+
+import { pc, css } from '../Style';
 
 export default class ClassicType extends React.Component {
 

@@ -1,12 +1,9 @@
 import React from "react";
-import { StyleSheet, Text, View, Dimensions } from "react-native";
-import store from "./utils/store";
+import { StyleSheet, Dimensions } from "react-native";
 import { Provider } from "react-redux";
 
 import RootApp from "./RootApp";
-import Temp from "./temp/Temp";
-import NavbarTop from "./components/Navbar/NavbarTop";
-import Corner from "./components/Corner";
+import store from "./utils/store";
 
 export default class App extends React.Component {
     render() {

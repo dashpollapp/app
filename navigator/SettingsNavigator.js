@@ -1,8 +1,9 @@
 import React from "react";
 import { View } from "react-native";
 import { createStackNavigator } from "react-navigation";
-import { SettingsOverview, AccountSettings, EditProfile, Help, Legal, MyData, Performance, ReportProblem, Security } from "../container/Settings";
 import PropTypes from "prop-types";
+
+import { SettingsOverview, AccountSettings, EditProfile, Help, Legal, MyData, Performance, ReportProblem, Security } from "../container/Settings";
 
 const Navigator = createStackNavigator(
     {

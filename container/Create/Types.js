@@ -1,6 +1,7 @@
 import React from "react";
 import { TouchableOpacity, Text, View, ScrollView, Image } from "react-native";
 import { connect } from "react-redux";
+
 import { pcSelect, pc, css } from "./Style";
 
 class Types extends React.Component {

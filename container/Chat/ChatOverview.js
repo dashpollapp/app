@@ -1,6 +1,6 @@
 import React from 'react';
-import { Platform, StatusBar, StyleSheet, Text, View, ScrollView, TouchableOpacity, Image, KeyboardAvoidingView, ImageBackground, Dimensions } from 'react-native';
-import { LinearGradient, Font, AppLoading } from 'expo';
+import { StatusBar, StyleSheet, Text, View, ScrollView, TouchableOpacity, Image, KeyboardAvoidingView, ImageBackground, Dimensions } from 'react-native';
+import { LinearGradient } from 'expo';
 import PropTypes from 'prop-types';
 
 export default class ChatOverview extends React.Component {

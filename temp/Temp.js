@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { View, TouchableOpacity, ScrollView, Image, Text, } from "react-native";
-import * as screenNames from "../constants/screenNames";
 
+import * as screenNames from "../constants/screenNames";
 import s from "./TempStyle";
 
 class Temp extends Component {
