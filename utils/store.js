@@ -21,7 +21,6 @@ export let httpClient = axios.create({
 	transformRequest: [
 		(data, headers) => {
 			const token = getUserToken();
-			console.log(token);
 			if (token) headers['Authorization'] = token;
 			return JSON.stringify(data);
 		}

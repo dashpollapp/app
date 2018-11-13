@@ -4,13 +4,13 @@ import HomeNavigator from "./HomeNavigator";
 import * as screenName from "../constants/screenNames";
 import SettingsNavigator from "./SettingsNavigator";
 import UserNavigatorWrapper from "../container/User/UserNavigatorWrapper";
-import Create from "../container/Create/Create"
+import CreatePollNavigator from "./CreatePollNavigator"
 
 export default createStackNavigator(
     {
         [screenName.HOME]: HomeNavigator,
         [screenName.USER]: UserNavigatorWrapper,
-        [screenName.CREATE]: Create,
+        [screenName.CREATE]: CreatePollNavigator,
         [screenName.SETTINGS]: SettingsNavigator
     },
     {

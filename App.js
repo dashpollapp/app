@@ -7,7 +7,6 @@ import store from "./utils/store";
 
 export default class App extends React.Component {
     render() {
-        console.log("START1");
         return (
             <Provider store={store}>
                 {/*<View style={styles.containerWraper}>

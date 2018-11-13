@@ -6,6 +6,7 @@ import { connect } from "react-redux";
 
 import db from "./utils/db";
 import { set_current_user } from "./actions";
+//import getAllImagePaths from "./utils/getAllImagePaths";
 
 import LoginNavigator from "./navigator/LoginNavigator";
 import RootNavigator from "./navigator/RootNavigator";
@@ -29,6 +30,7 @@ function loadFonts() {
 
 function cacheResourcesAsync() {
     return new Promise((resolve, reject) => {
+        //const images = getAllImagePaths().map(imgPath => console.log(imgPath));
         const images = [
             require('./assets/img/splash.png'),
             require('./assets/img/login/PWhide.png'),
@@ -42,11 +44,10 @@ function cacheResourcesAsync() {
             require('./assets/img/corner.png'),
             require('./assets/img/hide.png'),
             require('./assets/img/pb.jpg'),
-        ];
+        ]
         const cacheImages = images.map(image => Asset.fromModule(image).downloadAsync());
         Promise.all(cacheImages)
             .then(() => resolve());
-
     })
 }
 
@@ -54,7 +55,6 @@ function getUserFromDb() {
     return new Promise((resolve, reject) => {
         db.get("user")
             .then(user => {
-                //console.log(user);
                 resolve(user)
             })
             .catch(err => {
@@ -79,7 +79,6 @@ class RootApp extends React.Component {
             .then(results => {
                 const [, user] = results;
 
-                console.log(user);
                 if (user) this.props.set_current_user(user);
 
                 this.setState({ isAppReady: true }, () => { SplashScreen.hide() })
@@ -122,7 +121,6 @@ class RootApp extends React.Component {
                     ? <RootNavigator />
                     : <LoginNavigator />
                 }
-
             </View>
         )
     }

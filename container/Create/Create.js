@@ -10,8 +10,9 @@ import * as screenNames from "../../constants/screenNames";
 
 import PlusImg from "../../assets/img/navbar/top/plus.png";
 import BackImg from "../../assets/img/navbar/top/back.png";
+import { connect } from "react-redux";
 
-export default class Create extends React.Component {
+class Create extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -67,18 +68,22 @@ export default class Create extends React.Component {
                             <Image style={[css.create, css.close]} source={PlusImg} />
                         </TouchableOpacity>
                     </View>
-                    <TabView
-                        navigationState={this.state}
-                        renderScene={this._renderScene}
-                        onIndexChange={this._handleIndexChange}
-                        tabBarPosition={false}
-                    />
                 </View>
             </View>
         );
     }
 }
 
+const mapStateToProps = state => {
+    return {
+        navigationState: state.create_poll.navigationState,
+    }
+}
+
 Create.propTypes = {
     navigation: PropTypes.object.isRequired,
+    navigationState: PropTypes.number.isRequired
 }
+
+export default connect(mapStateToProps)(Create);
+

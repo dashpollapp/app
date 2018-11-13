@@ -8,3 +8,5 @@ export const CREATE = "CREATE";
 export const POLLS = "POLLS";
 export const CHAT = "CHAT";
 export const USER = "USER";
+export const CREATEPOLL = "CREATEPOLL";
+export const POLLTYPES = "POLLTYPES";

@@ -7,7 +7,6 @@ import s from "./TempStyle";
 class Temp extends Component {
     constructor(props) {
         super(props)
-        console.log(props)
     }
 
     render() {

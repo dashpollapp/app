@@ -3,13 +3,12 @@ import { TouchableOpacity, Text, View, ScrollView, Image } from "react-native";
 import { connect } from "react-redux";
 
 import { pcSelect, pc, css } from "./Style";
+import { create_poll_change_polltype } from "../../actions";
 
 class Types extends React.Component {
-    _handleTypeChange(type = "BACK") {
-        this.props.dispatch({
-            type: "CREATE_POLLTYPE_CHANGE",
-            payload: type
-        });
+
+    _handleTypeChange(type) {
+        this.props.create_poll_change_polltype(type)
     }
 
     render() {
@@ -92,4 +91,13 @@ class Types extends React.Component {
         );
     }
 }
-export default connect()(Types);
+
+const mapDispatchToProps = dispatch => {
+    return {
+        create_poll_change_polltype: polltype => {
+            dispatch(create_poll_change_polltype(polltype))
+        }
+    }
+}
+
+export default connect(null, mapDispatchToProps)(Types);

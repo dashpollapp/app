@@ -13,7 +13,6 @@ class Chat extends React.Component {
     }
 
     componentWillMount() {
-        console.log(this.props.screenProps.rootNavigation.state.params.user);
     }
 
     navigateToUser(user) {
