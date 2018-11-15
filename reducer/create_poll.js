@@ -1,25 +1,22 @@
 import { CREATE_POLL, CREATE_POLL_SUCCESS, CREATE_POLL_FAIL, CREATE_POLL_CHANGE_POLLTYPE } from "../constants/actionTypes";
 
-export default function (state = { loading: false, navigationState: 0 }, action) {
+export default function (state = { loading: false, poll: false }, action) {
     switch (action.type) {
         case CREATE_POLL:
-            return { ...state, loading: true };
+            return { loading: true, poll: false };
         case CREATE_POLL_SUCCESS:
             return { loading: false, poll: action.payload.data };
 
         case CREATE_POLL_FAIL:
             return {
                 ...state,
+                poll: false,
                 loading: false,
-                error: 'Error while fetching users',
+                error: 'Error while creating poll',
             };
 
         case CREATE_POLL_CHANGE_POLLTYPE:
-            return {
-                ...state,
-                polltype: action.payload,
-                navigationState: 0
-            }
+            return { ...state, polltype: action.payload }
 
         default:
             return state;

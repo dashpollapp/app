@@ -6,6 +6,7 @@ import PropTypes from 'prop-types';
 import { Classic, Like, Normal } from "./PollTypes";
 import { connect } from "react-redux";
 import { pc, css } from "./Style";
+import { create_poll } from "../../actions";
 
 //Images
 import CamImg from "../../assets/img/media/cam.png";
@@ -91,7 +92,7 @@ class CreatePage extends React.Component {
 
                         <TouchableOpacity
                             onPress={() => {
-                                this.createPoll();
+                                this.props.create_poll({ ...this.state, polltype: this.props.selectedPollType || 0 });
                             }}
                         >
                             <Image style={pc.mediaItem} source={SpotifyImg} />
@@ -113,13 +114,14 @@ class CreatePage extends React.Component {
                         source={{ uri: "https://pbs.twimg.com/profile_images/830204661474979841/qsnoO3lJ_400x400.jpg" }}
                     />
                 </ScrollView>
-            </View>
+            </View >
         );
     }
 }
 
 CreatePage.propTypes = {
-    selectedPollType: PropTypes.number
+    selectedPollType: PropTypes.number,
+    create_poll: PropTypes.func.isRequired
 }
 
 const mapStateToProps = state => {
@@ -128,6 +130,13 @@ const mapStateToProps = state => {
     }
 }
 
+const mapDispatchToProps = dispatch => {
+    return {
+        create_poll: poll => {
+            dispatch(create_poll(poll))
+        }
+    }
+}
 
 
-export default connect(mapStateToProps)(CreatePage);
+export default connect(mapStateToProps, mapDispatchToProps)(CreatePage);

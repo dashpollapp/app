@@ -5,7 +5,7 @@ export default function ({ heading, polltype, media, answers, maxVotes }) {
         type: CREATE_POLL,
         payload: {
             request: {
-                url: "/user",
+                url: "/polls",
                 method: "POST",
                 data: {
                     heading,

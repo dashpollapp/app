@@ -4,7 +4,7 @@ import { View, Image, Dimensions } from "react-native";
 import PropTypes from "prop-types";
 
 import NavbarTop from "../components/Navbar/NavbarTop";
-import Polls from "../temp/Temp";
+import Polls from "../container/Polls/Polls";
 import { ChatOverview } from "../container/Chat";
 import * as screenName from "../constants/screenNames";
 
