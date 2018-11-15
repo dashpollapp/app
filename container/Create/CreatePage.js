@@ -1,16 +1,23 @@
 import React from "react";
 import { Alert, TouchableOpacity, Text, View, ScrollView, TextInput, Image, } from "react-native";
 import { LinearGradient } from "expo";
+import PropTypes from 'prop-types';
 
 import { Classic, Like, Normal } from "./PollTypes";
 import { connect } from "react-redux";
 import { pc, css } from "./Style";
 
+//Images
+import CamImg from "../../assets/img/media/cam.png";
+import SpotifyImg from "../../assets/img/media/spotify.png";
+import YoutubeImg from "../../assets/img/media/youtube.png";
+
 class CreatePage extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            polltype: false
+            heading: "",
+            text: ""
         };
     }
 
@@ -64,7 +71,7 @@ class CreatePage extends React.Component {
                         style={pc.inputDescription}
                         placeholder={"Du kannst eine Beschreibung eingeben"}
                         placeholderTextColor={"#938f8f"}
-                        onChangeText={beschreibung => this.setState({ beschreibung })}
+                        onChangeText={text => this.setState({ text })}
                     />
 
                     {/*Medien (vorläufig)*/}
@@ -79,7 +86,7 @@ class CreatePage extends React.Component {
                                 Alert.alert("Cam");
                             }}
                         >
-                            <Image style={pc.mediaItem} source={require("../../assets/img/media/cam.png")} />
+                            <Image style={pc.mediaItem} source={CamImg} />
                         </TouchableOpacity>
 
                         <TouchableOpacity
@@ -87,7 +94,7 @@ class CreatePage extends React.Component {
                                 this.createPoll();
                             }}
                         >
-                            <Image style={pc.mediaItem} source={require("../../assets/img/media/spotify.png")} />
+                            <Image style={pc.mediaItem} source={SpotifyImg} />
                         </TouchableOpacity>
 
                         <TouchableOpacity
@@ -95,7 +102,7 @@ class CreatePage extends React.Component {
                                 Alert.alert("Youtube");
                             }}
                         >
-                            <Image style={pc.mediaItem} source={require("../../assets/img/media/youtube.png")} />
+                            <Image style={pc.mediaItem} source={YoutubeImg} />
                         </TouchableOpacity>
                     </LinearGradient>
 
@@ -109,6 +116,10 @@ class CreatePage extends React.Component {
             </View>
         );
     }
+}
+
+CreatePage.propTypes = {
+    selectedPollType: PropTypes.number
 }
 
 const mapStateToProps = state => {

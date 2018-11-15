@@ -38,7 +38,7 @@ class Login extends React.Component {
     }
 
     _onPasswordInputChange(password) {
-        this.props.auth_login(this.state.markered, password);
+        if (password.length > 2) this.props.auth_login(this.state.markered, password);
     }
 
 

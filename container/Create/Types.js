@@ -1,14 +1,17 @@
 import React from "react";
 import { TouchableOpacity, Text, View, ScrollView, Image } from "react-native";
 import { connect } from "react-redux";
+import PropTypes from "prop-types";
 
 import { pcSelect, pc, css } from "./Style";
 import { create_poll_change_polltype } from "../../actions";
+import * as screenNames from "../../constants/screenNames";
 
 class Types extends React.Component {
 
     _handleTypeChange(type) {
-        this.props.create_poll_change_polltype(type)
+        this.props.create_poll_change_polltype(type);
+        this.props.navigation.navigate(screenNames.CREATEPOLL)
     }
 
     render() {
@@ -90,6 +93,10 @@ class Types extends React.Component {
             </View>
         );
     }
+}
+
+Types.propTypes = {
+    create_poll_change_polltype: PropTypes.func.isRequired
 }
 
 const mapDispatchToProps = dispatch => {
