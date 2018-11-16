@@ -8,7 +8,9 @@ export default class ChatOverview extends React.Component {
     render() {
         return (
             <View>
-                <Text>Geplant für 2019</Text>
+                <Text style={{fontFamily: "GS2", textAlign: "center", paddingVertical: 12, fontSize: 16, color: "#888"}}>Geplant für 2019</Text>
+
+
                 <ScrollView style={[css.chats, {opacity: 0,}]}>
 
                     {/*▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆  Priority: Ultraaaa Wichtig  ▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆*/}
