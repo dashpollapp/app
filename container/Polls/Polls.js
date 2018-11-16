@@ -17,17 +17,17 @@ class Polls extends Component {
         return (
             <ScrollView style={style.box}>
 
-                <TouchableOpacity>
-                    <Text style={style.h1}>Beiträge:</Text>
-                </TouchableOpacity>
+                <View style={style.boxHeader}>
+                    <TouchableOpacity>
+                        <Text style={style.h1}>Beiträge:</Text>
+                    </TouchableOpacity>
 
-                <TouchableOpacity onPress={() => this.props.screenProps.parentNavigation.navigate(screenNames.CREATE)}>
-                    <Text style={style.link}>+ Neue Umfrage</Text>
-                </TouchableOpacity>
+                    <TouchableOpacity onPress={() => this.props.screenProps.parentNavigation.navigate(screenNames.CREATE)}>
+                        <Text style={style.link}>+ Neue Umfrage</Text>
+                    </TouchableOpacity>
+                </View>
 
-                <PollsFlatlist polls={this.props.polls} />
-
-
+                <PollsFlatlist polls={this.props.polls}/>
             </ScrollView>
         );
     }
