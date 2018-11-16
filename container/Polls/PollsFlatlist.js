@@ -8,7 +8,6 @@ import PbImg from "../../assets/img/pb.jpg";
 
 class PollsFlatlist extends Component {
 
-    /* Was hat das hier verloren? 16.11 KM*/ 
     formatTime(date) {
         if (typeof date === typeof "") {
             date = new Date(date);
@@ -47,12 +46,11 @@ class PollsFlatlist extends Component {
         return (
             <View>
                 <FlatList
-                    style={style.posts}
                     data={this.props.polls}
                     keyExtractor={(item, index) => index + "a" + item.heading}
                     renderItem={({ item }) => {
                         return (
-                            <View style={style.post}>
+                            <View style={style.pPost}>
                                 <View style={style.pPostHeader}>
                                     <TouchableOpacity>
                                         <Image style={style.pPB} source={PbImg} />
@@ -61,10 +59,6 @@ class PollsFlatlist extends Component {
                                         <Text style={style.pTitle}>{item.heading}</Text>
                                         <Text style={style.pSubtitle}>{item.author.username} {this.formatTime(item.createdAt)}</Text>
                                     </View>
-                                </View>
-                                <Text style={style.description}>Ich bin eine Beschreibung</Text>
-                                <View>
-
                                 </View>
                             </View>
                         )

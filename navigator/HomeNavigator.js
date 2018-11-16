@@ -8,7 +8,7 @@ import Polls from "../container/Polls/Polls";
 import { ChatOverview } from "../container/Chat";
 import * as screenName from "../constants/screenNames";
 
-import chatImg from "../assets/img/navbar/bottom/chat.png";
+import chatImg from "../assets/img/navbar/bottom/chat_off.png";
 import pollImg from "../assets/img/navbar/bottom/poll.png";
 
 
@@ -43,11 +43,10 @@ const Navigator = createMaterialTopTabNavigator(
             indicatorStyle: {
                 marginTop: -4,
                 height: 12,
-                width: Dimensions.get('window').width / 2 - 128,
-                marginLeft: 64,
+                width: Dimensions.get('window').width / 2 - 16,
+                marginLeft: 8,
                 backgroundColor: "#000",
-                borderTopLeftRadius: 6,
-                borderTopRightRadius: 6,
+                borderRadius: 2,
                 position: "absolute",
                 bottom: -8,
             },
@@ -77,7 +76,7 @@ export default class HomeNavigator extends React.Component {
 
     render() {
         return (
-            <View style={{ flex: 1, backgroundColor: "#fff" }}>
+            <View style={{ flex: 1 }}>
                 <NavbarTop navigation={this.props.navigation} />
                 <Navigator navigation={this.props.navigation} screenProps={{ parentNavigation: this.props.navigation }} />
             </View>

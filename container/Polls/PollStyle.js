@@ -2,10 +2,7 @@ import { StyleSheet, Platform } from "react-native";
 
 export default StyleSheet.create({
     box: {
-        padding: 0,
-        backgroundColor: "rgba(0,0,0,0.05)",
-        height: "100%",
-        zIndex: 0,
+        padding: 16,
     },
 
 
@@ -40,14 +37,8 @@ export default StyleSheet.create({
     },
 
     //Ein Beitrag
-    post: {
-        padding: 4,    
-        marginHorizontal: 8,
-        marginBottom: 32,
-    },
-    posts: {
-        padding: 8,
-        paddingTop: 20,
+    pPost: {
+        padding: 4,
     },
 
     pSubtitle: {
@@ -65,29 +56,11 @@ export default StyleSheet.create({
     pPostHeader: {
         flex: 1,
         flexDirection: "row",
+        marginHorizontal: 8,
         alignItems: "center",
-        width: "100%",       
-        marginBottom: 8,
     },
 
     pPostHeaderText: {
-        marginLeft: 8,
-    },
-
-    description: {
-        color: "#444",
-        fontSize: 16,
-        fontFamily: "GS1",
-        marginBottom: 12,
-    },
-
-
-
-    boxHeader: {
-        width: "100%",
-        backgroundColor: "rgba(0,0,0,0.05)",
-        padding: 12,
-        paddingHorizontal: 18,
-    },
-
+        marginLeft: 12,
+    }
 });
