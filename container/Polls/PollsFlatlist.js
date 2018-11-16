@@ -1,8 +1,9 @@
 import React, { Component } from "react";
 import { View, TouchableOpacity, Image, Text, FlatList } from "react-native";
 import PropTypes from "prop-types";
+import { LinearGradient } from 'expo';
 
-import style from "./PollStyle";
+import s from "./PollStyle";
 
 import PbImg from "../../assets/img/pb.jpg";
 
@@ -47,23 +48,59 @@ class PollsFlatlist extends Component {
         return (
             <View>
                 <FlatList
-                    style={style.posts}
+                    style={s.posts}
                     data={this.props.polls}
                     keyExtractor={(item, index) => index + "a" + item.heading}
                     renderItem={({ item }) => {
                         return (
-                            <View style={style.post}>
-                                <View style={style.pPostHeader}>
+                            <View style={s.post}>
+                                <View style={s.pPostHeader}>
                                     <TouchableOpacity>
-                                        <Image style={style.pPB} source={PbImg} />
+                                        <Image style={s.pPB} source={PbImg} />
                                     </TouchableOpacity>
-                                    <View style={style.pPostHeaderText}>
-                                        <Text style={style.pTitle}>{item.heading}</Text>
-                                        <Text style={style.pSubtitle}>{item.author.username} {this.formatTime(item.createdAt)}</Text>
+                                    <View style={s.pPostHeaderText}>
+                                        <Text style={s.pTitle}>{item.heading}</Text>
+                                        <Text style={s.pSubtitle}>{item.author.username} {this.formatTime(item.createdAt)}</Text>
                                     </View>
                                 </View>
-                                <Text style={style.description}>Ich bin eine Beschreibung</Text>
-                                <View>
+                                <Text style={s.description}>Ich bin eine Beschreibung</Text>
+
+                                {/* Umfragenteil */}
+                                <View style={s.poll}>
+
+                                    <TouchableOpacity>
+                                        <View style={s.pt1Answer}>
+                                            <View>
+                                                <Text style={s.pollAnswerTitle}>Antwort A</Text>
+                                            </View>
+                                            <View style={s.pt1Bar}>
+                                                <LinearGradient 
+                                                    style={[s.pt1BarInner, {width: "50%"}]}
+                                                    colors={['#aaa', '#888' ]}
+                                                    start={{x: 0.0, y: 0.0}} 
+                                                    end={{x: 0.9, y: 0.1}}
+                                                    />
+                                                <Text style={s.pollPercentText}>50%</Text>
+                                            </View>
+                                        </View>
+                                    </TouchableOpacity>
+
+                                    <TouchableOpacity>
+                                        <View style={s.pt1Answer}>
+                                            <View>
+                                                <Text style={s.pollAnswerTitle}>Antwort B</Text>
+                                            </View>
+                                                <View style={s.pt1Bar}>
+                                                    <LinearGradient 
+                                                    style={[s.pt1BarInner, {width: "50%"}]}
+                                                    colors={['#ae4768', '#3386cd' ]}
+                                                    start={{x: 0.0, y: 0.0}} 
+                                                    end={{x: 0.9, y: 0.1}}
+                                                    />
+                                                    <Text style={s.pollPercentText}>50%</Text>
+                                                </View>
+                                        </View>
+                                    </TouchableOpacity>
 
                                 </View>
                             </View>

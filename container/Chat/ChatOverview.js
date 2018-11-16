@@ -8,8 +8,8 @@ export default class ChatOverview extends React.Component {
     render() {
         return (
             <View>
-                <StatusBar hidden={true} />
-                <ScrollView style={css.chats}>
+                <Text>Geplant für 2019</Text>
+                <ScrollView style={[css.chats, {opacity: 0,}]}>
 
                     {/*▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆  Priority: Ultraaaa Wichtig  ▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆*/}
                     <View style={[css.chat, css.chatNew, { borderColor: "#d83a3a", backgroundColor: "#f2dcdc" }]}>

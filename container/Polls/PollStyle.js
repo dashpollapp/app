@@ -1,9 +1,10 @@
 import { StyleSheet, Platform } from "react-native";
 
 export default StyleSheet.create({
+
     box: {
         padding: 0,
-        backgroundColor: "rgba(0,0,0,0.05)",
+        backgroundColor: "#fff",
         height: "100%",
         zIndex: 0,
     },
@@ -89,5 +90,57 @@ export default StyleSheet.create({
         padding: 12,
         paddingHorizontal: 18,
     },
+
+
+
+
+    // < Poll - Anfang (Umfrageteil) ->
+    poll: {
+        
+    },
+    pollAnswerTitle: {
+        fontFamily: "GS2",
+        color: "#333",
+        fontSize: 16,
+    },
+    pollPercentText: {
+        fontFamily: "GS1",
+        color: "#666",
+        fontSize: 14,
+    },
+    // < / Poll - Ende (Umfrageteil) ->
+
+
+
+
+
+    //Polltype Klassic (erstmal Polltype-1 bei mir)
+    // (wird eh noch ausgelagert, müssten wir uns allgemein nochmal absprechen)
+    // lg KM :)
+    pt1: {
+
+    },
+    pt1Bar: {
+        height: 16,
+        marginTop: 2,
+        marginRight: 8,
+
+        alignItems: "center",
+        display: "flex",
+        flex: 1,
+        flexDirection: 'row',
+    },
+    pt1BarInner: {
+        borderRadius: 6,   
+        height: "100%",
+        minWidth: 4,
+        marginRight: 4,
+    },
+    pt1Answer: {
+        paddingVertical: 6,
+    },
+
+
+
 
 });

@@ -9,15 +9,9 @@ export default StyleSheet.create({
 
         padding: 12,
         flexDirection: "row",
-
-        shadowOpacity: 0.1,
-        shadowRadius: 2,
-        shadowOffset: {
-            height: 1,
-            width: 0
-        },
+        
         backgroundColor: "#fff",
-        borderTopWidth: 1,
+        borderTopWidth: 2,
         borderColor: "#ddd",
     },
     mainItem: {

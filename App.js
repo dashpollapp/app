@@ -1,5 +1,5 @@
 import React from "react";
-import { StyleSheet, Dimensions } from "react-native";
+import { StyleSheet, Dimensions, View } from "react-native";
 import { Provider } from "react-redux";
 
 import RootApp from "./RootApp";
@@ -9,16 +9,7 @@ export default class App extends React.Component {
     render() {
         return (
             <Provider store={store}>
-                {/*<View style={styles.containerWraper}>
-                    <NavbarTop />
-                    <View style={styles.container}>
-                        {/* Inhalt nach hier (sonst wird er von der Navbar abgeschnitten) */}
-                {/*<Temp />
-                    </View>
-                    <NavbarBottom />
-        <Corner />*/}
-                <RootApp />
-
+                    <RootApp />   
             </Provider >
         );
     }
