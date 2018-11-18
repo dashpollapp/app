@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 import { connect } from "react-redux";
 
 import { auth_logout } from "../../actions"
-import { s, csss, pc, css } from "./SettingsStyle";
+import { s, csss, } from "./SettingsStyle";
 
 class Settings extends React.Component {
 
@@ -93,16 +93,6 @@ class Settings extends React.Component {
 
                     </ScrollView>
 
-                    {/*=Navbar unten*/}
-                    {/*linear-Gradient border radius bug:    colors={['#e8f5f7', '#e5fcef']} start={[0, 1]} end={[1, 1]*/}
-                    <View style={css.bottom}>
-                        <TouchableOpacity style={[css.bottomText]}>
-                            <Text style={pc.textContinue}>Filtern</Text>
-                        </TouchableOpacity>
-                        <TouchableOpacity style={csss.bottomText}>
-                            <Text style={pc.textPublic}>Auswahl</Text>
-                        </TouchableOpacity>
-                    </View>
                 </View>
             </View>
         );
