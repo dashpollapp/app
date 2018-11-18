@@ -1,10 +1,11 @@
 import React from "react";
-import { StatusBar, TouchableOpacity, ScrollView, Text, View } from "react-native";
+import { LinearGradient } from "expo";
+import { Dimensions, TouchableOpacity, ScrollView, Text, View } from "react-native";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 
 import { auth_logout } from "../../actions"
-import { s, csss, } from "./SettingsStyle";
+import { s, } from "./SettingsStyle";
 
 class Settings extends React.Component {
 
@@ -20,17 +21,59 @@ class Settings extends React.Component {
         return (
             <View
                 style={{
-                    backgroundColor: "#fff",
                     width: "100%",
-                    height: "100%",           
-                    marginTop: 4,
+                    height: "100%",  
+                    display: "flex",
+                    alignItems: "flex-start", 
+                    backgroundColor: "rgba(0,0,0,0.05)",
+                    flexDirection:"row",
                 }}                                                                                                                                                                                                                                                                                                             
             >
-                {/* Expo/RN Einstellungen */}
-                <View style={[csss.body]}>
-                    <ScrollView>      
 
-                        <View style={{backgroundColor: "rgba(0,0,0,0.05)"}}>
+                
+
+                <View style={{ 
+                            height: "100%",
+                            padding: 4,
+                            alignItems: "center",
+                            justifyContent: "center",
+                            marginTop: -64,
+                        }}>
+
+                    <LinearGradient
+                        colors={['#af464e','#af4667']}
+                        start={{x: 1, y: 1}} end={{x: 1, y: 0}}
+                        style={{ 
+                            height: 32,
+                            width: 8, 
+                            alignItems: 'center', 
+                            justifyContent: 'center',
+                            borderRadius: 3,
+                            marginVertical: 2,
+                        }}>
+                    </LinearGradient>
+
+                    <LinearGradient
+                        colors={['#3486cc', '#297ec6']}
+                        start={{x: 1, y: 1}} end={{x: 1, y: 0}}
+                        style={{ 
+                            height: 32,
+                            width: 8, 
+                            alignItems: 'center', 
+                            justifyContent: 'center',
+                            borderRadius: 3,
+                            marginVertical: 2,
+                        }}>
+                    </LinearGradient>
+
+                </View>
+                            
+                    
+
+                {/* Expo/RN Einstellungen */}
+                <ScrollView style={[s.box]}> 
+
+                        <View>
                             <View style={s.connectionBox}>
                                 <Text style={s.connectionText}>Verbunden</Text>
                                 <View style={s.connectionPoints}>
@@ -91,9 +134,7 @@ class Settings extends React.Component {
                         </TouchableOpacity>
                         {/*DPI: "überalle Abmelden"*/}
 
-                    </ScrollView>
-
-                </View>
+                </ScrollView>
             </View>
         );
     }

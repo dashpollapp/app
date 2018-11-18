@@ -16,7 +16,8 @@ export default StyleSheet.create({
 
         fontFamily: "GS2",
         fontSize: 19,
-        marginVertical: 6,
+        marginTop: 6,
+        marginBottom: 5,
         color: "#444"
     },
 
@@ -41,7 +42,6 @@ export default StyleSheet.create({
         maxHeight: 52 + 24,
         backgroundColor: "#fff",
 
-        alignSelf: "stretch",
         flex: 1,
         padding: 8,
         paddingLeft: 18,

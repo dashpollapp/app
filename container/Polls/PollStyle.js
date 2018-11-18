@@ -7,7 +7,9 @@ export default StyleSheet.create({
         backgroundColor: "rgba(0,0,0,0.05)",
         marginTop: 2,
         height: "100%",
+        width: "100%",
         zIndex: 0,
+        flex: 1,
     },
 
 
@@ -51,6 +53,7 @@ export default StyleSheet.create({
         padding: 8,
         paddingTop: 20,
         backgroundColor: "#fff",
+        borderRadius: 12,
     },
 
     pSubtitle: {
