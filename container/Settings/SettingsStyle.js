@@ -2,18 +2,59 @@ import { StyleSheet } from "react-native";
 import { Dimensions, Platform } from "react-native";
 
 /* Polltype Auswahl */
-export var settings = StyleSheet.create({
+export var s = StyleSheet.create({
+
+
+
+
+    connectionBox: {
+        flexDirection: "row",
+        alignItems: "center",
+        justifyContent: "space-between",
+        marginHorizontal: 12,
+        marginVertical: 8,
+        paddingVertical: 8,
+        paddingHorizontal: 12,
+        borderRadius: 12,
+        backgroundColor: "#fff",
+    },
+    connectionText: {
+        fontFamily: "GS3",
+        color: "#444",
+    },
+    connectionPoints: {
+        flexDirection: "row",
+    },
+    connectionPoint: {
+        margin: 2,
+        width: 9,
+        height: 9,
+        backgroundColor: "#ccc",
+        borderRadius: 4,
+    },
+    connectionPointGood: {
+        backgroundColor: "#25ea71",
+    },
+    connectionPointOkay: {
+        backgroundColor: "#4e4f4e",
+    },
+    connectionPointBad: {
+        backgroundColor: "#db3f27",
+    },
+
+
     logout: {
         backgroundColor: "#fff"
     },
     itemBar: {
         width: "100%",
         height: 0.5,
-        backgroundColor: "#bbb"
+        backgroundColor: "rgba(0,0,0,0.05)"
     },
     item: {
         paddingHorizontal: 16,
-        paddingVertical: 8
+        paddingVertical: 8,
+        backgroundColor: "rgba(0,0,0,0.05)",
     },
     name: {
         color: "#333",

@@ -1,6 +1,36 @@
 import { StyleSheet } from "react-native";
 
 export default StyleSheet.create({
+
+    //TitleBox für Title + Img
+    titleBox: {
+        flex: 1,
+        flexDirection: "row",
+        alignItems: "center",
+    },
+
+    // Navbar Titel
+    title: {
+        display: "flex",
+     
+
+        fontFamily: "GS2",
+        fontSize: 19,
+        marginVertical: 6,
+        color: "#444"
+    },
+
+
+    // Zurück Bild 
+    imgBack: {
+        height: 22,
+        width: 22,
+        margin: 7,
+        opacity: 0.5,
+    },
+
+
+    // Alter Code
     box: {
         position: "absolute",
         top: 0,
@@ -11,9 +41,6 @@ export default StyleSheet.create({
         maxHeight: 52 + 24,
         backgroundColor: "#fff",
 
-      
-        
-
         alignSelf: "stretch",
         flex: 1,
         padding: 8,
@@ -21,11 +48,14 @@ export default StyleSheet.create({
         flexDirection: "row",
         justifyContent: "space-between",
         alignItems: "center",
-        borderBottomWidth: 2,
+        borderBottomWidth: 4,
         borderColor: "#ddd",
     },
     mainItem: {
-        display: "flex"
+        display: "flex",
+        flexDirection: "row",
+        alignContent: "center",
+        justifyContent: "center",
     },
     mainItemLogoImg: {
         height: 30,

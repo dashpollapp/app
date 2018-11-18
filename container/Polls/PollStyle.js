@@ -4,7 +4,8 @@ export default StyleSheet.create({
 
     box: {
         padding: 0,
-        backgroundColor: "#fff",
+        backgroundColor: "rgba(0,0,0,0.05)",
+        marginTop: 2,
         height: "100%",
         zIndex: 0,
     },
@@ -14,13 +15,13 @@ export default StyleSheet.create({
 
     h1: {
         fontSize: 26,
-        fontFamily: Platform.OS === "ios" ? "Trebuchet MS" : "Roboto",
+        fontFamily: "GS3",
         color: "#000",
         fontWeight: "500",
     },
     link: {
         fontSize: 18,
-        fontFamily: Platform.OS === "ios" ? "Trebuchet MS" : "Roboto",
+        fontFamily: "GS1",
         color: "#000",
         fontWeight: "500",
         color: "#0984e3",
@@ -32,12 +33,12 @@ export default StyleSheet.create({
     //*Später in eigener CSS (polls)
     pTitle: {
         fontSize: 18,
-        fontFamily: Platform.OS === "ios" ? "Trebuchet MS" : "Roboto",
+        fontFamily: "GS3",
         color: "#000",
         fontWeight: "500",
     },
     pSubtitle: {
-        fontFamily: Platform.OS === "ios" ? "Trebuchet MS" : "Roboto",
+        fontFamily: "GS2",
     },
 
     //Ein Beitrag
@@ -49,6 +50,7 @@ export default StyleSheet.create({
     posts: {
         padding: 8,
         paddingTop: 20,
+        backgroundColor: "#fff",
     },
 
     pSubtitle: {
@@ -86,7 +88,6 @@ export default StyleSheet.create({
 
     boxHeader: {
         width: "100%",
-        backgroundColor: "rgba(0,0,0,0.05)",
         padding: 12,
         paddingHorizontal: 18,
     },

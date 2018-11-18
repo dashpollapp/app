@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 import { connect } from "react-redux";
 
 import { auth_logout } from "../../actions"
-import { settings, csss, pc, css } from "./SettingsStyle";
+import { s, csss, pc, css } from "./SettingsStyle";
 
 class Settings extends React.Component {
 
@@ -22,98 +22,81 @@ class Settings extends React.Component {
                 style={{
                     backgroundColor: "#fff",
                     width: "100%",
-                    height: "100%"
-                }}
+                    height: "100%",           
+                    marginTop: 4,
+                }}                                                                                                                                                                                                                                                                                                             
             >
                 {/* Expo/RN Einstellungen */}
-                <StatusBar hidden={false} backgroundColor="#ffffff" barStyle="dark-content" />
-
-                <View style={csss.navTopHelp} />
                 <View style={[csss.body]}>
-                    <ScrollView>
-                        <View style={csss.navTopPush} />
+                    <ScrollView>      
 
-                        <TouchableOpacity onPress={() => this.rootNavigation("Profile")} style={settings.item}>
-                            <Text style={settings.name}>Mein Profil</Text>
-                            <Text style={settings.description}>Zeigt Dein Profil</Text>
+                        <View style={{backgroundColor: "rgba(0,0,0,0.05)"}}>
+                            <View style={s.connectionBox}>
+                                <Text style={s.connectionText}>Verbunden</Text>
+                                <View style={s.connectionPoints}>
+                                    <View style={[s.connectionPoint, s.connectionPointGood ]}></View>
+                                    <View style={[s.connectionPoint, s.connectionPointOkay ]}></View>
+                                    <View style={[s.connectionPoint, s.connectionPointBad ]}></View>
+                                    <View style={s.connectionPoint}></View>
+                                    <View style={s.connectionPoint}></View>
+                                </View>
+                            </View>
+                        </View>
+
+                        <TouchableOpacity onPress={() => this.navigation("Security")} style={s.item}>
+                            <Text style={s.name}>Sicherheit</Text>
+                            <Text style={s.description}>Anmeldung, Passwort, Sicherheits-Optionen…</Text>
                         </TouchableOpacity>
 
-                        <TouchableOpacity onPress={() => this.navigation("EditProfile")} style={settings.item}>
-                            <Text style={settings.name}>Profil bearbeiten</Text>
-                            <Text style={settings.description}>Passe dein Profil an</Text>
+                        <TouchableOpacity onPress={() => this.navigation("Performance")} style={s.item}>
+                            <Text style={s.name}>Performance</Text>
+                            <Text style={s.description}>Mobile Daten, Speicherverbrauch, Performance</Text>
                         </TouchableOpacity>
 
-                        <View style={settings.itemBar} />
-
-                        <TouchableOpacity onPress={() => this.navigation("Security")} style={settings.item}>
-                            <Text style={settings.name}>Sicherheit</Text>
-                            <Text style={settings.description}>Anmeldung, Passwort, Sicherheits-Optionen…</Text>
+                        <TouchableOpacity onPress={() => this.navigation("MyData")} style={s.item}>
+                            <Text style={s.name}>Meine Daten</Text>
+                            <Text style={s.description}>Persönliche Daten, Privatsphäre, Datenschutz,… </Text>
                         </TouchableOpacity>
 
-                        <TouchableOpacity onPress={() => this.navigation("Performance")} style={settings.item}>
-                            <Text style={settings.name}>Performance</Text>
-                            <Text style={settings.description}>Mobile Daten, Speicherverbrauch, Performance</Text>
-                        </TouchableOpacity>
+                        <View style={s.itemBar} />
 
-                        <TouchableOpacity onPress={() => this.navigation("MyData")} style={settings.item}>
-                            <Text style={settings.name}>Meine Daten</Text>
-                            <Text style={settings.description}>Persönliche Daten, Privatsphäre, Datenschutz,… </Text>
-                        </TouchableOpacity>
-
-                        <View style={settings.itemBar} />
-
-                        <TouchableOpacity onPress={() => this.navigation("Legal")} style={settings.item}>
-                            <Text style={settings.name}>Rechtliches</Text>
-                            <Text style={settings.description} numberOfLines={1}>
+                        <TouchableOpacity onPress={() => this.navigation("Legal")} style={s.item}>
+                            <Text style={s.name}>Rechtliches</Text>
+                            <Text style={s.description} numberOfLines={1}>
                                 Nutzungsbedingungen, Impressum, Datenschutzrichtlinien,…
                             </Text>
                         </TouchableOpacity>
 
-                        <TouchableOpacity onPress={() => this.navigation("ReportProblem")} style={settings.item}>
-                            <Text style={settings.name}>Problem Melden</Text>
-                            <Text style={settings.description} numberOfLines={1}>
+                        <TouchableOpacity onPress={() => this.navigation("ReportProblem")} style={s.item}>
+                            <Text style={s.name}>Problem Melden</Text>
+                            <Text style={s.description} numberOfLines={1}>
                                 Inhalt Melden, Fehler Melden, Frage, Feature vorschlagen,…
                             </Text>
                         </TouchableOpacity>
 
-                        <TouchableOpacity onPress={() => this.navigation("Help")} style={settings.item}>
-                            <Text style={settings.name}>Hilfe</Text>
-                            <Text style={settings.description} numberOfLines={1}>
+                        <TouchableOpacity onPress={() => this.navigation("Help")} style={s.item}>
+                            <Text style={s.name}>Hilfe</Text>
+                            <Text style={s.description} numberOfLines={1}>
                                 FAQ, Support, Updateinfos,…
                             </Text>
                         </TouchableOpacity>
 
-                        <View style={settings.itemBar} />
+                        <View style={s.itemBar} />
 
-                        <TouchableOpacity onPress={() => this.navigation("AccountSettings")} style={settings.item}>
-                            <Text style={settings.name}>Accounteinllungen</Text>
-                            <Text style={settings.description} numberOfLines={1}>
-                                Accounts verwalten, Überall Abmelden, Account Löschen
+                        <TouchableOpacity onPress={() => this.navigation("AccountSettings")} style={s.item}>
+                            <Text style={s.name}>Accounteinllungen</Text>
+                            <Text style={s.description} numberOfLines={1}>
+                                Accounts verwalten, Abmelden, Account Löschen
                             </Text>
                         </TouchableOpacity>
+                        {/*DPI: "überalle Abmelden"*/}
 
-                        <TouchableOpacity onPress={() => this.props.auth_logout(this.props.user)} style={[settings.item, settings.logout]}>
-                            <Text style={settings.name}>Abmelden</Text>
-                            <Text style={settings.description} numberOfLines={1}>
-                                Melde dich von diesem Gerät ab
-                            </Text>
-                        </TouchableOpacity>
-
-                        <View style={csss.navTopPush} />
                     </ScrollView>
-
-                    {/*=Navbar top */}
-                    <View style={css.navTop}>
-                        <TouchableOpacity activeOpacity={0.1} onPress={() => this.props.screenProps.rootNavigation.goBack()}>
-                            {/*<Image style={csss.navTopBack} source={require("../../assets/images/navbar/top/back.png")} />*/}
-                        </TouchableOpacity>
-                        <Text style={csss.name}>Einstellungen</Text>
-                    </View>
 
                     {/*=Navbar unten*/}
                     {/*linear-Gradient border radius bug:    colors={['#e8f5f7', '#e5fcef']} start={[0, 1]} end={[1, 1]*/}
                     <View style={css.bottom}>
-                        <TouchableOpacity style={csss.bottomText}>
+                        <TouchableOpacity style={[css.bottomText]}>
                             <Text style={pc.textContinue}>Filtern</Text>
                         </TouchableOpacity>
                         <TouchableOpacity style={csss.bottomText}>
