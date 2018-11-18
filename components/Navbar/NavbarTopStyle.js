@@ -2,6 +2,12 @@ import { StyleSheet } from "react-native";
 
 export default StyleSheet.create({
 
+    OptionsImg: {
+        height: 24,
+        width: 24,
+    },
+
+
     //TitleBox für Title + Img
     titleBox: {
         flex: 1,
@@ -29,6 +35,7 @@ export default StyleSheet.create({
         margin: 7,
         opacity: 0.5,
     },
+
 
 
     // Alter Code

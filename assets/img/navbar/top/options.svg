@@ -1,0 +1,50 @@
+<svg id="Gruppe_1" data-name="Gruppe 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="512" height="512" viewBox="0 0 512 512">
+  <metadata><?xpacket begin="﻿" id="W5M0MpCehiHzreSzNTczkc9d"?>
+<x:xmpmeta xmlns:x="adobe:ns:meta/" x:xmptk="Adobe XMP Core 5.6-c138 79.159824, 2016/09/14-01:09:01        ">
+   <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+      <rdf:Description rdf:about=""/>
+   </rdf:RDF>
+</x:xmpmeta>
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                           
+<?xpacket end="w"?></metadata>
+<defs>
+    <style>
+      .cls-1 {
+        fill: #3486cc;
+        fill-rule: evenodd;
+      }
+
+      .cls-2 {
+        fill: url(#linear-gradient);
+      }
+    </style>
+    <linearGradient id="linear-gradient" x1="350" y1="434.538" x2="125" y2="74.462" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#ad4346"/>
+      <stop offset="1" stop-color="#2563aa"/>
+    </linearGradient>
+  </defs>
+  <path id="Rechteck_1_Kopie_2" data-name="Rechteck 1 Kopie 2" class="cls-1" d="M209.926,342h79.885A48.189,48.189,0,0,1,338,390.189v28.622A48.189,48.189,0,0,1,289.811,467H209.926a48.188,48.188,0,0,1-48.188-48.189V390.189A48.188,48.188,0,0,1,209.926,342Z"/>
+  <path id="Rechteck_1_Kopie_3" data-name="Rechteck 1 Kopie 3" class="cls-1" d="M210.189,191h79.885a48.189,48.189,0,0,1,48.189,48.189v28.622A48.189,48.189,0,0,1,290.074,316H210.189A48.189,48.189,0,0,1,162,267.811V239.189A48.189,48.189,0,0,1,210.189,191Z"/>
+  <path id="Rechteck_1_Kopie_4" data-name="Rechteck 1 Kopie 4" class="cls-1" d="M209.926,40h79.885A48.189,48.189,0,0,1,338,88.189v28.622A48.189,48.189,0,0,1,289.811,165H209.926a48.188,48.188,0,0,1-48.188-48.189V88.189A48.188,48.188,0,0,1,209.926,40Z"/>
+  <rect id="Abgerundetes_Rechteck_1" data-name="Abgerundetes Rechteck 1" class="cls-2" x="125" y="40" width="225" height="429" rx="5" ry="5"/>
+</svg>
