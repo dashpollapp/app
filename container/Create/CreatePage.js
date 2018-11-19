@@ -66,6 +66,12 @@ class CreatePage extends React.Component {
                         onChangeText={text => this.setState({ text })}
                     />
 
+                    <TouchableOpacity>
+                        <View>
+                            <Text style={create.polltypeText}>+ Block hinzufügen</Text>
+                        </View>
+                    </TouchableOpacity>
+
 
 
                     {currentPolltype}
