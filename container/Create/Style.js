@@ -11,6 +11,12 @@ export var create = StyleSheet.create({
         fontSize: 16,
         fontFamily: "GS2",
     },
+    polltypeText: {
+        fontSize: 16,
+        fontFamily: "GS2",
+        color: "#30a88c",
+        marginVertical: 4,
+    }
 })
 
 
