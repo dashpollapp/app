@@ -7,11 +7,21 @@ export default class ChatOverview extends React.Component {
 
     render() {
         return (
-            <View>
-                <Text style={{fontFamily: "GS2", textAlign: "center", paddingVertical: 12, fontSize: 16, color: "#888"}}>Geplant für 2019</Text>
+
+            <View style={{ backgroundColor: "rgba(0,0,0,0.05)"}}>
 
 
-                <ScrollView style={[css.chats, {opacity: 0,}]}>
+                <Text style={css.h1}>Chats</Text>
+                <Text style={{fontFamily: "GS2", textAlign: "center", paddingVertical: 12, fontSize: 16, color: "#666"}}>Geplant für 2019</Text>
+
+
+
+
+
+
+
+                {/* Alter-Coder */}
+                <ScrollView style={[css.chats, {opacity: 0} ]}>
 
                     {/*▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆  Priority: Ultraaaa Wichtig  ▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆*/}
                     <View style={[css.chat, css.chatNew, { borderColor: "#d83a3a", backgroundColor: "#f2dcdc" }]}>
@@ -296,6 +306,13 @@ ChatOverview.propTypes = {
 
 const css = StyleSheet.create({
 
+    h1: {
+        fontFamily: "GS3",
+        color: "#000",
+        fontSize: 24,
+        marginHorizontal: 16,
+        marginVertical: 12,
+    },
 
 
     chatSelected: {
