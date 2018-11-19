@@ -40,7 +40,7 @@ class CreatePage extends React.Component {
         }
 
         return (
-            <View style={{ flex: 1, backgroundColor: "#fff" }}>
+            <View style={{ flex: 1, backgroundColor: "#fff", padding: 8, }}>
               
 
                 <ScrollView style={pc.create}>

@@ -53,8 +53,8 @@ export default StyleSheet.create({
         flexDirection: "row",
         justifyContent: "space-between",
         alignItems: "center",
-        borderBottomWidth: 4,
-        borderColor: "#aaa", //fff + rgba000,0.05 = #f2f2f2
+        borderBottomWidth: 1,
+        borderColor: "#d8d8d8", //fff + rgba000,0.05 = #f2f2f2
 
         minHeight: 74,
     },

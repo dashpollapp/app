@@ -34,8 +34,10 @@ const Navigator = createMaterialTopTabNavigator(
         tabBarPosition: "bottom",
         swipeEnabled: true,
         tabBarOptions: {
+            pressOpacity: 1,
             showIcon: true,
             showLabel: false,
+            activeTintOpacity: 0,
             iconStyle: {
                 height: 26,
                 width: 26
@@ -47,12 +49,11 @@ const Navigator = createMaterialTopTabNavigator(
                 marginLeft: 72,
                 marginBottom: -4,
                 backgroundColor: "#000",
-                borderRadius: 4,
                 position: "absolute",
             },
             style: {
-                borderTopWidth: 4,
-                borderColor: "#aaa",
+                borderTopWidth: 1,
+                borderColor: "#d8d8d8",
                 minHeight: 52,
                 backgroundColor: "#fff",
             }
