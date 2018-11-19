@@ -2,6 +2,7 @@ import { StyleSheet, Platform } from "react-native";
 
 export default StyleSheet.create({
 
+    // .posts > .box
     box: {
         padding: 0,
         backgroundColor: "rgba(0,0,0,0.05)",

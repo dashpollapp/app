@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 
 import { Classic, Like, Normal } from "./PollTypes";
 import { connect } from "react-redux";
-import { c, pc, css } from "./Style"; //(c ist die neue Datei) - KM
+import { create, pc, css } from "./Style"; //(create ist die neue Style)
 import { create_poll } from "../../actions";
 
 //Images
@@ -49,9 +49,9 @@ class CreatePage extends React.Component {
                         multiline
                         textAlignVertical={"top"}
                         underlineColorAndroid={"transparent"}
-                        style={pc.inputTitle}
-                        placeholder={"Titel eingeben"}
-                        placeholderTextColor={"#222"}
+                        style={create.inputTitle}
+                        placeholder={"Titel"}
+                        placeholderTextColor={"#111"}
                         onChangeText={heading => this.setState({ heading })}
                     />
 
@@ -60,7 +60,7 @@ class CreatePage extends React.Component {
                         multiline
                         textAlignVertical={"top"}
                         underlineColorAndroid={"transparent"}
-                        style={pc.inputDescription}
+                        style={create.inputDescription}
                         placeholder={"Du kannst eine Beschreibung eingeben"}
                         placeholderTextColor={"#938f8f"}
                         onChangeText={text => this.setState({ text })}

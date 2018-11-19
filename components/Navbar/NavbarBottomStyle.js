@@ -9,11 +9,10 @@ export default StyleSheet.create({
 
         padding: 12,
         backgroundColor: "#fff",
-        borderTopWidth: 2,
-        borderColor: "#ddd",
+        borderTopWidth: 4,
+        borderColor: "#aaa",
 
         minHeight: 52,
-     
 
         flex: 1,
         flexDirection: "row",

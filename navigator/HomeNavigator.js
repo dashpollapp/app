@@ -45,26 +45,17 @@ const Navigator = createMaterialTopTabNavigator(
                 height: 12,
                 width: Dimensions.get('window').width / 2 - 128,
                 marginLeft: 64,
-                backgroundColor: "#000",
-                borderTopLeftRadius: 6,
-                borderTopRightRadius: 6,
+                backgroundColor: "#222",
+                borderTopLeftRadius: 3,
+                borderTopRightRadius: 3,
                 position: "absolute",
                 bottom: -8,
             },
             style: {
-                shadowOpacity: 0.1,
-                shadowRadius: 2,
-                shadowOffset: {
-                    height: 1,
-                    width: 0
-                },
-                shadowColor: '#111',
+                borderTopWidth: 4,
+                borderColor: "#aaa",
+                minHeight: 52,
                 backgroundColor: "#fff",
-                borderTopWidth: 1,
-                borderColor: "#ddd",
-                elevation: 5,
-                //flex: 1,
-                //alignItems: "center"
             }
         }
     }

@@ -54,7 +54,7 @@ export default StyleSheet.create({
         justifyContent: "space-between",
         alignItems: "center",
         borderBottomWidth: 4,
-        borderColor: "#ddd", //fff + rgba000,0.05 = #f2f2f2
+        borderColor: "#aaa", //fff + rgba000,0.05 = #f2f2f2
 
         minHeight: 74,
     },

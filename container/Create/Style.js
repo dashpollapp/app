@@ -1,7 +1,21 @@
 import { StyleSheet } from 'react-native';
 import { Dimensions, Platform } from 'react-native';
 
-/* Polltype Auswahl */
+
+export var create = StyleSheet.create({
+    inputTitle: {
+        fontSize: 26,
+        fontFamily: "GS3",
+    },
+    inputDescription: {
+        fontSize: 16,
+        fontFamily: "GS2",
+    },
+})
+
+
+//Alte CSS:
+/* Alte CSS: Polltype Auswahl */
 export var pcSelect = StyleSheet.create({
     image: {
         width: "100%",
