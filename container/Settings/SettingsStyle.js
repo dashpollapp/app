@@ -7,6 +7,7 @@ export var s = StyleSheet.create({
     box: {
         height: "100%",
         flex: 1,
+        paddingVertical: 12,
     },
 
 
@@ -18,7 +19,8 @@ export var s = StyleSheet.create({
         alignItems: "center",
         justifyContent: "space-between",
         marginHorizontal: 12,
-        marginVertical: 8,
+        marginBottom: 12,
+        marginTop: 4,
         paddingVertical: 8,
         paddingHorizontal: 12,
         borderRadius: 12,

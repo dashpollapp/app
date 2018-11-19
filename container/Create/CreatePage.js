@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 
 import { Classic, Like, Normal } from "./PollTypes";
 import { connect } from "react-redux";
-import { pc, css } from "./Style";
+import { c, pc, css } from "./Style"; //(c ist die neue Datei) - KM
 import { create_poll } from "../../actions";
 
 //Images
@@ -40,17 +40,8 @@ class CreatePage extends React.Component {
         }
 
         return (
-            <View style={{ flex: 1 }}>
-                {/*=Navbar unten*/}
-                {/*linear-Gradient border radius bug: colors={['#e8f5f7', '#e5fcef']} start={[0, 1]} end={[1, 1]*/}
-                <View style={css.bottom}>
-                    <TouchableOpacity>
-                        <Text style={pc.textContinue}>ABBRECHEN</Text>
-                    </TouchableOpacity>
-                    <TouchableOpacity>
-                        <Text style={pc.textPublic}>VERÖFFENTLICHEN</Text>
-                    </TouchableOpacity>
-                </View>
+            <View style={{ flex: 1, backgroundColor: "#fff" }}>
+              
 
                 <ScrollView style={pc.create}>
                     {/*Titel*/}
@@ -75,44 +66,10 @@ class CreatePage extends React.Component {
                         onChangeText={text => this.setState({ text })}
                     />
 
-                    {/*Medien (vorläufig)*/}
-                    <LinearGradient
-                        style={pc.addMedia}
-                        colors={["#b5d3e5", "#c1f4c9", "#eae7a6"]}
-                        start={[0, 0.9]}
-                        end={[1, 1]}
-                    >
-                        <TouchableOpacity
-                            onPress={() => {
-                                Alert.alert("Cam");
-                            }}
-                        >
-                            <Image style={pc.mediaItem} source={CamImg} />
-                        </TouchableOpacity>
 
-                        <TouchableOpacity
-                            onPress={() => {
-                                this.props.create_poll({ ...this.state, polltype: this.props.selectedPollType || 0 });
-                            }}
-                        >
-                            <Image style={pc.mediaItem} source={SpotifyImg} />
-                        </TouchableOpacity>
-
-                        <TouchableOpacity
-                            onPress={() => {
-                                Alert.alert("Youtube");
-                            }}
-                        >
-                            <Image style={pc.mediaItem} source={YoutubeImg} />
-                        </TouchableOpacity>
-                    </LinearGradient>
 
                     {currentPolltype}
 
-                    <View
-                        style={css.navTopPush}
-                        source={{ uri: "https://pbs.twimg.com/profile_images/830204661474979841/qsnoO3lJ_400x400.jpg" }}
-                    />
                 </ScrollView>
             </View >
         );

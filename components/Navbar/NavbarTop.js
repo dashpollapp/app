@@ -13,7 +13,6 @@ export default class NavbarTop extends Component {
         return (
             <View>
                 <View style={nt.box}>
-
                     <TouchableOpacity onPress={() => this.props.navigation.push(screenNames.SETTINGS)} style={nt.mainItem}>
                         <Image style={nt.OptionsImg} source={optionsImg} />
                     </TouchableOpacity>

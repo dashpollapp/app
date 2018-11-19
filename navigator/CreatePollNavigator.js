@@ -6,7 +6,8 @@ import PropTypes from "prop-types";
 import CreatePage from "../container/Create/CreatePage";
 import PollTypes from "../container/Create/Types";
 import * as screenName from "../constants/screenNames";
-import NavbarTop from "../components/Navbar/Create/NavbarTop";
+import NavbarTopBack from "../components/Navbar/NavbarTopBack";
+import NavbarBottomText from "../components/Navbar/NavbarBottomText";
 import { css } from "../container/User/Style";
 
 const Navigator = createMaterialTopTabNavigator(
@@ -23,15 +24,15 @@ const Navigator = createMaterialTopTabNavigator(
     }
 );
 
-
+//CreatePost*
 export default class CreatePollNavigator extends React.Component {
 
     render() {
         return (
             <View style={{ flex: 1 }}>
-                <NavbarTop navigation={this.props.navigation} />
+                <NavbarTopBack title="Beitrag erstellen" navigation={this.props.navigation} />
                 <Navigator />
-
+                <NavbarBottomText text="Erstellen" navigation={this.props.navigation} />
             </View>
         )
     }

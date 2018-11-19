@@ -25,12 +25,11 @@ class Settings extends React.Component {
                     height: "100%",  
                     display: "flex",
                     alignItems: "flex-start", 
-                    backgroundColor: "rgba(0,0,0,0.05)",
+                    backgroundColor: "#f2f2f2",
                     flexDirection:"row",
                 }}                                                                                                                                                                                                                                                                                                             
             >
 
-                
 
                 <View style={{ 
                             height: "100%",

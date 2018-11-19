@@ -128,13 +128,13 @@ class RootApp extends React.Component {
 }
 
 const styles = StyleSheet.create({
-    container: {
+    /*container: {
         flex: 1,
         backgroundColor: "#fff",
         marginTop: 50 + 18,
         marginBottom: 50,
         height: Dimensions.get("window").height
-    },
+    },*/
     containerWraper: {
         flex: 1
     }

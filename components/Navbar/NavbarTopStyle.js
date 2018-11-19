@@ -18,12 +18,10 @@ export default StyleSheet.create({
     // Navbar Titel
     title: {
         display: "flex",
-     
-
         fontFamily: "GS2",
         fontSize: 19,
         marginTop: 6,
-        marginBottom: 5,
+        marginBottom: 6,
         color: "#444"
     },
 
@@ -56,7 +54,9 @@ export default StyleSheet.create({
         justifyContent: "space-between",
         alignItems: "center",
         borderBottomWidth: 4,
-        borderColor: "#ddd",
+        borderColor: "#ddd", //fff + rgba000,0.05 = #f2f2f2
+
+        minHeight: 74,
     },
     mainItem: {
         display: "flex",
@@ -77,8 +77,7 @@ export default StyleSheet.create({
         flex: 1
     },
     push: {
-        height: 72, //82 bei android
+        height: 74, //82 bei android
         width: "100%",
-
     }
 });

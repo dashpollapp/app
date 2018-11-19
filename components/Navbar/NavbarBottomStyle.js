@@ -8,11 +8,16 @@ export default StyleSheet.create({
         right: 0,
 
         padding: 12,
-        flexDirection: "row",
-        
         backgroundColor: "#fff",
         borderTopWidth: 2,
         borderColor: "#ddd",
+
+        minHeight: 52,
+     
+
+        flex: 1,
+        flexDirection: "row",
+        alignItems: "center",
     },
     mainItem: {
         flex: 1,
@@ -21,5 +26,13 @@ export default StyleSheet.create({
     mainItemImg: {
         height: 26,
         width: 26
-    }
+    },
+
+    //Text für NavTopText.js
+    text: {
+        fontSize: 14,
+        fontFamily: "GS2",
+        color: "#444",
+    },
+
 });

@@ -13,11 +13,8 @@ export default class NavbarTopBack extends Component {
             <View>
                 <View style={nt.box}>
                     <TouchableOpacity style={nt.titleBox}>
-                       {/* <Image style={nt.imgBack} source={backImg} />*/}
                         <Text style={nt.title}>{this.props.title}</Text>
                     </TouchableOpacity>
-                
-
                 </View>
                 <View style={nt.push}></View>
             </View>
