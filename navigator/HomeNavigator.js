@@ -17,17 +17,13 @@ const Navigator = createMaterialTopTabNavigator(
         [screenName.CHAT]: {
             screen: ChatOverview,
             navigationOptions: {
-                tabBarIcon: function (active) {
-                    return (<Image style={{ height: 26, width: 26, opacity: active.focused ? 1 : 0.7 }} source={chatImg} />)
-                }
+                tabBarIcon: (active) => <Image style={{ height: 26, width: 26, opacity: active.focused ? 1 : 0.7 }} source={chatImg} />
             }
         },
         [screenName.POLLS]: {
             screen: Polls,
             navigationOptions: {
-                tabBarIcon: function (active) {
-                    return (<Image style={{ height: 26, width: 26, opacity: active.focused ? 1 : 0.7 }} source={pollImg} />)
-                }
+                tabBarIcon: (active) => <Image style={{ height: 26, width: 26, opacity: active.focused ? 1 : 0.7 }} source={pollImg} />
             }
         },
 
