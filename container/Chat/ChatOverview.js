@@ -10,8 +10,6 @@ export default class ChatOverview extends React.Component {
 
             <View style={{ backgroundColor: "rgba(0,0,0,0.05)"}}>
 
-
-                <Text style={css.h1}>Chats</Text>
                 <Text style={{fontFamily: "GS2", textAlign: "center", paddingVertical: 12, fontSize: 16, color: "#666"}}>Geplant für 2019</Text>
 
 
