@@ -10,20 +10,21 @@ import * as screenName from "../constants/screenNames";
 
 import chatImg from "../assets/img/navbar/bottom/chat.png";
 import pollImg from "../assets/img/navbar/bottom/poll.png";
-
+import chatOffImg from "../assets/img/navbar/bottom/chat_off.png";
+import pollOffImg from "../assets/img/navbar/bottom/poll_off.png";
 
 const Navigator = createMaterialTopTabNavigator(
     {
         [screenName.CHAT]: {
             screen: ChatOverview,
             navigationOptions: {
-                tabBarIcon: (active) => <Image style={{ height: 26, width: 26, opacity: active.focused ? 1 : 0.7 }} source={chatImg} />
+                tabBarIcon: (active) => <Image style={{ height: 26, width: 26, }} source={ active.focused ? chatImg : chatOffImg } />
             }
         },
         [screenName.POLLS]: {
             screen: Polls,
             navigationOptions: {
-                tabBarIcon: (active) => <Image style={{ height: 26, width: 26, opacity: active.focused ? 1 : 0.7 }} source={pollImg} />
+                tabBarIcon: (active) => <Image style={{ height: 26, width: 26, }} source={ active.focused ? pollImg : pollOffImg } />
             }
         },
 
@@ -51,6 +52,7 @@ const Navigator = createMaterialTopTabNavigator(
                 marginBottom: -4,
                 backgroundColor: "#000",
                 position: "absolute",
+                borderRadius: 4,
             },
             style: {
                 borderTopWidth: 1,
