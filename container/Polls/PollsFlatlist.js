@@ -9,7 +9,7 @@ import PbImg from "../../assets/img/pb.jpg";
 
 class PollsFlatlist extends Component {
 
-    /* Was hat das hier verloren? 16.11 KM*/ 
+    /* Was hat das hier verloren? 16.11 KM*/
     formatTime(date) {
         if (typeof date === typeof "") {
             date = new Date(date);
@@ -17,8 +17,6 @@ class PollsFlatlist extends Component {
         current = new Date();
         currentTS = current.getTime() / 1000 | 0;
         dateTS = date.getTime() / 1000 | 0;
-
-        console.log(currentTS - dateTS);
 
         let difference = currentTS - dateTS;
 
@@ -54,109 +52,58 @@ class PollsFlatlist extends Component {
                     renderItem={({ item }) => {
                         return (
                             <View>
-                            <View style={s.post}>
-                                <View style={s.pPostHeader}>
-                                    <TouchableOpacity>
-                                        <Image style={s.pPB} source={PbImg} />
-                                    </TouchableOpacity>
-                                    <View style={s.pPostHeaderText}>
-                                        <Text style={s.pTitle}>{item.heading}</Text>
-                                        <Text style={s.pSubtitle}>{item.author.username} {this.formatTime(item.createdAt)}</Text>
-                                    </View>
-                                </View>
-                                <Text style={s.description}>Achtung, ich hab in der PollFlatlist die Umfragen doppelt! Ich bin trotzdem nur ne Beschreibunng.</Text>
-
-                                {/* Umfragenteil */}
-                                <View style={s.poll}>
-
-                                    <TouchableOpacity>
-                                        <View style={s.pt1Answer}>
-                                            <View>
-                                                <Text style={s.pollAnswerTitle}>Antwort A</Text>
-                                            </View>
-                                            <View style={s.pt1Bar}>
-                                                <LinearGradient 
-                                                    style={[s.pt1BarInner, {width: "50%"}]}
-                                                    colors={['#aaa', '#888' ]}
-                                                    start={{x: 0.0, y: 0.0}} 
-                                                    end={{x: 0.9, y: 0.1}}
-                                                    />
-                                                <Text style={s.pollPercentText}>50%</Text>
-                                            </View>
+                                <View style={s.post}>
+                                    <View style={s.pPostHeader}>
+                                        <TouchableOpacity>
+                                            <Image style={s.pPB} source={PbImg} />
+                                        </TouchableOpacity>
+                                        <View style={s.pPostHeaderText}>
+                                            <Text style={s.pTitle}>{item.heading}</Text>
+                                            <Text style={s.pSubtitle}>{item.author.username} {this.formatTime(item.createdAt)}</Text>
                                         </View>
-                                    </TouchableOpacity>
+                                    </View>
+                                    <Text style={s.description}>Achtung, ich hab in der PollFlatlist die Umfragen doppelt! Ich bin trotzdem nur ne Beschreibunng.</Text>
 
-                                    <TouchableOpacity>
-                                        <View style={s.pt1Answer}>
-                                            <View>
-                                                <Text style={s.pollAnswerTitle}>Antwort B</Text>
-                                            </View>
+                                    {/* Umfragenteil */}
+                                    <View style={s.poll}>
+
+                                        <TouchableOpacity>
+                                            <View style={s.pt1Answer}>
+                                                <View>
+                                                    <Text style={s.pollAnswerTitle}>Antwort A</Text>
+                                                </View>
                                                 <View style={s.pt1Bar}>
-                                                    <LinearGradient 
-                                                    style={[s.pt1BarInner, {width: "50%"}]}
-                                                    colors={['#ae4768', '#3386cd' ]}
-                                                    start={{x: 0.0, y: 0.0}} 
-                                                    end={{x: 0.9, y: 0.1}}
+                                                    <LinearGradient
+                                                        style={[s.pt1BarInner, { width: "50%" }]}
+                                                        colors={['#aaa', '#888']}
+                                                        start={{ x: 0.0, y: 0.0 }}
+                                                        end={{ x: 0.9, y: 0.1 }}
                                                     />
                                                     <Text style={s.pollPercentText}>50%</Text>
                                                 </View>
-                                        </View>
-                                    </TouchableOpacity>
-
-                                </View>
-                            </View>
-                            <View style={s.post}>
-                            <View style={s.pPostHeader}>
-                                <TouchableOpacity>
-                                    <Image style={s.pPB} source={PbImg} />
-                                </TouchableOpacity>
-                                <View style={s.pPostHeaderText}>
-                                    <Text style={s.pTitle}>{item.heading}</Text>
-                                    <Text style={s.pSubtitle}>{item.author.username} {this.formatTime(item.createdAt)}</Text>
-                                </View>
-                            </View>
-                            <Text style={s.description}>Ich bin eine Beschreibung</Text>
-
-                            {/* Umfragenteil */}
-                            <View style={s.poll}>
-
-                                <TouchableOpacity>
-                                    <View style={s.pt1Answer}>
-                                        <View>
-                                            <Text style={s.pollAnswerTitle}>Antwort A</Text>
-                                        </View>
-                                        <View style={s.pt1Bar}>
-                                            <LinearGradient 
-                                                style={[s.pt1BarInner, {width: "50%"}]}
-                                                colors={['#aaa', '#888' ]}
-                                                start={{x: 0.0, y: 0.0}} 
-                                                end={{x: 0.9, y: 0.1}}
-                                                />
-                                            <Text style={s.pollPercentText}>50%</Text>
-                                        </View>
-                                    </View>
-                                </TouchableOpacity>
-
-                                <TouchableOpacity>
-                                    <View style={s.pt1Answer}>
-                                        <View>
-                                            <Text style={s.pollAnswerTitle}>Antwort B</Text>
-                                        </View>
-                                            <View style={s.pt1Bar}>
-                                                <LinearGradient 
-                                                style={[s.pt1BarInner, {width: "50%"}]}
-                                                colors={['#ae4768', '#3386cd' ]}
-                                                start={{x: 0.0, y: 0.0}} 
-                                                end={{x: 0.9, y: 0.1}}
-                                                />
-                                                <Text style={s.pollPercentText}>50%</Text>
                                             </View>
-                                    </View>
-                                </TouchableOpacity>
+                                        </TouchableOpacity>
 
+                                        <TouchableOpacity>
+                                            <View style={s.pt1Answer}>
+                                                <View>
+                                                    <Text style={s.pollAnswerTitle}>Antwort B</Text>
+                                                </View>
+                                                <View style={s.pt1Bar}>
+                                                    <LinearGradient
+                                                        style={[s.pt1BarInner, { width: "50%" }]}
+                                                        colors={['#ae4768', '#3386cd']}
+                                                        start={{ x: 0.0, y: 0.0 }}
+                                                        end={{ x: 0.9, y: 0.1 }}
+                                                    />
+                                                    <Text style={s.pollPercentText}>50%</Text>
+                                                </View>
+                                            </View>
+                                        </TouchableOpacity>
+
+                                    </View>
+                                </View>
                             </View>
-                        </View>
-                        </View>
                         )
                     }}
                 />
