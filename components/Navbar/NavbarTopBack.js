@@ -12,7 +12,7 @@ export default class NavbarTopBack extends Component {
         return (
             <View>
                 <View style={nt.box}>
-                    <TouchableOpacity style={nt.titleBox}>
+                    <TouchableOpacity style={nt.titleBox} onPress={() => this.props.navigation.navigate(screenNames.HOME)} >
                         <Text style={nt.title}>{this.props.title}</Text>
                     </TouchableOpacity>
                 </View>
