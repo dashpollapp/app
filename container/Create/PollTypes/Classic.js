@@ -1,54 +1,80 @@
 import React from 'react';
-import { TouchableOpacity, Text, View, TextInput } from 'react-native';
+import { TouchableOpacity, Text, View, TextInput, StyleSheet, Platform,Dimensions  } from 'react-native';
 import { LinearGradient } from 'expo';
 
 import { pc, css } from '../Style';
+import s from "../../Polls/PollStyle";
 
 export default class ClassicType extends React.Component {
 
     render() {
         return (
             <View style={css.out}>
+            
                 <View style={pc.polltype}>
-                    <Text style={pc.polltypeName}>Klassische Umfrage: <Text style={pc.polltypeCat}>(Auswahl)</Text></Text>
-                    <Text style={pc.polltypeDescription}>Verschiede Antwortmöglichkeiten als Text. Benutzer können sich für 1 Antwortmöglichkeit entscheiden.</Text>
+                    <Text style={type.title}>Klassische Umfrage: <Text style={pc.polltypeCat}>(Auswahl)</Text></Text>
+                    <Text style={type.subtitle}>Verschiede Antwortmöglichkeiten als Text. Benutzer können sich für 1 Antwortmöglichkeit entscheiden.</Text>
                 </View>
 
                 <TextInput
                     //Sinlose Returns sollen Abgefangen werden!!!
                     multiline
                     underlineColorAndroid={'transparent'}
-                    style={pc.p1Answer}
+                    style={[{height: 20, marginBottom: 0}, s.pollAnswerTitle, ]}
                     placeholder={"Antwort 1"}
                     placeholderTextColor={"#111"}
                 ></TextInput>
-                <LinearGradient
-                    //Bei 2 Antwortmöglichkeiten 50% width, bei 3 33.3%, bei 4 25%,...
-                    style={pc.p1Bar}
-                    colors={['#18a057', '#27ad63']}
-                    start={[0, 1]}
-                    end={[1, 1]}>
-                </LinearGradient>
+               <View style={s.pt1Bar}>
+                    <LinearGradient
+                        style={[s.pt1BarInner, { width: "75%", height: 16, }]}
+                        colors={['#ae4768', '#3386cd']}
+                        start={{ x: 0.0, y: 0.0 }}
+                        end={{ x: 0.9, y: 0.1 }}
+                    />
+                    <Text style={s.pollPercentText}>löschen</Text>
+                </View>
 
                 <TextInput
                     multiline
                     underlineColorAndroid={'transparent'}
-                    style={pc.p1Answer}
+                    style={[s.pollAnswerTitle, {height: 20, }]}
                     placeholder={"Antwort 2"}
                     placeholderTextColor={"#111"}
                 ></TextInput>
-                <LinearGradient
-                    style={pc.p1Bar}
-                    colors={['#18a057', '#27ad63']}
-                    start={[0, 1]}
-                    end={[1, 1]}>
-                </LinearGradient>
+                <View style={[s.pt1Bar]}>
+                    <LinearGradient
+                        style={[s.pt1BarInner, { width: "75%", height: 16, }]}
+                        colors={['#ae4768', '#3386cd']}
+                        start={{ x: 0.0, y: 0.0 }}
+                        end={{ x: 0.9, y: 0.1 }}
+                    />
+                    <Text style={s.pollPercentText}>löschen</Text>
+                </View>
 
                 <TouchableOpacity>
-                    <Text style={pc.p1AddAnswer}>Antwort hinzufügen</Text>
+                    <Text style={type.addAnswer}>+ Antwort hinzufügen</Text>
                 </TouchableOpacity>
 
             </View>
         );
     }
 }
+
+export var type = StyleSheet.create({
+    addAnswer: {
+        fontFamily: "GS2",
+        fontSize: 16,
+        color: "#444",
+    },
+
+    title: {
+        fontFamily: "GS2",
+        fontSize: 18,
+        color: "#111",
+    },
+    subtitle: {
+        fontFamily: "GS1",
+        fontSize: 14,
+        color: "#aaa",
+    },
+})

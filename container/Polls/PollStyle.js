@@ -123,6 +123,7 @@ export default StyleSheet.create({
         fontFamily: "GS1",
         color: "#666",
         fontSize: 14,
+        marginLeft: 4,
     },
     // < / Poll - Ende (Umfrageteil) ->
 

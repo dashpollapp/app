@@ -15,6 +15,7 @@ import chatImg from "../assets/img/navbar/bottom/chat.png";
 import pollImg from "../assets/img/navbar/bottom/poll.png";
 import chatOffImg from "../assets/img/navbar/bottom/chat_off.png";
 import pollOffImg from "../assets/img/navbar/bottom/poll_off.png";
+import defaultProfileImg from "../assets/img/pb.png"
 
 const Navigator = createMaterialTopTabNavigator(
     {
@@ -27,7 +28,7 @@ const Navigator = createMaterialTopTabNavigator(
         [screenName.USER_PROFILE]: {
             screen: Profile,
             navigationOptions: {
-                tabBarIcon: (active) => <Image style={{ height: 26, width: 26, }} source={ active.focused ? pollImg : pollOffImg } />
+                tabBarIcon: (active) => <Image style={{ height: 44, width: 44, borderRadius: 18, marginTop: -3 }} source={defaultProfileImg} />
             }
         },
         [screenName.USER_POSTS]: {
@@ -57,7 +58,7 @@ const Navigator = createMaterialTopTabNavigator(
                 marginTop: -4,
                 height: 8,
                 width: Dimensions.get('window').width / 2 - 145,
-                marginLeft: 72,
+                marginLeft: 40,
                 marginBottom: -4,
                 backgroundColor: "#000",
                 position: "absolute",

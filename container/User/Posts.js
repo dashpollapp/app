@@ -1,6 +1,7 @@
 import { View, Text } from "react-native";
 import React from "react";
 
+
 class Posts extends React.Component {
     constructor(props) {
         super(props);
@@ -9,7 +10,7 @@ class Posts extends React.Component {
     render() {
         return (
             <View>
-                <Text>Posts</Text>
+                <Text>Polls</Text>
             </View>
         );
     }

@@ -37,7 +37,6 @@ class CreatePage extends React.Component {
                 currentPolltype = <Classic />;
                 break;
             default:
-;
                 break;
         }
 
