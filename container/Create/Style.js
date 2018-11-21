@@ -2,6 +2,74 @@ import { StyleSheet } from 'react-native';
 import { Dimensions, Platform } from 'react-native';
 
 
+
+export var createBlocks = StyleSheet.create({
+    image: {
+        width: "100%",
+        height: "100%",
+        borderRadius: 8,
+    },
+    imageBox: {
+        padding: 8,
+        flex: 5,
+    },
+    info: {
+        height: "100%",
+        padding: 8,
+        flex: 10,
+        justifyContent: "center",
+
+    },
+    item: {
+        width: "100%",
+        borderColor: "#eee",
+
+        flexDirection: "row",
+
+        justifyContent: "center",
+        flex: 1,
+
+        height: 82,
+    },
+    scroll: {
+        paddingTop: 16,
+    },
+
+
+    
+
+
+    h1: {
+        fontFamily: "GS3",
+        color: "#000",
+        fontSize: 24,
+    },
+    
+    h2: {
+        fontSize: 16,
+        fontFamily: "GS2",
+        color: "#666",
+    },
+
+    box: {
+        backgroundColor: "#fff",
+        height: "100%",
+        paddingHorizontal: 16,
+    },
+    button:{
+        paddingVertical: 8,
+        paddingHorizontal: 12,
+        borderRadius: 10,
+        width: "100%",       
+        backgroundColor: "#8c7ae6",
+        marginTop: 16,
+    },
+    buttonText: {
+        fontSize: 16,
+        fontFamily: "GS2",
+        color: "#fff",
+    },
+})
 export var create = StyleSheet.create({
     inputTitle: {
         fontSize: 26,
@@ -48,7 +116,7 @@ export var pcSelect = StyleSheet.create({
         justifyContent: "center",
         flex: 1,
 
-        height: 102,
+        height: 82,
     },
     scroll: {
         paddingTop: 4,
