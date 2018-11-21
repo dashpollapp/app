@@ -1,84 +1,94 @@
 import { createMaterialTopTabNavigator } from "react-navigation";
 import React from "react";
-import { Dimensions, Image } from "react-native";
+import { View, Image, Dimensions } from "react-native";
 import PropTypes from "prop-types";
+import * as screenName from "../constants/screenNames";
+import NavbarTopBack from "../components/Navbar/NavbarTopBack";
+
+//Screens
 import Chat from "../container/User/Chat";
-import Polls from "../temp/Temp";
+import Posts from "../container/User/Posts";
 import Profile from "../container/User/Profile";
 
-import css from "../assets/style/home";
+//Images
+import chatImg from "../assets/img/navbar/bottom/chat.png";
+import pollImg from "../assets/img/navbar/bottom/poll.png";
+import chatOffImg from "../assets/img/navbar/bottom/chat_off.png";
+import pollOffImg from "../assets/img/navbar/bottom/poll_off.png";
 
-import ChatImage from "../assets/img/navbar/bottom/chat.png";
-import PollsImage from "../assets/img/navbar/bottom/poll.png";
-import FriendsImage from "../assets/img/navbar/bottom/friends.png";
-
-class UserNavigator extends React.Component {
-    constructor(props) {
-        super(props);
-    }
-
-    componentWillMount() {
-        const { initialRouteName = "Polls" } = this.props;
-
-        Navigator = createMaterialTopTabNavigator(
-            {
-                Chat: {
-                    screen: Chat,
-                    navigationOptions: {
-                        tabBarIcon: () => <Image style={css.bottomImage} source={ChatImage} />
-                    }
-                },
-                Polls: {
-                    screen: Polls,
-                    navigationOptions: {
-                        tabBarIcon: () => <Image style={css.bottomImage} source={PollsImage} />
-                    }
-                },
-                Profile: {
-                    screen: Profile,
-                    navigationOptions: {
-                        tabBarIcon: () => <Image style={css.bottomImage} source={FriendsImage} />
-                    }
-                }
-            },
-            {
-                initialRouteName,
-                tabBarPosition: "bottom",
-                swipeEnabled: true,
-                backBehavior: false,
-                tabBarOptions: {
-                    indicatorStyle: {
-                        marginTop: -4,
-                        height: 12,
-                        width: Dimensions.get("window").width / 4 - 32,
-                        marginLeft: Dimensions.get("window").width * 0.045,
-                        backgroundColor: "#000",
-                        borderRadius: 4,
-                        position: "absolute",
-                        bottom: -8
-                    },
-                    style: {
-                        shadowOpacity: 0.5,
-                        shadowRadius: 5,
-                        shadowColor: "#111",
-                        backgroundColor: "#fff",
-                        elevation: 5
-                    },
-                    showIcon: true,
-                    showLabel: false
-                }
+const Navigator = createMaterialTopTabNavigator(
+    {
+        [screenName.USER_CHAT]: {
+            screen: Chat,
+            navigationOptions: {
+                tabBarIcon: (active) => <Image style={{ height: 26, width: 26, }} source={ active.focused ? chatImg : chatOffImg } />
             }
-        );
+        },
+        [screenName.USER_PROFILE]: {
+            screen: Profile,
+            navigationOptions: {
+                tabBarIcon: (active) => <Image style={{ height: 26, width: 26, }} source={ active.focused ? pollImg : pollOffImg } />
+            }
+        },
+        [screenName.USER_POSTS]: {
+            screen: Posts,
+            navigationOptions: {
+                tabBarIcon: (active) => <Image style={{ height: 26, width: 26, }} source={ active.focused ? pollImg : pollOffImg } />
+            }
+        },
+
+    },
+    {
+        headerMode: "none",
+        initialRouteName: screenName.USER_PROFILE,
+        tabBarPosition: "bottom",
+        swipeEnabled: true,
+        tabBarOptions: {
+            pressOpacity: 1,
+            showIcon: true,
+            showLabel: false,
+            activeTintOpacity: 0,
+            activeTintColor: "#123",
+            iconStyle: {
+                height: 26,
+                width: 26
+            },
+            indicatorStyle: {
+                marginTop: -4,
+                height: 8,
+                width: Dimensions.get('window').width / 2 - 145,
+                marginLeft: 72,
+                marginBottom: -4,
+                backgroundColor: "#000",
+                position: "absolute",
+                borderRadius: 4,
+            },
+            style: {
+                borderTopWidth: 1,
+                borderColor: "#d8d8d8",
+                minHeight: 52,
+                backgroundColor: "#fff",
+            }
+        }
     }
+);
+
+export default class HomeNavigator extends React.Component {
+
+    //Wird gebraucht, um den Focus auf SettingsNavigator zu stellen, falls man in SETTINGS ist (this.props.navigation)
+    static router = Navigator.router;
 
     render() {
-        return <Navigator screenProps={this.props.screenProps} />;
+        return (
+            <View style={{ flex: 1, backgroundColor: "#fff" }}>
+                <NavbarTopBack title="Profile" navigation={this.props.navigation} />
+                <Navigator navigation={this.props.navigation} screenProps={{ parentNavigation: this.props.navigation }} />
+            </View>
+        )
     }
+
 }
 
-UserNavigator.propTypes = {
-    screenProps: PropTypes.object.isRequired
+HomeNavigator.propTypes = {
+    navigation: PropTypes.object.isRequired
 }
-
-
-export default UserNavigator;

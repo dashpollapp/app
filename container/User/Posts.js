@@ -1,7 +1,7 @@
 import { View, Text } from "react-native";
 import React from "react";
 
-class Chat extends React.Component {
+class Posts extends React.Component {
     constructor(props) {
         super(props);
         this.state = {};
@@ -9,10 +9,10 @@ class Chat extends React.Component {
     render() {
         return (
             <View>
-                <Text>Chat</Text>
+                <Text>Posts</Text>
             </View>
         );
     }
 }
 
-export default Chat;
+export default Posts;

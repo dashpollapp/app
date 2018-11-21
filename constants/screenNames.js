@@ -15,3 +15,8 @@ export const SETTINGS = "SETTINGS";
 //CreatePollNavigator
 export const CREATEPOLL = "CREATEPOLL";
 export const POLLTYPES = "POLLTYPES";
+
+//UserNavigator
+export const USER_POSTS = "USER_POSTS";
+export const USER_PROFILE = "USER_PROFILE";
+export const USER_CHAT = "USER_CHAT";
