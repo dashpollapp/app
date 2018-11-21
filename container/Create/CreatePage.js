@@ -7,6 +7,7 @@ import { Classic, Like, Normal } from "./PollTypes";
 import { connect } from "react-redux";
 import { create, pc, css } from "./Style"; //(create ist die neue Style)
 import { create_poll } from "../../actions";
+import * as screenNames from "../../constants/screenNames";
 
 //Images
 import CamImg from "../../assets/img/media/cam.png";
@@ -32,7 +33,7 @@ class CreatePage extends React.Component {
             case 10:
                 currentPolltype = <Normal />;
                 break;
-            case 21:
+            case 20:
                 currentPolltype = <Classic />;
                 break;
             default:
@@ -67,7 +68,7 @@ class CreatePage extends React.Component {
                         onChangeText={text => this.setState({ text })}
                     />
 
-                    <TouchableOpacity>
+                    <TouchableOpacity onPress={() => this.props.navigation.navigate(screenNames.POLLTYPES)} >
                         <View>
                             <Text style={create.polltypeText}>+ Block hinzufügen (nice)</Text>
                         </View>
