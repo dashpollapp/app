@@ -49,6 +49,7 @@ export var createBlocks = StyleSheet.create({
         fontSize: 16,
         fontFamily: "GS2",
         color: "#666",
+        marginBottom: 16,
     },
 
     box: {
@@ -62,7 +63,7 @@ export var createBlocks = StyleSheet.create({
         borderRadius: 10,
         width: "100%",       
         backgroundColor: "#8c7ae6",
-        marginTop: 16,
+        marginTop: 28,
     },
     buttonText: {
         fontSize: 16,

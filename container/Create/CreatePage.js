@@ -36,6 +36,7 @@ class CreatePage extends React.Component {
                 currentPolltype = <Classic />;
                 break;
             default:
+;
                 break;
         }
 
@@ -68,7 +69,7 @@ class CreatePage extends React.Component {
 
                     <TouchableOpacity>
                         <View>
-                            <Text style={create.polltypeText}>+ Block hinzufügen</Text>
+                            <Text style={create.polltypeText}>+ Block hinzufügen (nice)</Text>
                         </View>
                     </TouchableOpacity>
 

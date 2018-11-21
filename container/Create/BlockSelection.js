@@ -3,7 +3,7 @@ import { TouchableOpacity, Text, View, ScrollView, Image } from "react-native";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
 
-import { createBlocks, createBlocks, pc, css } from "./Style";
+import { createBlocks, pc, css } from "./Style";
 import { create_poll_change_polltype } from "../../actions";
 import * as screenNames from "../../constants/screenNames";
 
