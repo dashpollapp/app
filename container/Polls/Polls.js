@@ -27,6 +27,7 @@ class Polls extends Component {
                     </TouchableOpacity>
                 </View>
 
+
                 <PollsFlatlist polls={this.props.polls}/>
             </ScrollView>
         );

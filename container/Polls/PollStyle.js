@@ -1,6 +1,18 @@
-import { StyleSheet, Platform } from "react-native";
+import { StyleSheet, Platform,Dimensions } from "react-native";
 
 export default StyleSheet.create({
+
+    image: {
+        height: 200, //Die höhe muss berechnet werden 
+
+        //Breite:
+        width: Dimensions.get('window').width - 40,
+        //Abrundung
+        borderRadius: 12,
+        //Hör auf meine CSS zu lesen
+        marginBottom: 16,
+        marginTop: 4,
+    },
 
     // .posts > .box
     box: {
@@ -47,11 +59,11 @@ export default StyleSheet.create({
     post: {
         padding: 4,    
         marginHorizontal: 8,
-        marginBottom: 32,
+        marginBottom: 44,
     },
     posts: {
         padding: 8,
-        paddingTop: 20,
+        paddingTop: 32,
         backgroundColor: "#fff",
         borderRadius: 12,
     },
@@ -73,7 +85,7 @@ export default StyleSheet.create({
         flexDirection: "row",
         alignItems: "center",
         width: "100%",       
-        marginBottom: 8,
+        marginBottom: 16,
     },
 
     pPostHeaderText: {

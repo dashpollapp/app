@@ -5,7 +5,9 @@ import { LinearGradient } from 'expo';
 
 import s from "./PollStyle";
 
-import PbImg from "../../assets/img/pb.jpg";
+import PbImg from "../../assets/img/pb.png";
+import TestImg from "../../assets/img/post/test.png";
+
 
 class PollsFlatlist extends Component {
 
@@ -63,6 +65,8 @@ class PollsFlatlist extends Component {
                                         </View>
                                     </View>
                                     <Text style={s.description}>Achtung, ich hab in der PollFlatlist die Umfragen doppelt! Ich bin trotzdem nur ne Beschreibunng.</Text>
+
+                                    <Image style={s.image} source={TestImg}/>
 
                                     {/* Umfragenteil */}
                                     <View style={s.poll}>
