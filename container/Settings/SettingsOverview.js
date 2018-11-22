@@ -23,12 +23,22 @@ class Settings extends React.Component {
             <View style={[s.box]}>
                 {/* Expo/RN Einstellungen */}
                 <ScrollView> 
+
                         <TouchableOpacity onPress={() => this.navigation("AccountSettings")} style={s.item}>
                             <Text style={s.name}>Accounteinllungen</Text>
                             <Text style={s.description} numberOfLines={1}>
                                 Accounts verwalten, Abmelden, Account Löschen
                             </Text>
                         </TouchableOpacity>
+
+                        <TouchableOpacity onPress={() => this.navigation("Legal")} style={s.item}>
+                            <Text style={s.name}>Rechtliches</Text>
+                            <Text style={s.description} numberOfLines={1}>
+                                Nutzungsbedingungen, Impressum, Datenschutzrichtlinien,…
+                            </Text>
+                        </TouchableOpacity>
+
+
 
 
                         <TouchableOpacity onPress={() => this.navigation("Security")} style={[s.item, {opacity: 0.33}]}>
@@ -48,12 +58,6 @@ class Settings extends React.Component {
 
                         <View style={s.itemBar} />
 
-                        <TouchableOpacity onPress={() => this.navigation("Legal")} style={[s.item, {opacity: 0.33}]}>
-                            <Text style={s.name}>Rechtliches</Text>
-                            <Text style={s.description} numberOfLines={1}>
-                                Nutzungsbedingungen, Impressum, Datenschutzrichtlinien,…
-                            </Text>
-                        </TouchableOpacity>
 
                         <TouchableOpacity onPress={() => this.navigation("ReportProblem")} style={[s.item, {opacity: 0.33}]}>
                             <Text style={s.name}>Problem Melden</Text>
