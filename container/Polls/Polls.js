@@ -28,7 +28,7 @@ class Polls extends Component {
                 </View>
 
 
-                <PollsFlatlist polls={this.props.polls}/>
+                <PollsFlatlist polls={this.props.polls} navigation={this.props.navigation} />
             </ScrollView>
         );
     }

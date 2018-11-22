@@ -4,6 +4,10 @@ import PropTypes from "prop-types";
 
 import s from "./PollStyle";
 
+import * as screenNames from '../../constants/screenNames';
+
+import formatTime from '../../utils/formatTime';
+
 import PbImg from "../../assets/img/pb.png";
 import TestImg from "../../assets/img/post/test.png";
 
@@ -11,37 +15,8 @@ import PollTypes from "./PollTypes";
 
 class PollsFlatlist extends Component {
 
-    /* Was hat das hier verloren? 16.11 KM*/
-    formatTime(date) {
-        if (typeof date === typeof "") {
-            date = new Date(date);
-        }
-        current = new Date();
-        currentTS = current.getTime() / 1000 | 0;
-        dateTS = date.getTime() / 1000 | 0;
-
-        let difference = currentTS - dateTS;
-
-        if (difference < 3) return "jetzt gerade";
-
-        if (difference < 60) {
-            return "vor " + difference + "sek";
-        }
-
-        if (difference < 3600) {
-
-            return "vor " + (difference / 60 | 0) + "min";
-        }
-
-        if (difference < 86400) {
-            return "vor " + (difference / 3600 | 0) + " Stunden";
-        }
-
-        return "am " + (date.getDate() < 10 ? "0" + date.getDate() : date.getDate()) +
-            "." + ((date.getMonth() + 1) < 10 ? "0" + (date.getMonth() + 1) : (date.getMonth() + 1)) +
-            "." + date.getFullYear();
-
-
+    constructor(props) {
+        super(props)
     }
 
     render() {
@@ -56,12 +31,12 @@ class PollsFlatlist extends Component {
                             <View>
                                 <View style={s.post}>
                                     <View style={s.pPostHeader}>
-                                        <TouchableOpacity>
+                                        <TouchableOpacity onPress={() => this.props.navigation.push(screenNames.USER)}>
                                             <Image style={s.pPB} source={PbImg} />
                                         </TouchableOpacity>
                                         <View style={s.pPostHeaderText}>
                                             <Text style={s.pTitle}>{item.heading}</Text>
-                                            <Text style={s.pSubtitle}>{item.author.username} {this.formatTime(item.createdAt)}</Text>
+                                            <Text style={s.pSubtitle}>{item.author.username} {formatTime(item.createdAt)}</Text>
                                         </View>
                                     </View>
                                     <Text style={s.description}>Achtung, ich hab in der PollFlatlist die Umfragen doppelt! Ich bin trotzdem nur ne Beschreibunng.</Text>
@@ -72,8 +47,6 @@ class PollsFlatlist extends Component {
                                     <View style={s.poll}>
 
                                         <PollTypes poll={item} />
-
-                                        
 
                                     </View>
                                 </View>
