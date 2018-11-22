@@ -33,15 +33,24 @@ function cacheResourcesAsync() {
     return new Promise((resolve, reject) => {
         //const images = getAllImagePaths().map(imgPath => console.log(imgPath));
         const images = [
-            require('./assets/img/splash.png'),
+            //Login
             require('./assets/img/login/PWhide.png'),
             require('./assets/img/login/PWshow.png'),
+
+            //Navbar Bottom
             require('./assets/img/navbar/bottom/chat_off.png'),
             require('./assets/img/navbar/bottom/chat.png'),
             require('./assets/img/navbar/bottom/poll_off.png'),
             require('./assets/img/navbar/bottom/poll.png'),
+
+            //Navbar Top
             require('./assets/img/navbar/top/logo.png'),
             require('./assets/img/navbar/top/logo2.png'),
+            require('./assets/img/navbar/top/back.png'),
+            require('./assets/img/navbar/top/options.png'),
+
+            //Other
+            require('./assets/img/splash.png'),
             require('./assets/img/corner.png'),
             require('./assets/img/hide.png'),
             require('./assets/img/pb.jpg'),
