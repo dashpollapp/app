@@ -1,13 +1,13 @@
 import React, { Component } from "react";
 import { View, TouchableOpacity, Image, Text, FlatList } from "react-native";
 import PropTypes from "prop-types";
-import { LinearGradient } from 'expo';
 
 import s from "./PollStyle";
 
 import PbImg from "../../assets/img/pb.png";
 import TestImg from "../../assets/img/post/test.png";
 
+import PollTypes from "./PollTypes";
 
 class PollsFlatlist extends Component {
 
@@ -71,39 +71,9 @@ class PollsFlatlist extends Component {
                                     {/* Umfragenteil */}
                                     <View style={s.poll}>
 
-                                        <TouchableOpacity>
-                                            <View style={s.pt1Answer}>
-                                                <View>
-                                                    <Text style={s.pollAnswerTitle}>Antwort A</Text>
-                                                </View>
-                                                <View style={s.pt1Bar}>
-                                                    <LinearGradient
-                                                        style={[s.pt1BarInner, { width: "50%" }]}
-                                                        colors={['#aaa', '#888']}
-                                                        start={{ x: 0.0, y: 0.0 }}
-                                                        end={{ x: 0.9, y: 0.1 }}
-                                                    />
-                                                    <Text style={s.pollPercentText}>50%</Text>
-                                                </View>
-                                            </View>
-                                        </TouchableOpacity>
+                                        <PollTypes poll={item} />
 
-                                        <TouchableOpacity>
-                                            <View style={s.pt1Answer}>
-                                                <View>
-                                                    <Text style={s.pollAnswerTitle}>Antwort B</Text>
-                                                </View>
-                                                <View style={s.pt1Bar}>
-                                                    <LinearGradient
-                                                        style={[s.pt1BarInner, { width: "50%" }]}
-                                                        colors={['#ae4768', '#3386cd']}
-                                                        start={{ x: 0.0, y: 0.0 }}
-                                                        end={{ x: 0.9, y: 0.1 }}
-                                                    />
-                                                    <Text style={s.pollPercentText}>50%</Text>
-                                                </View>
-                                            </View>
-                                        </TouchableOpacity>
+                                        
 
                                     </View>
                                 </View>
