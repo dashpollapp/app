@@ -1,6 +1,13 @@
 import { StyleSheet } from "react-native";
 
 export default StyleSheet.create({
+    backImg: {
+        height: 12,
+        width: 12,
+        opacity: 0.7,
+        marginRight: 8,
+    },
+
 
     OptionsImg: {
         height: 24,

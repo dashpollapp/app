@@ -12,8 +12,11 @@ export default class NavbarTopBack extends Component {
         return (
             <View>
                 <View style={nt.box}>
-                    <TouchableOpacity style={nt.titleBox} onPress={() => this.props.navigation.navigate(screenNames.HOME)} >
-                        <Text style={nt.title}>{this.props.title}</Text>
+                    <TouchableOpacity onPress={() => this.props.navigation.navigate(screenNames.HOME)} >
+                        <View style={nt.titleBox} >
+                            <Image style={nt.backImg} source={backImg} />
+                            <Text style={nt.title}>{this.props.title}</Text>
+                        </View>
                     </TouchableOpacity>
                 </View>
                 <View style={nt.push}></View>

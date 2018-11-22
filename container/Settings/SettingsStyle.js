@@ -7,7 +7,8 @@ export var s = StyleSheet.create({
     box: {
         height: "100%",
         flex: 1,
-        paddingVertical: 12,
+        padding: 24,
+        backgroundColor: "#fff",
     },
 
 
@@ -61,8 +62,7 @@ export var s = StyleSheet.create({
         height: 0.5,
     },
     item: {
-        paddingHorizontal: 16,
-        paddingVertical: 8,
+        paddingBottom: 16,
     },
     name: {
         color: "#333",
