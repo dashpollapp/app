@@ -9,7 +9,7 @@ class Chat extends React.Component {
     render() {
         return (
             <View>
-                <Text>Chat</Text>
+                <Text style={{fontFamily: "GS2", textAlign: "center", paddingVertical: 12, fontSize: 16, color: "#666"}}>Geplant für 2019</Text>
             </View>
         );
     }

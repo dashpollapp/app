@@ -10,7 +10,7 @@ class Posts extends React.Component {
     render() {
         return (
             <View>
-                <Text>Polls</Text>
+                <Text>Na los Max :)</Text>
             </View>
         );
     }

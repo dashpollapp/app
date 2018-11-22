@@ -103,7 +103,7 @@ export default StyleSheet.create({
 
     boxHeader: {
         width: "100%",
-        padding: 12,
+        padding: 24,
         paddingHorizontal: 18,
     },
 

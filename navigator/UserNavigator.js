@@ -15,7 +15,8 @@ import chatImg from "../assets/img/navbar/bottom/chat.png";
 import pollImg from "../assets/img/navbar/bottom/poll.png";
 import chatOffImg from "../assets/img/navbar/bottom/chat_off.png";
 import pollOffImg from "../assets/img/navbar/bottom/poll_off.png";
-import defaultProfileImg from "../assets/img/pb.png"
+//import defaultProfileImg from "../assets/img/pb.png"
+import defaultProfileImg from "../assets/img/dev/pp3.jpg"
 
 const Navigator = createMaterialTopTabNavigator(
     {
