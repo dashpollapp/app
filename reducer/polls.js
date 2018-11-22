@@ -36,6 +36,7 @@ const mockPolls = [
                 text: "Twitter"
             },
             {
+                id: 1,
                 text: "Facebook"
             },
             {
