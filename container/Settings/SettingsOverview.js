@@ -38,13 +38,14 @@ class Settings extends React.Component {
                             </Text>
                         </TouchableOpacity>
 
-
-
-
-                        <TouchableOpacity onPress={() => this.navigation("Security")} style={[s.item, {opacity: 0.33}]}>
-                            <Text style={s.name}>Sicherheit</Text>
+                        <TouchableOpacity onPress={() => this.navigation("Security")} style={[s.item,]}>
+                            <Text style={s.name}>Account & Sicherheit</Text>
                             <Text style={s.description}>Anmeldung, Passwort, Sicherheits-Optionen…</Text>
                         </TouchableOpacity>
+
+
+
+
 
                         <TouchableOpacity onPress={() => this.navigation("Performance")} style={[s.item, {opacity: 0.33}]}>
                             <Text style={s.name}>Performance</Text>

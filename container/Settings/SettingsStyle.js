@@ -7,11 +7,22 @@ export var s = StyleSheet.create({
     box: {
         height: "100%",
         flex: 1,
-        padding: 24,
+        padding: 16,
         backgroundColor: "#fff",
     },
 
 
+    section: {
+        marginBottom: 32,
+    },
+    heading: {
+        fontFamily: "GS1",
+        textTransform: "uppercase",
+        color: "#aaa",
+        fontSize: 14,
+        marginBottom: 8,
+        textAlign: "center",
+    },
 
 
     // <Verbindungsanzeige>
@@ -62,7 +73,10 @@ export var s = StyleSheet.create({
         height: 0.5,
     },
     item: {
-        paddingBottom: 16,
+        padding: 8,
+        paddingVertical: 12,
+        marginBottom: 8,
+        borderRadius: 9,
     },
     name: {
         color: "#333",
