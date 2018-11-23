@@ -1,5 +1,5 @@
 import React, { Component, } from "react";
-import { Text } from "react-native";
+import { Text, WebView } from "react-native";
 import PropTypes from "prop-types";
 import TestImg from "../../assets/img/post/test.png";
 import s from './PollStyle'; 
@@ -16,10 +16,10 @@ class PollTypes extends Component {
                 return <Image style={s.image} source={TestImg}/>
 
             case 'youtube':
-                return <Text>Youtube</Text>
+                return <WebView source={{uri: "https://www.youtube.com/embed/" + poll.media.uri}} style={s.image} />
 
             case 'spotify':
-                return <Text>Spotify</Text>
+                return <WebView source={{uri: "https://open.spotify.com/embed/track/" + poll.media.uri}} style={s.spotify} />
 
         }
     }

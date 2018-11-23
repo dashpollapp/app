@@ -29,7 +29,7 @@ class PollTypes extends Component {
                 return <Classic poll={poll} />;
 
             default:
-                return <View><Text>Fehler beim laden des PollTypes</Text></View>;
+                return null;
         }
     }
 }

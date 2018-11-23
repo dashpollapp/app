@@ -14,6 +14,15 @@ export default StyleSheet.create({
         marginTop: 4,
     },
 
+    spotify: {
+        width: Dimensions.get('window').width - 40,
+        borderRadius: 12,
+        //Hör auf meine CSS zu lesen
+        marginBottom: 16,
+        marginTop: 4,
+        height: 80, //Die höhe muss berechnet werden 
+    },
+
     // .posts > .box
     box: {
         padding: 0,
