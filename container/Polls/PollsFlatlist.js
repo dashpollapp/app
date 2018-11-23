@@ -18,7 +18,6 @@ class PollsFlatlist extends Component {
     constructor(props) {
         super(props)
     }
-
     render() {
         return (
             <View>
@@ -32,22 +31,20 @@ class PollsFlatlist extends Component {
                                 <View style={s.post}>
                                     <View style={s.pPostHeader}>
                                         <TouchableOpacity onPress={() => this.props.navigation.push(screenNames.USER)}>
-                                            <Image style={s.pPB} source={PbImg} />
+                                            <View style={s.authorBox}>
+                                                <Image style={s.pPB} source={PbImg} />
+                                                <Text style={s.pSubtitle}>{item.author.username} {formatTime(item.createdAt)}</Text>
+                                            </View>
                                         </TouchableOpacity>
-                                        <View style={s.pPostHeaderText}>
-                                            <Text style={s.pTitle}>{item.heading}</Text>
-                                            <Text style={s.pSubtitle}>{item.author.username} {formatTime(item.createdAt)}</Text>
-                                        </View>
+                                        <Text style={s.pTitle}>{item.heading}</Text>
                                     </View>
-                                    <Text style={s.description}>Achtung, ich hab in der PollFlatlist die Umfragen doppelt! Ich bin trotzdem nur ne Beschreibunng.</Text>
 
+                                    <Text style={s.description}>[Beschreibung?]</Text>
                                     <Image style={s.image} source={TestImg}/>
 
                                     {/* Umfragenteil */}
                                     <View style={s.poll}>
-
                                         <PollTypes poll={item} />
-
                                     </View>
                                 </View>
                             </View>

@@ -9,15 +9,15 @@ export default function formatTime(date) {
 
     let difference = currentTS - dateTS;
 
-    if (difference < 3) return "jetzt gerade";
+    if (difference < 2) return "gearde eben";
 
     if (difference < 60) {
-        return "vor " + difference + "sek";
+        return "vor " + difference + " Sekunden";
     }
 
     if (difference < 3600) {
 
-        return "vor " + (difference / 60 | 0) + "min";
+        return "vor " + (difference / 60 | 0) + " Minuten";
     }
 
     if (difference < 86400) {

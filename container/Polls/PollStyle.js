@@ -46,13 +46,12 @@ export default StyleSheet.create({
 
     //*Später in eigener CSS (polls)
     pTitle: {
-        fontSize: 18,
+        fontSize: 20,
         fontFamily: "GS3",
         color: "#000",
         fontWeight: "500",
-    },
-    pSubtitle: {
-        fontFamily: "GS2",
+        textAligin: "center",
+        paddingHorizontal: 4,
     },
 
     //Ein Beitrag
@@ -60,6 +59,9 @@ export default StyleSheet.create({
         padding: 4,    
         marginHorizontal: 8,
         marginBottom: 44,
+        borderTopWidth: 1,
+        borderColor: "#e5e5e5",
+        paddingTop: 12,
     },
     posts: {
         padding: 8,
@@ -68,29 +70,37 @@ export default StyleSheet.create({
         borderRadius: 12,
     },
 
+
+    //Autor box
     pSubtitle: {
-        color: "#aaa"
+        color: "#aaa",
+        fontFamily: "GS2",
+        fontSize: 13,
     },
-
-
     pPB: {
-        height: 44,
-        width: 44,
-        borderRadius: 44 / 2.35,
+        height: 22,
+        width: 22,
+        borderRadius: 22 / 2.35,
         backgroundColor: "#aaa",
+        marginHorizontal: 4,
     },
+    authorBox: {
+        flexDirection: "row",
+        alignItems: "center",
+        marginBottom: 4,
+    },
+
+
+
+
 
     pPostHeader: {
         flex: 1,
-        flexDirection: "row",
-        alignItems: "center",
-        width: "100%",       
+        //center: alignItems: "center",       
         marginBottom: 16,
+        padding: 4,
     },
 
-    pPostHeaderText: {
-        marginLeft: 8,
-    },
 
     description: {
         color: "#444",

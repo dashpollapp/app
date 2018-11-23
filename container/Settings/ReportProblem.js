@@ -1,9 +1,10 @@
 import { View, Text, ScrollView, TouchableOpacity } from "react-native";
 import React from "react";
-import { s, } from "./SettingsStyle";
+import { s } from "./SettingsStyle";
+
+//Aktuell Fehlerhaft !!!
 
 //In der falschen Datei weil was mit dem Navigator nicht geht ;/
-
 
 class ReportProblem extends React.Component {
     constructor(props) {
