@@ -1,4 +1,6 @@
-import { CREATE_POLL_SUCCESS } from "../constants/actionTypes";
+import { CREATE_POLL_SUCCESS, LOAD_POLLS_HOME, LOAD_POLLS_HOME_SUCCESS, LOAD_POLLS_HOME_FAIL } from "../constants/actionTypes";
+import { uniqueArray, store } from "../utils";
+
 
 let date1 = new Date();
 let date2 = new Date();
@@ -6,7 +8,7 @@ let date2 = new Date();
 
 const mockPolls = [
     {
-        heading: "Titel der Umfrage",
+        heading: "AB HIER MOCK Titel der Umfrage",
         author: {
             username: "Koni"
         },
@@ -22,13 +24,13 @@ const mockPolls = [
         createdAt: new Date(date2.setHours(date2.getHours() - 2))
     },
     {
-        _id: "5b7069ca3a100f53e49bda7c",
+        _id: "aaa",
         author: {
             _id: "5b09cd9312574128e4acb285",
             username: "Max",
             fullname: "Dashpoll"
         },
-        heading: "Wenn ich mich heute für ein Social Network entscheiden müsste wäre es...",
+        heading: "Wenn hurensohgn mich heute für ein Social Network entscheiden müsste wäre es...",
         polltype: 20,
         answers: [
             {
@@ -65,13 +67,28 @@ const mockPolls = [
 
 ]
 
-export default function (state = { loading: false, polls: mockPolls }, action) {
+export default function (state = { loading: false, polls: { home: mockPolls } }, action) {
     switch (action.type) {
 
         case CREATE_POLL_SUCCESS:
-            return { loading: false, polls: [{ ...action.payload.data.poll, author: { username: "yoMax" } }, ...state.polls] };
+            return { loading: false, polls: Object.assign(state.polls.home, { ...action.payload.data.poll, author: store.getState().user.user }) };
+
+        case LOAD_POLLS_HOME:
+
+            return { ...state, loading: true }
+
+        case LOAD_POLLS_HOME_SUCCESS:
+            let uniquePolls = uniqueArray([...action.payload.data, ...state.polls.home])
+
+            console.log(uniquePolls);
+            return { loading: false, polls: { ...state.polls, home: uniquePolls } }
+
+        case LOAD_POLLS_HOME_FAIL:
+            return { ...state, loading: false }
 
         default:
             return state;
     }
 }
+
+// TODO: Polls reducer in mehrere dateien aufteilen und in combineReducers als object einzeln machen halt kp kanns net erklären ~max 2018

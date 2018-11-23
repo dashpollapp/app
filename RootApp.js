@@ -6,7 +6,6 @@ import { connect } from "react-redux";
 
 import db from "./utils/db";
 import { set_current_user } from "./actions";
-//import getAllImagePaths from "./utils/getAllImagePaths";
 
 
 import LoginNavigator from "./navigator/LoginNavigator";

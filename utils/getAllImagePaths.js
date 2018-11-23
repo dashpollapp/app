@@ -1,9 +1,9 @@
-import path from "path";
+/*import path from "path";
 import fs from "fs";
 
 const allowedEndings = ["jpg", "png", "jpeg"];
 
-export default function searchImages(folder) {
+function searchImages(folder) {
     let images = [];
 
     fs.readdirSync(folder).forEach(filePath => {
@@ -21,4 +21,6 @@ export default function searchImages(folder) {
         }
     });
     return images;
-};
+};*/
+
+export default ""

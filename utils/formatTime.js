@@ -1,5 +1,5 @@
 export default function formatTime(date) {
-    
+
     if (typeof date === typeof "") {
         date = new Date(date);
     }
