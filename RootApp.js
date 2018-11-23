@@ -54,6 +54,9 @@ function cacheResourcesAsync() {
             require('./assets/img/corner.png'),
             require('./assets/img/hide.png'),
             require('./assets/img/pb.jpg'),
+
+            //Create
+            require('./assets/img/create/copy.png')
         ]
         const cacheImages = images.map(image => Asset.fromModule(image).downloadAsync());
         Promise.all(cacheImages)

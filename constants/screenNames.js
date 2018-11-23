@@ -11,6 +11,7 @@ export const HOME = "HOME";
 export const USER = "USER";
 export const CREATE = "CREATE";
 export const SETTINGS = "SETTINGS";
+export const SEARCH = "SEARCH";
 
 //CreatePollNavigator
 export const CREATEPOLL = "CREATEPOLL";

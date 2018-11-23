@@ -16,7 +16,7 @@ export default class NavbarTop extends Component {
                     <TouchableOpacity onPress={() => this.props.navigation.push(screenNames.SETTINGS)} style={nt.mainItem}>
                         <Image style={nt.OptionsImg} source={optionsImg} />
                     </TouchableOpacity>
-                    <TouchableOpacity style={nt.mainItem}>
+                    <TouchableOpacity onPress={() => this.props.navigation.push(screenNames.SEARCH)} style={nt.mainItem}>
                         <Image style={nt.mainItemLogoImg} source={logoImg} />
                     </TouchableOpacity>
                     <TouchableOpacity onPress={() => this.props.navigation.push(screenNames.USER)} style={nt.mainItem}>
