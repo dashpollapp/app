@@ -30,12 +30,21 @@ class PollsFlatlist extends Component {
                             <View>
                                 <View style={s.post}>
                                     <View style={s.pPostHeader}>
+                                    
+                                        {this.props.profile ?
+                                            <View style={s.authorBox}>
+                                                <Image style={s.pPB} source={PbImg} />
+                                                <Text style={s.pSubtitle}>{item.author.username} {formatTime(item.createdAt)}</Text>
+                                            </View>
+                                        : 
                                         <TouchableOpacity onPress={() => this.props.navigation.push(screenNames.USER)}>
                                             <View style={s.authorBox}>
                                                 <Image style={s.pPB} source={PbImg} />
                                                 <Text style={s.pSubtitle}>{item.author.username} {formatTime(item.createdAt)}</Text>
                                             </View>
                                         </TouchableOpacity>
+                                        }   
+
                                         <Text style={s.pTitle}>{item.heading}</Text>
                                     </View>
 
