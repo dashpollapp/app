@@ -1,5 +1,7 @@
-import { View, Text, ScrollView } from "react-native";
+import { View, Text, ScrollView, TouchableOpacity } from "react-native";
 import React from "react";
+
+import {s} from './SettingsStyle';
 
 class AccountSettings extends React.Component {
     constructor(props) {
@@ -10,12 +12,7 @@ class AccountSettings extends React.Component {
         return (
             <View style={[s.box]}>
                 <ScrollView> 
-                    <TouchableOpacity onPress={() => this.navigation("AccountSettings")} style={s.item}>
-                        <Text style={s.name}>Accounteinllungen</Text>
-                        <Text style={s.description} numberOfLines={1}>
-                            Accounts verwalten, Abmelden, Account Löschen
-                        </Text>
-                    </TouchableOpacity>
+                    <Text style={s.name}>Accounteinllungen</Text>
                 </ScrollView> 
             </View>
         );
