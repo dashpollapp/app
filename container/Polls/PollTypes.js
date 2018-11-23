@@ -5,6 +5,7 @@ import PropTypes from "prop-types";
 //PollTypes
 import Classic from './VoteTypes/Classic';
 import Like from './VoteTypes/Like';
+import Thumb from './VoteTypes/Thumb'
 
 class PollTypes extends Component {
     
@@ -14,11 +15,7 @@ class PollTypes extends Component {
  
         switch(poll.polltype) {
             case 11:
-                return (
-                    <View>
-                        <Text>PollType: 11</Text>
-                    </View>
-                );
+                return <Thumb poll={poll} />
 
             case 10:
 
