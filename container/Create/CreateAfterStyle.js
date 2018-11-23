@@ -10,7 +10,7 @@ export var ca = StyleSheet.create({
         fontSize: 24,
         color: "#111",
         textAlign: "center",
-        marginTop: 24,
+        marginTop: 44,
         marginBottom: 4,
     },
     h2: {
