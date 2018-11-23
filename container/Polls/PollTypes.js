@@ -3,8 +3,8 @@ import { View, Text } from "react-native";
 import PropTypes from "prop-types";
 
 //PollTypes
-import Classic from './PollTypes/Classic';
-import Like from './PollTypes/Like';
+import Classic from './VoteTypes/Classic';
+import Like from './VoteTypes/Like';
 
 class PollTypes extends Component {
     
