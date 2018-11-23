@@ -7,12 +7,13 @@ import LikeImg_on from "../../../assets/img/post/polltypes/like/like_on.png"
 
 export default class LikeType extends React.Component {
 	render() {
+        let poll = this.props.poll;
 		return (
 			<TouchableOpacity>
                 <View style={like.box}>
                     <View style={like.inner}>
-                        <Text style={like.amount}>12x</Text>
-                        <Image style={like.img} source={LikeImg_on}/>
+                        <Text style={like.amount}>{poll.vote.totalVotes}x</Text>
+                        <Image style={like.img} source={(poll.vote.hasVoted) ? LikeImg_on : LikeImg}/>
                     </View>
                 </View>
             </TouchableOpacity>

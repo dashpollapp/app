@@ -9,9 +9,10 @@ import * as screenNames from '../../constants/screenNames';
 import formatTime from '../../utils/formatTime';
 
 import PbImg from "../../assets/img/pb.png";
-import TestImg from "../../assets/img/post/test.png";
+
 
 import PollTypes from "./PollTypes";
+import LoadMedia from './LoadMedia';
 
 class PollsFlatlist extends Component {
 
@@ -48,8 +49,10 @@ class PollsFlatlist extends Component {
                                         <Text style={s.pTitle}>{item.heading}</Text>
                                     </View>
 
-                                    <Text style={s.description}>[Beschreibung?]</Text>
-                                    <Image style={s.image} source={TestImg}/>
+                                    {/*{item.text ? <Text style={s.description}>{item.text}</Text> : null}*/}
+
+                                    {/* Media */}
+                                    {item.media ? <LoadMedia poll={item} /> : null}
 
                                     {/* Umfragenteil */}
                                     <View style={s.poll}>

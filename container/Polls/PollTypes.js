@@ -13,14 +13,14 @@ class PollTypes extends Component {
         let poll = this.props.poll;
  
         switch(poll.polltype) {
-            case 10:
+            case 11:
                 return (
                     <View>
                         <Text>PollType: 11</Text>
                     </View>
                 );
 
-            case 11:
+            case 10:
 
                 return <Like poll={poll} />;
 
