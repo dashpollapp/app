@@ -4,7 +4,7 @@ export default function ({ heading, polltype, media, answers, maxVotes }, user) 
 
     return dispatch => {
 
-        dispatch({ type: CREATE_POLL, payload: { poll, choice } });
+        dispatch({ type: CREATE_POLL });
 
         httpClient.request({
             url: "/polls",
