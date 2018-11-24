@@ -3,9 +3,17 @@ import { httpClient } from "../utils";
 
 export default function (initiator, poll, choice) {
 
+
+
     let method = determineMethod(poll, choice); // <- muss vor VOTE_FROM_HOME aufgerufen werden, wegen poll obj mutate
 
     return dispatch => {
+
+        //maxVotes  check -> erstmal so später FIFO
+        if (poll.polltype === 20 && Array.isArray(poll.vote.hasVoted) && !poll.vote.hasVoted.includes(choice) && poll.maxVotes <= poll.vote.hasVoted.length) {
+            console.log("RETURN");
+            return;
+        };
 
         dispatch({ type: VOTE_FROM_HOME, payload: { poll, choice } });
 
