@@ -3,7 +3,7 @@ import React from "react";
 import { View } from "react-native";
 import PropTypes from "prop-types";
 import {connect} from 'react-redux';
-
+import {create_poll} from '../actions';
 import CreateAfter from "../container/Create/CreateAfter";
 import CreatePage from "../container/Create/CreatePage";
 import BlockSelection from "../container/Create/BlockSelection";
@@ -32,7 +32,6 @@ class CreatePollNavigator extends React.Component {
     static router = Navigator.router;
 
     render() {
-        console.log(this.props.haspollcreated)
         return (
             <View style={{ flex: 1 }}>
                 <NavbarTopBack title="Beitrag erstellen" navigation={this.props.navigation} />
@@ -41,7 +40,7 @@ class CreatePollNavigator extends React.Component {
                 :
                 <View style={{flex: 1}}>
                     <Navigator navigation={this.props.navigation} />
-                    <NavbarBottomText text="Erstellen" navigation={this.props.navigation} />
+                    <NavbarBottomText text="Erstellen" onPress={() => this.props.create_poll(this.props.haspollcreated)} navigation={this.props.navigation} />
                 </View>
                 }
             </View>
@@ -59,4 +58,12 @@ const mapStateToProps = state => {
     }
 }
 
-export default connect(mapStateToProps, null)(CreatePollNavigator);
+const mapDispatchToProps = dispatch => {
+    return {
+        create_poll: poll => {
+            dispatch(create_poll(poll))
+        }
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(CreatePollNavigator);

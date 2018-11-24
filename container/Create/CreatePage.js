@@ -24,10 +24,6 @@ class CreatePage extends React.Component {
         };
     }
 
-    create_poll() {
-        this.props.create_poll();
-    }
-
     render() {
         let currentPolltype;
 
@@ -96,13 +92,4 @@ const mapStateToProps = state => {
     }
 }
 
-const mapDispatchToProps = dispatch => {
-    return {
-        create_poll: poll => {
-            dispatch(create_poll(poll))
-        }
-    }
-}
-
-
-export default connect(mapStateToProps, mapDispatchToProps)(CreatePage);
+export default connect(mapStateToProps)(CreatePage);

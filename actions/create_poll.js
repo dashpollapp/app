@@ -1,7 +1,7 @@
 import { CREATE_POLL, CREATE_POLL_SUCCESS, CREATE_POLL_FAIL } from "../constants/actionTypes";
 
-export default function ({ heading, polltype, media, answers, maxVotes }, user) {
-
+export default function ({ heading, text, polltype, media, answers, maxVotes }, user) {
+    const httpClient = require('../utils/store').httpClient;
     return dispatch => {
 
         dispatch({ type: CREATE_POLL });
@@ -11,6 +11,7 @@ export default function ({ heading, polltype, media, answers, maxVotes }, user) 
             method: "post",
             data: {
                 heading,
+                text,
                 polltype,
                 media,
                 answers,

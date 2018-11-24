@@ -10,7 +10,7 @@ class NavbarBottom extends Component {
     render() {
         return (
             <View style={nb.box}>
-                <TouchableOpacity style={nb.mainItem}>
+                <TouchableOpacity onPress={() => (this.props.onPress) ? this.props.onPress() : null} style={nb.mainItem}>
                     <Text style={nb.text}>{this.props.text}</Text>
                 </TouchableOpacity>
             </View>

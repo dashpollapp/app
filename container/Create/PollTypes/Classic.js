@@ -2,10 +2,12 @@ import React from 'react';
 import { TouchableOpacity, Text, View, TextInput, StyleSheet, Platform,Dimensions  } from 'react-native';
 import { LinearGradient } from 'expo';
 
+import {connect} from 'react-redux';
+
 import { pc, css } from '../Style';
 import s from "../../Polls/PollStyle";
 
-export default class ClassicType extends React.Component {
+class ClassicType extends React.Component {
 
     render() {
         return (
@@ -59,6 +61,8 @@ export default class ClassicType extends React.Component {
         );
     }
 }
+
+export default connect()(ClassicType);
 
 export var type = StyleSheet.create({
     addAnswer: {
