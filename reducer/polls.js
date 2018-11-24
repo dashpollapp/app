@@ -87,9 +87,6 @@ export default function (state = { loading: false, polls: { home: mockPolls } },
             return { ...state, loading: false }
 
         case VOTE_FROM_HOME:
-            return { ...state, loading: true }
-
-        case VOTE_FROM_HOME_SUCCESS:
             const { poll, choice } = action.payload;
             const indexOfPoll = state.polls.home.map(e => e._id).indexOf(poll._id);
             switch (poll.polltype) {
@@ -98,6 +95,10 @@ export default function (state = { loading: false, polls: { home: mockPolls } },
                     poll.vote.totalVotes = poll.vote.hasVoted ? poll.vote.totalVotes + 1 : poll.vote.totalVotes - 1
             }
             state.polls.home[indexOfPoll] = poll;
+            return { ...state, loading: true }
+
+        case VOTE_FROM_HOME_SUCCESS:
+
             return { ...state, loading: false }
 
         case VOTE_FROM_HOME_FAIL:
