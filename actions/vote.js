@@ -3,7 +3,7 @@ import { httpClient } from "../utils";
 
 export default function (initiator, poll, choice) {
     return dispatch => {
-        dispatch({ type: VOTE_FROM_HOME });
+        dispatch({ type: VOTE_FROM_HOME, payload: { poll, choice } });
         httpClient.request({
             url: "/vote",
             method: determineMethod(poll, choice),
