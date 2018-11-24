@@ -1,8 +1,8 @@
 {
   "expo": {
-    "name": "dashapp",
-    "description": "This project is really great.",
-    "slug": "dashapp",
+    "name": "Dashpoll 0.1 [Luca]",
+    "description": "Dashpoll-App",
+    "slug": "dashpoll-app",
     "privacy": "public",
     "sdkVersion": "31.0.0",
     "platforms": [

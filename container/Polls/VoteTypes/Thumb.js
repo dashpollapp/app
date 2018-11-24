@@ -15,7 +15,6 @@ export default class ThumbType extends React.Component {
                 </TouchableOpacity>
                 <TouchableOpacity onPress={() => this.props.vote("", poll, 1)} style={like.box}>
                     <Image style={like.img} source={(poll.vote.hasVoted === 1) ? LikeImg_on : LikeImg} />{/* hoch = choice 1*/}
-                    <Text>like</Text>
                 </TouchableOpacity>
             </View>
         );
