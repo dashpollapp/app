@@ -5,10 +5,16 @@ import { composeWithDevTools } from "remote-redux-devtools";
 import axios from "axios";
 import axiosMiddleware from "redux-axios-middleware";
 
+import { auth_logout } from "../actions";
+
 function getUserToken() {
 	const token = store.getState().user.user.token;
 	if (typeof token != typeof "") return false;
 	return "Bearer " + token;
+}
+
+function dispatchLogout() {
+	store.dispatch(auth_logout());
 }
 
 
@@ -25,8 +31,15 @@ export let httpClient = axios.create({
 			return JSON.stringify(data);
 		}
 	],
-
 });
+
+//logout on 401
+httpClient.interceptors.response.use(res => res, err => {
+	if (err.response.status === 401) {
+		dispatchLogout();
+	}
+	return Promise.reject(error.response)
+})
 
 const middleware = [thunk, axiosMiddleware(httpClient)];
 const enhancer = composeWithDevTools(applyMiddleware(...middleware));
