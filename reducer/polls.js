@@ -1,4 +1,4 @@
-import { CREATE_POLL_SUCCESS, LOAD_POLLS_HOME, LOAD_POLLS_HOME_SUCCESS, LOAD_POLLS_HOME_FAIL } from "../constants/actionTypes";
+import { VOTE_FROM_HOME, VOTE_FROM_HOME_SUCCESS, VOTE_FROM_HOME_FAIL, CREATE_POLL_SUCCESS, LOAD_POLLS_HOME, LOAD_POLLS_HOME_SUCCESS, LOAD_POLLS_HOME_FAIL } from "../constants/actionTypes";
 import { uniqueArray, store } from "../utils";
 
 
@@ -8,6 +8,7 @@ let date2 = new Date();
 
 const mockPolls = [
     {
+        _id: "q34",
         heading: "AB HIER MOCK Titel der Umfrage",
         author: {
             username: "Koni"
@@ -16,6 +17,7 @@ const mockPolls = [
         createdAt: new Date(date1.setMinutes(date1.getMinutes() - 32))
     },
     {
+        _id: "luica",
         heading: "Umfrage von Max",
         author: {
             username: "Max"
@@ -79,11 +81,27 @@ export default function (state = { loading: false, polls: { home: mockPolls } },
 
         case LOAD_POLLS_HOME_SUCCESS:
             let uniquePolls = uniqueArray([...action.payload.data, ...state.polls.home])
-
-            console.log(uniquePolls);
             return { loading: false, polls: { ...state.polls, home: uniquePolls } }
 
         case LOAD_POLLS_HOME_FAIL:
+            return { ...state, loading: false }
+
+        case VOTE_FROM_HOME:
+            return { ...state, loading: true }
+
+        case VOTE_FROM_HOME_SUCCESS:
+            const { poll, choice } = action.payload;
+            console.log("REDPOLL", action);
+            const indexOfPoll = state.polls.home.map(e => e._id).indexOf(poll._id);
+            switch (poll.polltype) {
+                case 10:
+                    poll.vote.hasVoted = !poll.vote.hasVoted;
+                    poll.vote.totalVotes = poll.vote.hasVoted ? poll.vote.totalVotes + 1 : poll.vote.totalVotes - 1
+            }
+            state.polls.home[indexOfPoll] = poll;
+            return { ...state, loading: false }
+
+        case VOTE_FROM_HOME_FAIL:
             return { ...state, loading: false }
 
         default:

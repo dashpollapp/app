@@ -6,12 +6,11 @@ import { connect } from "react-redux";
 import * as screenNames from "../../constants/screenNames";
 import style from "./PollStyle";
 import PollsFlatlist from "./PollsFlatlist";
-import { load_home_polls } from "../../actions";
+import { load_home_polls, vote } from "../../actions";
 
 class Polls extends Component {
     constructor(props) {
         super(props)
-        console.log(props.polls)
     }
 
     componentDidMount() {
@@ -19,6 +18,7 @@ class Polls extends Component {
     }
 
     render() {
+        console.log("RERENDER IN POLLS.JS")
         return (
             <ScrollView style={style.box}>
 
@@ -33,7 +33,7 @@ class Polls extends Component {
                 </View>
 
 
-                <PollsFlatlist polls={this.props.homePolls} navigation={this.props.navigation} />
+                <PollsFlatlist vote={this.props.vote} navigation={this.props.navigation} />
             </ScrollView>
         );
     }
@@ -55,6 +55,9 @@ const mapDispatchToProps = dispatch => {
     return {
         load_home_polls: skip => {
             dispatch(load_home_polls(skip))
+        },
+        vote: (initiator, poll, choice) => {
+            dispatch(vote("home", poll, choice))
         }
     }
 }

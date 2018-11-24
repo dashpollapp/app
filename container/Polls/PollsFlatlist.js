@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { View, TouchableOpacity, Image, Text, FlatList } from "react-native";
 import PropTypes from "prop-types";
+import { connect } from "react-redux";
 
 import s from "./PollStyle";
 
@@ -19,32 +20,40 @@ class PollsFlatlist extends Component {
     constructor(props) {
         super(props)
     }
+
+    componentDidUpdate() {
+        console.log("DID UPDATE");
+    }
+
     render() {
         return (
             <View>
                 <FlatList
                     style={s.posts}
-                    data={this.props.polls}
-                    keyExtractor={(item, index) => index + "a" + item.heading}
+                    data={this.props.polls.polls.home}
+                    extraData={this.props.polls} //wird nur wegen loading geändert -> muss das noch richtig machen
+                    inverted={true}
+                    keyExtractor={(item, index) => item._id}
                     renderItem={({ item }) => {
+
                         return (
                             <View>
                                 <View style={s.post}>
                                     <View style={s.pPostHeader}>
-                                    
+
                                         {this.props.profile ?
                                             <View style={s.authorBox}>
                                                 <Image style={s.pPB} source={PbImg} />
                                                 <Text style={s.pSubtitle}>{item.author.username} {formatTime(item.createdAt)}</Text>
                                             </View>
-                                        : 
-                                        <TouchableOpacity onPress={() => this.props.navigation.push(screenNames.USER)}>
-                                            <View style={s.authorBox}>
-                                                <Image style={s.pPB} source={PbImg} />
-                                                <Text style={s.pSubtitle}>{item.author.username} {formatTime(item.createdAt)}</Text>
-                                            </View>
-                                        </TouchableOpacity>
-                                        }   
+                                            :
+                                            <TouchableOpacity onPress={() => this.props.navigation.push(screenNames.USER)}>
+                                                <View style={s.authorBox}>
+                                                    <Image style={s.pPB} source={PbImg} />
+                                                    <Text style={s.pSubtitle}>{item.author.username} {formatTime(item.createdAt)}</Text>
+                                                </View>
+                                            </TouchableOpacity>
+                                        }
 
                                         <Text style={s.pTitle}>{item.heading}</Text>
                                     </View>
@@ -56,7 +65,7 @@ class PollsFlatlist extends Component {
 
                                     {/* Umfragenteil */}
                                     <View style={s.poll}>
-                                        <PollTypes poll={item} />
+                                        <PollTypes vote={this.props.vote} poll={item} />
                                     </View>
                                 </View>
                             </View>
@@ -69,7 +78,14 @@ class PollsFlatlist extends Component {
 }
 
 PollsFlatlist.propTypes = {
-    polls: PropTypes.array.isRequired,
+    polls: PropTypes.object.isRequired,
+    vote: PropTypes.func.isRequired
 }
 
-export default PollsFlatlist;
+const mapStatetp = state => {
+    return {
+        polls: state.polls
+    }
+}
+
+export default connect(mapStatetp)(PollsFlatlist);

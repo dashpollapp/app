@@ -1,24 +1,24 @@
-import React from "react";
 import { View, TouchableOpacity, Image, Text, StyleSheet } from "react-native";
+import React from "react";
 
 //Like
 import LikeImg from "../../../assets/img/post/polltypes/like/like_off.png"
 import LikeImg_on from "../../../assets/img/post/polltypes/like/like_on.png"
 
 export default class ThumbType extends React.Component {
-	render() {
+    render() {
         let poll = this.props.poll;
-		return (
+        return (
             <View style={like.test} >
                 <TouchableOpacity >
-                    <Image style={like.img} source={LikeImg_on}/>
+                    <Image style={like.img} source={LikeImg_on} />
                 </TouchableOpacity>
                 <TouchableOpacity style={like.box} >
-                    <Image style={like.img} source={LikeImg_on}/>
+                    <Image style={like.img} source={LikeImg_on} />
                 </TouchableOpacity>
             </View>
-		);
-	}
+        );
+    }
 }
 
 const like = StyleSheet.create({
@@ -44,7 +44,7 @@ const like = StyleSheet.create({
         width: 26,
     },
     inner: {
-        alignItems: "center",        
+        alignItems: "center",
         flexDirection: "row",
         padding: 4,
     },

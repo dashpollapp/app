@@ -8,22 +8,22 @@ import Like from './VoteTypes/Like';
 import Thumb from './VoteTypes/Thumb'
 
 class PollTypes extends Component {
-    
+
     render() {
 
         let poll = this.props.poll;
- 
-        switch(poll.polltype) {
+
+        switch (poll.polltype) {
             case 11:
-                return <Thumb poll={poll} />
+                return <Thumb vote={this.props.vote} poll={poll} />
 
             case 10:
 
-                return <Like poll={poll} />;
+                return <Like vote={this.props.vote} poll={poll} />;
 
             case 20:
 
-                return <Classic poll={poll} />;
+                return <Classic vote={this.props.vote} poll={poll} />;
 
             default:
                 return null;

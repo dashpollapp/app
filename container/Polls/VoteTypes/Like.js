@@ -6,19 +6,19 @@ import LikeImg from "../../../assets/img/post/polltypes/like/like_off.png"
 import LikeImg_on from "../../../assets/img/post/polltypes/like/like_on.png"
 
 export default class LikeType extends React.Component {
-	render() {
+    render() {
         let poll = this.props.poll;
-		return (
-			<TouchableOpacity>
+        return (
+            <TouchableOpacity onPress={() => this.props.vote("", poll, 1)}>
                 <View style={like.box}>
                     <View style={like.inner}>
                         <Text style={like.amount}>{poll.vote.totalVotes}x</Text>
-                        <Image style={like.img} source={(poll.vote.hasVoted) ? LikeImg_on : LikeImg}/>
+                        <Image style={like.img} source={(poll.vote.hasVoted) ? LikeImg_on : LikeImg} />
                     </View>
                 </View>
             </TouchableOpacity>
-		);
-	}
+        );
+    }
 }
 
 const like = StyleSheet.create({
@@ -40,7 +40,7 @@ const like = StyleSheet.create({
         marginHorizontal: 4,
     },
     inner: {
-        alignItems: "center",        
+        alignItems: "center",
         flexDirection: "row",
         padding: 4,
     },
