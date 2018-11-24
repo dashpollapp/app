@@ -59,7 +59,6 @@ export default StyleSheet.create({
         fontFamily: "GS3",
         color: "#000",
         fontWeight: "500",
-        textAlign: "center",
         paddingHorizontal: 4,
     },
 
