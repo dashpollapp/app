@@ -1,5 +1,5 @@
 import { VOTE_FROM_HOME, VOTE_FROM_USER, VOTE_FROM_HOME_SUCCESS, VOTE_FROM_HOME_FAIL } from "../constants/actionTypes";
-import { httpClient } from "../utils";
+import { httpClient } from "../utils/store";
 
 export default function (initiator, poll, choice) {
 

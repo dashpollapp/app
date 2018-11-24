@@ -38,7 +38,7 @@ httpClient.interceptors.response.use(res => res, err => {
 	if (err.response.status === 401) {
 		dispatchLogout();
 	}
-	return Promise.reject(error.response)
+	return Promise.reject(err.response)
 })
 
 const middleware = [thunk, axiosMiddleware(httpClient)];

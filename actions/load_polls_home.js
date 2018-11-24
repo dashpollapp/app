@@ -1,5 +1,4 @@
 import { LOAD_POLLS_HOME } from "../constants/actionTypes";
-import { store } from "../utils";
 
 export default function (skip) {
     const limit = /*store.getState().bl*/ 10;
