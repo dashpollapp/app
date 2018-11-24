@@ -18,11 +18,13 @@ const Navigator = createStackNavigator(
 
 export default class SearchNavigator extends React.Component {
 
+    static router = Navigator.router;
+    
     render() {
         return (
             <View style={{ flex: 1}}>
                 <NavbarTopBack title="Search" navigation={this.props.navigation} />
-                <Navigator />
+                <Navigator navigation={this.props.navigation} />
             </View>
         )
     }

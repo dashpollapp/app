@@ -26,11 +26,13 @@ const Navigator = createStackNavigator(
 
 export default class SettingsNavigator extends React.Component {
 
+    static router = Navigator.router;
+
     render() {
         return (
             <View style={{ flex: 1}}>
                 <NavbarTopBack title="Optionen" navigation={this.props.navigation} />
-                <Navigator screenProps={{ rootNavigation: this.props.navigation }} />
+                <Navigator navigation={this.props.navigation} screenProps={{ rootNavigation: this.props.navigation }} />
             </View>
         )
     }
