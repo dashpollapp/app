@@ -21,6 +21,7 @@ export default function (state = { loading: false, polls: { home: [] } }, action
         case VOTE_FROM_HOME:
             const { poll, choice } = action.payload;
             const indexOfPoll = state.polls.home.map(e => e._id).indexOf(poll._id);
+            let method;
             switch (poll.polltype) {
                 case 10:
                     poll.vote.hasVoted = !poll.vote.hasVoted;
@@ -28,7 +29,6 @@ export default function (state = { loading: false, polls: { home: [] } }, action
                     break;
                 case 11:
 
-                    let method;
                     if (typeof poll.vote.hasVoted === typeof 1) {
                         method = (poll.vote.hasVoted === choice) ? "delete" : "post";
                     } else {
@@ -55,6 +55,48 @@ export default function (state = { loading: false, polls: { home: [] } }, action
                         if (choice === 1) { poll.vote.likes--; } else { poll.vote.dislikes--; }
                     }
                     break;
+                case 20:
+                    if (!poll.vote.hasVoted) {
+                        method = "post";
+                    } else {
+                        if (poll.vote.hasVoted.includes(choice)) { method = "delete" } else { method = "post" }
+                    }
+
+                    if (method === "post") {
+                        if (poll.maxVotes === 1) {
+                            //Logik für Umfragen mit einer Stimme
+                            if (typeof poll.vote.hasVoted === typeof [] && poll.vote.hasVoted.length === 1) {
+                                //Stimme ändern
+                                poll.vote.votes[poll.vote.hasVoted[0]]--;
+                                poll.vote.hasVoted = [choice];
+                                poll.vote.votes[choice]++;
+                            } else {
+                                //Erste Stimme
+                                poll.vote.hasVoted = [choice];
+                                poll.vote.totalVoter++;
+                                poll.vote.totalVotes++;
+                                poll.vote.votes[choice]++;
+                            }
+                        } else {
+                            //Logik für Umfragen mit mehreren Stimmen
+                            if (poll.vote.hasVoted) {
+                                poll.vote.hasVoted = [...poll.vote.hasVoted, choice]
+                            } else {
+                                poll.vote.hasVoted = [choice];
+                                poll.vote.totalVoter++;
+                            }
+                            poll.vote.totalVotes++;
+                            poll.vote.votes[choice]++;
+                        }
+                    } else {
+                        poll.vote.hasVoted = poll.vote.hasVoted.filter(c => c !== choice);
+                        if (Array.isArray(poll.vote.hasVoted) && poll.vote.hasVoted.length === 0) {
+                            poll.vote.hasVoted = false;
+                            poll.vote.totalVoter--;
+                        }
+                        poll.vote.totalVotes--;
+                        poll.vote.votes[choice]--;
+                    }
 
             }
             state.polls.home[indexOfPoll] = poll;

@@ -34,6 +34,12 @@ function determineMethod(poll, choice) {
             } else {
                 return "post";
             }
+        case 20:
+            if (!poll.vote.hasVoted) {
+                return "post";
+            } else {
+                return (poll.vote.hasVoted.includes(choice)) ? "delete" : "post";
+            }
         default:
             return "post";
     }
