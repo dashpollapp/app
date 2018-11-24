@@ -21,9 +21,10 @@ class PollsFlatlist extends Component {
         super(props)
     }
 
+
     render() {
         return (
-            <View>
+            <View style={{ flex: 1 }}>
                 <FlatList
                     style={s.posts}
                     data={this.props.polls.polls.home}
