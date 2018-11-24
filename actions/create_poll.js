@@ -1,20 +1,25 @@
-import { CREATE_POLL } from "../constants/actionTypes";
+import { CREATE_POLL, CREATE_POLL_SUCCESS, CREATE_POLL_FAIL } from "../constants/actionTypes";
 
-export default function ({ heading, polltype, media, answers, maxVotes }) {
-    return {
-        type: CREATE_POLL,
-        payload: {
-            request: {
-                url: "/polls",
-                method: "POST",
-                data: {
-                    heading,
-                    polltype,
-                    media,
-                    answers,
-                    maxVotes
-                }
+export default function ({ heading, polltype, media, answers, maxVotes }, user) {
+
+    return dispatch => {
+
+        dispatch({ type: CREATE_POLL, payload: { poll, choice } });
+
+        httpClient.request({
+            url: "/polls",
+            method: "post",
+            data: {
+                heading,
+                polltype,
+                media,
+                answers,
+                maxVotes
             }
-        }
+        }).then(res => {
+            dispatch({ type: CREATE_POLL_SUCCESS, payload: { user, poll: res.data.poll } })
+        }).catch(err => console.log(err) & dispatch({ type: CREATE_POLL_FAIL, payload: { err } }));
+
+
     }
 }

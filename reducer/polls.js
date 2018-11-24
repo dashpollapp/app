@@ -5,7 +5,7 @@ export default function (state = { loading: false, polls: { home: [] } }, action
     switch (action.type) {
 
         case CREATE_POLL_SUCCESS:
-            return { loading: false, polls: Object.assign(state.polls.home, { ...action.payload.data.poll, author: store.getState().user.user }) };
+            return { loading: false, polls: Object.assign(state.polls.home, { ...action.payload.data.poll, author: action.payload.user }) };
 
         case LOAD_POLLS_HOME:
 
