@@ -157,7 +157,7 @@ export default StyleSheet.create({
     pt1Bar: {
         height: 16,
         marginTop: 2,
-        marginRight: 8,
+        marginRight: 26,
 
         alignItems: "center",
         display: "flex",

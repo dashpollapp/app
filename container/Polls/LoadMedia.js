@@ -16,10 +16,10 @@ class PollTypes extends Component {
                 return <Image style={s.image} source={TestImg}/>
 
             case 'youtube':
-                return <WebView source={{uri: "https://www.youtube.com/embed/" + poll.media.uri}} style={s.image} />
+                return <WebView source={{uri: "https://www.youtube.com/embed/" + poll.media.uri}} scrollEnabled={false} style={s.image} />
 
             case 'spotify':
-                return <WebView source={{uri: "https://open.spotify.com/embed/track/" + poll.media.uri}} style={s.spotify} />
+                return <WebView source={{uri: "https://open.spotify.com/embed/track/" + poll.media.uri}} scrollEnabled={false} style={s.spotify} />
 
         }
     }
