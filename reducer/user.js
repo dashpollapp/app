@@ -1,4 +1,17 @@
-import { SET_CURRENT_USER, AUTH_LOGOUT, AUTH_LOGIN, AUTH_LOGIN_SUCCESS, AUTH_LOGIN_FAIL, AUTH_REGISTER, AUTH_REGISTER_FAIL, AUTH_REGISTER_SUCCESS } from "../constants/actionTypes";
+import { 
+    SET_CURRENT_USER,
+    AUTH_LOGOUT,
+    AUTH_LOGOUT_ALL,
+    AUTH_LOGOUT_ALL_SUCCESS,
+    AUTH_LOGOUT_ALL_FAIL,
+    AUTH_LOGIN,
+    AUTH_LOGIN_SUCCESS,
+    AUTH_LOGIN_FAIL,
+    AUTH_REGISTER,
+    AUTH_REGISTER_FAIL,
+    AUTH_REGISTER_SUCCESS
+} from "../constants/actionTypes";
+
 import db from "../utils/db";
 
 const initialState = { loading: false, user: false };
@@ -41,6 +54,12 @@ export default function (state = initialState, action) {
             deleteUserFromDb();
             return { loading: false, user: false };
 
+        case AUTH_LOGOUT_ALL_SUCCESS:
+            deleteUserFromDb();
+            return { loading: false, user: false };
+
+        case AUTH_LOGOUT_ALL_FAIL:
+            return { ...state, loading: false, error: 'error while logout' }
 
         default:
             return state;

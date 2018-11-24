@@ -17,6 +17,9 @@ export const AUTH_LOGIN_FAIL = "AUTH_LOGIN_FAIL";
 //container/Settings/SettingsOverview.js
 //reducer/user.js
 export const AUTH_LOGOUT = "AUTH_LOGOUT";
+export const AUTH_LOGOUT_ALL = "AUTH_LOGOUT_ALL";
+export const AUTH_LOGOUT_ALL_SUCCESS = "AUTH_LOGOUT_ALL_SUCCESS";
+export const AUTH_LOGOUT_ALL_FAIL = "AUTH_LOGOUT_ALL_FAIL";
 
 //container/Login/SignUp.js
 //reducer/user.js

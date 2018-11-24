@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import React from "react";
 import { s } from "./SettingsStyle";
-import { auth_logout } from "../../actions";
+import { auth_logout, auth_logout_all } from "../../actions";
 
 //Aktuell Fehlerhaft !!!
 
@@ -58,7 +58,7 @@ class Security extends React.Component {
                             </Text>
                         </TouchableOpacity>
 
-                        <TouchableOpacity onPress={() => this.navigation("AccountSettings")} style={[s.item,]}>
+                        <TouchableOpacity onPress={() => this.props.auth_logout_all()} style={[s.item,]}>
                             <Text style={s.name}>Überall Abmelden</Text>
                             <Text style={s.description} numberOfLines={1}>
                                 Du wirst auf allen Geräten von Dashpoll abgemeldet
@@ -80,7 +80,8 @@ Security.propTypes = {
 const mapDispatchToProps = dispatch => {
 
     return {
-        auth_logout: () => dispatch(auth_logout())
+        auth_logout: () => dispatch(auth_logout()),
+        auth_logout_all: () => dispatch(auth_logout_all())
     }
 
 }
