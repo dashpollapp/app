@@ -20,7 +20,7 @@ class PollsFlatlist extends Component {
     constructor(props) {
         super(props)
     }
-    
+
     render() {
         return (
             <View>
@@ -30,10 +30,9 @@ class PollsFlatlist extends Component {
                     extraData={this.props.polls} //wird nur wegen loading geändert -> muss das noch richtig machen
                     keyExtractor={(item) => item._id}
                     renderItem={({ item, index }) => {
-
                         return (
                             <View>
-                                <View style={[s.post, (index !== 0) ? {borderTopWidth: 1, borderColor: "#e5e5e5"} : null]}>
+                                <View style={[s.post, (index !== 0) ? { borderTopWidth: 1, borderColor: "#e5e5e5" } : null]}>
                                     <View style={s.pPostHeader}>
 
                                         {this.props.profile ?

@@ -20,13 +20,45 @@ export default function (state = { loading: false, polls: { home: [] } }, action
 
         case VOTE_FROM_HOME:
             const { poll, choice } = action.payload;
-            const indexOfPoll = state.polls.home.map(e => e._id).indexOf(poll._id);
-            switch (poll.polltype) {
+            const newPoll = Object.assign({}, poll);
+            const indexOfPoll = state.polls.home.map(e => e._id).indexOf(newPoll._id);
+            switch (newPoll.polltype) {
                 case 10:
-                    poll.vote.hasVoted = !poll.vote.hasVoted;
-                    poll.vote.totalVotes = poll.vote.hasVoted ? poll.vote.totalVotes + 1 : poll.vote.totalVotes - 1
+                    newPoll.vote.hasVoted = !newPoll.vote.hasVoted;
+                    newPoll.vote.totalVotes = newPoll.vote.hasVoted ? newPoll.vote.totalVotes + 1 : newPoll.vote.totalVotes - 1
+                    break;
+                case 11:
+
+                    let method;
+                    if (typeof newPoll.vote.hasVoted === typeof 1) {
+                        method = (newPoll.vote.hasVoted === choice) ? "delete" : "post";
+                    } else {
+                        method = "post";
+                    }
+
+                    //if(!(typeof poll.vote.hasVoted === typeof 1) || (typeof poll.vote.hasVoted === typeof 1 && poll.vote.hasVoted !== choice))
+                    if (method === "post") {
+                        if (typeof newPoll.vote.hasVoted === typeof 1) {
+                            if (newPoll.vote.hasVoted === 1) {
+                                newPoll.vote.dislikes++;
+                                newPoll.vote.likes--;
+                            } else {
+                                newPoll.vote.likes++;
+                                newPoll.vote.dislikes--;
+                            }
+                            newPoll.vote.hasVoted = choice;
+                        } else {
+                            newPoll.vote.hasVoted = choice;
+                            if (choice === 1) { newPoll.vote.likes++; } else { newPoll.vote.dislikes++; }
+                        }
+                    } else {
+                        newPoll.vote.hasVoted = false;
+                        if (choice === 1) { newPoll.vote.likes--; } else { newPoll.vote.dislikes--; }
+                    }
+                    break;
+
             }
-            state.polls.home[indexOfPoll] = poll;
+            state.polls.home[indexOfPoll] = newPoll;
             return { ...state, loading: true }
 
         case VOTE_FROM_HOME_SUCCESS:

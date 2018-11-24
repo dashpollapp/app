@@ -9,12 +9,13 @@ export default class ThumbType extends React.Component {
     render() {
         let poll = this.props.poll;
         return (
-            <View style={like.test} >
-                <TouchableOpacity >
-                    <Image style={like.img} source={LikeImg_on} />
+            <View style={like.test}>
+                <TouchableOpacity onPress={() => this.props.vote("", poll, 0)}>{/*daume runter = choice 0 */}
+                    <Image style={like.img} source={(poll.vote.hasVoted === 0) ? LikeImg_on : LikeImg} />
                 </TouchableOpacity>
-                <TouchableOpacity style={like.box} >
-                    <Image style={like.img} source={LikeImg_on} />
+                <TouchableOpacity onPress={() => this.props.vote("", poll, 1)} style={like.box}>
+                    <Image style={like.img} source={(poll.vote.hasVoted === 1) ? LikeImg_on : LikeImg} />{/* hoch = choice 1*/}
+                    <Text>like</Text>
                 </TouchableOpacity>
             </View>
         );
