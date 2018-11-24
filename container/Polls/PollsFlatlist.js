@@ -53,7 +53,7 @@ class PollsFlatlist extends Component {
                                         <Text style={s.pTitle}>{item.heading}</Text>
                                     </View>
 
-                                    {/*{item.text ? <Text style={s.description}>{item.text}</Text> : null}*/}
+                                    {item.text ? <Text style={s.description}>{item.text}</Text> : null}
 
                                     {/* Media */}
                                     {item.media ? <LoadMedia poll={item} /> : null}
