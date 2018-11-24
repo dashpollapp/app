@@ -1,12 +1,15 @@
 import { View, Text, ScrollView, TouchableOpacity } from "react-native";
+import PropTypes from "prop-types";
+import { connect } from "react-redux";
 import React from "react";
 import { s } from "./SettingsStyle";
+import { auth_logout } from "../../actions";
 
 //Aktuell Fehlerhaft !!!
 
 //In der falschen Datei weil was mit dem Navigator nicht geht ;/
 
-class ReportProblem extends React.Component {
+class Security extends React.Component {
     constructor(props) {
         super(props);
         this.state = {};
@@ -45,9 +48,10 @@ class ReportProblem extends React.Component {
 
 
                     <View style={s.section}>
+
                         <Text style={s.heading}>Abmelden</Text>
 
-                        <TouchableOpacity onPress={() => this.navigation("AccountSettings")} style={[s.item,]}>
+                        <TouchableOpacity onPress={() => this.props.auth_logout()} style={[s.item,]}>
                             <Text style={s.name}>Abmelden</Text>
                             <Text style={s.description} numberOfLines={1}>
                                 Du wirst auf diesem Gerät abgemdeldet
@@ -68,4 +72,17 @@ class ReportProblem extends React.Component {
     }
 }
 
-export default ReportProblem;
+Security.propTypes = {
+    auth_logout: PropTypes.func.isRequired
+}
+
+
+const mapDispatchToProps = dispatch => {
+
+    return {
+        auth_logout: () => dispatch(auth_logout())
+    }
+
+}
+
+export default connect(null, mapDispatchToProps)(Security);
