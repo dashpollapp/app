@@ -2,13 +2,14 @@ import { createMaterialTopTabNavigator } from "react-navigation";
 import React from "react";
 import { View } from "react-native";
 import PropTypes from "prop-types";
+import {connect} from 'react-redux';
 
+import CreateAfter from "../container/Create/CreateAfter";
 import CreatePage from "../container/Create/CreatePage";
 import BlockSelection from "../container/Create/BlockSelection";
 import * as screenName from "../constants/screenNames";
 import NavbarTopBack from "../components/Navbar/NavbarTopBack";
 import NavbarBottomText from "../components/Navbar/NavbarBottomText";
-import { css } from "../container/User/Style";
 
 const Navigator = createMaterialTopTabNavigator(
     {
@@ -25,17 +26,24 @@ const Navigator = createMaterialTopTabNavigator(
 );
 
 //CreatePost*
-export default class CreatePollNavigator extends React.Component {
+class CreatePollNavigator extends React.Component {
 
     //Wird gebraucht, um den Focus auf SettingsNavigator zu stellen, falls man in SETTINGS ist (this.props.navigation)
     static router = Navigator.router;
 
     render() {
+        console.log(this.props.haspollcreated)
         return (
             <View style={{ flex: 1 }}>
                 <NavbarTopBack title="Beitrag erstellen" navigation={this.props.navigation} />
-                <Navigator navigation={this.props.navigation} />
-                <NavbarBottomText text="Erstellen" navigation={this.props.navigation} />
+                {(this.props.haspollcreated) ? 
+                <CreateAfter navigation={this.props.navigation} />
+                :
+                <View style={{flex: 1}}>
+                    <Navigator navigation={this.props.navigation} />
+                    <NavbarBottomText text="Erstellen" navigation={this.props.navigation} />
+                </View>
+                }
             </View>
         )
     }
@@ -44,3 +52,11 @@ export default class CreatePollNavigator extends React.Component {
 CreatePollNavigator.propTypes = {
     navigation: PropTypes.object.isRequired
 }
+
+const mapStateToProps = state => {
+    return {
+        haspollcreated: state.create_poll.poll
+    }
+}
+
+export default connect(mapStateToProps, null)(CreatePollNavigator);

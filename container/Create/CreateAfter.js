@@ -5,6 +5,10 @@ import { ca } from "./CreateAfterStyle"; //Create After Style
 //Images Crate After
 import CopyImg from "../../assets/img/create/copy.png";
 
+import PropTypes from "prop-types";
+
+import * as screenNames from '../../constants/screenNames';
+
 import WhatsappImg from "../../assets/img/create/whatsapp.png";
 import SnapchatImg from "../../assets/img/create/snapchat.png";
 import InstaImg from "../../assets/img/create/insta.png";
@@ -58,7 +62,7 @@ class CreateAfter extends React.Component {
                         </TouchableOpacity>
                     </View>
 
-                    <TouchableOpacity>
+                    <TouchableOpacity onPress={() => this.props.navigation.navigate(screenNames.HOME)}>
                         <View style={ca.skipButton}>
                             <Text style={ca.skipButtonText}>Überspringen</Text>
                         </View>
@@ -69,6 +73,10 @@ class CreateAfter extends React.Component {
             </View >
         );
     }
+}
+
+CreateAfter.propTypes = {
+    navigation: PropTypes.object.isRequired
 }
 
 export default CreateAfter;

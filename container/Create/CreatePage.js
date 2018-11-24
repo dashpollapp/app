@@ -24,6 +24,10 @@ class CreatePage extends React.Component {
         };
     }
 
+    create_poll() {
+        this.props.create_poll();
+    }
+
     render() {
         let currentPolltype;
 
