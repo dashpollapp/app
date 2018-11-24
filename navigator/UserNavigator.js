@@ -23,7 +23,7 @@ const Navigator = createMaterialTopTabNavigator(
         [screenName.USER_CHAT]: {
             screen: Chat,
             navigationOptions: {
-                tabBarIcon: (active) => <Image style={{ height: 26, width: 26, }} source={ active.focused ? chatImg : chatOffImg } />
+                tabBarIcon: (active) => <Image style={{ height: 26, width: 26, }} source={active.focused ? chatImg : chatOffImg} />
             }
         },
         [screenName.USER_PROFILE]: {
@@ -35,7 +35,7 @@ const Navigator = createMaterialTopTabNavigator(
         [screenName.USER_POSTS]: {
             screen: Posts,
             navigationOptions: {
-                tabBarIcon: (active) => <Image style={{ height: 26, width: 26, }} source={ active.focused ? pollImg : pollOffImg } />
+                tabBarIcon: (active) => <Image style={{ height: 26, width: 26, }} source={active.focused ? pollImg : pollOffImg} />
             }
         },
 

@@ -5,7 +5,7 @@ import Legal from "./Legal";
 import MyData from "./MyData";
 import Performance from "./Performance";
 import ReportProblem from "./ReportProblem";
-import Security from "./ReportProblem";
+import Security from "./Security";
 import SettingsOverview from "./SettingsOverview";
 
 export { AccountSettings, EditProfile, Help, Legal, MyData, Performance, ReportProblem, Security, SettingsOverview }
