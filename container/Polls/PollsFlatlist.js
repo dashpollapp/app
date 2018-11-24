@@ -18,13 +18,13 @@ import LoadMedia from './LoadMedia';
 class PollsFlatlist extends Component {
 
     constructor(props) {
-        super(props)
+        super(props);
     }
 
 
     render() {
         return (
-            <View style={{ flex: 1 }}>
+            <View>
                 <FlatList
                     style={s.posts}
                     data={this.props.polls.polls.home}
