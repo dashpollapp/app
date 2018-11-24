@@ -20,11 +20,7 @@ class PollsFlatlist extends Component {
     constructor(props) {
         super(props)
     }
-
-    componentDidUpdate() {
-        console.log("DID UPDATE");
-    }
-
+    
     render() {
         return (
             <View>
@@ -32,13 +28,12 @@ class PollsFlatlist extends Component {
                     style={s.posts}
                     data={this.props.polls.polls.home}
                     extraData={this.props.polls} //wird nur wegen loading geändert -> muss das noch richtig machen
-                    inverted={true}
-                    keyExtractor={(item, index) => item._id}
-                    renderItem={({ item }) => {
+                    keyExtractor={(item) => item._id}
+                    renderItem={({ item, index }) => {
 
                         return (
                             <View>
-                                <View style={s.post}>
+                                <View style={[s.post, (index !== 0) ? {borderTopWidth: 1, borderColor: "#e5e5e5"} : null]}>
                                     <View style={s.pPostHeader}>
 
                                         {this.props.profile ?

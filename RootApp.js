@@ -55,7 +55,11 @@ function cacheResourcesAsync() {
             require('./assets/img/pb.jpg'),
 
             //Create
-            require('./assets/img/create/copy.png')
+            require('./assets/img/create/copy.png'),
+
+            //PollTypes
+            require('./assets/img/post/polltypes/like/like_on.png'),
+            require('./assets/img/post/polltypes/like/like_off.png')
         ]
         const cacheImages = images.map(image => Asset.fromModule(image).downloadAsync());
         Promise.all(cacheImages)

@@ -91,7 +91,6 @@ export default function (state = { loading: false, polls: { home: mockPolls } },
 
         case VOTE_FROM_HOME_SUCCESS:
             const { poll, choice } = action.payload;
-            console.log("REDPOLL", action);
             const indexOfPoll = state.polls.home.map(e => e._id).indexOf(poll._id);
             switch (poll.polltype) {
                 case 10:
