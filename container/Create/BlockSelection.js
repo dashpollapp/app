@@ -10,8 +10,9 @@ import * as screenNames from "../../constants/screenNames";
 class Types extends React.Component {
 
     _handleTypeChange(type) {
-        this.props.create_poll_change_polltype(type);
         this.props.navigation.navigate(screenNames.CREATEPOLL)
+        this.props.create_poll_change_polltype(type);
+
     }
 
     render() {
@@ -22,7 +23,7 @@ class Types extends React.Component {
                     <Text style={createBlocks.h1}>Blocks</Text>
                     <Text style={createBlocks.h2}>Wähle mehrere Blocks aus und kombiniere sie.</Text>
 
-                
+
                     <TouchableOpacity
                         onPress={() => {
                             this._handleTypeChange(0);
@@ -84,7 +85,7 @@ class Types extends React.Component {
                         </View>
                     </TouchableOpacity>
 
-        
+
 
                     {/*=Navbar unten*/}
                     <TouchableOpacity>

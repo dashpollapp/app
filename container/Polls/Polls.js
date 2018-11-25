@@ -14,7 +14,7 @@ class Polls extends Component {
     }
 
     componentDidMount() {
-        this.props.load_home_polls(this.props.homePolls.length);
+        this.props.load_home_polls(0);
     }
 
     render() {

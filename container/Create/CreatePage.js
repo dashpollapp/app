@@ -24,6 +24,16 @@ class CreatePage extends React.Component {
         };
     }
 
+    componentDidUpdate() {
+        this.props.screenProps(this.state.heading, this.state.text);
+    }
+
+    shouldComponentUpdate(nextProps, nextState) {
+        if (this.state.heading !== nextState.heading || this.state.text !== nextState.text) return true;
+        if (this.props.selectedPollType !== nextProps.selectedPollType) return true;
+        return false;
+    }
+
     render() {
         let currentPolltype;
 
@@ -82,8 +92,7 @@ class CreatePage extends React.Component {
 }
 
 CreatePage.propTypes = {
-    selectedPollType: PropTypes.number,
-    create_poll: PropTypes.func.isRequired
+    selectedPollType: PropTypes.number
 }
 
 const mapStateToProps = state => {
