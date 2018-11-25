@@ -1,5 +1,5 @@
 import { VOTE_FROM_HOME, VOTE_FROM_HOME_SUCCESS, VOTE_FROM_HOME_FAIL, CREATE_POLL_SUCCESS, LOAD_POLLS_HOME, LOAD_POLLS_HOME_SUCCESS, AUTH_LOGOUT, AUTH_LOGOUT_ALL_SUCCESS, LOAD_POLLS_HOME_FAIL } from "../constants/actionTypes";
-import uniqueArray from "../utils/uniquePollsArray";
+import uniqueArray from "../utils/uniqueIdArray";
 
 const initialState = { loading: false, polls: { home: [] } }
 
@@ -15,8 +15,9 @@ export default function (state = initialState, action) {
 
         case LOAD_POLLS_HOME_SUCCESS:
             if (Array.isArray(action.payload.data)) {
-                console.log("action.payload.refresh", action.payload.refresh)
-                let uniquePolls = action.payload.refresh ? uniqueArray([...action.payload.data, ...state.polls.home]) : uniqueArray([...state.polls.home, ...action.payload.data])
+                let uniquePolls = action.payload.refresh
+                    ? uniqueArray([...action.payload.data, ...state.polls.home])
+                    : uniqueArray([...state.polls.home, ...action.payload.data])
                 return { loading: false, polls: Object.assign(state.polls, { home: uniquePolls }) }
             }
             return state;

@@ -42,9 +42,13 @@ export const LOAD_POLLS_HOME_SUCCESS = "LOAD_POLLS_HOME_SUCCESS";
 export const LOAD_POLLS_HOME_FAIL = "LOAD_POLLS_HOME_FAIL";
 
 //container/Polls/*
-//reducer/reducer/polls.js
+//reducer/polls.js
 export const VOTE_FROM_HOME = "VOTE_FROM_HOME";
 export const VOTE_FROM_HOME_SUCCESS = "VOTE_FROM_HOME_SUCCESS";
 export const VOTE_FROM_HOME_FAIL = "VOTE_FROM_HOME_FAIL";
 export const VOTE_FROM_USER = "VOTE_FROM_USER";
 
+
+//reducer/other_users.js
+export const SAVE_USER_PROFILE = "SAVE_USER_PROFILE";
+export const CLEAR_USER_PROFILES = "CLEAR_USER_PROFILES";
