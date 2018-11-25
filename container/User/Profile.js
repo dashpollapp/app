@@ -4,6 +4,15 @@ import React from "react";
 import profileImage from "../../assets/img/dev/pp3.jpg"
 import mapImage from "../../assets/img/map.png"
 
+const mockUserObj = {
+    _id: "",
+    username: "",
+    fullname: "",
+    meta: {
+        pb: ""
+    }
+}
+
 class Profile extends React.Component {
     constructor(props) {
         super(props);
@@ -11,13 +20,14 @@ class Profile extends React.Component {
     }
     render() {
         const { screenProps } = this.props;
+        const user = (screenProps.userObj) ? screenProps.userObj : mockUserObj
         return (
             <ScrollView>
 
-                <Image style={s.pb} source={(screenProps.user.meta.pb) ? { uri: "https://api.dashpoll.net/pb/" + screenProps.user.meta.pb } : profileImage} />
+                <Image style={s.pb} source={(user.meta.pb) ? { uri: "https://api.dashpoll.net/pb/" + user.meta.pb } : profileImage} />
 
-                <Text style={s.fullname}>{screenProps.user.fullname}</Text>
-                <Text style={s.name}>@{screenProps.user.username}</Text>
+                <Text style={s.fullname}>{user.fullname}</Text>
+                <Text style={s.name}>@{user.username}</Text>
 
                 {/*<TouchableOpacity>
                     <View style={[s.followButton]}>

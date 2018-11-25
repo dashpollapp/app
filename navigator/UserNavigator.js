@@ -87,7 +87,7 @@ export default class HomeNavigator extends React.Component {
         const userId = navigation.getParam("userId", false);
         return (
             <View style={{ flex: 1, backgroundColor: "#fff" }}>
-                <NavbarTopBack title="Profile" navigation={this.props.navigation} />
+                <NavbarTopBack title={"Profile " + ((userObj) ? "> " + userObj.username : "")} navigation={this.props.navigation} />
                 <Navigator screenProps={{ userObj, userId, parentNavigation: navigation }} />
             </View>
         )
