@@ -23,3 +23,7 @@ export default class NavTopWithoutIcons extends Component {
         );
     }
 }
+
+NavTopWithoutIcons.propTypes = {
+    navigation: PropTypes.object,
+}
