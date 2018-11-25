@@ -10,10 +10,11 @@ import pbImg from "../../assets/img/pb.jpg";
 
 export default class NavTopWithoutIcons extends Component {
     render() {
+        const { navigation } = this.props;
         return (
             <View>
                 <View style={nt.box}>
-                    <TouchableOpacity onPress={() => this.props.navigation.push(screenNames.SEARCH)} style={nt.mainItem}>
+                    <TouchableOpacity onPress={() => (navigation) ? this.props.navigation.push(screenNames.SEARCH) : null} style={nt.mainItem}>
                         <Image style={nt.mainItemLogoImg} source={logoImg} />
                     </TouchableOpacity>
                 </View>
@@ -21,8 +22,4 @@ export default class NavTopWithoutIcons extends Component {
             </View>
         );
     }
-}
-
-NavTopWithoutIcons.propTypes = {
-    navigation: PropTypes.object.isRequired,
 }
