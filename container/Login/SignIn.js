@@ -51,7 +51,7 @@ class Login extends React.Component {
 
                 
                 {/*=Navbar top*/}
-                <NavTopWithoutIcons/>
+                <NavTopWithoutIcons navigation={this.props.navigation} />
 
 
                 <View style={css.body}>
