@@ -65,7 +65,7 @@ export default StyleSheet.create({
         minHeight: 74,
     },
     mainItem: {
-        flex: 1,
+        
     },
     mainItemLogoImg: {
         height: 30,
