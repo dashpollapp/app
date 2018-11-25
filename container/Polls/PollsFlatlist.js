@@ -19,6 +19,17 @@ class PollsFlatlist extends Component {
 
     constructor(props) {
         super(props);
+
+    }
+
+    state = {
+        flatListRefreshing: false
+    }
+
+    flatListRefresh = () => {
+        this.setState({ flatListRefreshing: true });
+        this.props.load_home_polls(0, true);
+        setTimeout(() => this.setState({ flatListRefreshing: false }), 500)
     }
 
     onEndReached = () => {
@@ -26,7 +37,6 @@ class PollsFlatlist extends Component {
             this.props.load_home_polls(this.props.polls.polls.home.length)
         } else { console.log("NULLLLLL"); }
     }
-
 
     render() {
         return (
@@ -37,7 +47,11 @@ class PollsFlatlist extends Component {
                     extraData={this.props.polls} //wird nur wegen loading geändert -> muss das noch richtig machen
                     ListEmptyComponent={<Text style={s.pTitle}>Noch keine Polls.</Text>}
                     keyExtractor={(item) => item._id}
-                    //onEndReached={this.onEndReached}
+                    refreshing={this.state.flatListRefreshing}
+                    onRefresh={this.flatListRefresh}
+                    onEndReachedThreshold={0.2}
+                    onEndReached={this.onEndReached}
+
                     renderItem={({ item, index }) => {
                         return (
                             <View>
@@ -94,8 +108,8 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
     return {
-        load_home_polls: skip => {
-            dispatch(load_home_polls(skip))
+        load_home_polls: (skip, refres) => {
+            dispatch(load_home_polls(skip, refres))
         },
     }
 }

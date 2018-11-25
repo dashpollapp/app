@@ -20,7 +20,7 @@ class Polls extends Component {
     render() {
         console.log("RERENDER IN POLLS.JS")
         return (
-            <ScrollView style={style.box}>
+            <View style={style.box}>
 
                 <View style={style.boxHeader}>
                     <TouchableOpacity>
@@ -33,8 +33,8 @@ class Polls extends Component {
                 </View>
 
 
-                <PollsFlatlist onEndReached={() => { console.log("END") }} vote={this.props.vote} navigation={this.props.navigation} />
-            </ScrollView>
+                <PollsFlatlist vote={this.props.vote} navigation={this.props.navigation} />
+            </View>
         );
     }
 }
