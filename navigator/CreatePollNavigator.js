@@ -52,7 +52,7 @@ class CreatePollNavigator extends React.Component {
             <View style={{ flex: 1 }}>
                 <NavbarTopBack title="Beitrag erstellen" navigation={this.props.navigation} />
                 {(this.props.haspollcreated) ?
-                    <CreateAfter poll={this.props.haspollcreated} navigation={this.props.navigation} />
+                    <CreateAfter iliUrl={this.props.iliUrl} navigation={this.props.navigation} />
                     :
                     <View style={{ flex: 1 }}>
                         <Navigator screenProps={this.changeValues.bind(this)} navigation={this.props.navigation} />
@@ -68,6 +68,7 @@ CreatePollNavigator.propTypes = {
     navigation: PropTypes.object.isRequired,
     create_poll: PropTypes.func.isRequired,
     haspollcreated: PropTypes.oneOfType([PropTypes.bool, PropTypes.object]).isRequired,
+    iliUrl: PropTypes.string,
     polltype: PropTypes.number,
     user: PropTypes.object.isRequired
 }
@@ -75,6 +76,7 @@ CreatePollNavigator.propTypes = {
 const mapStateToProps = state => {
     return {
         haspollcreated: state.create_poll.poll,
+        iliUrl: state.create_poll.iliUrl,
         polltype: state.create_poll.polltype,
         user: state.user.user
     }
