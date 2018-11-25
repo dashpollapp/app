@@ -2,6 +2,12 @@ import { StyleSheet, Platform,Dimensions } from "react-native";
 
 export default StyleSheet.create({
 
+    //URL in Beschreibung
+    url: {
+        color: "#0984e3",
+    },
+
+
     image: {
         height: 200, //Die höhe muss berechnet werden 
 
@@ -32,7 +38,6 @@ export default StyleSheet.create({
         zIndex: 0,
         flex: 1,
     },
-
 
 
 

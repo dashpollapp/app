@@ -75,7 +75,9 @@ class PollsFlatlist extends Component {
                                         <Text style={s.pTitle}>{item.heading}</Text>
                                     </View>
 
-                                    {item.text ? <Text style={s.description}>{item.text}</Text> : null}
+                                    {item.text ? <Text style={s.description}>{item.text} <Text style={s.url}>https://ichbineinlink.de</Text></Text> : null}
+                                    {/* Konnte kein TouchableOpacity drummachen :( Im Text darf keine "View" vorkommen: ggf. <Text>Ein Link:  </Text><link></link><Text> gg</Text> */}
+
 
                                     {/* Media */}
                                     {item.media ? <LoadMedia poll={item} /> : null}
