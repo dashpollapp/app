@@ -13,7 +13,7 @@ export default function (poll, user) {
                 ...poll
             }
         }).then(res => {
-            dispatch({ type: CREATE_POLL_SUCCESS, payload: { user, poll: res.data.poll, iliUrl: res.data.iliUrl } })
+            dispatch({ type: CREATE_POLL_SUCCESS, payload: { user, poll: {...res.data.poll, iliUrl: res.data.iliUrl}} })
         }).catch(err => console.log(err) & dispatch({ type: CREATE_POLL_FAIL, payload: { err } }));
 
 
