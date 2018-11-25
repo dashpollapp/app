@@ -19,7 +19,10 @@ import DashchatImg from "../../assets/img/media/spotify.png"; // ACHTUNG ERSMAL 
 
 class CreateAfter extends React.Component {
 
+
     render() {
+
+        const { iliUrl = "" } = this.props;
         return (
             <View style={{ flex: 1, backgroundColor: "#fff", padding: 8, }}>
 
@@ -29,9 +32,9 @@ class CreateAfter extends React.Component {
                     <Text style={ca.h2}>Teile ihn doch mit Freunden.</Text>
 
 
-                    <TouchableOpacity onPress={() => Clipboard.setString('https://ili.pw/' + this.props.iliUrl)}>
+                    <TouchableOpacity onPress={() => Clipboard.setString('https://ili.pw/' + iliUrl)}>
                         <View style={ca.copyBox}>
-                            <Text style={ca.postURL}>ili.pw/{this.props.iliUrl}</Text>
+                            <Text style={ca.postURL}>ili.pw/{iliUrl}</Text>
                             <Image style={ca.copyImg} source={CopyImg} />
                         </View>
                     </TouchableOpacity>

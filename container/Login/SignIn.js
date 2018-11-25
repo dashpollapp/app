@@ -49,9 +49,9 @@ class Login extends React.Component {
             <View style={css.out}>
                 <View style={css.navTopHelp} />
 
-                
+
                 {/*=Navbar top*/}
-                <NavTopWithoutIcons navigation={this.props.navigation} />
+                <NavTopWithoutIcons />
 
 
                 <View style={css.body}>
