@@ -37,7 +37,7 @@ class PollsFlatlist extends Component {
                     extraData={this.props.polls} //wird nur wegen loading geändert -> muss das noch richtig machen
                     ListEmptyComponent={<Text style={s.pTitle}>Noch keine Polls.</Text>}
                     keyExtractor={(item) => item._id}
-                    onEndReached={this.onEndReached}
+                    //onEndReached={this.onEndReached}
                     renderItem={({ item, index }) => {
                         return (
                             <View>
