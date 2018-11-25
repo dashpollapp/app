@@ -1,5 +1,6 @@
 import React from "react";
 import { View, TouchableOpacity, Image, Text, StyleSheet } from "react-native";
+import PropTypes from "prop-types";
 
 //Like
 import LikeImg from "../../../assets/img/post/polltypes/like/like_off.png"
@@ -19,6 +20,10 @@ export default class LikeType extends React.Component {
             </TouchableOpacity>
         );
     }
+}
+
+LikeType.propTypes = {
+    poll: PropTypes.object.isRequired
 }
 
 const like = StyleSheet.create({

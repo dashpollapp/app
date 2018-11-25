@@ -73,7 +73,8 @@ class Security extends React.Component {
 }
 
 Security.propTypes = {
-    auth_logout: PropTypes.func.isRequired
+    auth_logout: PropTypes.func.isRequired,
+    auth_logout_all: PropTypes.func.isRequired
 }
 
 

@@ -27,4 +27,5 @@ export default class NavbarTopBack extends Component {
 
 NavbarTopBack.propTypes = {
     navigation: PropTypes.object.isRequired,
+    title: PropTypes.string
 }

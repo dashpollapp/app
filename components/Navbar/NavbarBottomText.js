@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-import { View, TouchableOpacity, Image,Text } from "react-native";
+import { View, TouchableOpacity, Image, Text } from "react-native";
+import PropTypes from "prop-types";
 
 import nb from "./NavbarBottomStyle";
 
@@ -16,6 +17,11 @@ class NavbarBottom extends Component {
             </View>
         );
     }
+}
+
+NavbarBottom.propTypes = {
+    onPress: PropTypes.func,
+    text: PropTypes.string
 }
 
 export default NavbarBottom;

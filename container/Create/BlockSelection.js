@@ -102,6 +102,7 @@ class Types extends React.Component {
 }
 
 Types.propTypes = {
+    navigation: PropTypes.object.isRequired,
     create_poll_change_polltype: PropTypes.func.isRequired
 }
 

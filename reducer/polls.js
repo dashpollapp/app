@@ -1,18 +1,6 @@
 import { VOTE_FROM_HOME, VOTE_FROM_HOME_SUCCESS, VOTE_FROM_HOME_FAIL, CREATE_POLL_SUCCESS, LOAD_POLLS_HOME, LOAD_POLLS_HOME_SUCCESS, LOAD_POLLS_HOME_FAIL } from "../constants/actionTypes";
 import uniqueArray from "../utils/uniqueArray";
 
-const mockVotesObj = {
-    10: {
-        totalVotes: 0,
-        hasVoted: false
-    },
-    11: {
-        likes: 0,
-        dislikes: 0,
-        hasVoted: false
-    }
-}
-
 export default function (state = { loading: false, polls: { home: [] } }, action) {
     switch (action.type) {
 

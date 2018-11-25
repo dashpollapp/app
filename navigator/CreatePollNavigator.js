@@ -65,7 +65,11 @@ class CreatePollNavigator extends React.Component {
 }
 
 CreatePollNavigator.propTypes = {
-    navigation: PropTypes.object.isRequired
+    navigation: PropTypes.object.isRequired,
+    create_poll: PropTypes.func.isRequired,
+    haspollcreated: PropTypes.oneOfType([PropTypes.bool, PropTypes.object]).isRequired,
+    polltype: PropTypes.number,
+    user: PropTypes.object.isRequired
 }
 
 const mapStateToProps = state => {

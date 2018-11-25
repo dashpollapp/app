@@ -1,5 +1,6 @@
 import { View, TouchableOpacity, Image, Text, StyleSheet } from "react-native";
 import React from "react";
+import PropTypes from "prop-types";
 
 //Like
 import LikeImg from "../../../assets/img/post/polltypes/like/like_off.png"
@@ -19,6 +20,10 @@ export default class ThumbType extends React.Component {
             </View>
         );
     }
+}
+
+ThumbType.propTypes = {
+    poll: PropTypes.object.isRequired
 }
 
 const like = StyleSheet.create({

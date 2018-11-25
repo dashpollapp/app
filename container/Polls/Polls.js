@@ -42,7 +42,9 @@ class Polls extends Component {
 
 Polls.propTypes = {
     screenProps: PropTypes.object.isRequired,
-    homePolls: PropTypes.array.isRequired
+    homePolls: PropTypes.array.isRequired,
+    vote: PropTypes.func.isRequired,
+    load_home_polls: PropTypes.func.isRequired
 }
 
 const mapStateToProps = state => {

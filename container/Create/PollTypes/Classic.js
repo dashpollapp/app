@@ -1,8 +1,8 @@
 import React from 'react';
-import { TouchableOpacity, Text, View, TextInput, StyleSheet, Platform,Dimensions  } from 'react-native';
+import { TouchableOpacity, Text, View, TextInput, StyleSheet, Platform, Dimensions } from 'react-native';
 import { LinearGradient } from 'expo';
 
-import {connect} from 'react-redux';
+import { connect } from 'react-redux';
 
 import { pc, css } from '../Style';
 import s from "../../Polls/PollStyle";
@@ -12,7 +12,7 @@ class ClassicType extends React.Component {
     render() {
         return (
             <View style={css.out}>
-            
+
                 <View style={pc.polltype}>
                     <Text style={type.title}>Klassische Umfrage: <Text style={pc.polltypeCat}>(Auswahl)</Text></Text>
                     <Text style={type.subtitle}>Verschiede Antwortmöglichkeiten als Text. Benutzer können sich für 1 Antwortmöglichkeit entscheiden.</Text>
@@ -22,11 +22,11 @@ class ClassicType extends React.Component {
                     //Sinlose Returns sollen Abgefangen werden!!!
                     multiline
                     underlineColorAndroid={'transparent'}
-                    style={[{height: 20, marginBottom: 0}, s.pollAnswerTitle, ]}
+                    style={[{ height: 20, marginBottom: 0 }, s.pollAnswerTitle,]}
                     placeholder={"Antwort 1"}
                     placeholderTextColor={"#111"}
-                ></TextInput>
-               <View style={s.pt1Bar}>
+                />
+                <View style={s.pt1Bar}>
                     <LinearGradient
                         style={[s.pt1BarInner, { width: "75%", height: 16, }]}
                         colors={['#ae4768', '#3386cd']}
@@ -39,10 +39,10 @@ class ClassicType extends React.Component {
                 <TextInput
                     multiline
                     underlineColorAndroid={'transparent'}
-                    style={[s.pollAnswerTitle, {height: 20, }]}
+                    style={[s.pollAnswerTitle, { height: 20, }]}
                     placeholder={"Antwort 2"}
                     placeholderTextColor={"#111"}
-                ></TextInput>
+                />
                 <View style={[s.pt1Bar]}>
                     <LinearGradient
                         style={[s.pt1BarInner, { width: "75%", height: 16, }]}
@@ -62,7 +62,7 @@ class ClassicType extends React.Component {
     }
 }
 
-export default connect()(ClassicType);
+export default ClassicType;
 
 export var type = StyleSheet.create({
     addAnswer: {

@@ -1,6 +1,7 @@
 import React from 'react';
 import { TouchableOpacity, Text, View } from 'react-native';
 import { LinearGradient } from 'expo';
+import PropTypes from "prop-types";
 
 import s from "../../Polls/PollStyle";
 
@@ -61,4 +62,8 @@ export default class ClassicType extends React.Component {
 
         return (answers);
     }
+}
+
+ClassicType.propTypes = {
+    poll: PropTypes.object.isRequired
 }

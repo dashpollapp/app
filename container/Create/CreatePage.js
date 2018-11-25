@@ -92,6 +92,7 @@ class CreatePage extends React.Component {
 }
 
 CreatePage.propTypes = {
+    navigation: PropTypes.object.isRequired,
     selectedPollType: PropTypes.number
 }
 

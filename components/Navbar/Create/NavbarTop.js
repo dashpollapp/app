@@ -9,7 +9,7 @@ import nt from "../NavbarTopStyle";
 import PlusImg from "../../../assets/img/navbar/top/plus.png";
 import BackImg from "../../../assets/img/navbar/top/back.png";
 
-export default class NavbarTop extends React.Component {
+class NavbarTop extends React.Component {
     constructor(props) {
         super(props);
     }
@@ -45,6 +45,12 @@ export default class NavbarTop extends React.Component {
         );
     }
 }
+
+NavbarTop.propTypes = {
+    navigation: PropTypes.object.isRequired
+}
+
+export default NavbarTop;
 
 /*
 import React from "react";

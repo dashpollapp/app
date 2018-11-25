@@ -82,7 +82,8 @@ class CreateAfter extends React.Component {
 }
 
 CreateAfter.propTypes = {
-    navigation: PropTypes.object.isRequired
+    navigation: PropTypes.object.isRequired,
+    dispatch: PropTypes.func.isRequired
 }
 
 export default connect()(CreateAfter);
