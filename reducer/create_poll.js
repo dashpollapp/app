@@ -7,7 +7,7 @@ export default function (state = initialState, action) {
         case CREATE_POLL:
             return { loading: true, poll: false };
         case CREATE_POLL_SUCCESS:
-            return { loading: false, poll: action.payload.poll };
+            return { loading: false, poll: action.payload.poll, iliUrl: action.payload.iliUrl };
 
         case CREATE_POLL_FAIL:
             return {

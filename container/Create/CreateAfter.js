@@ -1,5 +1,5 @@
 import React from "react";
-import { TouchableOpacity, Text, View, ScrollView, Image, } from "react-native";
+import { TouchableOpacity, Text, View, ScrollView, Image, Clipboard } from "react-native";
 import { ca } from "./CreateAfterStyle"; //Create After Style
 import { connect } from "react-redux";
 
@@ -29,9 +29,9 @@ class CreateAfter extends React.Component {
                     <Text style={ca.h2}>Teile ihn doch mit Freunden.</Text>
 
 
-                    <TouchableOpacity>
+                    <TouchableOpacity onPress={() => Clipboard.setString('https://ili.pw/' + this.props.iliUrl)}>
                         <View style={ca.copyBox}>
-                            <Text style={ca.postURL}>ili.pw/{this.props.poll.heading}</Text>
+                            <Text style={ca.postURL}>ili.pw/{this.props.iliUrl}</Text>
                             <Image style={ca.copyImg} source={CopyImg} />
                         </View>
                     </TouchableOpacity>
