@@ -1,4 +1,4 @@
-import { CREATE_POLL, CREATE_POLL_SUCCESS, CREATE_POLL_FAIL, CREATE_POLL_CHANGE_POLLTYPE } from "../constants/actionTypes";
+import { CREATE_POLL, CREATE_POLL_SUCCESS, CREATE_POLL_FAIL, CREATE_POLL_CHANGE_POLLTYPE, CREATE_POLL_INITIALSTATE } from "../constants/actionTypes";
 
 export default function (state = { loading: false, poll: false }, action) {
     switch (action.type) {
@@ -14,6 +14,9 @@ export default function (state = { loading: false, poll: false }, action) {
                 loading: false,
                 error: 'Error while creating poll',
             };
+
+        case CREATE_POLL_INITIALSTATE:
+            return { loading: false, poll: false }
 
         case CREATE_POLL_CHANGE_POLLTYPE:
             return { ...state, polltype: action.payload }
