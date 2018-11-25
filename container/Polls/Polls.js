@@ -22,6 +22,7 @@ class Polls extends Component {
         return (
             <View style={style.box}>
 
+                {/* Das soll eigentlich in mit in die Flatlist :( */}
                 <View style={style.boxHeader}>
                     <TouchableOpacity>
                         <Text style={style.h1}>Beiträge:</Text>
