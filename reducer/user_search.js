@@ -1,8 +1,6 @@
-import { USER_SEARCH, USER_SEARCH_SUCCESS, USER_SEARCH_FAIL, AUTH_LOGIN_SUCCESS } from "../constants/actionTypes";
+import { USER_SEARCH, USER_SEARCH_SUCCESS, USER_SEARCH_FAIL, AUTH_LOGIN_SUCCESS, AUTH_LOGOUT_ALL_SUCCESS } from "../constants/actionTypes";
 
-const initialState = {
-    users: []
-}
+const initialState = { users: [] }
 
 export default function (state = initialState, action) {
     switch (action.type) {
@@ -17,7 +15,8 @@ export default function (state = initialState, action) {
                 loading: false,
                 error: 'Error while fetching users',
             };
-        case AUTH_LOGIN_SUCCESS:
+        case AUTH_LOGOUT:
+        case AUTH_LOGOUT_ALL_SUCCESS:
             return initialState;
         default:
             return state;

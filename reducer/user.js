@@ -1,4 +1,4 @@
-import { 
+import {
     SET_CURRENT_USER,
     AUTH_LOGOUT,
     AUTH_LOGOUT_ALL,

@@ -1,7 +1,9 @@
-import { VOTE_FROM_HOME, VOTE_FROM_HOME_SUCCESS, VOTE_FROM_HOME_FAIL, CREATE_POLL_SUCCESS, LOAD_POLLS_HOME, LOAD_POLLS_HOME_SUCCESS, LOAD_POLLS_HOME_FAIL } from "../constants/actionTypes";
+import { VOTE_FROM_HOME, VOTE_FROM_HOME_SUCCESS, VOTE_FROM_HOME_FAIL, CREATE_POLL_SUCCESS, LOAD_POLLS_HOME, LOAD_POLLS_HOME_SUCCESS, AUTH_LOGOUT, AUTH_LOGOUT_ALL_SUCCESS, LOAD_POLLS_HOME_FAIL } from "../constants/actionTypes";
 import uniqueArray from "../utils/uniquePollsArray";
 
-export default function (state = { loading: false, polls: { home: [] } }, action) {
+const initialState = { loading: false, polls: { home: [] } }
+
+export default function (state = initialState, action) {
     switch (action.type) {
 
         case CREATE_POLL_SUCCESS:
@@ -112,6 +114,10 @@ export default function (state = { loading: false, polls: { home: [] } }, action
 
         case VOTE_FROM_HOME_FAIL:
             return { ...state, loading: false }
+
+        case AUTH_LOGOUT:
+        case AUTH_LOGOUT_ALL_SUCCESS:
+            return initialState;
 
         default:
             return state;
