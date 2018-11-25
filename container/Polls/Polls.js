@@ -33,7 +33,7 @@ class Polls extends Component {
                 </View>
 
 
-                <PollsFlatlist vote={this.props.vote} navigation={this.props.navigation} />
+                <PollsFlatlist onEndReached={() => { console.log("END") }} vote={this.props.vote} navigation={this.props.navigation} />
             </ScrollView>
         );
     }

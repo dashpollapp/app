@@ -14,11 +14,17 @@ import PbImg from "../../assets/img/pb.png";
 
 import PollTypes from "./PollTypes";
 import LoadMedia from './LoadMedia';
-
+import { load_home_polls, vote } from "../../actions";
 class PollsFlatlist extends Component {
 
     constructor(props) {
         super(props);
+    }
+
+    onEndReached = () => {
+        if (this.props.polls.polls.home.length > 0 && !this.props.isFetchingPolls) {
+            this.props.load_home_polls(this.props.polls.polls.home.length)
+        } else { console.log("NULLLLLL"); }
     }
 
 
@@ -31,6 +37,7 @@ class PollsFlatlist extends Component {
                     extraData={this.props.polls} //wird nur wegen loading geändert -> muss das noch richtig machen
                     ListEmptyComponent={<Text style={s.pTitle}>Noch keine Polls.</Text>}
                     keyExtractor={(item) => item._id}
+                    onEndReached={this.onEndReached}
                     renderItem={({ item, index }) => {
                         return (
                             <View>
@@ -78,10 +85,19 @@ PollsFlatlist.propTypes = {
     vote: PropTypes.func.isRequired
 }
 
-const mapStatetp = state => {
+const mapStateToProps = state => {
     return {
-        polls: state.polls
+        polls: state.polls,
+        isFetchingPolls: state.polls.loading
     }
 }
 
-export default connect(mapStatetp)(PollsFlatlist);
+const mapDispatchToProps = dispatch => {
+    return {
+        load_home_polls: skip => {
+            dispatch(load_home_polls(skip))
+        },
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(PollsFlatlist);

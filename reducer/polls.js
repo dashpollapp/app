@@ -12,7 +12,7 @@ export default function (state = { loading: false, polls: { home: [] } }, action
             return { ...state, loading: true }
 
         case LOAD_POLLS_HOME_SUCCESS:
-            let uniquePolls = uniqueArray([...action.payload.data, ...state.polls.home])
+            let uniquePolls = uniqueArray([...state.polls.home, ...action.payload.data])
             return { loading: false, polls: { ...state.polls, home: uniquePolls } }
 
         case LOAD_POLLS_HOME_FAIL:

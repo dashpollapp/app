@@ -11,7 +11,7 @@ export default function (initiator, poll, choice) {
     return dispatch => {
 
         //maxVotes  check -> erstmal so später FIFO
-        if (poll.polltype === 20 && Array.isArray(poll.vote.hasVoted) && !poll.vote.hasVoted.includes(choice) && poll.maxVotes <= poll.vote.hasVoted.length) {
+        if (poll.polltype === 20 && poll.maxVotes !== 1 && Array.isArray(poll.vote.hasVoted) && !poll.vote.hasVoted.includes(choice) && poll.maxVotes <= poll.vote.hasVoted.length) {
             console.log("RETURN");
             return;
         };
