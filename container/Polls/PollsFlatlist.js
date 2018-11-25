@@ -64,7 +64,7 @@ class PollsFlatlist extends Component {
                                                 <Text style={s.pSubtitle}>{item.author.username} {formatTime(item.createdAt)}</Text>
                                             </View>
                                             :
-                                            <TouchableOpacity onPress={() => this.props.navigation.push(screenNames.USER, { user: item.author })}>
+                                            <TouchableOpacity onPress={() => this.props.navigation.push(screenNames.USER, { userObj: item.author })}>
                                                 <View style={s.authorBox}>
                                                     <Image style={s.pPB} source={(item.author.meta.pb) ? { uri: "https://api.dashpoll.net/pb/" + item.author.meta.pb } : PbImg} />
                                                     <Text style={s.pSubtitle}>{item.author.username} {formatTime(item.createdAt)}</Text>

@@ -83,11 +83,12 @@ export default class HomeNavigator extends React.Component {
 
     render() {
         const { navigation } = this.props;
-        const user = navigation.getParam("user");
+        const userObj = navigation.getParam("userObj", false);
+        const userId = navigation.getParam("userId", false);
         return (
             <View style={{ flex: 1, backgroundColor: "#fff" }}>
                 <NavbarTopBack title="Profile" navigation={this.props.navigation} />
-                <Navigator screenProps={{ user, parentNavigation: navigation }} />
+                <Navigator screenProps={{ userObj, userId, parentNavigation: navigation }} />
             </View>
         )
     }
