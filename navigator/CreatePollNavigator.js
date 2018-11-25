@@ -52,7 +52,7 @@ class CreatePollNavigator extends React.Component {
             <View style={{ flex: 1 }}>
                 <NavbarTopBack title="Beitrag erstellen" navigation={this.props.navigation} />
                 {(this.props.haspollcreated) ?
-                    <CreateAfter navigation={this.props.navigation} />
+                    <CreateAfter poll={this.props.haspollcreated} navigation={this.props.navigation} />
                     :
                     <View style={{ flex: 1 }}>
                         <Navigator screenProps={this.changeValues.bind(this)} navigation={this.props.navigation} />

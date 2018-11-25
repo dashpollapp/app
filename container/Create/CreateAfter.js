@@ -31,7 +31,7 @@ class CreateAfter extends React.Component {
 
                     <TouchableOpacity>
                         <View style={ca.copyBox}>
-                            <Text style={ca.postURL}>ili.pw/dpGt8Fj</Text>
+                            <Text style={ca.postURL}>ili.pw/{this.props.poll.heading}</Text>
                             <Image style={ca.copyImg} source={CopyImg} />
                         </View>
                     </TouchableOpacity>
