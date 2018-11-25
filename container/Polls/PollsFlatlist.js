@@ -60,13 +60,13 @@ class PollsFlatlist extends Component {
 
                                         {this.props.profile ?
                                             <View style={s.authorBox}>
-                                                <Image style={s.pPB} source={PbImg} />
+                                                <Image style={s.pPB} source={(item.author.meta.pb) ? { uri: "https://api.dashpoll.net/pb/" + item.author.meta.pb } : PbImg} />
                                                 <Text style={s.pSubtitle}>{item.author.username} {formatTime(item.createdAt)}</Text>
                                             </View>
                                             :
-                                            <TouchableOpacity onPress={() => this.props.navigation.push(screenNames.USER)}>
+                                            <TouchableOpacity onPress={() => this.props.navigation.push(screenNames.USER, { user: item.author })}>
                                                 <View style={s.authorBox}>
-                                                    <Image style={s.pPB} source={PbImg} />
+                                                    <Image style={s.pPB} source={(item.author.meta.pb) ? { uri: "https://api.dashpoll.net/pb/" + item.author.meta.pb } : PbImg} />
                                                     <Text style={s.pSubtitle}>{item.author.username} {formatTime(item.createdAt)}</Text>
                                                 </View>
                                             </TouchableOpacity>
@@ -75,9 +75,7 @@ class PollsFlatlist extends Component {
                                         <Text style={s.pTitle}>{item.heading}</Text>
                                     </View>
 
-                                    {item.text ? <Text style={s.description}>{item.text} <Text style={s.url}>https://ichbineinlink.de</Text></Text> : null}
-                                    {/* Konnte kein TouchableOpacity drummachen :( Im Text darf keine "View" vorkommen: ggf. <Text>Ein Link:  </Text><link></link><Text> gg</Text> */}
-
+                                    {item.text ? <Text style={s.description}>{item.text}</Text> : null}
 
                                     {/* Media */}
                                     {item.media ? <LoadMedia poll={item} /> : null}
@@ -98,7 +96,7 @@ class PollsFlatlist extends Component {
 
 PollsFlatlist.propTypes = {
     polls: PropTypes.object.isRequired,
-    vote: PropTypes.func.isRequired
+    vote: PropTypes.func
 }
 
 const mapStateToProps = state => {

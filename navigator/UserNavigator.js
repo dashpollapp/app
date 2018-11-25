@@ -73,18 +73,21 @@ const Navigator = createMaterialTopTabNavigator(
             }
         }
     }
-);
+)
 
 export default class HomeNavigator extends React.Component {
 
     //Wird gebraucht, um den Focus auf SettingsNavigator zu stellen, falls man in SETTINGS ist (this.props.navigation)
     static router = Navigator.router;
 
+
     render() {
+        const { navigation } = this.props;
+        const user = navigation.getParam("user");
         return (
             <View style={{ flex: 1, backgroundColor: "#fff" }}>
                 <NavbarTopBack title="Profile" navigation={this.props.navigation} />
-                <Navigator navigation={this.props.navigation} screenProps={{ parentNavigation: this.props.navigation }} />
+                <Navigator screenProps={{ user, parentNavigation: navigation }} />
             </View>
         )
     }

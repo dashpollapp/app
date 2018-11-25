@@ -1,5 +1,5 @@
-import { ScrollView,View, Text, Image, Dimensions, StyleSheet,TouchableOpacity } from "react-native";
-import React from "react"; 
+import { ScrollView, View, Text, Image, Dimensions, StyleSheet, TouchableOpacity } from "react-native";
+import React from "react";
 
 import profileImage from "../../assets/img/dev/pp3.jpg"
 import mapImage from "../../assets/img/map.png"
@@ -10,13 +10,14 @@ class Profile extends React.Component {
         this.state = {};
     }
     render() {
+        const { screenProps } = this.props;
         return (
             <ScrollView>
 
-                <Image style={s.pb} source={profileImage} />
+                <Image style={s.pb} source={(screenProps.user.meta.pb) ? { uri: "https://api.dashpoll.net/pb/" + screenProps.user.meta.pb } : profileImage} />
 
-                <Text style={s.fullname}>Konrad Mayer</Text>
-                <Text style={s.name}>@koni</Text>
+                <Text style={s.fullname}>{screenProps.user.fullname}</Text>
+                <Text style={s.name}>@{screenProps.user.username}</Text>
 
                 {/*<TouchableOpacity>
                     <View style={[s.followButton]}>
@@ -35,7 +36,7 @@ class Profile extends React.Component {
                         <Text style={[s.followConterText]}>Folgt dir & 41</Text>
                     </View>
                 </View>
-               
+
                 <Image style={s.map} source={mapImage} />
 
             </ScrollView>
@@ -74,7 +75,7 @@ export var s = StyleSheet.create({
         marginHorizontal: 52,
     },
 
- 
+
 
     followButtonText_on: {
         textAlign: "center",
@@ -90,7 +91,7 @@ export var s = StyleSheet.create({
         marginTop: 32,
     },
 
-    
+
 
     //Wenn man nicht folgt
     followButtonText: {
@@ -130,7 +131,7 @@ export var s = StyleSheet.create({
     pb: {
         width: PBSize,
         height: PBSize,
-        borderRadius: PBSize  / 2 - 32,
+        borderRadius: PBSize / 2 - 32,
         margin: PBMargin,
         marginBottom: PBMargin / 2,
     }
