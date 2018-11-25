@@ -35,10 +35,14 @@ export const CREATE_POLL_SUCCESS = "CREATE_POLL_SUCCESS";
 export const CREATE_POLL_FAIL = "CREATE_POLL_FAIL";
 export const CREATE_POLL_INITIALSTATE = "CREATE_POLL_INITIALSTATE";
 
+//container/Polls/*
+//reducer/reducer/polls.js
 export const LOAD_POLLS_HOME = "LOAD_POLLS_HOME";
 export const LOAD_POLLS_HOME_SUCCESS = "LOAD_POLLS_HOME_SUCCESS";
 export const LOAD_POLLS_HOME_FAIL = "LOAD_POLLS_HOME_FAIL";
 
+//container/Polls/*
+//reducer/reducer/polls.js
 export const VOTE_FROM_HOME = "VOTE_FROM_HOME";
 export const VOTE_FROM_HOME_SUCCESS = "VOTE_FROM_HOME_SUCCESS";
 export const VOTE_FROM_HOME_FAIL = "VOTE_FROM_HOME_FAIL";
