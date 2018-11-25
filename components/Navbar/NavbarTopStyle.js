@@ -53,7 +53,6 @@ export default StyleSheet.create({
         zIndex: 1000,
         maxHeight: 52 + 24,
         backgroundColor: "#fff",
-
         flex: 1,
         padding: 8,
         paddingLeft: 18,
@@ -62,18 +61,15 @@ export default StyleSheet.create({
         alignItems: "center",
         borderBottomWidth: 1,
         borderColor: "#d8d8d8", //fff + rgba000,0.05 = #f2f2f2
-
+        width: "100%",
         minHeight: 74,
     },
     mainItem: {
-        display: "flex",
-        flexDirection: "row",
-        alignContent: "center",
-        justifyContent: "center",
+        flex: 1,
     },
     mainItemLogoImg: {
         height: 30,
-        width: 90
+        width: 90,
     },
     mainItemPbImg: {
         height: 36,

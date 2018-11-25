@@ -8,6 +8,8 @@ import { user_search, auth_login } from "../../actions";
 import { login, pc, css } from "./SignInStyle";
 import * as screenNames from "../../constants/screenNames";
 
+import NavTopWithoutIcons from "../../components/Navbar/NavTopWithoutIcons"
+
 //Images
 import pwShow from "../../assets/img/login/PWshow.png";
 import pwHide from "../../assets/img/login/PWhide.png";
@@ -47,11 +49,15 @@ class Login extends React.Component {
             <View style={css.out}>
                 <View style={css.navTopHelp} />
 
+                
+                {/*=Navbar top*/}
+                <NavTopWithoutIcons/>
+
+
                 <View style={css.body}>
                     <StatusBar hidden={false} style={[{ backgroundColor: "#ffffff" }]} barStyle="dark-content" />
-                    <KeyboardAvoidingView behavior="padding">
+                    <KeyboardAvoidingView behavior="position" keyboardVerticalOffset="-420">
                         <View hidden={true} style={login.body}>
-                            <View style={css.navTopPush} />
 
                             <Text style={login.Text}>Suche deinen Account</Text>
                             <TextInput
@@ -159,20 +165,6 @@ class Login extends React.Component {
                             <View style={css.navTopPush} />
                         </View>
                     </KeyboardAvoidingView>
-
-                    {/*=Navbar top*/}
-                    {/* linear-Gradient border radius bug:   colors={['#e8f5f7', '#edf7f1']} start={[0, 1]} end={[1, 1]}*/}
-                    <LinearGradient
-                        style={css.navTop}
-                        colors={["rgba(255, 255, 255, 0.98)", "rgba(255, 255, 255, 0.98)"]}
-                        start={[0, 1]}
-                        end={[1, 1]}
-                    >
-                        <View style={css.navTopCenter}>
-                            {/*<Text style={css.windowTitle}>Umrafge erstellen</Text>*/}
-                            <Image style={css.logo} source={require("../../assets/img/navbar/top/logo2.png")} />
-                        </View>
-                    </LinearGradient>
 
                     {/*=Navbar unten*/}
                     <View style={css.bottom}>
