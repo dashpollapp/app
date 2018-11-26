@@ -1,4 +1,12 @@
-import { CREATE_POLL, CREATE_POLL_SUCCESS, CREATE_POLL_FAIL, CREATE_POLL_CHANGE_POLLTYPE, CREATE_POLL_INITIALSTATE, AUTH_LOGOUT, AUTH_LOGOUT_ALL_SUCCESS } from "../constants/actionTypes";
+import { 
+    CREATE_POLL,
+    CREATE_POLL_SUCCESS,
+    CREATE_POLL_FAIL,
+    CREATE_POLL_CHANGE_POLLTYPE,
+    CREATE_POLL_INITIALSTATE,
+    AUTH_LOGOUT,
+    AUTH_LOGOUT_ALL_SUCCESS
+} from "../constants/actionTypes";
 
 const initialState = { loading: false, poll: false }
 

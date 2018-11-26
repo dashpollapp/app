@@ -1,4 +1,8 @@
-import { SAVE_USER_PROFILE, CLEAR_USER_PROFILES } from "../constants/actionTypes";
+import { 
+    SAVE_USER_PROFILE,
+    CLEAR_USER_PROFILES
+} from "../constants/actionTypes";
+
 import { db } from "../utils"
 
 const initialState = {}

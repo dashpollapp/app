@@ -1,4 +1,15 @@
-import { VOTE_FROM_HOME, VOTE_FROM_HOME_SUCCESS, VOTE_FROM_HOME_FAIL, CREATE_POLL_SUCCESS, LOAD_POLLS_HOME, LOAD_POLLS_HOME_SUCCESS, AUTH_LOGOUT, AUTH_LOGOUT_ALL_SUCCESS, LOAD_POLLS_HOME_FAIL } from "../constants/actionTypes";
+import { 
+    VOTE_FROM_HOME,
+    VOTE_FROM_HOME_SUCCESS,
+    VOTE_FROM_HOME_FAIL,
+    CREATE_POLL_SUCCESS,
+    LOAD_POLLS_HOME,
+    LOAD_POLLS_HOME_SUCCESS,
+    AUTH_LOGOUT,
+    AUTH_LOGOUT_ALL_SUCCESS,
+    LOAD_POLLS_HOME_FAIL
+} from "../constants/actionTypes";
+
 import uniqueArray from "../utils/uniqueIdArray";
 
 const initialState = { loading: false, polls: { home: [] } }

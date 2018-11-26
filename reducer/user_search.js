@@ -1,4 +1,10 @@
-import { USER_SEARCH, USER_SEARCH_SUCCESS, USER_SEARCH_FAIL, AUTH_LOGOUT, AUTH_LOGOUT_ALL_SUCCESS } from "../constants/actionTypes";
+import { 
+    USER_SEARCH,
+    USER_SEARCH_SUCCESS,
+    USER_SEARCH_FAIL,
+    AUTH_LOGOUT,
+    AUTH_LOGOUT_ALL_SUCCESS
+} from "../constants/actionTypes";
 
 const initialState = { users: [] }
 
