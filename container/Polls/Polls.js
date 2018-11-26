@@ -20,12 +20,9 @@ class Polls extends Component {
     render() {
         console.log("RERENDER IN POLLS.JS")
         return (
-            <ScrollView>
-                <View style={style.box}>
-
-                    <PollsFlatlist vote={this.props.vote} navigation={this.props.navigation} />
-                </View>
-            </ScrollView>
+            <View style={style.box}>
+                <PollsFlatlist vote={this.props.vote} navigation={this.props.navigation} />
+            </View>
         );
     }
 }
