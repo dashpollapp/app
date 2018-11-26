@@ -86,6 +86,7 @@ function NavigatorClass(props) {
 
 
 
+
 export default class HomeNavigator extends React.Component {
 
     //Wird gebraucht, um den Focus auf SettingsNavigator zu stellen, falls man in SETTINGS ist (this.props.navigation)
@@ -98,9 +99,12 @@ export default class HomeNavigator extends React.Component {
         const { navigation } = this.props;
         const userObj = navigation.getParam("userObj", false);
         const userId = navigation.getParam("userId", false);
+
+        var NavTopTitle = ((userObj) ? "@" + userObj.username : "Dein Profil")
+
         return (
             <View style={{ flex: 1, backgroundColor: "#fff" }}>
-                <NavbarTopBack title={"Profile " + ((userObj) ? "> " + userObj.username : "")} navigation={this.props.navigation} />
+                <NavbarTopBack title={NavTopTitle} navigation={this.props.navigation} />
                 <NavigatorClass screenProps={{ userObj, userId, parentNavigation: navigation }} />
             </View>
         )
