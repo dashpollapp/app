@@ -18,67 +18,78 @@ import pollOffImg from "../assets/img/navbar/bottom/poll_off.png";
 //import defaultProfileImg from "../assets/img/pb.png"
 import defaultProfileImg from "../assets/img/dev/pp3.jpg"
 
-const Navigator = createMaterialTopTabNavigator(
-    {
-        [screenName.USER_CHAT]: {
-            screen: Chat,
-            navigationOptions: {
-                tabBarIcon: (active) => <Image style={{ height: 26, width: 26, }} source={active.focused ? chatImg : chatOffImg} />
-            }
-        },
-        [screenName.USER_PROFILE]: {
-            screen: Profile,
-            navigationOptions: {
-                tabBarIcon: (active) => <Image style={{ height: 44, width: 44, borderRadius: 18, marginTop: -3 }} source={defaultProfileImg} />
-            }
-        },
-        [screenName.USER_POSTS]: {
-            screen: Posts,
-            navigationOptions: {
-                tabBarIcon: (active) => <Image style={{ height: 26, width: 26, }} source={active.focused ? pollImg : pollOffImg} />
-            }
-        },
+function NavigatorClass(props) {
 
-    },
-    {
-        headerMode: "none",
-        initialRouteName: screenName.USER_PROFILE,
-        tabBarPosition: "bottom",
-        swipeEnabled: true,
-        tabBarOptions: {
-            pressOpacity: 1,
-            showIcon: true,
-            showLabel: false,
-            activeTintOpacity: 0,
-            activeTintColor: "#123",
-            iconStyle: {
-                height: 26,
-                width: 26
+    const { screenProps } = props;
+    const pb = (screenProps.userObj) ? screenProps.userObj.meta.pb : false;
+    console.log(screenProps.userObj);
+
+    const Navigator = createMaterialTopTabNavigator(
+        {
+            [screenName.USER_CHAT]: {
+                screen: Chat,
+                navigationOptions: {
+                    tabBarIcon: (active) => <Image style={{ height: 26, width: 26, }} source={active.focused ? chatImg : chatOffImg} />
+                }
             },
-            indicatorStyle: {
-                marginTop: -4,
-                height: 8,
-                width: Dimensions.get('window').width / 2 - 145,
-                marginLeft: 40,
-                marginBottom: -4,
-                backgroundColor: "#000",
-                position: "absolute",
-                borderRadius: 4,
+            [screenName.USER_PROFILE]: {
+                screen: Profile,
+                navigationOptions: {
+                    tabBarIcon: (active) => <Image style={{ height: 44, width: 44, borderRadius: 18, marginTop: -3 }} source={(pb) ? { uri: "https://api.dashpoll.net/pb/" + pb } : defaultProfileImg} />
+                }
             },
-            style: {
-                borderTopWidth: 1,
-                borderColor: "#d8d8d8",
-                minHeight: 52,
-                backgroundColor: "#fff",
+            [screenName.USER_POSTS]: {
+                screen: Posts,
+                navigationOptions: {
+                    tabBarIcon: (active) => <Image style={{ height: 26, width: 26, }} source={active.focused ? pollImg : pollOffImg} />
+                }
+            },
+
+        },
+        {
+            headerMode: "none",
+            initialRouteName: screenName.USER_PROFILE,
+            tabBarPosition: "bottom",
+            swipeEnabled: true,
+            tabBarOptions: {
+                pressOpacity: 1,
+                showIcon: true,
+                showLabel: false,
+                activeTintOpacity: 0,
+                activeTintColor: "#123",
+                iconStyle: {
+                    height: 26,
+                    width: 26
+                },
+                indicatorStyle: {
+                    marginTop: -4,
+                    height: 8,
+                    width: Dimensions.get('window').width / 2 - 145,
+                    marginLeft: 40,
+                    marginBottom: -4,
+                    backgroundColor: "#000",
+                    position: "absolute",
+                    borderRadius: 4,
+                },
+                style: {
+                    borderTopWidth: 1,
+                    borderColor: "#d8d8d8",
+                    minHeight: 52,
+                    backgroundColor: "#fff",
+                }
             }
-        }
-    }
-)
+        })
+
+    return <Navigator screenProps={props.screenProps} />
+
+}
+
+
 
 export default class HomeNavigator extends React.Component {
 
     //Wird gebraucht, um den Focus auf SettingsNavigator zu stellen, falls man in SETTINGS ist (this.props.navigation)
-    static router = Navigator.router;
+    //static router = Navigator.router;
 
 
     render() {
@@ -88,7 +99,7 @@ export default class HomeNavigator extends React.Component {
         return (
             <View style={{ flex: 1, backgroundColor: "#fff" }}>
                 <NavbarTopBack title={"Profile " + ((userObj) ? "> " + userObj.username : "")} navigation={this.props.navigation} />
-                <Navigator screenProps={{ userObj, userId, parentNavigation: navigation }} />
+                <NavigatorClass screenProps={{ userObj, userId, parentNavigation: navigation }} />
             </View>
         )
     }
