@@ -92,7 +92,7 @@ export default class HomeNavigator extends React.Component {
     //Wird gebraucht, um den Focus auf SettingsNavigator zu stellen, falls man in SETTINGS ist (this.props.navigation)
     //static router = Navigator.router;
     //static router = NavigatorClass.router; -> TODO: ist .router noch verfügbar als gerenderter component? .router public in NavigatorClass machen
-
+    //static router = NavigatorClass.obj.router
     //Bitte fixen.. Bekomme wieder 100 Warnings wegen Navigator :) Thx
     //Warning: You should only render one navigator explicitly in your app, and other navigators should by rendered by including them in that navigator.
 
@@ -107,7 +107,7 @@ export default class HomeNavigator extends React.Component {
         return (
             <View style={{ flex: 1, backgroundColor: "#fff" }}>
                 <NavbarTopBack title={NavTopTitle} navigation={this.props.navigation} />
-                <NavigatorClass screenProps={{ userObj, userId, parentNavigation: navigation }} />
+                <NavigatorClass navigation={navigation} screenProps={{ userObj, userId, parentNavigation: navigation }} />
             </View>
         )
     }

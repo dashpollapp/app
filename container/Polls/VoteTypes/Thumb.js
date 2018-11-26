@@ -1,11 +1,11 @@
 import { View, TouchableOpacity, Image, Text, StyleSheet } from "react-native";
-import {LinearGradient} from "expo";
+import { LinearGradient } from "expo";
 import React from "react";
 import PropTypes from "prop-types";
 
 //Like
-import LikeImg      from "../../../assets/img/post/polltypes/thumb/thumb.png"
-import LikeImg_on   from "../../../assets/img/post/polltypes/thumb/thumb_on.png"
+import LikeImg from "../../../assets/img/post/polltypes/thumb/thumb.png"
+import LikeImg_on from "../../../assets/img/post/polltypes/thumb/thumb_on.png"
 
 {  /*          <View style={like.test}>
                 <TouchableOpacity onPress={() => this.props.vote("", poll, 0)}>{/*daume runter = choice 0 /}
@@ -18,11 +18,11 @@ import LikeImg_on   from "../../../assets/img/post/polltypes/thumb/thumb_on.png"
 
 export default class ThumbType extends React.Component {
     render() {
-        
+
         let poll = this.props.poll;
 
 
-        let allVotes    = poll.vote.likes + poll.vote.dislikes;
+        let allVotes = poll.vote.likes + poll.vote.dislikes;
         let likePercent = (poll.vote.likes / allVotes) * 100;
 
         (poll.vote.likes == 0 && poll.vote.dislikes == 0) ? likePercent = 50 : null;
@@ -33,7 +33,7 @@ export default class ThumbType extends React.Component {
                     <View style={thumb.thumbBoxes}>
                         <TouchableOpacity onPress={() => this.props.vote("", poll, 1)}>
                             <View style={thumb.thumbBox}>
-                                <Image style={[thumb.img, {marginTop: 8,transform: [{rotate: "180deg"}]}]} source={(poll.vote.hasVoted === 1) ? LikeImg_on : LikeImg} />
+                                <Image style={[thumb.img, { marginTop: 8, transform: [{ rotate: "180deg" }] }]} source={(poll.vote.hasVoted === 1) ? LikeImg_on : LikeImg} />
                                 <Text style={thumb.amount}>{poll.vote.likes}</Text>
                             </View>
                         </TouchableOpacity>
@@ -45,12 +45,12 @@ export default class ThumbType extends React.Component {
                         </TouchableOpacity>
                     </View>
                     <View style={[thumb.bar,]}>
-                         <LinearGradient
-                                style={[thumb.inner, { width: likePercent + "%" }]}
-                                colors={['#b8596e', '#739dd5']}
-                                start={{ x: 0.0, y: 0.0 }}
-                                end={{ x: 0.9, y: 0.1 }}
-                            />
+                        <LinearGradient
+                            style={[thumb.inner, { width: likePercent + "%" }]}
+                            colors={['#b8596e', '#739dd5']}
+                            start={{ x: 0.0, y: 0.0 }}
+                            end={{ x: 0.9, y: 0.1 }}
+                        />
                     </View>
                 </View>
             </View>
@@ -71,7 +71,7 @@ const thumb = StyleSheet.create({
     },
     inner: {
         height: "100%",
-        width: "50%",        
+        width: "50%",
         borderRadius: 3,
     },
     box: {
