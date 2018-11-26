@@ -46,7 +46,6 @@ class PollsFlatlist extends Component {
                 <TouchableOpacity>
                     <Text style={s.h1}>Beiträge:</Text>
                 </TouchableOpacity>
-
                 <TouchableOpacity onPress={() => this.props.screenProps.parentNavigation.navigate(screenNames.CREATE)}>
                     <Text style={s.link}>+ Neue Umfrage</Text>
                 </TouchableOpacity>
@@ -71,36 +70,34 @@ class PollsFlatlist extends Component {
 
                     renderItem={({ item, index }) => {
                         return (
-                            <View>
-                                <View style={[s.post, (index !== 0) ? { borderTopWidth: 1, borderColor: "#eee" } : null]}>
-                                    <View style={s.pPostHeader}>
+                            <View style={[s.post, (index !== 0) ? { borderTopWidth: 1, borderColor: "#eee" } : null]}>
+                                <View style={s.pPostHeader}>
 
-                                        {this.props.profile ?
+                                    {this.props.profile ?
+                                        <View style={s.authorBox}>
+                                            <Image style={s.pPB} source={DefaultPB} />
+                                            <Text style={s.pSubtitle}>{item.author.username} {formatTime(item.createdAt)}</Text>
+                                        </View>
+                                        :
+                                        <TouchableOpacity onPress={() => this.props.navigation.push(screenNames.USER, { userObj: item.author })}>
                                             <View style={s.authorBox}>
-                                                <Image style={s.pPB} source={DefaultPB} />
+                                                <Image style={s.pPB} source={(item.author.meta && item.author.meta.pb) ? { uri: "https://api.dashpoll.net/pb/" + item.author.meta.pb } : DefaultPB} />
                                                 <Text style={s.pSubtitle}>{item.author.username} {formatTime(item.createdAt)}</Text>
                                             </View>
-                                            :
-                                            <TouchableOpacity onPress={() => this.props.navigation.push(screenNames.USER, { userObj: item.author })}>
-                                                <View style={s.authorBox}>
-                                                    <Image style={s.pPB} source={(item.author.meta && item.author.meta.pb) ? { uri: "https://api.dashpoll.net/pb/" + item.author.meta.pb } : DefaultPB} />
-                                                    <Text style={s.pSubtitle}>{item.author.username} {formatTime(item.createdAt)}</Text>
-                                                </View>
-                                            </TouchableOpacity>
-                                        }
+                                        </TouchableOpacity>
+                                    }
 
-                                        <Text style={s.pTitle}>{item.heading}</Text>
-                                    </View>
+                                    <Text style={s.pTitle}>{item.heading}</Text>
+                                </View>
 
-                                    {item.text ? <Text style={s.description}>{item.text}</Text> : null}
+                                {item.text ? <Text style={s.description}>{item.text}</Text> : null}
 
-                                    {/* Media */}
-                                    {item.media ? <LoadMedia poll={item} /> : null}
+                                {/* Media */}
+                                {item.media ? <LoadMedia poll={item} /> : null}
 
-                                    {/* Umfragenteil */}
-                                    <View style={s.poll}>
-                                        <PollTypes vote={this.props.vote} poll={item} />
-                                    </View>
+                                {/* Umfragenteil */}
+                                <View style={s.poll}>
+                                    <PollTypes vote={this.props.vote} poll={item} />
                                 </View>
                             </View>
                         )

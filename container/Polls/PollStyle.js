@@ -68,13 +68,11 @@ export default StyleSheet.create({
 
     //Ein Beitrag
     post: {
-        padding: 4,    
-        marginHorizontal: 8,
-        marginBottom: 44,
         paddingTop: 12,
+        paddingBottom: 32,
+        marginHorizontal: 16,
     },
     posts: {
-        padding: 8,
         //paddingTop: 32, -> Finde ohne Besser?
         backgroundColor: "#fff",
         borderRadius: 12,
