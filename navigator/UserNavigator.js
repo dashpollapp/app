@@ -93,6 +93,8 @@ export default class HomeNavigator extends React.Component {
     //static router = Navigator.router;
     //static router = NavigatorClass.router; -> TODO: ist .router noch verfügbar als gerenderter component? .router public in NavigatorClass machen
 
+    //Bitte fixen.. Bekomme wieder 100 Warnings wegen Navigator :) Thx
+    //Warning: You should only render one navigator explicitly in your app, and other navigators should by rendered by including them in that navigator.
 
     render() {
 
