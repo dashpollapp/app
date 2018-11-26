@@ -20,22 +20,24 @@ class Polls extends Component {
     render() {
         console.log("RERENDER IN POLLS.JS")
         return (
-            <View style={style.box}>
+            <ScrollView>
+                <View style={style.box}>
 
-                {/* Das soll eigentlich in mit in die Flatlist :( */}
-                <View style={style.boxHeader}>
-                    <TouchableOpacity>
-                        <Text style={style.h1}>Beiträge:</Text>
-                    </TouchableOpacity>
+                    {/* Das soll eigentlich in mit in die Flatlist :( */}
+                    <View style={style.boxHeader}>
+                        <TouchableOpacity>
+                            <Text style={style.h1}>Beiträge:</Text>
+                        </TouchableOpacity>
 
-                    <TouchableOpacity onPress={() => this.props.screenProps.parentNavigation.navigate(screenNames.CREATE)}>
-                        <Text style={style.link}>+ Neue Umfrage</Text>
-                    </TouchableOpacity>
+                        <TouchableOpacity onPress={() => this.props.screenProps.parentNavigation.navigate(screenNames.CREATE)}>
+                            <Text style={style.link}>+ Neue Umfrage</Text>
+                        </TouchableOpacity>
+                    </View>
+
+
+                    <PollsFlatlist vote={this.props.vote} navigation={this.props.navigation} />
                 </View>
-
-
-                <PollsFlatlist vote={this.props.vote} navigation={this.props.navigation} />
-            </View>
+            </ScrollView>
         );
     }
 }

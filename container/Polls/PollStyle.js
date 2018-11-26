@@ -64,7 +64,6 @@ export default StyleSheet.create({
         fontFamily: "GS3",
         color: "#000",
         fontWeight: "500",
-        paddingHorizontal: 4,
     },
 
     //Ein Beitrag
@@ -86,14 +85,14 @@ export default StyleSheet.create({
     pSubtitle: {
         color: "#aaa",
         fontFamily: "GS2",
-        fontSize: 13,
+        fontSize: 14,
+        marginHorizontal: 8,
     },
     pPB: {
-        height: 22,
-        width: 22,
-        borderRadius: 22 / 2.35,
+        height: 24,
+        width: 24,
+        borderRadius: 24 / 2.35,
         backgroundColor: "#aaa",
-        marginHorizontal: 4,
     },
     authorBox: {
         flexDirection: "row",

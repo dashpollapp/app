@@ -9,7 +9,7 @@ import * as screenNames from '../../constants/screenNames';
 
 import formatTime from '../../utils/formatTime';
 
-import PbImg from "../../assets/img/pb.png";
+import DefaultPB from "../../assets/img/pb.png";
 
 
 import PollTypes from "./PollTypes";
@@ -55,18 +55,18 @@ class PollsFlatlist extends Component {
                     renderItem={({ item, index }) => {
                         return (
                             <View>
-                                <View style={[s.post, (index !== 0) ? { borderTopWidth: 1, borderColor: "#e5e5e5" } : null]}>
+                                <View style={[s.post, (index !== 0) ? { borderTopWidth: 1, borderColor: "#eee" } : null]}>
                                     <View style={s.pPostHeader}>
 
                                         {this.props.profile ?
                                             <View style={s.authorBox}>
-                                                <Image style={s.pPB} source={PbImg} />
+                                                <Image style={s.pPB} source={DefaultPB} />
                                                 <Text style={s.pSubtitle}>{item.author.username} {formatTime(item.createdAt)}</Text>
                                             </View>
                                             :
                                             <TouchableOpacity onPress={() => this.props.navigation.push(screenNames.USER, { userObj: item.author })}>
                                                 <View style={s.authorBox}>
-                                                    <Image style={s.pPB} source={(item.author.meta && item.author.meta.pb) ? { uri: "https://api.dashpoll.net/pb/" + item.author.meta.pb } : PbImg} />
+                                                    <Image style={s.pPB} source={(item.author.meta && item.author.meta.pb) ? { uri: "https://api.dashpoll.net/pb/" + item.author.meta.pb } : DefaultPB} />
                                                     <Text style={s.pSubtitle}>{item.author.username} {formatTime(item.createdAt)}</Text>
                                                 </View>
                                             </TouchableOpacity>
