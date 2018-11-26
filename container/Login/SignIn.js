@@ -45,6 +45,8 @@ class Login extends React.Component {
 
 
     render() {
+        //Bitte KeyboardAvoidingView einbinden. 
+        //Wo ist der Button zum Registrieren?
         return (
             <View style={css.out}>
                 <View style={css.navTopHelp} />
