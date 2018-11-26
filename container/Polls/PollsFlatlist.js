@@ -40,15 +40,13 @@ class PollsFlatlist extends Component {
 
 
     //Für Koni
-    loadHeader() {
+    loadHeader = () => {
         return(
             <View style={s.boxHeader}>
                 <TouchableOpacity>
                     <Text style={s.h1}>Beiträge:</Text>
                 </TouchableOpacity>
-                {/* Error: dringend fixen (screenProps undefined) */}
-                {/* <TouchableOpacity onPress={() => this.props.screenProps.parentNavigation.navigate(screenNames.CREATE)}> */}
-                <TouchableOpacity> 
+                <TouchableOpacity onPress={() => this.props.navigation.push(screenNames.CREATE)}> 
                     <Text style={s.link}>+ Neue Umfrage</Text>
                 </TouchableOpacity>
             </View>
