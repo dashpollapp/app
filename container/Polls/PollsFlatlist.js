@@ -38,6 +38,16 @@ class PollsFlatlist extends Component {
         } else { console.log("NULLLLLL"); }
     }
 
+
+    //Für Koni
+    loadHeader() {
+        return(
+            <View>
+                {/* Hier kann der Header rein. */}
+            </View>
+        )
+    }
+
     render() {
         return (
             <View>
@@ -46,6 +56,7 @@ class PollsFlatlist extends Component {
                     data={this.props.polls.polls.home}
                     extraData={this.props.polls} //wird nur wegen loading geändert -> muss das noch richtig machen
                     ListEmptyComponent={<Text style={s.pTitle}>Noch keine Polls.</Text>}
+                    ListHeaderComponent={this.loadHeader}
                     keyExtractor={(item) => item._id}
                     refreshing={this.state.flatListRefreshing}
                     onRefresh={this.flatListRefresh}
