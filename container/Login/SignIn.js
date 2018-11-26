@@ -53,6 +53,7 @@ class Login extends React.Component {
 
 
                 {/*=Navbar top*/}
+                {/* Wenn die Navbar da ist ist die Bottombar weg.. */}
                 <NavTopWithoutIcons />
 
 
