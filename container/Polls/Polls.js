@@ -23,18 +23,6 @@ class Polls extends Component {
             <ScrollView>
                 <View style={style.box}>
 
-                    {/* Das soll eigentlich in mit in die Flatlist :( */}
-                    <View style={style.boxHeader}>
-                        <TouchableOpacity>
-                            <Text style={style.h1}>Beiträge:</Text>
-                        </TouchableOpacity>
-
-                        <TouchableOpacity onPress={() => this.props.screenProps.parentNavigation.navigate(screenNames.CREATE)}>
-                            <Text style={style.link}>+ Neue Umfrage</Text>
-                        </TouchableOpacity>
-                    </View>
-
-
                     <PollsFlatlist vote={this.props.vote} navigation={this.props.navigation} />
                 </View>
             </ScrollView>
