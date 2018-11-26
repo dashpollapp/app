@@ -90,9 +90,11 @@ export default class HomeNavigator extends React.Component {
 
     //Wird gebraucht, um den Focus auf SettingsNavigator zu stellen, falls man in SETTINGS ist (this.props.navigation)
     //static router = Navigator.router;
+    //static router = NavigatorClass.router; -> TODO: ist .router noch verfügbar als gerenderter component? .router public in NavigatorClass machen
 
 
     render() {
+
         const { navigation } = this.props;
         const userObj = navigation.getParam("userObj", false);
         const userId = navigation.getParam("userId", false);
