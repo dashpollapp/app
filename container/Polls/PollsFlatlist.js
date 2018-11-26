@@ -46,7 +46,9 @@ class PollsFlatlist extends Component {
                 <TouchableOpacity>
                     <Text style={s.h1}>Beiträge:</Text>
                 </TouchableOpacity>
-                <TouchableOpacity onPress={() => this.props.screenProps.parentNavigation.navigate(screenNames.CREATE)}>
+                {/* Error: dringend fixen (screenProps undefined) */}
+                {/* <TouchableOpacity onPress={() => this.props.screenProps.parentNavigation.navigate(screenNames.CREATE)}> */}
+                <TouchableOpacity> 
                     <Text style={s.link}>+ Neue Umfrage</Text>
                 </TouchableOpacity>
             </View>
