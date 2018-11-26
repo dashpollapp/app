@@ -60,13 +60,13 @@ class PollsFlatlist extends Component {
 
                                         {this.props.profile ?
                                             <View style={s.authorBox}>
-                                                <Image style={s.pPB} source={(item.author.meta.pb) ? { uri: "https://api.dashpoll.net/pb/" + item.author.meta.pb } : PbImg} />
+                                                <Image style={s.pPB} source={PbImg} />
                                                 <Text style={s.pSubtitle}>{item.author.username} {formatTime(item.createdAt)}</Text>
                                             </View>
                                             :
                                             <TouchableOpacity onPress={() => this.props.navigation.push(screenNames.USER, { userObj: item.author })}>
                                                 <View style={s.authorBox}>
-                                                    <Image style={s.pPB} source={(item.author.meta.pb) ? { uri: "https://api.dashpoll.net/pb/" + item.author.meta.pb } : PbImg} />
+                                                    <Image style={s.pPB} source={(item.author.meta && item.author.meta.pb) ? { uri: "https://api.dashpoll.net/pb/" + item.author.meta.pb } : PbImg} />
                                                     <Text style={s.pSubtitle}>{item.author.username} {formatTime(item.createdAt)}</Text>
                                                 </View>
                                             </TouchableOpacity>
