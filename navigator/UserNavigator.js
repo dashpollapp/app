@@ -1,11 +1,14 @@
-import { createMaterialTopTabNavigator } from "react-navigation";
 import React from "react";
 import { View, Image, Dimensions } from "react-native";
+import { createMaterialTopTabNavigator } from "react-navigation";
 import PropTypes from "prop-types";
+
 import * as screenName from "../constants/screenNames";
+
+//Components
 import NavbarTopBack from "../components/Navbar/NavbarTopBack";
 
-//Screens
+//Container
 import Chat from "../container/User/Chat";
 import Posts from "../container/User/Posts";
 import Profile from "../container/User/Profile";
@@ -15,8 +18,8 @@ import chatImg from "../assets/img/navbar/bottom/chat.png";
 import pollImg from "../assets/img/navbar/bottom/poll.png";
 import chatOffImg from "../assets/img/navbar/bottom/chat_off.png";
 import pollOffImg from "../assets/img/navbar/bottom/poll_off.png";
-//import defaultProfileImg from "../assets/img/pb.png"
 import defaultProfileImg from "../assets/img/dev/pp3.jpg"
+//import defaultProfileImg from "../assets/img/pb.png"
 
 function NavigatorClass(props) {
 
@@ -64,7 +67,7 @@ function NavigatorClass(props) {
                 indicatorStyle: {
                     marginTop: -4,
                     height: 8,
-                    width: Dimensions.get('window').width / 2 - 145,
+                    width: Dimensions.get("window").width / 2 - 145,
                     marginLeft: 40,
                     marginBottom: -4,
                     backgroundColor: "#000",

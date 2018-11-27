@@ -2,9 +2,22 @@ import React from "react";
 import { View } from "react-native";
 import { createStackNavigator } from "react-navigation";
 import PropTypes from "prop-types";
+
+//Components
 import NavbarTopBack from "../components/Navbar/NavbarTopBack";
 
-import { SettingsOverview, AccountSettings, EditProfile, Help, Legal, MyData, Performance, ReportProblem, Security } from "../container/Settings";
+//Container
+import {
+    SettingsOverview,
+    AccountSettings,
+    EditProfile,
+    Help,
+    Legal,
+    MyData,
+    Performance,
+    ReportProblem,
+    Security
+} from "../container/Settings";
 
 const Navigator = createStackNavigator(
     {

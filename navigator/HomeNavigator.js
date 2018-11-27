@@ -1,13 +1,19 @@
-import { createMaterialTopTabNavigator } from "react-navigation";
 import React from "react";
 import { View, Image, Dimensions } from "react-native";
+import { createMaterialTopTabNavigator } from "react-navigation";
+
 import PropTypes from "prop-types";
 
-import NavbarTop from "../components/Navbar/NavbarTop";
-import Polls from "../container/Polls/Polls";
-import { ChatOverview } from "../container/Chat";
 import * as screenName from "../constants/screenNames";
 
+//Components
+import NavbarTop from "../components/Navbar/NavbarTop";
+
+//Container
+import Polls from "../container/Polls/Polls";
+import { ChatOverview } from "../container/Chat";
+
+//Images
 import chatImg from "../assets/img/navbar/bottom/chat.png";
 import pollImg from "../assets/img/navbar/bottom/poll.png";
 import chatOffImg from "../assets/img/navbar/bottom/chat_off.png";
@@ -47,7 +53,7 @@ const Navigator = createMaterialTopTabNavigator(
             indicatorStyle: {
                 marginTop: -4,
                 height: 8,
-                width: Dimensions.get('window').width / 2 - 145,
+                width: Dimensions.get("window").width / 2 - 145,
                 marginLeft: 72,
                 marginBottom: -4,
                 backgroundColor: "#000",

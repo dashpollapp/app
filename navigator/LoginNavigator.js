@@ -1,6 +1,8 @@
 import { createStackNavigator } from "react-navigation";
-import { SignIn, SignUp } from "../container/Login";
 import * as screenName from "../constants/screenNames";
+
+//Container
+import { SignIn, SignUp } from "../container/Login";
 
 export default createStackNavigator(
     {

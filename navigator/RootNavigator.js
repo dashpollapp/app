@@ -1,13 +1,12 @@
 import { createStackNavigator } from "react-navigation";
-
-import HomeNavigator from "./HomeNavigator";
 import * as screenName from "../constants/screenNames";
-import SettingsNavigator from "./SettingsNavigator";
-import UserNavigator from './UserNavigator';
-import SearchNavigator from './SearchNavigator';
-import CreatePollNavigator from "./CreatePollNavigator"
 
-//import UserNavigatorWrapper from "../container/User/UserNavigatorWrapper";
+//Navigators
+import HomeNavigator from "./HomeNavigator";
+import UserNavigator from "./UserNavigator";
+import CreatePollNavigator from "./CreatePollNavigator"
+import SettingsNavigator from "./SettingsNavigator";
+import SearchNavigator from "./SearchNavigator";
 
 export default createStackNavigator(
     {

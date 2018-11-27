@@ -1,10 +1,15 @@
 import React from "react";
 import { View } from "react-native";
 import { createStackNavigator } from "react-navigation";
-import Search from '../container/Search/SearchPage';
-import * as screenName from "../constants/screenNames";
-import NavbarTopBack from "../components/Navbar/NavbarTopBack";
 import PropTypes from "prop-types";
+import * as screenName from "../constants/screenNames";
+
+//Components
+import NavbarTopBack from "../components/Navbar/NavbarTopBack";
+
+//Container
+import Search from "../container/Search/SearchPage";
+
 
 const Navigator = createStackNavigator(
     {

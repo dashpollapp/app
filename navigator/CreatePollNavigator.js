@@ -1,15 +1,20 @@
-import { createMaterialTopTabNavigator } from "react-navigation";
 import React from "react";
 import { View } from "react-native";
+import { createMaterialTopTabNavigator } from "react-navigation";
+import { connect } from "react-redux";
 import PropTypes from "prop-types";
-import { connect } from 'react-redux';
-import { create_poll } from '../actions';
-import CreateAfter from "../container/Create/CreateAfter";
-import CreatePage from "../container/Create/CreatePage";
-import BlockSelection from "../container/Create/BlockSelection";
+
+import { create_poll } from "../actions";
 import * as screenName from "../constants/screenNames";
+
+//Components
 import NavbarTopBack from "../components/Navbar/NavbarTopBack";
 import NavbarBottomText from "../components/Navbar/NavbarBottomText";
+
+//Container
+import CreatePage from "../container/Create/CreatePage";
+import CreateAfter from "../container/Create/CreateAfter";
+import BlockSelection from "../container/Create/BlockSelection";
 
 const Navigator = createMaterialTopTabNavigator(
     {
