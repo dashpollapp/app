@@ -19,15 +19,15 @@ function dispatchLogout() {
 
 
 export let httpClient = axios.create({
-	baseURL: 'https://api.dashpoll.net',
-	responseType: 'json',
+	baseURL: "https://api.dashpoll.net",
+	responseType: "json",
 	headers: {
 		"Content-Type": "application/json;charset=utf-8"
 	},
 	transformRequest: [
 		(data, headers) => {
 			const token = getUserToken();
-			if (token) headers['Authorization'] = token;
+			if (token) headers["Authorization"] = token;
 			return JSON.stringify(data);
 		}
 	],

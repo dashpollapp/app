@@ -4,4 +4,11 @@ import iphoneX from "./iphoneX";
 import store, { httpClient } from "./store";
 import uniqueIdArray from "./uniqueIdArray";
 
-export { db, formatTime, iphoneX, store, uniqueIdArray, httpClient }
+export { 
+    db,
+    formatTime,
+    iphoneX,
+    store,
+    uniqueIdArray,
+    httpClient
+}
