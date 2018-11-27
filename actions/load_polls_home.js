@@ -6,7 +6,7 @@ export default function (skip, refresh = false) {
     return dispatch => {
         dispatch({ type: LOAD_POLLS_HOME });
         httpClient.request({
-            url: `/polls?site=all&skip=${skip}&limit=${limit}`, //später zu: site=home
+            url: `/polls?site=home&skip=${skip}&limit=${limit}`, //später zu: site=home
             method: "GET",
         }).then(res => {
             dispatch({ type: LOAD_POLLS_HOME_SUCCESS, payload: { data: res.data, refresh } })
