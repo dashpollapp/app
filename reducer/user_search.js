@@ -3,7 +3,8 @@ import {
     USER_SEARCH_SUCCESS,
     USER_SEARCH_FAIL,
     AUTH_LOGOUT,
-    AUTH_LOGOUT_ALL_SUCCESS
+    AUTH_LOGOUT_ALL_SUCCESS,
+    AUTH_LOGIN_SUCCESS
 } from "../constants/actionTypes";
 
 const initialState = { users: [] }
@@ -21,7 +22,9 @@ export default function (state = initialState, action) {
                 loading: false,
                 error: 'Error while fetching users',
             };
+        
         case AUTH_LOGOUT:
+        case AUTH_LOGIN_SUCCESS:
         case AUTH_LOGOUT_ALL_SUCCESS:
             return initialState;
         default:
