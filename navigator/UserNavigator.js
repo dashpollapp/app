@@ -52,6 +52,7 @@ function NavigatorClass(props) {
         {
             headerMode: "none",
             initialRouteName: screenName.USER_PROFILE,
+            lazy: true,
             tabBarPosition: "bottom",
             swipeEnabled: true,
             tabBarOptions: {
