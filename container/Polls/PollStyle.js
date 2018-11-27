@@ -76,6 +76,7 @@ export default StyleSheet.create({
         //paddingTop: 32, -> Finde ohne Besser?
         backgroundColor: "#fff",
         borderRadius: 12,
+        minHeight: "100%",
     },
 
 
