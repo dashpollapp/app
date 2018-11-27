@@ -169,19 +169,20 @@ class Login extends React.Component {
                         </View>
                     </KeyboardAvoidingView>
 
-                    {/*=Navbar unten*/}
-                    <View style={css.bottom}>
-                        <TouchableOpacity
-                            onPress={() => {
-                                Alert.alert("GIBT KEINE HILFE DU HUND");
-                            }}
-                        >
-                            <Text style={pc.textContinue}>Hilfe</Text>
-                        </TouchableOpacity>
-                        <TouchableOpacity onPress={() => this.props.navigation.navigate(screenNames.SIGN_UP)}>
-                            <Text style={pc.textPublic}>Account erstellen</Text>
-                        </TouchableOpacity>
-                    </View>
+                </View>
+
+                {/*=Navbar unten*/}
+                <View style={css.bottom}>
+                    <TouchableOpacity
+                        onPress={() => {
+                            Alert.alert("GIBT KEINE HILFE DU HUND");
+                        }}
+                    >
+                        <Text style={pc.textContinue}>Hilfe</Text>
+                    </TouchableOpacity>
+                    <TouchableOpacity onPress={() => this.props.navigation.navigate(screenNames.SIGN_UP)}>
+                        <Text style={pc.textPublic}>Account erstellen</Text>
+                    </TouchableOpacity>
                 </View>
 
                 <Image style={[css.cornerTL, css.corner]} source={corner} />
