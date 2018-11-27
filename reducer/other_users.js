@@ -1,21 +1,23 @@
 import { 
     SAVE_USER_PROFILE,
-    CLEAR_USER_PROFILES
+    CLEAR_USER_PROFILES,
+    LOAD_USER_PROFILE
 } from "../constants/actionTypes";
 
-import { db } from "../utils"
+import { db } from "../utils";
 
 const initialState = {}
 
 export default function (state = initialState, action) {
     switch (action.type) {
+        case LOAD_USER_PROFILE:
+            return {...state, loading: true}
         case SAVE_USER_PROFILE:
             const { user } = action.payload;
-            saveProfileToDb(user);
-            return Object.assign(state, { [user._id]: user });
-
+            //saveProfileToDb(user);
+            return { ...state, [user._id]: user, loading: false}
         case CLEAR_USER_PROFILES:
-            deleteProfilesFromDb();
+            //deleteProfilesFromDb();
             return initialState;
 
         case USER_SEARCH_FAIL:
@@ -26,7 +28,7 @@ export default function (state = initialState, action) {
             };
         case AUTH_LOGOUT:
         case AUTH_LOGOUT_ALL_SUCCESS:
-            deleteProfilesFromDb();
+            //deleteProfilesFromDb();
             return initialState;
         default:
             return state;

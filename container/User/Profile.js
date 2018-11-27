@@ -10,17 +10,32 @@ const mockUserObj = {
     fullname: "",
     meta: {
         pb: ""
+    },
+    following: false,
+    num: {
+        following: 0,
+        follower: 0
     }
 }
+
+
 
 class Profile extends React.Component {
     constructor(props) {
         super(props);
         this.state = {};
     }
+
+    followButton = () => {
+
+    }
+
+
     render() {
         const { screenProps } = this.props;
         const user = (screenProps.userObj) ? screenProps.userObj : mockUserObj
+        const following = user.following;
+
         return (
             <ScrollView>
 
@@ -35,15 +50,15 @@ class Profile extends React.Component {
                     </View>
                 </TouchableOpacity>*/}
                 <View style={[s.followBox]}>
-                    <TouchableOpacity>
-                        <View style={[s.followButton_on]}>
-                            <Text style={[s.followButtonText_on]}>Folgst du</Text>
+                    <TouchableOpacity onPress={() => this.followButton()}>
+                        <View style={(following) ? s.followButton_on : s.followButton}>
+                            <Text style={(following) ? s.followButtonText_on : s.followButtonText}>{(following) ? "Folgst du" : "Folgen"}</Text>
                         </View>
                     </TouchableOpacity>
 
                     <View style={s.followTextBox}>
-                        <Text style={[s.followerConterText]}>130 Follower</Text>
-                        <Text style={[s.followConterText]}>Folgt dir & 41</Text>
+                        <Text style={[s.followerConterText]}>0 Follower</Text>
+                        <Text style={[s.followConterText]}>"Folgt dir & 0"</Text>
                     </View>
                 </View>
 
