@@ -28,7 +28,6 @@ export default class SearchNavigator extends React.Component {
     render() {
         return (
             <View style={{ flex: 1}}>
-                <NavbarTopBack title="Search" navigation={this.props.navigation} />
                 <Navigator navigation={this.props.navigation} />
             </View>
         )
