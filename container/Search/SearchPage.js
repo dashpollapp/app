@@ -65,7 +65,7 @@ class SearchPage extends React.Component {
 
                                         <Image 
                                         style={se.userImg} 
-                                        source={DefaultPB}/>
+                                        source={(item.meta.pb) ? { uri: "https://api.dashpoll.net/pb/" + item.meta.pb } : DefaultPB}/>
 
                                         <Text 
                                         style={se.userFullname}
