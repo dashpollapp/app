@@ -21,6 +21,15 @@ export default StyleSheet.create({
         opacity: 0.5,
     },
 
+    loadingText: {
+        fontFamily: "GS2",
+        fontSize: 16,
+        color: "#aaa",
+        textAlign:"center",
+        marginVertical: 32,
+    },
+
+
 
     // < Mordal/Popup: Nicht mehr anzeigen >
     block:{

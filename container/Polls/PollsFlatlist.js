@@ -129,7 +129,7 @@ class PollsFlatlist extends Component {
                     style={s.posts}
                     data={this.props.polls.polls.home}
                     extraData={this.props.polls} //wird nur wegen loading geändert -> muss das noch richtig machen
-                    ListEmptyComponent={<Text style={s.pTitle}>Noch keine Polls.</Text>}
+                    ListEmptyComponent={<Text style={s.loadingText}>Lädt Beiträge...</Text>}
                     ListHeaderComponent={this.loadHeader}
                     keyExtractor={(item) => item._id}
                     refreshing={this.state.flatListRefreshing}
