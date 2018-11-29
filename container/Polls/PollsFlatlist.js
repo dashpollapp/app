@@ -7,12 +7,8 @@ import s from "./PollStyle";
 
 import * as screenNames from '../../constants/screenNames';
 
-import formatTime from '../../utils/formatTime';
-
-import DefaultPB from "../../assets/img/pb.png";
-import optionsBlock from "../../assets/img/post/options/block.png"
-import optionsStats from "../../assets/img/post/options/stats.png"
-import optionsShare from "../../assets/img/post/options/share.png"
+import Option from '../../components/Post/Option';
+import Author from '../../components/Post/authorBox';
 
 import PollTypes from "./PollTypes";
 import LoadMedia from './LoadMedia';
@@ -54,22 +50,7 @@ class PollsFlatlist extends Component {
         )
     }
 
-    sharePoll(poll) {
-        Share.share({
-            message: "'" + poll.heading + "' - Stimme jetzt ab: https://dashpoll.net/poll/" + poll._id,
-            url: 'https://dashpoll.net/poll/' + poll._id,
-            title: 'Umfrage'
-          }, {
-            // Android:
-            dialogTitle: 'Beitrag teilen',
-            // iOS:
-            excludedActivityTypes: [
-              'com.apple.UIKit.activity.PostToTwitter' //Twitter
-            ]
-          })
-
-        console.log(poll)
-    }
+    
 
     render() {
         return (
@@ -90,38 +71,11 @@ class PollsFlatlist extends Component {
                         return (
                             <View style={[s.post, (index !== 0) ? { borderTopWidth: 1, borderColor: "#eee" } : null]}>
 
-                                {(this.state.options === item._id) ?
-
-                                <View style={s.postOptions}>
-                                    <TouchableOpacity style={s.postOption}>
-                                        <Image style={s.postOptionImg} source={optionsBlock} />          
-                                    </TouchableOpacity>  
-                                    <TouchableOpacity style={s.postOption}>
-                                        <Image style={s.postOptionImg} source={optionsStats} />          
-                                    </TouchableOpacity>  
-                                    <TouchableOpacity style={s.postOption} onPress={() => this.sharePoll(item)}>
-                                        <Image style={s.postOptionImg} source={optionsShare} />          
-                                    </TouchableOpacity>  
-                                </View>
-
-                                : null}
-
+                                {(this.state.options === item._id) ? <Option poll={item} /> : null}
 
                                 <View style={s.pPostHeader}>
 
-                                    {this.props.profile ?
-                                        <View style={s.authorBox}>
-                                            <Image style={s.pPB} source={DefaultPB} />
-                                            <Text style={s.pSubtitle}>{item.author.username} {formatTime(item.createdAt)}</Text>
-                                        </View>
-                                        :
-                                        <TouchableOpacity onPress={() => this.props.navigation.push(screenNames.USER, { userObj: item.author })}>
-                                            <View style={s.authorBox}>
-                                                <Image style={s.pPB} source={(item.author.meta && item.author.meta.pb) ? { uri: "https://api.dashpoll.net/pb/" + item.author.meta.pb } : DefaultPB} />
-                                                <Text style={s.pSubtitle}>{item.author.username} {formatTime(item.createdAt)}</Text>
-                                            </View>
-                                        </TouchableOpacity>
-                                    }
+                                    <Author poll={item} navigation={this.props.navigation} />
 
                                     <TouchableOpacity onPress={() => (this.state.options === item._id) ? this.setState({options: ""}) : this.setState({options: item._id})}>
                                         <Text style={s.pTitle}>{item.heading}</Text>
@@ -135,9 +89,8 @@ class PollsFlatlist extends Component {
                                 {item.media ? <LoadMedia poll={item} /> : null}
 
                                 {/* Umfragenteil */}
-                                <View style={s.poll}>
-                                    <PollTypes vote={this.props.vote} poll={item} />
-                                </View>
+                                <View style={s.poll}><PollTypes vote={this.props.vote} poll={item} /></View>
+
                             </View>
                         )
                     }}
