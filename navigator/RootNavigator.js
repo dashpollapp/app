@@ -7,6 +7,7 @@ import UserNavigator from "./UserNavigator";
 import CreatePollNavigator from "./CreatePollNavigator"
 import SettingsNavigator from "./SettingsNavigator";
 import SearchNavigator from "./SearchNavigator";
+import ProfileNavigator from "./ProfileNavigator";
 
 export default createStackNavigator(
     {
@@ -14,7 +15,8 @@ export default createStackNavigator(
         [screenName.USER]: UserNavigator,
         [screenName.CREATE]: CreatePollNavigator,
         [screenName.SETTINGS]: SettingsNavigator,
-        [screenName.SEARCH]: SearchNavigator
+        [screenName.SEARCH]: SearchNavigator,
+        [screenName.PROFILE]: ProfileNavigator,
     },
     {
         initialRouteName: screenName.HOME,
