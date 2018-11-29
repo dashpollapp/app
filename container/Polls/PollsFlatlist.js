@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { View, TouchableOpacity, Image, Text, FlatList } from "react-native";
+import { View, TouchableOpacity, Image, Text, FlatList, Share } from "react-native";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 
@@ -41,7 +41,7 @@ class PollsFlatlist extends Component {
     }
 
 
-    //Für Koni
+    //Header der Mitsrollt
     loadHeader = () => {
         return(
             <View style={s.boxHeader}>
@@ -53,6 +53,23 @@ class PollsFlatlist extends Component {
                 </TouchableOpacity>
             </View>
         )
+    }
+
+    sharePoll(poll) {
+        Share.share({
+            message: "'" + poll.heading + "' - Stimme jetzt ab: https://dashpoll.net/poll/" + poll._id,
+            url: 'https://dashpoll.net/poll/' + poll._id,
+            title: 'Umfrage'
+          }, {
+            // Android:
+            dialogTitle: 'Beitrag teilen',
+            // iOS:
+            excludedActivityTypes: [
+              'com.apple.UIKit.activity.PostToTwitter' //Twitter
+            ]
+          })
+
+        console.log(poll)
     }
 
     render() {
@@ -82,7 +99,7 @@ class PollsFlatlist extends Component {
                                     <TouchableOpacity style={s.postOption}>
                                         <Image style={s.postOptionImg} source={optionsStats} />          
                                     </TouchableOpacity>  
-                                    <TouchableOpacity style={s.postOption}>
+                                    <TouchableOpacity style={s.postOption} onPress={() => this.sharePoll(item)}>
                                         <Image style={s.postOptionImg} source={optionsShare} />          
                                     </TouchableOpacity>  
                                 </View>
