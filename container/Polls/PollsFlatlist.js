@@ -10,7 +10,9 @@ import * as screenNames from '../../constants/screenNames';
 import formatTime from '../../utils/formatTime';
 
 import DefaultPB from "../../assets/img/pb.png";
-
+import optionsBlock from "../../assets/img/post/options/block.png"
+import optionsStats from "../../assets/img/post/options/stats.png"
+import optionsShare from "../../assets/img/post/options/share.png"
 
 import PollTypes from "./PollTypes";
 import LoadMedia from './LoadMedia';
@@ -71,6 +73,21 @@ class PollsFlatlist extends Component {
                     renderItem={({ item, index }) => {
                         return (
                             <View style={[s.post, (index !== 0) ? { borderTopWidth: 1, borderColor: "#eee" } : null]}>
+
+                                {/* Teilen, Keine Intersse, Stats - Soll beim Klick auf den Titel geöffnet werden. */}
+                                <View style={s.postOptions}>
+                                    <TouchableOpacity style={s.postOption}>
+                                        <Image style={s.postOptionImg} source={optionsBlock} />          
+                                    </TouchableOpacity>  
+                                    <TouchableOpacity style={s.postOption}>
+                                        <Image style={s.postOptionImg} source={optionsStats} />          
+                                    </TouchableOpacity>  
+                                    <TouchableOpacity style={s.postOption}>
+                                        <Image style={s.postOptionImg} source={optionsShare} />          
+                                    </TouchableOpacity>  
+                                </View>
+
+
                                 <View style={s.pPostHeader}>
 
                                     {this.props.profile ?

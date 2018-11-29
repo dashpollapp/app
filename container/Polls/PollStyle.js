@@ -2,6 +2,28 @@ import { StyleSheet, Platform,Dimensions } from "react-native";
 
 export default StyleSheet.create({
 
+
+    postOptions: {
+        flexDirection: "row",
+        marginBottom: 4,
+    },
+    postOption: {
+        flex: 1,
+        backgroundColor: "rgba(0,0,0,0.05)",
+        alignItems: "center",
+        marginHorizontal: 4,
+        borderRadius: 12,
+        padding: 8,
+    },
+    postOptionImg: {
+        height: 24,
+        width: 24,
+        opacity: 0.5,
+    },
+
+
+    
+
     //URL in Beschreibung
     url: {
         color: "#0984e3",
@@ -76,7 +98,6 @@ export default StyleSheet.create({
         //paddingTop: 32, -> Finde ohne Besser?
         backgroundColor: "#fff",
         borderRadius: 12,
-        minHeight: "100%",
     },
 
 
@@ -159,7 +180,7 @@ export default StyleSheet.create({
     pt1Bar: {
         height: 16,
         marginTop: 2,
-        marginRight: 44,
+        marginRight: 26,
 
         alignItems: "center",
         display: "flex",
