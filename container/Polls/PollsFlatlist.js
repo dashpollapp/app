@@ -32,7 +32,7 @@ class PollsFlatlist extends Component {
     onEndReached = () => {
         if (this.props.polls.polls.home.length > 0 && !this.props.isFetchingPolls) {
             this.props.load_home_polls(this.props.polls.polls.home.length)
-        } else { console.log("NULLLLLL"); }
+        } else { console.log("Ende der Flatlist erreicht!"); }
     }
 
 
