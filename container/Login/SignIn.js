@@ -14,6 +14,7 @@ import NavTopWithoutIcons from "../../components/Navbar/NavTopWithoutIcons"
 import pwShow from "../../assets/img/login/PWshow.png";
 import pwHide from "../../assets/img/login/PWhide.png";
 import corner from "../../assets/img/corner.png";
+import DefaultPB from "../../assets/img/pb.png"
 
 class Login extends React.Component {
     constructor(props) {
@@ -49,8 +50,6 @@ class Login extends React.Component {
         //Wo ist der Button zum Registrieren?
         return (
             <View style={css.out}>
-                <View style={css.navTopHelp} />
-
 
                 {/*=Navbar top*/}
                 {/* Wenn die Navbar da ist ist die Bottombar weg.. */}
@@ -59,14 +58,16 @@ class Login extends React.Component {
 
                 <View style={css.body}>
                     <StatusBar hidden={false} style={[{ backgroundColor: "#ffffff" }]} barStyle="dark-content" />
-                    <KeyboardAvoidingView behavior="position" keyboardVerticalOffset="-420">
+                   
                         <View hidden={true} style={login.body}>
 
                             <Text style={login.Text}>Suche deinen Account</Text>
+
                             <TextInput
                                 underlineColorAndroid={"transparent"}
                                 style={login.Input}
                                 placeholder={"Account Suchen"}
+                                placeholderTextColor={"#aaa"}
                                 onChangeText={text => this._onUserInputChange(text)}
                                 ref={input => {
                                     this.inputs["two"] = input;
@@ -76,10 +77,12 @@ class Login extends React.Component {
                                 }}
                             />
 
+                            
+
                             <FlatList
                                 data={this.props.foundUsers}
                                 extraData={this.state}
-                                style={login.foundUsers}
+                                style={login.userList}
                                 ref={ref => {
                                     this.flatListRef = ref;
                                 }}
@@ -88,49 +91,55 @@ class Login extends React.Component {
                                 horizontal={true}
                                 renderItem={({ item, index }) => {
                                     return (
-                                        <View>
-                                            <TouchableOpacity
-                                                onPress={() => {
-                                                    this.state.markered === item.username
-                                                        ? this.setState({ markered: "" }) &
-                                                        this.flatListRef.scrollToIndex({
-                                                            animated: true,
-                                                            index: 0
-                                                        })
-                                                        : this.setState({ markered: item.username }) &
-                                                        this.flatListRef.scrollToIndex({
-                                                            animated: true,
-                                                            index: index > 0 ? index - 0.2 : index
-                                                        });
-                                                }}
-                                            >
-                                                <View
-                                                    style={[
+                                    <TouchableOpacity
+                                        horizontal={"true"}
+                                        onPress={() => {
+                                            this.state.markered === item.username
+                                                ? this.setState({ markered: "" }) &
+                                                this.flatListRef.scrollToIndex({
+                                                    animated: true,
+                                                    index: 0
+                                                })
+                                                : this.setState({ markered: item.username }) &
+                                                this.flatListRef.scrollToIndex({
+                                                    animated: true,
+                                                    index: index > 0 ? index - 0.2 : index
+                                                });
+                                        }}
+                                    >
+                                        <View style={[
                                                         login.foundUser,
                                                         this.state.markered === item.username
-                                                            ? login.foundUserSelected
-                                                            : null
-                                                    ]}
-                                                >
-                                                    <Image
-                                                        style={login.foundPB}
-                                                        source={{
-                                                            uri:
-                                                                "https://pbs.twimg.com/profile_images/830204661474979841/qsnoO3lJ_400x400.jpg"
-                                                        }}
-                                                    />
-                                                    <Text style={login.foundUsernameText}>
-                                                        @{item.username}
-                                                    </Text>
-                                                </View>
-                                            </TouchableOpacity>
-                                        </View>
+                                                            ? login.userBox
+                                                            : login.userBox
+                                                    ]}>
+
+                                            <Image 
+                                            style={login.userImg} 
+                                            source={DefaultPB}/>
+            
+                                            <Text 
+                                            style={login.userFullname}
+                                            numberOfLines={1} 
+                                            ellipsizeMode ={'tail'} 
+                                            >
+                                                {item.fullname}
+                                            </Text>
+            
+                                            <Text  
+                                            numberOfLines={1} 
+                                            ellipsizeMode ={'tail'} 
+                                            style={login.userName}>
+                                                @{item.username}
+                                            </Text>
+            
+                                        </View>    
+                                    </TouchableOpacity>
+
                                     );
                                 }}
                             />
 
-                            {/* Geht nicht anders Weil drüber ein maxHeight ist */}
-                            <View style={login.space} />
 
                             {
                                 this.state.markered === "" ? null : (
@@ -167,7 +176,6 @@ class Login extends React.Component {
 
                             <View style={css.navTopPush} />
                         </View>
-                    </KeyboardAvoidingView>
 
                 </View>
 
@@ -185,10 +193,6 @@ class Login extends React.Component {
                     </TouchableOpacity>
                 </View>
 
-                <Image style={[css.cornerTL, css.corner]} source={corner} />
-                <Image style={[css.cornerTR, css.corner]} source={corner} />
-                <Image style={[css.cornerBL, css.corner]} source={corner} />
-                <Image style={[css.cornerBR, css.corner]} source={corner} />
             </View>
         );
     }

@@ -49,7 +49,6 @@ export default StyleSheet.create({
         top: 0,
         left: 0,
         right: 0,
-        paddingTop: 26,
         zIndex: 1000,
         maxHeight: 52 + 24,
         backgroundColor: "#fff",
@@ -62,7 +61,7 @@ export default StyleSheet.create({
         borderBottomWidth: 1,
         borderColor: "#d8d8d8", //fff + rgba000,0.05 = #f2f2f2
         width: "100%",
-        minHeight: 74,
+        minHeight: 54,
     },
     mainItem: {
         
@@ -80,7 +79,7 @@ export default StyleSheet.create({
         flex: 1
     },
     push: {
-        height: 74, //82 bei android
+        height: 54, //82 bei android
         width: "100%",
     }
 });

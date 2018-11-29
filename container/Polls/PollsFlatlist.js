@@ -74,7 +74,7 @@ class PollsFlatlist extends Component {
 
     render() {
         return (
-            <View>
+            <View style={s.box}>
                 <FlatList
                     style={s.posts}
                     data={this.props.polls.polls.home}

@@ -5,6 +5,39 @@ import { totalSize } from "react-native-dimension";
 /* Creative Board */
 
 export var login = StyleSheet.create({
+
+    //User
+    userList: {
+        paddingVertical: 32,
+        flexDirection: "row",
+        height: 100,
+    },
+    userBox: {
+        paddingHorizontal: 2,
+        width: 108,
+        alignItems: "center",
+        textAlign: "center",
+    },
+    userImg: {
+        height: 64,
+        width: 64,
+        borderRadius: 26,
+        marginVertical: 4,
+    },
+    userFullname: {
+        color: "#111",
+        fontFamily: "GS3",
+        fontSize: 13,
+    },
+    userName: {
+        color: "#aaa",
+        fontFamily: "GS1",
+        fontSize: 12,
+    },
+
+
+
+
     PasswordInputBox: {
         backgroundColor: "#dfe6e9",
         paddingHorizontal: 8,
@@ -25,69 +58,38 @@ export var login = StyleSheet.create({
         height: 24,
         width: 24
     },
-
-    space: {
-        width: "100%",
-        height: 32
-    },
     foundUserSelected: {
         backgroundColor: "#74b9ff"
     },
 
-    /* Ergebnisse beim Username eingeben */
-    foundUsers: {
-        flexDirection: "row",
-        maxHeight: 170,
-        overflow: "hidden",
-        borderRadius: 8,
-        marginHorizontal: 4
-    },
-    foundUser: {
-        alignItems: "center",
-        justifyContent: "center",
-        width: 130,
-        height: "100%",
-        backgroundColor: "#dfe6e9",
-        borderRadius: 4,
-        marginRight: 6,
-        padding: 16
-    },
-    foundPB: {
-        width: 88,
-        height: 88,
-        borderRadius: 44,
-        marginBottom: 8,
-        borderWidth: 1,
-        borderColor: "#fff"
-    },
-    foundUsernameText: {
-        fontFamily: "Poppins400",
-        color: "#2d3436",
-        textAlign: "center"
-    },
 
     /* Beschreibung */
     Text: {
         textAlign: "center",
         color: "#444",
-        fontFamily: "Poppins300",
+        fontFamily: "GS2",
         fontSize: 18,
         marginBottom: 16
     },
+    focus: {
+        backgroundColor: "rgba(0,0,0,0.065)",
+    },
     /* Input für: Username, */
     Input: {
-        backgroundColor: "#dfe6e9",
-        paddingHorizontal: 8,
-        paddingVertical: 8,
-        borderRadius: 4,
+        backgroundColor: "rgba(0,0,0,0.035)",
+        paddingHorizontal: 14,
+        paddingVertical: 10,
+        borderRadius: 12,
         marginBottom: 16,
 
-        color: "#333",
-        fontFamily: "Poppins300",
+        color: "#444",
+        fontFamily: "GS2",
         fontSize: 15
     },
     /* Die View um den Login bereich*/
     body: {
+        flexDirection: "column",
+        justifyContent: "flex-start",
         height: "100%",
         padding: 16,
         paddingVertical: 32

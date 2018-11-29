@@ -54,7 +54,7 @@ export default StyleSheet.create({
     // .posts > .box
     box: {
         padding: 0,
-        backgroundColor: "rgba(0,0,0,0.05)",
+        backgroundColor: "#fff",
         height: "100%",
         width: "100%",
         zIndex: 0,
