@@ -34,8 +34,8 @@ class Types extends React.Component {
                             <Image source={require("../../assets/img/create/no.png")} style={createBlocks.image} />
                         </View>
                         <View style={createBlocks.info}>
-                            <Text style={pc.polltypeName}>Normale Post</Text>
-                            <Text style={pc.polltypeDescription}>Benutzer haben keine möglichkeit Abzustimmen.</Text>
+                            <Text style={pc.polltypeName}>Kein Block</Text>
+                            <Text style={pc.polltypeDescription}>Benutzer haben keine möglichkeit zu interagieren.</Text>
                         </View>
                     </TouchableOpacity>
 
@@ -50,7 +50,7 @@ class Types extends React.Component {
                             <Image source={require("../../assets/img/create/classic.png")} style={createBlocks.image} />
                         </View>
                         <View style={createBlocks.info}>
-                            <Text style={pc.polltypeName}>Klassische Umfrage:</Text>
+                            <Text style={pc.polltypeName}>Klassische Umfrage</Text>
                             <Text style={pc.polltypeDescription}>Verschiede Antwortmöglichkeiten als Text.</Text>
                         </View>
                     </TouchableOpacity>
@@ -65,8 +65,8 @@ class Types extends React.Component {
                             <Image source={require("../../assets/img/create/thumbs.png")} style={createBlocks.image} />
                         </View>
                         <View style={createBlocks.info}>
-                            <Text style={pc.polltypeName}>Likes & Dislikes:</Text>
-                            <Text style={pc.polltypeDescription}>Benutzer können dein Beitrag Liken oder Diliken</Text>
+                            <Text style={pc.polltypeName}>Likes & Dislikes</Text>
+                            <Text style={pc.polltypeDescription}>Benutzer können dein Beitrag Liken oder Disliken.</Text>
                         </View>
                     </TouchableOpacity>
 
@@ -80,10 +80,71 @@ class Types extends React.Component {
                             <Image source={require("../../assets/img/create/like.png")} style={createBlocks.image} />
                         </View>
                         <View style={createBlocks.info}>
-                            <Text style={pc.polltypeName}>Gefällt mir:</Text>
+                            <Text style={pc.polltypeName}>Gefällt mir</Text>
+                            <Text style={pc.polltypeDescription}>Wähle ein Bild aus deiner Galerie.</Text>
+                        </View>
+                    </TouchableOpacity>
+
+                    <TouchableOpacity
+                        onPress={() => {
+                            this._handleTypeChange(0);
+                        }}
+                        style={createBlocks.item}
+                    >
+                        <View style={createBlocks.imageBox}>
+                            <Image source={require("../../assets/img/create/image.png")} style={createBlocks.image} />
+                        </View>
+                        <View style={createBlocks.info}>
+                            <Text style={pc.polltypeName}>Bild</Text>
                             <Text style={pc.polltypeDescription}>Benutzer können dein Beitrag nur Liken.</Text>
                         </View>
                     </TouchableOpacity>
+
+
+<TouchableOpacity
+                        onPress={() => {
+                            this._handleTypeChange(0);
+                        }}
+                        style={createBlocks.item}
+                    >
+                        <View style={createBlocks.imageBox}>
+                            <Image source={require("../../assets/img/create/song.png")} style={createBlocks.image} />
+                        </View>
+                        <View style={createBlocks.info}>
+                            <Text style={pc.polltypeName}>Song</Text>
+                            <Text style={pc.polltypeDescription}>Benutzer können dein Beitrag nur Liken.</Text>
+                        </View>
+                    </TouchableOpacity>
+
+
+<TouchableOpacity
+                        onPress={() => {
+                            this._handleTypeChange(0);
+                        }}
+                        style={createBlocks.item}
+                    >
+                        <View style={createBlocks.imageBox}>
+                            <Image source={require("../../assets/img/create/yt.png")} style={createBlocks.image} />
+                        </View>
+                        <View style={createBlocks.info}>
+                            <Text style={pc.polltypeName}>YouTube-Video</Text>
+                            <Text style={pc.polltypeDescription}>Benutzer können dein Beitrag nur Liken.</Text>
+                        </View>
+                    </TouchableOpacity>
+
+
+                    {/*
+                    Bild
+                    Wähle ein Bild aus deiner Galerie.
+
+                    Song
+                    Nutzer können 30sek eines Songs hören.
+
+                    YouTube-Video
+                    Fügt ein YouTube Video zu deinem Beitrag hinzu.
+
+                
+                    */}
 
 
 

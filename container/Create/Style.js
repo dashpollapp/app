@@ -64,6 +64,7 @@ export var createBlocks = StyleSheet.create({
         width: "100%",       
         backgroundColor: "#8c7ae6",
         marginTop: 28,
+        marginBottom: 120,
     },
     buttonText: {
         fontSize: 16,
