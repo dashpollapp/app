@@ -9,7 +9,10 @@ import optionsBlock from "../../assets/img/post/options/block.png"
 import optionsStats from "../../assets/img/post/options/stats.png"
 import optionsShare from "../../assets/img/post/options/share.png"
 
-const Option = (poll) => {
+const Option = (props) => {
+
+    const poll = props.poll;
+
     return (
         <View style={css.postOptions}>
             <TouchableOpacity style={css.postOption}>
