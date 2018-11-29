@@ -21,11 +21,10 @@ class PollsFlatlist extends Component {
 
     constructor(props) {
         super(props);
-
-    }
-
-    state = {
-        flatListRefreshing: false
+        this.state = {
+            options: "",
+            flatListRefreshing: false
+        }
     }
 
     flatListRefresh = () => {
@@ -91,7 +90,8 @@ class PollsFlatlist extends Component {
                         return (
                             <View style={[s.post, (index !== 0) ? { borderTopWidth: 1, borderColor: "#eee" } : null]}>
 
-                                {/* Teilen, Keine Intersse, Stats - Soll beim Klick auf den Titel geöffnet werden. */}
+                                {(this.state.options === item._id) ?
+
                                 <View style={s.postOptions}>
                                     <TouchableOpacity style={s.postOption}>
                                         <Image style={s.postOptionImg} source={optionsBlock} />          
@@ -103,6 +103,8 @@ class PollsFlatlist extends Component {
                                         <Image style={s.postOptionImg} source={optionsShare} />          
                                     </TouchableOpacity>  
                                 </View>
+
+                                : null}
 
 
                                 <View style={s.pPostHeader}>
@@ -121,7 +123,10 @@ class PollsFlatlist extends Component {
                                         </TouchableOpacity>
                                     }
 
-                                    <Text style={s.pTitle}>{item.heading}</Text>
+                                    <TouchableOpacity onPress={() => (this.state.options === item._id) ? this.setState({options: ""}) : this.setState({options: item._id})}>
+                                        <Text style={s.pTitle}>{item.heading}</Text>
+                                    </TouchableOpacity>
+
                                 </View>
 
                                 {item.text ? <Text style={s.description}>{item.text}</Text> : null}
