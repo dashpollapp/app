@@ -22,7 +22,57 @@ export default StyleSheet.create({
     },
 
 
+    // < Mordal/Popup: Nicht mehr anzeigen >
+    block:{
+        backgroundColor: "rgba(0,0,0,0.1)",
+        height: "100%",
+        width: "100%",
+        padding: 32,
+    },
+    blockHeading:{
+        fontFamily: "GS3",
+        color: "#222",
+        fontSize: 22,
+        textAlign: "center",
+        marginVertical: 32,
+    },
+
+
+    blockItem: {
+        marginVertical: 12,
+        flexDirection: "row",
+    },
+    blockItemText: {
+        fontFamily: "GS1",
+        color: "#666",
+        fontSize: 22,
+    },
+    blockItemBoolText: {
+        fontFamily: "GS2",
+        color: "#d63031",
+        fontSize: 22,
+        marginHorizontal: 12,
+    },
+
+
+    //Back btn:
+    blockHideButton: {
+        paddingVertical: 64,
+    },
+    blockHideText: {
+        fontFamily: "GS2",
+        color: "#0984e3",
+        fontSize: 18,
+        textAlign: "center",
+    },
+
+
+    // < / ENDE!: Mordal/Popup: Nicht mehr anzeigen >
+
     
+
+
+
 
     //URL in Beschreibung
     url: {

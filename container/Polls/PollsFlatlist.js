@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-import { View, TouchableOpacity, Image, Text, FlatList, Share } from "react-native";
+import { View, TouchableOpacity, Image, Text, FlatList, Share, Modal } from "react-native";
+import { BlurView } from 'expo';
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 
@@ -19,7 +20,8 @@ class PollsFlatlist extends Component {
         super(props);
         this.state = {
             options: "",
-            flatListRefreshing: false
+            flatListRefreshing: false,
+            modalVisible: true,
         }
     }
 
@@ -32,7 +34,7 @@ class PollsFlatlist extends Component {
     onEndReached = () => {
         if (this.props.polls.polls.home.length > 0 && !this.props.isFetchingPolls) {
             this.props.load_home_polls(this.props.polls.polls.home.length)
-        } else { console.log("Ende der Flatlist erreicht!"); }
+        } else { console.log("NULLLLLL"); }
     }
 
 
@@ -55,6 +57,74 @@ class PollsFlatlist extends Component {
     render() {
         return (
             <View style={s.box}>
+
+                <Modal
+                    animationType="fade"
+                    transparent={true}
+                    visible={this.state.modalVisible}
+                    onRequestClose={() => {
+                        Alert.alert('Modal has been closed.');
+                    }}>
+                    <BlurView tint="light" intensity={90}>
+                        <View style={s.block}>
+                            <View>
+                                <Text style={s.blockHeading}>Nicht mehr anzeigen:</Text>
+
+                                <TouchableOpacity>
+                                    <View style={s.blockItem}>
+                                        <Text style={s.blockItemText}>
+                                            Nicht mehr folgen
+                                        </Text>
+                                    </View>
+                                </TouchableOpacity>
+
+                                <TouchableOpacity>
+                                <View style={s.blockItem}>
+                                        <Text style={s.blockItemText}>
+                                            Gefällt mir nicht
+                                        </Text>
+                                    </View>
+                                </TouchableOpacity>
+
+                                <TouchableOpacity>
+                                <View style={s.blockItem}>
+                                        <Text style={s.blockItemText}>
+                                            Nicht mehr folgen
+                                        </Text>
+                                    </View>
+                                </TouchableOpacity>
+
+                                <TouchableOpacity>
+                                    <View style={s.blockItem}>
+                                        <Text style={s.blockItemText}>
+                                            Löschen
+                                        </Text>
+                                    </View>
+                                </TouchableOpacity>
+
+                                <TouchableOpacity>
+                                    <View style={s.blockItem}>
+                                        <Text style={s.blockItemText}>
+                                            Benachrichtgungen:
+                                        </Text>
+                                        <Text style={[s.blockItemBoolText]}>
+                                            Aus
+                                        </Text>
+                                    </View>
+                                </TouchableOpacity>
+
+                                <TouchableOpacity
+                                    style={s.blockHideButton}
+                                    onPress={() => {
+                                    this.setState({modalVisible: false});
+                                    }}>
+                                    <Text style={s.blockHideText}>Abbrechen</Text>
+                                </TouchableOpacity>
+                            </View>
+                        </View>
+                    </BlurView>
+                </Modal>
+
                 <FlatList
                     style={s.posts}
                     data={this.props.polls.polls.home}
@@ -66,7 +136,6 @@ class PollsFlatlist extends Component {
                     onRefresh={this.flatListRefresh}
                     onEndReachedThreshold={0.2}
                     onEndReached={this.onEndReached}
-
                     renderItem={({ item, index }) => {
                         return (
                             <View style={[s.post, (index !== 0) ? { borderTopWidth: 1, borderColor: "#eee" } : null]}>
