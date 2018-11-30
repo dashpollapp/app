@@ -74,26 +74,17 @@ export default class ChatOverview extends React.Component {
         ]
 
         return (
-            <View style={{ backgroundColor: "#fff", height: "100%",  opacity: 0.0, }}>
-
+            <View style={{ backgroundColor: "#fff", height: "100%",  opacity: 0, }}>
                 <ScrollView style={{height: "100%",}}>
      
-                    
                     <ChatItem data={chat[0]} />
-
                     <ChatItem data={chat[1]} />
-
                     <ChatItem data={chat[2]} />
-
                     <ChatItem data={chat[3]} />
-
                     <ChatItem data={chat[4]} />
-
                     <ChatItem data={chat[5]} />
 
-
                 </ScrollView>
-
             </View>
         );
     }
