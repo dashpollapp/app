@@ -53,6 +53,23 @@ class ClassicType extends React.Component {
                     <Text style={s.pollPercentText}>löschen</Text>
                 </View>
 
+                 <TextInput
+                    multiline
+                    underlineColorAndroid={'transparent'}
+                    style={[s.pollAnswerTitle, { height: 20, }]}
+                    placeholder={"Antwort 2"}
+                    placeholderTextColor={"#111"}
+                />
+                <View style={[s.pt1Bar]}>
+                    <LinearGradient
+                        style={[s.pt1BarInner, { width: "75%", height: 16, }]}
+                        colors={['#ae4768', '#3386cd']}
+                        start={{ x: 0.0, y: 0.0 }}
+                        end={{ x: 0.9, y: 0.1 }}
+                    />
+                    <Text style={s.pollPercentText}>löschen</Text>
+                </View>
+
                 <TouchableOpacity>
                     <Text style={type.addAnswer}>+ Antwort hinzufügen</Text>
                 </TouchableOpacity>
