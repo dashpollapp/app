@@ -1,3 +1,5 @@
+import React from "react";
+import { View } from "react-native";
 import { createMaterialTopTabNavigator } from "react-navigation";
 import * as screenName from "../constants/screenNames";
 
@@ -27,7 +29,7 @@ export default class RegisterNavigator extends React.Component {
     render() {
         return (
             <View style={{ flex: 1, backgroundColor: "#fff" }}>
-
+                <Navigator navigation={this.props.navigation} />
             </View>
         )
     }
