@@ -19,6 +19,8 @@ import pollImg from "../assets/img/navbar/bottom/poll.png";
 import chatOffImg from "../assets/img/navbar/bottom/chat_off.png";
 import pollOffImg from "../assets/img/navbar/bottom/poll_off.png";
 import defaultProfileImg from "../assets/img/dev/pp3.jpg"
+import OwnProfile from "../container/Profile/Profile";
+import { connect } from "react-redux";
 //import defaultProfileImg from "../assets/img/pb.png"
 
 function NavigatorClass(props) {
@@ -26,6 +28,7 @@ function NavigatorClass(props) {
     const { screenProps } = props;
     const pb = (screenProps.userObj) ? screenProps.userObj.meta.pb : false;
     console.log(screenProps.userObj);
+    const isOwnProfile = props.ownUserId === screenProps.userObj._id || props.ownUserId === screenProps.userId;
 
     const Navigator = createMaterialTopTabNavigator(
         {
@@ -36,7 +39,7 @@ function NavigatorClass(props) {
                 }
             },
             [screenName.USER_PROFILE]: {
-                screen: Profile,
+                screen: isOwnProfile ? OwnProfile : Profile,
                 navigationOptions: {
                     tabBarIcon: (active) => <Image style={{ height: 44, width: 44, borderRadius: 18, marginTop: -3 }} source={(pb) ? { uri: "https://api.dashpoll.net/pb/" + pb } : defaultProfileImg} />
                 }
@@ -91,7 +94,7 @@ function NavigatorClass(props) {
 
 
 
-export default class HomeNavigator extends React.Component {
+class HomeNavigator extends React.Component {
 
     //Wird gebraucht, um den Focus auf SettingsNavigator zu stellen, falls man in SETTINGS ist (this.props.navigation)
     //static router = Navigator.router;
@@ -102,7 +105,7 @@ export default class HomeNavigator extends React.Component {
 
     render() {
 
-        const { navigation } = this.props;
+        const { navigation, currentUserId } = this.props;
         const userObj = navigation.getParam("userObj", false);
         const userId = navigation.getParam("userId", false);
 
@@ -111,13 +114,23 @@ export default class HomeNavigator extends React.Component {
         return (
             <View style={{ flex: 1, backgroundColor: "#fff" }}>
                 <NavbarTopBack title={NavTopTitle} navigation={this.props.navigation} />
-                <NavigatorClass navigation={navigation} screenProps={{ userObj, userId, parentNavigation: navigation }} />
+                <NavigatorClass ownUserId={ownUserId} navigation={navigation} screenProps={{ userObj, userId, parentNavigation: navigation }} />
             </View>
         )
     }
 
 }
 
+
+
 HomeNavigator.propTypes = {
     navigation: PropTypes.object.isRequired
 }
+
+const mapStateToProps = state => {
+    return {
+        ownUserId: state.user.user._id
+    }
+}
+
+export default connect(mapStateToProps)(HomeNavigator)
