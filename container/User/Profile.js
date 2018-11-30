@@ -23,15 +23,18 @@ class Profile extends React.Component {
     render() {
         //console.log(this.props)
         const { screenProps } = this.props;
-        const { user } = screenProps;
-        const { following } = user;
+        const { userId } = screenProps;
 
-        console.log(user);
+
+        const user = this.props.currentUserProfile[userId];
+
+
+        //console.log(user);
 
         if (!user) {
             return (<View><Text>user: false</Text></View>)
         }
-
+        const { following } = user;
         return (
             <ScrollView>
 
@@ -60,6 +63,12 @@ class Profile extends React.Component {
     }
 }
 
+const mapStateToProps = state => {
+    return {
+        currentUserProfile: state.other_users
+    }
+}
+
 const mapDispatchToProps = dispatch => {
     return {
         follow_user: user => {
@@ -68,4 +77,4 @@ const mapDispatchToProps = dispatch => {
     }
 }
 
-export default connect(null, mapDispatchToProps)(Profile);
+export default connect(mapStateToProps, mapDispatchToProps)(Profile);

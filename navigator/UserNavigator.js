@@ -108,6 +108,14 @@ class HomeNavigator extends React.Component {
         this.props.load_user(this.state.userObj._id);
     }
 
+    shouldComponentUpdate(nextProps, nextState) {
+        if (this.props.requestedProfile[this.state.userObj._id]) {
+            if (this.props.requestedProfile[this.state.userObj._id].following !== nextProps.requestedProfile[this.state.userObj._id].following) return false;
+
+        }
+        return true
+    }
+
     //Man muss das userobj mit minimal dem username & _id übergeben ( -> für NavBar)
     //Dann wird im Redux store nach dieser ID geschaut, falls diese schon
     //existiert, wird gleich gerendert und von der APi der user geupdatet, (und dann nochmal gedenrert => TODO: shallow-vergleich für 1x rendern)
@@ -133,7 +141,7 @@ class HomeNavigator extends React.Component {
         return (
             <View style={{ flex: 1, backgroundColor: "#fff" }}>
                 <NavbarTopBack title={navTopTitle} navigation={this.props.navigation} />
-                <NavigatorClass isOwnProfile={isOwnProfile} navigation={navigation} screenProps={{ user, parentNavigation: navigation }} />
+                <NavigatorClass isOwnProfile={isOwnProfile} navigation={navigation} screenProps={{ userId: user._id, parentNavigation: navigation }} />
             </View>
         )
     }
