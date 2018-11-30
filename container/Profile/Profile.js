@@ -10,6 +10,7 @@ class Profile extends React.Component {
     render() {
         return (
             <View>
+                <Text>Eigenes Profil</Text>
             </View>
         );
     }

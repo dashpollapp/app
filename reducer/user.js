@@ -19,7 +19,12 @@ export default function (state = initialState, action) {
     switch (action.type) {
 
         case SET_CURRENT_USER:
-            return { loading: false, user: action.payload };
+            let ifUserFromDb = action.payload;
+            if (ifUserFromDb._id === "user" || (ifUserFromDb.id)) {
+                ifUserFromDb._id = ifUserFromDb.id;
+                delete ifUserFromDb.id;
+            }
+            return { loading: false, user: ifUserFromDb };
 
 
         case AUTH_LOGIN:
@@ -72,11 +77,7 @@ function deleteUserFromDb() {
 }
 
 function saveUserToDb(user) {
-    db.put(
-        {
-            _id: "user",
-            ...user
-        },
+    db.put(Object.assign(user, { _id: "user", id: user._id }),
         { force: true }
     )
 }
