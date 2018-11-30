@@ -18,6 +18,7 @@ export const PROFILE = "PROFILE";
 export const CREATEPOLL = "CREATEPOLL";
 export const POLLTYPES = "POLLTYPES";
 export const POLLSTATS = "POLLSTATS";
+export const POSTFILTER = "POSTFILTER";
 
 //UserNavigator
 export const USER_POSTS = "USER_POSTS";
