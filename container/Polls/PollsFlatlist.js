@@ -42,7 +42,7 @@ class PollsFlatlist extends Component {
     loadHeader = () => {
         return(
             <View style={s.boxHeader}>
-                <TouchableOpacity>
+                <TouchableOpacity onPress={() => this.props.navigation.push(screenNames.POSTFILTER)}>
                     <Text style={s.h1}>Beiträge:</Text>
                 </TouchableOpacity>
                 <TouchableOpacity onPress={() => this.props.navigation.push(screenNames.CREATE)}> 
