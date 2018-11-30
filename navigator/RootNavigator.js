@@ -9,6 +9,8 @@ import SettingsNavigator from "./SettingsNavigator";
 import SearchNavigator from "./SearchNavigator";
 import ProfileNavigator from "./ProfileNavigator";
 
+import PollStatsNavigator from './PollStatsNavigator';
+
 export default createStackNavigator(
     {
         [screenName.HOME]: HomeNavigator,
@@ -17,6 +19,7 @@ export default createStackNavigator(
         [screenName.SETTINGS]: SettingsNavigator,
         [screenName.SEARCH]: SearchNavigator,
         [screenName.PROFILE]: ProfileNavigator,
+        [screenName.POLLSTATS]: PollStatsNavigator,
     },
     {
         initialRouteName: screenName.HOME,

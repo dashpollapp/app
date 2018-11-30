@@ -21,7 +21,7 @@ class PollsFlatlist extends Component {
         this.state = {
             options: "",
             flatListRefreshing: false,
-            modalVisible: true,
+            modalVisible: false,
         }
     }
 
@@ -140,7 +140,7 @@ class PollsFlatlist extends Component {
                         return (
                             <View style={[s.post, (index !== 0) ? { borderTopWidth: 1, borderColor: "#eee" } : null]}>
 
-                                {(this.state.options === item._id) ? <Option poll={item} /> : null}
+                                {(this.state.options === item._id) ? <Option poll={item} navigation={this.props.navigation} /> : null}
 
                                 <View style={s.pPostHeader}>
 

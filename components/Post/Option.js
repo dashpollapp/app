@@ -4,6 +4,10 @@ import { View, TouchableOpacity, Image, StyleSheet } from "react-native";
 //Functions
 import sharePoll from '../../utils/share';
 
+import { connect } from 'react-redux';
+
+import * as screenNames from '../../constants/screenNames';
+
 //Images
 import optionsBlock from "../../assets/img/post/options/block.png"
 import optionsStats from "../../assets/img/post/options/stats.png"
@@ -18,7 +22,7 @@ const Option = (props) => {
             <TouchableOpacity style={css.postOption}>
                 <Image style={css.postOptionImg} source={optionsBlock} />          
             </TouchableOpacity>  
-            <TouchableOpacity style={css.postOption}>
+            <TouchableOpacity style={css.postOption} onPress={() => props.navigation.push(screenNames.POLLSTATS, {poll})}>
                 <Image style={css.postOptionImg} source={optionsStats} />          
             </TouchableOpacity>  
             <TouchableOpacity style={css.postOption} onPress={() => sharePoll(poll)}>
@@ -48,4 +52,4 @@ const css = StyleSheet.create({
     },
 })
 
-export default Option;
+export default connect()(Option);
