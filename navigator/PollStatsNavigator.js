@@ -28,7 +28,7 @@ export default class PollStatsNavigator extends React.Component {
     render() {
         return (
             <View style={{ flex: 1}}>
-                <NavbarTopBack title="Zurück" navigation={this.props.navigation} />
+                <NavbarTopBack title="Statistiken" navigation={this.props.navigation} />
                 <Navigator navigation={this.props.navigation} />
             </View>
         )
