@@ -13,7 +13,7 @@ class ClassicType extends React.Component {
         return (
             <View style={css.out}>
 
-                <View style={pc.polltype}>
+                <View style={[pc.polltype, {display: "none"}]}>
                     <Text style={type.title}>Klassische Umfrage: <Text style={pc.polltypeCat}>(Auswahl)</Text></Text>
                     <Text style={type.subtitle}>Verschiede Antwortmöglichkeiten als Text. Benutzer können sich für 1 Antwortmöglichkeit entscheiden.</Text>
                 </View>
