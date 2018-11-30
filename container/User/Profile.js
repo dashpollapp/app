@@ -6,20 +6,6 @@ import mapImage from "../../assets/img/map.png"
 
 import s from './ProfileStyle';
 
-const mockUserObj = {
-    _id: "",
-    username: "",
-    fullname: "",
-    meta: {
-        pb: ""
-    },
-    following: false,
-    num: {
-        following: 0,
-        follower: 0
-    }
-}
-
 class Profile extends React.Component {
     constructor(props) {
         super(props);
