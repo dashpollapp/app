@@ -12,6 +12,9 @@ import NavbarTopBack from "../components/Navbar/NavbarTopBack";
 import Chat from "../container/User/Chat";
 import Posts from "../container/User/Posts";
 import Profile from "../container/User/Profile";
+import OwnProfile from "../container/Profile/Profile";
+
+import { store } from "../utils"
 
 //Images
 import chatImg from "../assets/img/navbar/bottom/chat.png";
@@ -19,7 +22,6 @@ import pollImg from "../assets/img/navbar/bottom/poll.png";
 import chatOffImg from "../assets/img/navbar/bottom/chat_off.png";
 import pollOffImg from "../assets/img/navbar/bottom/poll_off.png";
 import defaultProfileImg from "../assets/img/dev/pp3.jpg"
-import OwnProfile from "../container/Profile/Profile";
 import { connect } from "react-redux";
 //import defaultProfileImg from "../assets/img/pb.png"
 
@@ -28,8 +30,8 @@ function NavigatorClass(props) {
     const { screenProps } = props;
     const pb = (screenProps.userObj) ? screenProps.userObj.meta.pb : false;
     console.log(screenProps.userObj);
-    const isOwnProfile = props.ownUserId === screenProps.userObj._id || props.ownUserId === screenProps.userId;
-
+    const isOwnProfile = props.ownUserId === screenProps.userObj._id;
+    console.log(isOwnProfile, props.ownUserId, screenProps.userObj._id);
     const Navigator = createMaterialTopTabNavigator(
         {
             [screenName.USER_CHAT]: {
@@ -110,11 +112,10 @@ class HomeNavigator extends React.Component {
         const userId = navigation.getParam("userId", false);
 
         var NavTopTitle = ((userObj) ? "@" + userObj.username : "Dein Profil")
-
         return (
             <View style={{ flex: 1, backgroundColor: "#fff" }}>
                 <NavbarTopBack title={NavTopTitle} navigation={this.props.navigation} />
-                <NavigatorClass ownUserId={ownUserId} navigation={navigation} screenProps={{ userObj, userId, parentNavigation: navigation }} />
+                <NavigatorClass ownUserId={this.props.ownUserId} navigation={navigation} screenProps={{ userObj, userId, parentNavigation: navigation }} />
             </View>
         )
     }
