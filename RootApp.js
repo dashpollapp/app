@@ -61,6 +61,11 @@ function cacheResourcesAsync() {
             require('./assets/img/post/polltypes/like/like_on.png'),
             require('./assets/img/post/polltypes/like/like_off.png'),
 
+            //Posts
+            require('./assets/img/post/options/block.png'),
+            require('./assets/img/post/options/share.png'),
+            require('./assets/img/post/options/stats.png'),
+
             //Erstmal 
             require('./assets/img/map.png')
         ]
