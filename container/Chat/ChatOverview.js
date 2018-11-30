@@ -3,17 +3,95 @@ import { StatusBar, StyleSheet, Text, View, ScrollView, TouchableOpacity, Image,
 import { LinearGradient } from 'expo';
 import PropTypes from 'prop-types';
 
-export default class ChatOverview extends React.Component {
+import { css } from "./ChatOverviewStyle"
 
+export default class ChatOverview extends React.Component {
     render() {
         return (
-
-            <View style={{ backgroundColor: "rgba(0,0,0,0.05)"}}>
+            <View style={{ backgroundColor: "#fff", opacity: 0}}>
 
                 <ScrollView>
-                    <Text style={{fontFamily: "GS2", textAlign: "center", paddingVertical: 12, fontSize: 16, color: "#666"}}>Geplant für 2019</Text>
+     
+                     {/*▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆  Priority: Ultraaaa Wichtig  ▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆*/}	
+                    <View style={[css.chat, css.chatNew,]}>	
+                        <View style={[css.chatNewBox, {backgroundColor:"#d83a3a"} ]}></View>
+                        <Image style={css.pb} source={require("../../assets/img/pb.png")}  />	
+                        <View style={css.text}>	
+                            <Text style={css.name}>Frank Idee</Text>	
+                            <Text numberOfLines={1} style={css.lastMessage}>Diese nachricht ist so w</Text>	
+                        </View>	
+                        <Text style={[css.sendTime, css.sendTimeNew, { color: "#e17055" }]}>12:14</Text>	
+                    </View>	
 
 
+                     {/*▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆  Priority: Extrem Wichtig  ▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆*/}	
+                    <View style={[css.chat, css.chatNew,]}>	
+                        <View style={[css.chatNewBox, {backgroundColor:"#db7a41"} ]}></View>
+                        <Image style={css.pb} source={require("../../assets/img/dev/pp2.jpg")}  />	
+                        <View style={css.text}>	
+                            <Text style={css.name}>Kaffsuchti</Text>	
+                            <Text numberOfLines={1} style={css.lastMessage}>Habe vergessen Nudeln aufzuschreiben</Text>	
+                        </View>	
+                        <Text style={[css.sendTime, css.sendTimeNew, { color: "#db7a41" }]}>12:17</Text>	
+                    </View>	
+
+                     {/*▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆  Priority: Wichtig  ▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆*/}	
+                    <View style={[css.chat, css.chatNew,]}>	
+                        <View style={[css.chatNewBox, {backgroundColor:"#e0a83e"} ]}></View>
+                        <Image style={css.pb} source={require("../../assets/img/pb.jpg")} />	
+                        <View style={css.text}>	
+                            <Text style={css.name}>Max Baier</Text>	
+                            <Text numberOfLines={1} style={css.lastMessage}>Ey hab noch ein Bug endeckt</Text>	
+                        </View>	
+                        <Text style={[css.sendTime, css.sendTimeNew, { color: "#e0a83e" }]}>12:15</Text>	
+                    </View>	
+                     {/*▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆  Neue Messageæ  ▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆*/}	
+                    <View style={[css.chat, css.chatNew]}>	
+                        <View style={[css.chatNewBox, {backgroundColor:"#0ccc6c"} ]}></View>
+                        <Image style={css.pb} source={require("../../assets/img/dev/pp1.jpg")} />	
+                        <View style={css.text}>	
+                            <Text style={css.name}>Irgendwer</Text>	
+                            <Text numberOfLines={1} style={css.lastMessage}>Irgendwas</Text>	
+                        </View>	
+                        <Text style={[css.sendTime, css.sendTimeNew]}>12:24</Text>	
+                    </View>	
+                     {/*▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆  Neue Message  ▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆*/}	
+                    <View style={[css.chat, css.chatNew,]}>	
+                        <View style={[css.chatNewBox, {backgroundColor:"#a3a3a3"} ]}></View>
+                        <Image style={css.pb} source={require("../../assets/img/dev/pp2.jpg")} />	
+                        <View style={css.text}>	
+                            <Text style={css.name}>Kevin</Text>	
+                            <Text numberOfLines={1} style={[css.lastMessage, css.lastMessageBold, {}]}>Spam wurde erkannt</Text>	
+                        </View>	
+                        <TouchableOpacity><Text style={[css.sendTime]}>Blockieren</Text></TouchableOpacity>
+                    </View>	
+                     {/*▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆  Neue Message  ▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆*/}	
+                    <View style={[css.chat, css.chatNew,]}>
+                        <View style={[css.chatNewBox, {backgroundColor:"#a3a3a3"} ]}></View>	
+                        <Image style={css.pb} source={require("../../assets/img/dev/pp2.jpg")} />	
+                        <View style={css.text}>	
+                            <Text style={css.name}>Kevin</Text>	
+                            <Text numberOfLines={1} style={[css.lastMessage, css.lastMessageBold, {}]}>Wegen Spam blokiert</Text>	
+                        </View>	
+                        <Text style={[css.sendTime]}>Rückgängig</Text>	
+                    </View>	
+                     <View style={[css.chat, /*css.chatSelected */]}>	
+                        <Image style={css.pb} source={require("../../assets/img/dev/pp4.jpg")} />	
+                        <View style={css.text}>	
+                            <Text style={css.name}>Karl der Käfer</Text>	
+                            <Text numberOfLines={1} style={css.lastMessage}>keine Panik auf der Titanik</Text>	
+                        </View>	
+                        <Text style={css.sendTime}>12:12</Text>	
+                    </View>	
+                     <View style={css.chat}>	
+                        <Image style={css.pb} source={require("../../assets/img/pb.jpg")} />	
+                        <View style={css.text}>	
+                            <Text style={css.name}>Endomat</Text>	
+                            <Text numberOfLines={1} style={css.lastMessage}>😂😂</Text>	
+                        </View>	
+                        <Text style={css.sendTime}>12:11</Text>	
+                    </View>	
+                    
 
                 </ScrollView>
 
@@ -25,106 +103,3 @@ export default class ChatOverview extends React.Component {
 ChatOverview.propTypes = {
     navigation: PropTypes.object.isRequired,
 }
-
-const css = StyleSheet.create({
-
-    h1: {
-        fontFamily: "GS3",
-        color: "#000",
-        fontSize: 24,
-        marginHorizontal: 16,
-        marginVertical: 12,
-    },
-
-
-    chatSelected: {
-        backgroundColor: "#efefef",
-    },
-
-    //Wetter
-    chatWeather: {
-
-    },
-    //Ersmal so
-    chatWeatherCrad: {
-        fontFamily: "Poppins600",
-        fontSize: 20,
-    },
-
-
-
-
-    sendTime: {
-        alignSelf: 'center',
-        justifyContent: "flex-end",
-        color: "#929684",
-        marginRight: 4,
-        fontSize: 14,
-        fontFamily: "Poppins300",
-        minWidth: 32,
-    },
-    sendTimeNew: {
-        fontFamily: "Poppins600",
-        color: "#36c187",
-    },
-    lastMessage: {
-        fontSize: 15,
-        color: "#55574e",
-        margin: 0,
-        padding: 0,
-        fontFamily: "Poppins400",
-        //ellipsizeMode: "tail",
-        marginTop: -2,
-    },
-    lastMessageBold: {
-        color: "#55574e",
-        fontFamily: "Poppins500",
-        flex: 1,
-        flexDirection: "row",
-    },
-    name: {
-        fontSize: 17,
-        color: "#000",
-        margin: 0,
-        padding: 0,
-        fontFamily: "Poppins600",
-    },
-    text: {
-        //fontFamily: "Poppins500",
-        alignSelf: "center",
-        marginLeft: 12,
-        flex: 1,
-    },
-    pb: {
-        height: 52,
-        width: 52,
-        borderRadius: 26,
-
-        //für Inhalt 
-        justifyContent: 'center',
-        alignItems: 'center'
-    },
-    chat: {
-        width: "100%",
-        backgroundColor: "#fff",
-        paddingVertical: 9,
-        paddingHorizontal: 9,
-
-        flexDirection: 'row',
-        alignItems: 'center',
-    },
-    chatNew: {
-        borderLeftWidth: 8,
-        borderColor: "#36c187",
-        backgroundColor: "#f2f2f2",
-    },
-    chats: {
-
-    },
-    body: {
-        width: "100%",
-        height: "100%",
-        paddingTop: 24,
-        backgroundColor: "#fff",
-    },
-});
