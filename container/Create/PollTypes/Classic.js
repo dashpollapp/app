@@ -26,7 +26,7 @@ class ClassicType extends React.Component {
                     placeholder={"Antwort 1"}
                     placeholderTextColor={"#111"}
                 />
-                <View style={s.pt1Bar}>
+                <View style={[s.pt1Bar, {marginBottom: 24,}]}>
                     <LinearGradient
                         style={[s.pt1BarInner, { width: "75%", height: 16, }]}
                         colors={['#ae4768', '#3386cd']}
@@ -43,7 +43,7 @@ class ClassicType extends React.Component {
                     placeholder={"Antwort 2"}
                     placeholderTextColor={"#111"}
                 />
-                <View style={[s.pt1Bar]}>
+                <View style={[s.pt1Bar, {marginBottom: 24,}]}>
                     <LinearGradient
                         style={[s.pt1BarInner, { width: "75%", height: 16, }]}
                         colors={['#ae4768', '#3386cd']}
@@ -60,7 +60,7 @@ class ClassicType extends React.Component {
                     placeholder={"Antwort 2"}
                     placeholderTextColor={"#111"}
                 />
-                <View style={[s.pt1Bar]}>
+                <View style={[s.pt1Bar, {marginBottom: 24,}]}>
                     <LinearGradient
                         style={[s.pt1BarInner, { width: "75%", height: 16, }]}
                         colors={['#ae4768', '#3386cd']}

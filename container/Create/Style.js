@@ -1057,6 +1057,7 @@ export var css = StyleSheet.create({
         height: "100%",
     },
     out: {
+        flex: 1,
         flexDirection: "column",
         justifyContent: "flex-start",
 
