@@ -29,7 +29,7 @@ export default function (state = initialState, action) {
         case SAVE_USER_PROFILE:
             const { user } = action.payload;
             //saveProfileToDb(user);
-            return { [user._id]: user, ...state, /*loading: false*/ }
+            return { ...state, [user._id]: user /*loading: false*/ }
 
         case SAVE_USER_PROFILE_FAIL:
             return { ...state, /*loading: false*/ }
