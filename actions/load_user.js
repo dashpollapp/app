@@ -1,8 +1,4 @@
-{ (this.state.options === item._id) ? <Option poll={item} /> : null }
-￼                                 { (this.state.options === item._id) ? <Option poll={item} navigation={this.props.navigation} /> : null }
-￼
-￼                                 <View style
-    import { LOAD_USER_PROFILE, SAVE_USER_PROFILE, SAVE_USER_PROFILE_FAIL} from "../constants/actionTypes";
+import { LOAD_USER_PROFILE, SAVE_USER_PROFILE, SAVE_USER_PROFILE_FAIL } from "../constants/actionTypes";
 
 export default function (userId) {
     const httpClient = require("../utils/store").httpClient;
