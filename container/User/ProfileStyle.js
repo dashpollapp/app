@@ -35,6 +35,8 @@ export default StyleSheet.create({
     },
     followButton_on: {
         backgroundColor: "#0984e3",
+        borderWidth: 3,
+        borderColor: "#0984e3",
         borderRadius: 20,
         paddingHorizontal: 16,
         paddingVertical: 16,
