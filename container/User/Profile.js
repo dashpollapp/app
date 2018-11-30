@@ -37,7 +37,7 @@ class Profile extends React.Component {
         const { user } = screenProps;
         const { following } = user;
 
-
+        console.log(user);
 
         if (!user) {
             return (<View><Text>user: false</Text></View>)
@@ -59,8 +59,8 @@ class Profile extends React.Component {
                     </TouchableOpacity>
 
                     <View style={s.followTextBox}>
-                        <Text style={[s.followerConterText]}>0 Follower</Text>
-                        <Text style={[s.followConterText]}>"Folgt dir & 0"</Text>
+                        <Text style={[s.followerConterText]}>{user.num.follower} Follower</Text>
+                        <Text style={[s.followConterText]}>{(user.followingYou) ? `Folgt dir & ${user.num.following -1}` : `Folgt ${user.num.following}`}</Text>
                     </View>
                 </View>
 
