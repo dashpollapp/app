@@ -97,9 +97,13 @@ class HomeNavigator extends React.Component {
 
     constructor(props) {
         super(props);
+        let userObj = this.props.navigation.getParam("userObj", false);
+        if(!userObj){
+            //Wenns das eigene Profil ist
+            userObj = { _id: this.props.ownUserId } 
+        };
         this.state = {
-            userObj: this.props.navigation.getParam("userObj", false),
-            user: {}
+            userObj
         }
     }
 
@@ -109,7 +113,7 @@ class HomeNavigator extends React.Component {
 
     //Nicht den ganzen Navigator rerendern, falls man (ent)folgt
     shouldComponentUpdate(nextProps, nextState) {
-        if (this.props.requestedProfile[this.state.userObj._id]) {
+        if (this.props.requestedProfile[this.state.userObj._id] && this.props.ownUserId !== this.state.userObj._id) {
             if (this.props.requestedProfile[this.state.userObj._id].following !== nextProps.requestedProfile[this.state.userObj._id].following) return false;
 
         }

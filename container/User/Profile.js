@@ -32,7 +32,7 @@ class Profile extends React.Component {
         //console.log(user);
 
         if (!user) {
-            return (<View><Text>user: false</Text></View>)
+            return (<View></View>)
         }
         const { following } = user;
         return (
