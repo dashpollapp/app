@@ -207,7 +207,6 @@ export var pc = StyleSheet.create({
         color: "#383838",
         fontSize: 16,
     },
-    //pc.create
     create: {
         padding: 12,
         height: "100%"
@@ -1054,13 +1053,9 @@ export var css = StyleSheet.create({
     },
     body: {
         width: "100%",
-        height: "100%",
+        height: "100%"
     },
     out: {
-        flex: 1,
-        flexDirection: "column",
-        justifyContent: "flex-start",
-
         backgroundColor: "#fff",
         width: "100%",
         height: "100%",

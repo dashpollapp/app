@@ -23,15 +23,13 @@ import chatOffImg from "../assets/img/navbar/bottom/chat_off.png";
 import pollOffImg from "../assets/img/navbar/bottom/poll_off.png";
 import defaultProfileImg from "../assets/img/dev/pp3.jpg"
 import { connect } from "react-redux";
+import { load_user } from "../actions"
 //import defaultProfileImg from "../assets/img/pb.png"
 
 function NavigatorClass(props) {
 
-    const { screenProps } = props;
-    const pb = (screenProps.userObj) ? screenProps.userObj.meta.pb : false;
-    console.log(screenProps.userObj);
-    const isOwnProfile = props.ownUserId === screenProps.userObj._id;
-    console.log(isOwnProfile, props.ownUserId, screenProps.userObj._id);
+    const { screenProps, isOwnProfile } = props;
+    const pb = (screenProps.user) ? screenProps.user.meta.pb : false;
     const Navigator = createMaterialTopTabNavigator(
         {
             [screenName.USER_CHAT]: {
@@ -98,24 +96,44 @@ function NavigatorClass(props) {
 
 class HomeNavigator extends React.Component {
 
-    //Wird gebraucht, um den Focus auf SettingsNavigator zu stellen, falls man in SETTINGS ist (this.props.navigation)
-    //static router = Navigator.router;
-    //static router = NavigatorClass.router; -> TODO: ist .router noch verfügbar als gerenderter component? .router public in NavigatorClass machen
-    //static router = NavigatorClass.obj.router
-    //Bitte fixen.. Bekomme wieder 100 Warnings wegen Navigator :) Thx
-    //Warning: You should only render one navigator explicitly in your app, and other navigators should by rendered by including them in that navigator.
+    constructor(props) {
+        super(props);
+        this.state = {
+            userObj: this.props.navigation.getParam("userObj", false),
+            user: {}
+        }
+    }
+
+    componentDidMount() {
+        this.props.load_user(this.state.userObj._id);
+    }
+
+    //Man muss das userobj mit minimal dem username & _id übergeben ( -> für NavBar)
+    //Dann wird im Redux store nach dieser ID geschaut, falls diese schon
+    //existiert, wird gleich gerendert und von der APi der user geupdatet, (und dann nochmal gedenrert => TODO: shallow-vergleich für 1x rendern)
+    //wenn nicht ist user = false und die User-Components zeigen in der Navbar
+    //nur den Username an, aber der Inhalt bleibt leer, bis durch cpm der Redux-
+    //State geuptatet worden ist. 
+    //WIR RENDERN NICHT NACH USEROBJ
 
     render() {
 
-        const { navigation, currentUserId } = this.props;
-        const userObj = navigation.getParam("userObj", false);
-        const userId = navigation.getParam("userId", false);
+        const { navigation, ownUserId } = this.props;
+        let user = this.props.requestedProfile[this.state.userObj._id] || false;
 
-        var NavTopTitle = ((userObj) ? "@" + userObj.username : "Dein Profil")
+        let navTopTitle;
+        if (user) {
+            navTopTitle = (user._id === ownUserId) ? "Dein Profil" : `@${user.username}`
+        } else {
+            navTopTitle = (this.state.userObj._id === ownUserId) ? "Dein Profil" : `@${this.state.userObj.username}`
+        }
+
+        const isOwnProfile = this.state.userObj._id === ownUserId;
+
         return (
             <View style={{ flex: 1, backgroundColor: "#fff" }}>
-                <NavbarTopBack title={NavTopTitle} navigation={this.props.navigation} />
-                <NavigatorClass ownUserId={this.props.ownUserId} navigation={navigation} screenProps={{ userObj, userId, parentNavigation: navigation }} />
+                <NavbarTopBack title={navTopTitle} navigation={this.props.navigation} />
+                <NavigatorClass isOwnProfile={isOwnProfile} navigation={navigation} screenProps={{ user, parentNavigation: navigation }} />
             </View>
         )
     }
@@ -130,8 +148,17 @@ HomeNavigator.propTypes = {
 
 const mapStateToProps = state => {
     return {
-        ownUserId: state.user.user._id
+        ownUserId: state.user.user._id,
+        requestedProfile: state.other_users
     }
 }
 
-export default connect(mapStateToProps)(HomeNavigator)
+const mapDispatchToProps = dispatch => {
+    return {
+        load_user: userId => {
+            dispatch(load_user(userId));
+        }
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(HomeNavigator)

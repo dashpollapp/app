@@ -1,24 +1,38 @@
 import {
     SAVE_USER_PROFILE,
     CLEAR_USER_PROFILES,
-    LOAD_USER_PROFILE
+    LOAD_USER_PROFILE,
+    SAVE_USER_PROFILE_FAIL,
+    AUTH_LOGOUT,
+    AUTH_LOGOUT_ALL_SUCCESS
 } from "../constants/actionTypes";
 
-import { db } from "../utils";
+import db from "../utils/db";
 
 const initialState = {}
 
 export default function (state = initialState, action) {
     switch (action.type) {
-        case LOAD_USER_PROFILE:
-            return { ...state, loading: true }
+
+        /*
+        
+            {
+                "aw89fua8wd":{
+                    _id: "aw89fua8wd",
+                    username: "lugga",
+                    ...
+                }
+            }
+
+        */
+
         case SAVE_USER_PROFILE:
             const { user } = action.payload;
             //saveProfileToDb(user);
-            return { ...state, [user._id]: user, loading: false }
+            return { [user._id]: user, ...state, /*loading: false*/ }
 
         case SAVE_USER_PROFILE_FAIL:
-            return { ...state, loading: false }
+            return { ...state, /*loading: false*/ }
 
         case CLEAR_USER_PROFILES:
             //deleteProfilesFromDb();

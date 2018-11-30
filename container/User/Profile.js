@@ -32,9 +32,16 @@ class Profile extends React.Component {
 
 
     render() {
+        //console.log(this.props)
         const { screenProps } = this.props;
-        const user = (screenProps.userObj) ? screenProps.userObj : mockUserObj
-        const following = user.following;
+        const { user } = screenProps;
+        const { following } = user;
+
+
+
+        if (!user) {
+            return (<View><Text>user: false</Text></View>)
+        }
 
         return (
             <ScrollView>
