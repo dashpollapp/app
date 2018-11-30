@@ -28,8 +28,7 @@ import { load_user } from "../actions"
 
 function NavigatorClass(props) {
 
-    const { screenProps, isOwnProfile } = props;
-    const pb = (screenProps.user) ? screenProps.user.meta.pb : false;
+    const { pb, isOwnProfile } = props;
     const Navigator = createMaterialTopTabNavigator(
         {
             [screenName.USER_CHAT]: {
@@ -108,6 +107,7 @@ class HomeNavigator extends React.Component {
         this.props.load_user(this.state.userObj._id);
     }
 
+    //Nicht den ganzen Navigator rerendern, falls man (ent)folgt
     shouldComponentUpdate(nextProps, nextState) {
         if (this.props.requestedProfile[this.state.userObj._id]) {
             if (this.props.requestedProfile[this.state.userObj._id].following !== nextProps.requestedProfile[this.state.userObj._id].following) return false;
@@ -141,7 +141,7 @@ class HomeNavigator extends React.Component {
         return (
             <View style={{ flex: 1, backgroundColor: "#fff" }}>
                 <NavbarTopBack title={navTopTitle} navigation={this.props.navigation} />
-                <NavigatorClass isOwnProfile={isOwnProfile} navigation={navigation} screenProps={{ userId: user._id, parentNavigation: navigation }} />
+                <NavigatorClass isOwnProfile={isOwnProfile} navigation={navigation} pb={(user) ? user.meta.pb : false} screenProps={{ userId: user._id, parentNavigation: navigation }} />
             </View>
         )
     }
