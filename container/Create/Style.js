@@ -207,6 +207,7 @@ export var pc = StyleSheet.create({
         color: "#383838",
         fontSize: 16,
     },
+    //pc.create
     create: {
         padding: 12,
         height: "100%"
