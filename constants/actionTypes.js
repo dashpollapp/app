@@ -52,3 +52,5 @@ export const VOTE_FROM_USER = "VOTE_FROM_USER";
 //reducer/other_users.js
 export const SAVE_USER_PROFILE = "SAVE_USER_PROFILE";
 export const CLEAR_USER_PROFILES = "CLEAR_USER_PROFILES";
+export const LOAD_USER_PROFILE = "LOAD_USER_PROFILE";
+export const SAVE_USER_PROFILE_FAIL = "SAVE_USER_PROFILE_FAIL";
