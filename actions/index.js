@@ -9,6 +9,7 @@ import create_poll from "./create_poll";
 import load_home_polls from "./load_polls_home";
 import vote from "./vote";
 import load_user from "./load_user";
+import follow_user from "./follow_user";
 
 export {
     set_current_user,
@@ -21,5 +22,6 @@ export {
     create_poll_change_polltype,
     load_home_polls,
     vote,
-    load_user
+    load_user,
+    follow_user
 }

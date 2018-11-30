@@ -4,7 +4,8 @@ import {
     LOAD_USER_PROFILE,
     SAVE_USER_PROFILE_FAIL,
     AUTH_LOGOUT,
-    AUTH_LOGOUT_ALL_SUCCESS
+    AUTH_LOGOUT_ALL_SUCCESS,
+    FOLLOW_USER_SUCCESS
 } from "../constants/actionTypes";
 
 import db from "../utils/db";
@@ -37,6 +38,9 @@ export default function (state = initialState, action) {
         case CLEAR_USER_PROFILES:
             //deleteProfilesFromDb();
             return initialState;
+
+        case FOLLOW_USER_SUCCESS:
+            return { ...state, [action.payload.user._id]: action.payload.user }
 
         case AUTH_LOGOUT:
         case AUTH_LOGOUT_ALL_SUCCESS:

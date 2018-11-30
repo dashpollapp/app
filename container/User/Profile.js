@@ -6,14 +6,17 @@ import mapImage from "../../assets/img/map.png"
 
 import s from './ProfileStyle';
 
+import { connect } from "react-redux";
+import { follow_user } from '../../actions'
+
 class Profile extends React.Component {
     constructor(props) {
         super(props);
         this.state = {};
     }
 
-    followButton = () => {
-
+    followButton = (user) => {
+        this.props.follow_user(user);
     }
 
 
@@ -38,7 +41,7 @@ class Profile extends React.Component {
                 <Text style={s.name}>@{user.username}</Text>
 
                 <View style={[s.followBox]}>
-                    <TouchableOpacity onPress={() => this.followButton()}>
+                    <TouchableOpacity onPress={() => this.followButton(user)}>
                         <View style={(following) ? s.followButton_on : s.followButton}>
                             <Text style={(following) ? s.followButtonText_on : s.followButtonText}>{(following) ? "Folgst du" : "Folgen"}</Text>
                         </View>
@@ -46,7 +49,7 @@ class Profile extends React.Component {
 
                     <View style={s.followTextBox}>
                         <Text style={[s.followerConterText]}>{user.num.follower} Follower</Text>
-                        <Text style={[s.followConterText]}>{(user.followingYou) ? `Folgt dir & ${user.num.following -1}` : `Folgt ${user.num.following}`}</Text>
+                        <Text style={[s.followConterText]}>{(user.followingYou) ? `Folgt dir & ${user.num.following - 1}` : `Folgt ${user.num.following}`}</Text>
                     </View>
                 </View>
 
@@ -57,4 +60,12 @@ class Profile extends React.Component {
     }
 }
 
-export default Profile;
+const mapDispatchToProps = dispatch => {
+    return {
+        follow_user: user => {
+            dispatch(follow_user(user));
+        }
+    }
+}
+
+export default connect(null, mapDispatchToProps)(Profile);
