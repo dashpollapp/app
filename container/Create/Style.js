@@ -36,7 +36,7 @@ export var createBlocks = StyleSheet.create({
     },
 
 
-    
+
 
 
     h1: {
@@ -44,7 +44,7 @@ export var createBlocks = StyleSheet.create({
         color: "#000",
         fontSize: 24,
     },
-    
+
     h2: {
         fontSize: 16,
         fontFamily: "GS2",
@@ -57,11 +57,11 @@ export var createBlocks = StyleSheet.create({
         height: "100%",
         paddingHorizontal: 16,
     },
-    button:{
+    button: {
         paddingVertical: 8,
         paddingHorizontal: 12,
         borderRadius: 10,
-        width: "100%",       
+        width: "100%",
         backgroundColor: "#8c7ae6",
         marginTop: 28,
         marginBottom: 120,
@@ -209,6 +209,7 @@ export var pc = StyleSheet.create({
     },
     create: {
         padding: 12,
+        height: "100%"
     },
 });
 /* Profile */
@@ -1058,7 +1059,6 @@ export var css = StyleSheet.create({
         backgroundColor: "#fff",
         width: "100%",
         height: "100%",
-
         paddingTop: Platform.OS === 'ios' ? 22 : 24,
     },
 
