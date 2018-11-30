@@ -14,3 +14,7 @@ export default createStackNavigator(
         initialRouteName: screenName.SIGN_IN
     }
 );
+
+//berechtigungen -> Namen -> Password -> Fertig -> // Create oder Freune 
+//                          |2Auth
+//                          |Pin - TouchID - FaceID
