@@ -1,12 +1,12 @@
 import React, { Component } from "react";
-import { View,Modal, TouchableOpacity, ScrollView, Text, } from "react-native";
+import { View, Modal, TouchableOpacity, ScrollView, Text, } from "react-native";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 
 import * as screenNames from "../../constants/screenNames";
 import style from "./PollStyle";
 import PollsFlatlist from "./PollsFlatlist";
-import { load_home_polls, vote } from "../../actions";
+import { load_home_polls, vote, update_user_from_api } from "../../actions";
 
 class Polls extends Component {
     constructor(props) {
@@ -14,6 +14,7 @@ class Polls extends Component {
     }
 
     componentDidMount() {
+        this.props.update_user_from_api();
         this.props.load_home_polls(0);
     }
 
@@ -48,6 +49,9 @@ const mapDispatchToProps = dispatch => {
         },
         vote: (initiator, poll, choice) => {
             dispatch(vote("home", poll, choice))
+        },
+        update_user_from_api: () => {
+            dispatch(update_user_from_api());
         }
     }
 }

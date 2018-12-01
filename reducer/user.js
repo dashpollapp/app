@@ -9,7 +9,8 @@ import {
     AUTH_REGISTER,
     AUTH_REGISTER_FAIL,
     AUTH_REGISTER_SUCCESS,
-    UPLOAD_PB_SUCCESS
+    UPLOAD_PB_SUCCESS,
+    UPDATE_USER_FROM_API_SUCCESS
 } from "../constants/actionTypes";
 
 import db from "../utils/db";
@@ -27,9 +28,15 @@ export default function (state = initialState, action) {
             }
             return { loading: false, user: ifUserFromDb };
 
+        case UPDATE_USER_FROM_API_SUCCESS:
+            let userFromApi = action.payload.user;
+            return { loading: false, user: { ...userFromApi, token: state.user.token } };
 
+        //Ganzen user updaten
         case UPLOAD_PB_SUCCESS:
-            return { ...state, user: { ...state.user, meta: { ...state.user.meta, pb: action.payload.msg }}}
+            let userPbUpdated = { ...state.user, meta: { ...state.user.meta, pb: action.payload.msg } }
+            saveUserToDb(userPbUpdated);
+            return { ...state, user: userPbUpdated }
 
         case AUTH_LOGIN:
             return { ...state, loading: true };
@@ -46,10 +53,12 @@ export default function (state = initialState, action) {
 
         case AUTH_REGISTER:
             return { ...state, loading: true };
+
         case AUTH_REGISTER_SUCCESS:
             let registeredUser = { ...action.payload.data.user, token: action.payload.data.token, loading: false }
             saveUserToDb(registeredUser);
             return { loading: false, user: registeredUser };
+
         case AUTH_REGISTER_FAIL:
             return {
                 user: false,
@@ -80,7 +89,19 @@ function deleteUserFromDb() {
 }
 
 function saveUserToDb(user) {
-    db.put(Object.assign(user, { _id: "user", id: user._id }),
-        { force: true }
-    )
+    console.log("SAVEUSER");
+    db.get('user').then(function (doc) {
+        return db.remove(doc._id, doc._rev).then(() => {
+            db.put(Object.assign(user, { _id: "user", id: user._id }),
+                { force: true }
+            )
+        })
+
+    })
+        .catch(e => {
+            db.put(Object.assign(user, { _id: "user", id: user._id }),
+                { force: true }
+            )
+        });
+
 }

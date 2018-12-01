@@ -5,7 +5,7 @@ import { View, StyleSheet, Dimensions, Image } from "react-native";
 import { connect } from "react-redux";
 
 import db from "./utils/db";
-import { set_current_user } from "./actions";
+import { set_current_user, update_user_from_api } from "./actions";
 
 
 import LoginNavigator from "./navigator/LoginNavigator";
@@ -103,7 +103,7 @@ class RootApp extends React.Component {
             .then(results => {
                 const [, user] = results;
 
-                if (user) this.props.set_current_user(user);
+                if ((user)) this.props.set_current_user(user);
 
                 this.setState({ isAppReady: true }, () => { SplashScreen.hide() })
             });
@@ -169,7 +169,7 @@ RootApp.propTypes = {
     user: PropTypes.oneOfType([
         PropTypes.bool,
         PropTypes.object,
-    ]).isRequired,
+    ]).isRequired
 }
 
 const mapStateToProps = state => {
