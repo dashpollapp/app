@@ -13,7 +13,8 @@ export default class ChatOverviewItem extends Component {
         let lastMessage = data.lastMessage.text
         let title = data.title
 
-        let showAsNew = data.lastMessage.from != 0 && data.lastMessage.readed == 0
+        let showAsNew   = data.lastMessage.from != 0 && data.lastMessage.readed == 0
+        let chatTime    = data.lastMessage.time
         let priorityColor
 
         switch (data.priority) {
@@ -34,19 +35,23 @@ export default class ChatOverviewItem extends Component {
                 break;
         }
 
+        //Gelesen: Uhrzeit > Textfarbe > Grau
+        data.lastMessage.readed != 0 ? priorityColor = "#aaa" : null
+
         return (
-            <View style={[css.chat, css.chatNew,]}>
+            <TouchableOpacity>
+                <View style={[css.chat, showAsNew ? css.chatNew : null ]}>
 
-                {showAsNew ? <View style={[css.chatNewBox, { backgroundColor: priorityColor }]}></View> : null}
+                    {showAsNew ? <View style={[css.chatNewBox, { backgroundColor: priorityColor }]}></View> : null}
 
-
-                <Image style={css.pb} source={require("../../assets/img/pb.png")} />
-                <View style={css.text}>
-                    <Text style={css.name}>{title}</Text>
-                    <Text numberOfLines={1} style={css.lastMessage}>{lastMessage}</Text>
+                    <Image style={css.pb} source={require("../../assets/img/pb.png")} />
+                    <View style={css.text}>
+                        <Text style={css.name}>{title}</Text>
+                        <Text numberOfLines={1} style={css.lastMessage}>{lastMessage}</Text>
+                    </View>
+                    <Text style={[css.sendTime, css.sendTimeNew, { color: priorityColor }]}>{chatTime}</Text>
                 </View>
-                <Text style={[css.sendTime, css.sendTimeNew, { color: "#e17055" }]}>12:14</Text>
-            </View>
+            </TouchableOpacity>
         )
     }
 }

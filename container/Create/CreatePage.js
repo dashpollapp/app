@@ -83,6 +83,7 @@ class CreatePage extends React.Component {
                         </View>
                     </TouchableOpacity>
 
+
                     {currentPolltype}
 
                 </ScrollView>

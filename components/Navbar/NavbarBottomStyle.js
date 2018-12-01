@@ -9,8 +9,8 @@ export default StyleSheet.create({
 
         padding: 12,
         backgroundColor: "#fff",
-        borderTopWidth: 1,
-        borderColor: "#d8d8d8",
+        borderTopWidth: 4,
+        borderColor: "#eee",
 
         minHeight: 52,
 

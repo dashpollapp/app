@@ -58,10 +58,21 @@ export default StyleSheet.create({
         flexDirection: "row",
         justifyContent: "space-between",
         alignItems: "center",
-        borderBottomWidth: 1,
-        borderColor: "#d8d8d8", //fff + rgba000,0.05 = #f2f2f2
+        borderBottomWidth: 1, //0
+        borderColor: "#eee",
         width: "100%",
         minHeight: 54,
+
+        /*
+        shadowColor: "#000",
+        shadowOffset: {
+            width: 0,
+            height: 1,
+        },
+        shadowOpacity: 0.1,
+        shadowRadius: 2,
+        */
+
     },
     mainItem: {
         
@@ -79,7 +90,8 @@ export default StyleSheet.create({
         flex: 1
     },
     push: {
-        height: 54, //82 bei android
+        zIndex: 0,
+        height: 54, // 
         width: "100%",
     }
 });
