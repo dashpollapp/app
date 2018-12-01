@@ -1,7 +1,10 @@
 import { StyleSheet } from 'react-native';
 import { Dimensions, Platform } from 'react-native';
 
+//Create vom 1.12.2018
+export var c = StyleSheet.create({
 
+})
 
 export var createBlocks = StyleSheet.create({
     image: {
@@ -39,12 +42,7 @@ export var createBlocks = StyleSheet.create({
 
 
 
-    h1: {
-        fontFamily: "GS3",
-        color: "#000",
-        fontSize: 24,
-    },
-
+ 
     h2: {
         fontSize: 16,
         fontFamily: "GS2",

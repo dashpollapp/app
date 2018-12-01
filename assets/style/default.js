@@ -20,5 +20,25 @@ export default StyleSheet.create({
     },
 
 
+    
+    link: {
+        fontSize: 18,
+        fontFamily: "GS1",
+        color: "#000",
+        fontWeight: "500",
+        color: "#0984e3",
+    },
+    boxHeader: {
+        width: "100%",
+        padding: 24,
+        paddingHorizontal: 18,
+    },
+    h1: {
+        fontFamily: "GS3",
+        color: "#000",
+        fontSize: 24,
+    },
+
+
 
 })
