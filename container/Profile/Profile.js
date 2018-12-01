@@ -4,7 +4,7 @@ import { connect } from "react-redux";
 
 import profileImage from "../../assets/img/dev/pp3.jpg"
 
-import { ImagePicker } from "expo";
+import { ImagePicker, Permissions } from "expo";
 
 import { upload_pb } from "../../actions"
 
@@ -17,15 +17,23 @@ class Profile extends React.Component {
     }
 
     _uploadProfilePB  = async () => {
-        let result = await ImagePicker.launchImageLibraryAsync({
-            allowsEditing: true,
-            mediaTypes: "Images",
-            aspect: [1, 1],
-        });
-      
-        if(!result.cancelled) {
-            this.props.upload_pb(result);
-        }
+
+        const { status: cameraRollPerm } = await Permissions.askAsync(Permissions.CAMERA_ROLL);
+
+        if (cameraRollPerm === 'granted') {
+
+            let result = await ImagePicker.launchImageLibraryAsync({
+                allowsEditing: true,
+                mediaTypes: "Images",
+                aspect: [1, 1],
+            });
+        
+            if(!result.cancelled) {
+                this.props.upload_pb(result);
+            }
+
+        }   
+
     }
 
 
