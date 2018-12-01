@@ -8,7 +8,8 @@ import {
     AUTH_LOGIN_FAIL,
     AUTH_REGISTER,
     AUTH_REGISTER_FAIL,
-    AUTH_REGISTER_SUCCESS
+    AUTH_REGISTER_SUCCESS,
+    UPLOAD_PB_SUCCESS
 } from "../constants/actionTypes";
 
 import db from "../utils/db";
@@ -26,6 +27,9 @@ export default function (state = initialState, action) {
             }
             return { loading: false, user: ifUserFromDb };
 
+
+        case UPLOAD_PB_SUCCESS:
+            return { ...state, user: { ...state.user, meta: { ...state.user.meta, pb: action.payload.msg }}}
 
         case AUTH_LOGIN:
             return { ...state, loading: true };
@@ -52,7 +56,6 @@ export default function (state = initialState, action) {
                 loading: false,
                 error: 'Error while login in',
             };
-
 
         case AUTH_LOGOUT:
             deleteUserFromDb();

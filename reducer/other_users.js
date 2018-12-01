@@ -5,7 +5,8 @@ import {
     SAVE_USER_PROFILE_FAIL,
     AUTH_LOGOUT,
     AUTH_LOGOUT_ALL_SUCCESS,
-    FOLLOW_USER_SUCCESS
+    FOLLOW_USER_SUCCESS,
+    UPLOAD_PB_SUCCESS
 } from "../constants/actionTypes";
 
 import db from "../utils/db";
@@ -14,18 +15,6 @@ const initialState = {}
 
 export default function (state = initialState, action) {
     switch (action.type) {
-
-        /*
-        
-            {
-                "aw89fua8wd":{
-                    _id: "aw89fua8wd",
-                    username: "lugga",
-                    ...
-                }
-            }
-
-        */
 
         case SAVE_USER_PROFILE:
             const { user } = action.payload;

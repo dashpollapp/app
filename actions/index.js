@@ -10,6 +10,7 @@ import load_home_polls from "./load_polls_home";
 import vote from "./vote";
 import load_user from "./load_user";
 import follow_user from "./follow_user";
+import upload_pb from "./upload_pb";
 
 export {
     set_current_user,
@@ -23,5 +24,6 @@ export {
     load_home_polls,
     vote,
     load_user,
-    follow_user
+    follow_user,
+    upload_pb
 }

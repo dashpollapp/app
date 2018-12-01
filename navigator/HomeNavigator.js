@@ -13,6 +13,8 @@ import NavbarTop from "../components/Navbar/NavbarTop";
 import Polls from "../container/Polls/Polls";
 import { ChatOverview } from "../container/Chat";
 
+import { connect } from "react-redux";
+
 //Images
 import chatImg from "../assets/img/navbar/bottom/chat.png";
 import pollImg from "../assets/img/navbar/bottom/poll.png";
@@ -70,7 +72,7 @@ const Navigator = createMaterialTopTabNavigator(
     }
 );
 
-export default class HomeNavigator extends React.Component {
+class HomeNavigator extends React.Component {
 
     //Wird gebraucht, um den Focus auf SettingsNavigator zu stellen, falls man in SETTINGS ist (this.props.navigation)
     static router = Navigator.router;
@@ -78,7 +80,7 @@ export default class HomeNavigator extends React.Component {
     render() {
         return (
             <View style={{ flex: 1, backgroundColor: "#fff" }}>
-                <NavbarTop navigation={this.props.navigation} />
+                <NavbarTop pb={this.props.pb} navigation={this.props.navigation} />
                 <Navigator navigation={this.props.navigation} screenProps={{ parentNavigation: this.props.navigation }} />
             </View>
         )
@@ -89,3 +91,11 @@ export default class HomeNavigator extends React.Component {
 HomeNavigator.propTypes = {
     navigation: PropTypes.object.isRequired
 }
+
+const mapStateToProps = state => {
+    return {
+        pb: state.user.user.meta.pb
+    }
+}
+
+export default connect(mapStateToProps)(HomeNavigator);

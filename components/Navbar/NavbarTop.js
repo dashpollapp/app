@@ -10,6 +10,7 @@ import pbImg from "../../assets/img/pb.jpg";
 
 export default class NavbarTop extends Component {
     render() {
+        const { pb } = this.props; 
         return (
             <View>
                 <View style={nt.box}>
@@ -20,7 +21,7 @@ export default class NavbarTop extends Component {
                         <Image style={nt.mainItemLogoImg} source={logoImg} />
                     </TouchableOpacity>
                     <TouchableOpacity onPress={() => this.props.navigation.push(screenNames.USER)} style={nt.mainItem}>
-                        <Image style={nt.mainItemPbImg} source={pbImg} />
+                        <Image style={nt.mainItemPbImg} source={(pb) ? { uri: "https://api.dashpoll.net/pb/"+pb } : pbImg} />
                     </TouchableOpacity>
 
                 </View>
