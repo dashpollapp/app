@@ -52,7 +52,7 @@ function cacheResourcesAsync() {
             require('./assets/img/splash.png'),
             require('./assets/img/corner.png'),
             require('./assets/img/hide.png'),
-            require('./assets/img/pb.jpg'),
+            require('./assets/img/pb.png'),
 
             //Create
             require('./assets/img/create/copy.png'),
