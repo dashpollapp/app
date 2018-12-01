@@ -2,7 +2,7 @@ import { UPLOAD_PB, UPLOAD_PB_SUCCESS, UPLOAD_PB_FAIL } from "../constants/actio
 
 export default function (image) {
 
-    const store = require("../utils");
+    const store = require("../utils").store;
 
     return dispatch => {
 
