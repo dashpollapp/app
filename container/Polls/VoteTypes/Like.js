@@ -22,14 +22,14 @@ export default class LikeType extends React.Component {
                     </View>
                 </TouchableOpacity>
 
-                {/* Comments */}
+                {/* Comments 
                 <View style={comments.box}>
                     <View style={comments.comments}>
                         <View style={comments.comment}>
                             <TouchableOpacity>
                                 <View style={comments.userBox}>
                                     <Image style={comments.img} source={DefaultPB} />
-                                    <Text style={comments.name}>@koni</Text>
+                                    <Text style={comments.name}></Text>
                                 </View>
                             </TouchableOpacity>
                             <Text style={comments.commentText}>Was geht ab</Text>
@@ -41,6 +41,7 @@ export default class LikeType extends React.Component {
                         </View>
                     </TouchableOpacity>
                 </View>
+                */}
             </View>
         );
     }

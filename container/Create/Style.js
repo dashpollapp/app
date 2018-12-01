@@ -81,6 +81,12 @@ export var create = StyleSheet.create({
         fontFamily: "GS2", 
         flex: 1, 
     },
+    inputURL: {
+        fontSize: 16,
+        fontFamily: "GS1", 
+        flex: 1, 
+        marginTop: 24,
+    },
     polltypeText: {
         fontSize: 16,
         fontFamily: "GS2",

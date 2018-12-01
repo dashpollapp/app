@@ -83,6 +83,16 @@ class CreatePage extends React.Component {
                         </View>
                     </TouchableOpacity>
 
+                    <TextInput
+                        multiline
+                        textAlignVertical={"top"}
+                        underlineColorAndroid={"transparent"}
+                        style={create.inputURL}
+                        placeholder={"YouTube oder Spotify URL eingeben"}
+                        placeholderTextColor={"#938f8f"}
+                        onChangeText={text => this.setState({ text })}
+                    />
+
 
                     {currentPolltype}
 
