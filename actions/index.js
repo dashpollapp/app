@@ -12,6 +12,7 @@ import load_user from "./load_user";
 import follow_user from "./follow_user";
 import upload_pb from "./upload_pb";
 import update_user_from_api from "./update_user_from_api"
+import change_modal from "./change_modal"
 
 export {
     set_current_user,
@@ -27,5 +28,6 @@ export {
     load_user,
     follow_user,
     upload_pb,
-    update_user_from_api
+    update_user_from_api,
+    change_modal
 }

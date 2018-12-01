@@ -10,6 +10,7 @@ import * as screenNames from '../../constants/screenNames';
 
 import Option from '../../components/Post/Option';
 import Author from '../../components/Post/authorBox';
+import PostModal from '../../components/Post/Modal';
 
 import PollTypes from "./PollTypes";
 import LoadMedia from './LoadMedia';
@@ -58,72 +59,7 @@ class PollsFlatlist extends Component {
         return (
             <View style={s.box}>
 
-                <Modal
-                    animationType="fade"
-                    transparent={true}
-                    visible={this.state.modalVisible}
-                    onRequestClose={() => {
-                        Alert.alert('Modal has been closed.');
-                    }}>
-                    <BlurView tint="light" intensity={90}>
-                        <View style={s.block}>
-                            <View>
-                                <Text style={s.blockHeading}>Nicht mehr anzeigen:</Text>
-
-                                <TouchableOpacity>
-                                    <View style={s.blockItem}>
-                                        <Text style={s.blockItemText}>
-                                            Nicht mehr folgen
-                                        </Text>
-                                    </View>
-                                </TouchableOpacity>
-
-                                <TouchableOpacity>
-                                    <View style={s.blockItem}>
-                                        <Text style={s.blockItemText}>
-                                            Gefällt mir nicht
-                                        </Text>
-                                    </View>
-                                </TouchableOpacity>
-
-                                <TouchableOpacity>
-                                    <View style={s.blockItem}>
-                                        <Text style={s.blockItemText}>
-                                            Nicht mehr folgen
-                                        </Text>
-                                    </View>
-                                </TouchableOpacity>
-
-                                <TouchableOpacity>
-                                    <View style={s.blockItem}>
-                                        <Text style={s.blockItemText}>
-                                            Löschen
-                                        </Text>
-                                    </View>
-                                </TouchableOpacity>
-
-                                <TouchableOpacity>
-                                    <View style={s.blockItem}>
-                                        <Text style={s.blockItemText}>
-                                            Benachrichtgungen:
-                                        </Text>
-                                        <Text style={[s.blockItemBoolText]}>
-                                            Aus
-                                        </Text>
-                                    </View>
-                                </TouchableOpacity>
-
-                                <TouchableOpacity
-                                    style={s.blockHideButton}
-                                    onPress={() => {
-                                        this.setState({ modalVisible: false });
-                                    }}>
-                                    <Text style={s.blockHideText}>Abbrechen</Text>
-                                </TouchableOpacity>
-                            </View>
-                        </View>
-                    </BlurView>
-                </Modal>
+                <PostModal />
 
                 <FlatList
                     style={s.posts}

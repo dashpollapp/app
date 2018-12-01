@@ -8,6 +8,8 @@ import { connect } from 'react-redux';
 
 import * as screenNames from '../../constants/screenNames';
 
+import { change_modal } from "../../actions"
+
 //Images
 import optionsBlock from "../../assets/img/post/options/block.png"
 import optionsStats from "../../assets/img/post/options/stats.png"
@@ -19,7 +21,7 @@ const Option = (props) => {
 
     return (
         <View style={css.postOptions}>
-            <TouchableOpacity style={css.postOption}>
+            <TouchableOpacity style={css.postOption} onPress={() => props.change_modal(true)} >
                 <Image style={css.postOptionImg} source={optionsBlock} />          
             </TouchableOpacity>  
             <TouchableOpacity style={css.postOption} onPress={() => props.navigation.push(screenNames.POLLSTATS, {poll})}>
@@ -52,4 +54,12 @@ const css = StyleSheet.create({
     },
 })
 
-export default connect()(Option);
+const mapDispatchToProps = dispatch => {
+    return {
+        change_modal: visible => {
+            dispatch(change_modal(visible));
+        }
+    }
+}
+
+export default connect(null, mapDispatchToProps)(Option);
