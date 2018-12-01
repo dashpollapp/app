@@ -40,19 +40,19 @@ class PollsFlatlist extends Component {
 
     //Header der Mitsrollt
     loadHeader = () => {
-        return(
+        return (
             <View style={s.boxHeader}>
                 <TouchableOpacity onPress={() => this.props.navigation.push(screenNames.POSTFILTER)}>
                     <Text style={s.h1}>Beiträge:</Text>
                 </TouchableOpacity>
-                <TouchableOpacity onPress={() => this.props.navigation.push(screenNames.CREATE)}> 
+                <TouchableOpacity onPress={() => this.props.navigation.push(screenNames.CREATE)}>
                     <Text style={s.link}>+ Neue Umfrage</Text>
                 </TouchableOpacity>
             </View>
         )
     }
 
-    
+
 
     render() {
         return (
@@ -79,7 +79,7 @@ class PollsFlatlist extends Component {
                                 </TouchableOpacity>
 
                                 <TouchableOpacity>
-                                <View style={s.blockItem}>
+                                    <View style={s.blockItem}>
                                         <Text style={s.blockItemText}>
                                             Gefällt mir nicht
                                         </Text>
@@ -87,7 +87,7 @@ class PollsFlatlist extends Component {
                                 </TouchableOpacity>
 
                                 <TouchableOpacity>
-                                <View style={s.blockItem}>
+                                    <View style={s.blockItem}>
                                         <Text style={s.blockItemText}>
                                             Nicht mehr folgen
                                         </Text>
@@ -116,7 +116,7 @@ class PollsFlatlist extends Component {
                                 <TouchableOpacity
                                     style={s.blockHideButton}
                                     onPress={() => {
-                                    this.setState({modalVisible: false});
+                                        this.setState({ modalVisible: false });
                                     }}>
                                     <Text style={s.blockHideText}>Abbrechen</Text>
                                 </TouchableOpacity>
@@ -134,7 +134,8 @@ class PollsFlatlist extends Component {
                     keyExtractor={(item) => item._id}
                     refreshing={this.state.flatListRefreshing}
                     onRefresh={this.flatListRefresh}
-                    onEndReachedThreshold={0.2}
+                    //removeClippedSubviews={true}
+                    onEndReachedThreshold={0.4}
                     onEndReached={this.onEndReached}
                     renderItem={({ item, index }) => {
                         return (
@@ -146,7 +147,7 @@ class PollsFlatlist extends Component {
 
                                     <Author poll={item} navigation={this.props.navigation} />
 
-                                    <TouchableOpacity onPress={() => (this.state.options === item._id) ? this.setState({options: ""}) : this.setState({options: item._id})}>
+                                    <TouchableOpacity onPress={() => (this.state.options === item._id) ? this.setState({ options: "" }) : this.setState({ options: item._id })}>
                                         <Text style={s.pTitle}>{item.heading}</Text>
                                     </TouchableOpacity>
 
