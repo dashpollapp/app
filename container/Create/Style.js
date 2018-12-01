@@ -74,16 +74,19 @@ export var create = StyleSheet.create({
     inputTitle: {
         fontSize: 26,
         fontFamily: "GS3",
+        flex: 1, 
     },
     inputDescription: {
         fontSize: 16,
-        fontFamily: "GS2",
+        fontFamily: "GS2", 
+        flex: 1, 
     },
     polltypeText: {
         fontSize: 16,
         fontFamily: "GS2",
         color: "#30a88c",
         marginVertical: 4,
+        flex: 1, 
     }
 })
 

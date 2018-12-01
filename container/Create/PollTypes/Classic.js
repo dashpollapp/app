@@ -11,9 +11,9 @@ class ClassicType extends React.Component {
 
     render() {
         return (
-            <View style={css.out}>
+            <View style={{flex: 1, marginTop: 24, }}>
 
-                <View style={[pc.polltype, {display: "none"}]}>
+                <View style={[pc.polltype, { flex: 1, }]}>
                     <Text style={type.title}>Klassische Umfrage: <Text style={pc.polltypeCat}>(Auswahl)</Text></Text>
                     <Text style={type.subtitle}>Verschiede Antwortmöglichkeiten als Text. Benutzer können sich für 1 Antwortmöglichkeit entscheiden.</Text>
                 </View>
@@ -22,11 +22,11 @@ class ClassicType extends React.Component {
                     //Sinlose Returns sollen Abgefangen werden!!!
                     multiline
                     underlineColorAndroid={'transparent'}
-                    style={[{ height: 20, marginBottom: 0 }, s.pollAnswerTitle,]}
+                    style={[{ height: 20, marginBottom: 0, flex: 1, }, s.pollAnswerTitle,]}
                     placeholder={"Antwort 1"}
                     placeholderTextColor={"#111"}
                 />
-                <View style={[s.pt1Bar, {marginBottom: 24,}]}>
+                <View style={[s.pt1Bar, {marginBottom: 24, flex: 1,}]}>
                     <LinearGradient
                         style={[s.pt1BarInner, { width: "75%", height: 16, }]}
                         colors={['#ae4768', '#3386cd']}
@@ -35,15 +35,37 @@ class ClassicType extends React.Component {
                     />
                     <Text style={s.pollPercentText}>löschen</Text>
                 </View>
+
+                
+                <TextInput
+                    //Sinlose Returns sollen Abgefangen werden!!!
+                    multiline
+                    underlineColorAndroid={'transparent'}
+                    style={[{ height: 20, marginBottom: 0, flex: 1, }, s.pollAnswerTitle,]}
+                    placeholder={"Antwort 1"}
+                    placeholderTextColor={"#111"}
+                />
+                <View style={[s.pt1Bar, {marginBottom: 24, flex: 1,}]}>
+                    <LinearGradient
+                        style={[s.pt1BarInner, { width: "75%", height: 16, }]}
+                        colors={['#ae4768', '#3386cd']}
+                        start={{ x: 0.0, y: 0.0 }}
+                        end={{ x: 0.9, y: 0.1 }}
+                    />
+                    <Text style={s.pollPercentText}>löschen</Text>
+                </View>
+
+
 
                 <TextInput
+                    //Sinlose Returns sollen Abgefangen werden!!!
                     multiline
                     underlineColorAndroid={'transparent'}
-                    style={[s.pollAnswerTitle, { height: 20, }]}
-                    placeholder={"Antwort 2"}
+                    style={[{ height: 20, marginBottom: 0, flex: 1, }, s.pollAnswerTitle,]}
+                    placeholder={"Antwort 1"}
                     placeholderTextColor={"#111"}
                 />
-                <View style={[s.pt1Bar, {marginBottom: 24,}]}>
+                <View style={[s.pt1Bar, {marginBottom: 24, flex: 1,}]}>
                     <LinearGradient
                         style={[s.pt1BarInner, { width: "75%", height: 16, }]}
                         colors={['#ae4768', '#3386cd']}
@@ -53,14 +75,17 @@ class ClassicType extends React.Component {
                     <Text style={s.pollPercentText}>löschen</Text>
                 </View>
 
-                 <TextInput
+
+
+                <TextInput
+                    //Sinlose Returns sollen Abgefangen werden!!!
                     multiline
                     underlineColorAndroid={'transparent'}
-                    style={[s.pollAnswerTitle, { height: 20, }]}
-                    placeholder={"Antwort 2"}
+                    style={[{ height: 20, marginBottom: 0, flex: 1, }, s.pollAnswerTitle,]}
+                    placeholder={"Antwort 1"}
                     placeholderTextColor={"#111"}
                 />
-                <View style={[s.pt1Bar, {marginBottom: 24,}]}>
+                <View style={[s.pt1Bar, {marginBottom: 24, flex: 1,}]}>
                     <LinearGradient
                         style={[s.pt1BarInner, { width: "75%", height: 16, }]}
                         colors={['#ae4768', '#3386cd']}
@@ -69,6 +94,9 @@ class ClassicType extends React.Component {
                     />
                     <Text style={s.pollPercentText}>löschen</Text>
                 </View>
+
+
+              
 
                 <TouchableOpacity>
                     <Text style={type.addAnswer}>+ Antwort hinzufügen</Text>

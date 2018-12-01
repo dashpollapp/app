@@ -52,9 +52,9 @@ class CreatePage extends React.Component {
         }
 
         return (
-            <View style={{ flex: 1, backgroundColor: "#fff", padding: 8, height: "100%" }}>
+            <View style={{ backgroundColor: "#fff", height: "100%" }}>
 
-                <ScrollView style={[pc.create]}>
+                <ScrollView style={{height: "100%", padding: 16, }}>
                     {/*Titel*/}
                     <TextInput
                         multiline
