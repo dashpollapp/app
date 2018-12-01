@@ -1,7 +1,7 @@
 import { ScrollView, View, Text, Image, TouchableOpacity } from "react-native";
 import React from "react";
 
-import profileImage from "../../assets/img/dev/pp3.jpg"
+import DefaultPB from "../../assets/img/pb.png"
 import mapImage from "../../assets/img/map.png"
 
 import s from './ProfileStyle';
@@ -38,13 +38,13 @@ class Profile extends React.Component {
         return (
             <ScrollView>
 
-                <Image style={s.pb} source={(user.meta.pb) ? { uri: "https://api.dashpoll.net/pb/" + user.meta.pb } : profileImage} />
+                <Image style={s.pb} source={(user.meta.pb !== "default") ? { uri: "https://api.dashpoll.net/pb/" + user.meta.pb } : DefaultPB} />
 
                 <Text style={s.fullname}>{user.fullname}</Text>
                 <Text style={s.name}>@{user.username}</Text>
 
                 <View style={[s.followBox]}>
-                    <TouchableOpacity onPress={() => this.followButton(user)}>
+                    <TouchableOpacity onPress={() => this.followButton(user)}> 
                         <View style={(following) ? s.followButton_on : s.followButton}>
                             <Text style={(following) ? s.followButtonText_on : s.followButtonText}>{(following) ? "Folgst du" : "Folgen"}</Text>
                         </View>

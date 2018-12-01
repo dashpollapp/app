@@ -9,7 +9,7 @@ const authorBox = (props) => {
 
     const poll = props.poll;
 
-    const pb = (poll.author.meta && poll.author.meta.pb) ? { uri: "https://api.dashpoll.net/pb/" + poll.author.meta.pb} : DefaultPB;
+    const pb = (poll.author.meta && poll.author.meta.pb !== "default") ? { uri: "https://api.dashpoll.net/pb/" + poll.author.meta.pb} : DefaultPB;
 
     return (
         <TouchableOpacity onPress={() => props.navigation.push(screenNames.USER, { userObj: poll.author })}>

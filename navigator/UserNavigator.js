@@ -21,7 +21,7 @@ import chatImg from "../assets/img/navbar/bottom/chat.png";
 import pollImg from "../assets/img/navbar/bottom/poll.png";
 import chatOffImg from "../assets/img/navbar/bottom/chat_off.png";
 import pollOffImg from "../assets/img/navbar/bottom/poll_off.png";
-import defaultProfileImg from "../assets/img/dev/pp3.jpg"
+import DefaultPB from "../assets/img/pb.png"
 import { connect } from "react-redux";
 import { load_user } from "../actions"
 //import defaultProfileImg from "../assets/img/pb.png"
@@ -40,7 +40,7 @@ function NavigatorClass(props) {
             [screenName.USER_PROFILE]: {
                 screen: isOwnProfile ? OwnProfile : Profile,
                 navigationOptions: {
-                    tabBarIcon: (active) => <Image style={{ height: 44, width: 44, borderRadius: 18, marginTop: -3 }} source={(pb) ? { uri: "https://api.dashpoll.net/pb/" + pb } : defaultProfileImg} />
+                    tabBarIcon: (active) => <Image style={{ height: 44, width: 44, borderRadius: 18, marginTop: -3 }} source={(pb !== "default") ? { uri: "https://api.dashpoll.net/pb/" + pb } : DefaultPB} />
                 }
             },
             [screenName.USER_POSTS]: {

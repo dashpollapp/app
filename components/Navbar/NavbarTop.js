@@ -6,11 +6,13 @@ import nt from "./NavbarTopStyle";
 
 import logoImg from "../../assets/img/navbar/top/logo.png";
 import optionsImg from "../../assets/img/navbar/top/options.png";
-import pbImg from "../../assets/img/pb.jpg";
+
+import DefaultPB from "../../assets/img/pb.png";
 
 export default class NavbarTop extends Component {
     render() {
         const { pb } = this.props; 
+        console.log("PB IN NAVBAR:", this.props.pb)
         return (
             <View>
                 <View style={nt.box}>
@@ -21,10 +23,10 @@ export default class NavbarTop extends Component {
                         <Image style={nt.mainItemLogoImg} source={logoImg} />
                     </TouchableOpacity>
                     <TouchableOpacity onPress={() => this.props.navigation.push(screenNames.USER)} style={nt.mainItem}>
-                        <Image style={nt.mainItemPbImg} source={(pb) ? { uri: "https://api.dashpoll.net/pb/"+pb } : pbImg} />
+                        <Image style={nt.mainItemPbImg} source={(pb !== "default") ? { uri: "https://api.dashpoll.net/pb/"+pb } : DefaultPB} />
                     </TouchableOpacity>
 
-                </View>
+                </View> 
                 <View style={nt.push}></View>
             </View>
         );
