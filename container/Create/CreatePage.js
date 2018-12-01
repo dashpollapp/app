@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 
 import { Classic, Like, Normal } from "./PollTypes";
 import { connect } from "react-redux";
-import { create, pc, css } from "./Style"; //(create ist die neue Style)
+import { c, create, pc, css } from "./Style"; //(create ist die neue Style)
 import { create_poll } from "../../actions";
 import * as screenNames from "../../constants/screenNames";
 
