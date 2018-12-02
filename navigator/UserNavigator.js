@@ -160,7 +160,7 @@ HomeNavigator.propTypes = {
 
 const mapStateToProps = state => {
     return {
-        ownUserId: state.user.user._id,
+        ownUserId: state.user.user.id,
         requestedProfile: state.other_users
     }
 }
