@@ -21,7 +21,7 @@ const Option = (props) => {
 
     return (
         <View style={css.postOptions}>
-            <TouchableOpacity style={css.postOption} onPress={() => props.change_modal(true)} >
+            <TouchableOpacity style={css.postOption} onPress={() => props.change_modal(true, poll)} >
                 <Image style={css.postOptionImg} source={optionsBlock} />          
             </TouchableOpacity>  
             <TouchableOpacity style={css.postOption} onPress={() => props.navigation.push(screenNames.POLLSTATS, {poll})}>
@@ -56,8 +56,8 @@ const css = StyleSheet.create({
 
 const mapDispatchToProps = dispatch => {
     return {
-        change_modal: visible => {
-            dispatch(change_modal(visible));
+        change_modal: (visible, poll) => {
+            dispatch(change_modal(visible, poll));
         }
     }
 }

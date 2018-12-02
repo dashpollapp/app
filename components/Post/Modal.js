@@ -7,6 +7,8 @@ import s from '../../container/Polls/PollStyle';
 
 const PostModal = (props) => {
 
+    const poll = props.poll;
+
     return (
         <Modal
             animationType="fade"
@@ -75,7 +77,8 @@ const PostModal = (props) => {
 
 const mapStateToProps = state => {
     return {
-        visible: state.change_modal.visible
+        visible: state.change_modal.visible,
+        poll: state.change_modal.poll
     }
 }
 

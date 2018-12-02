@@ -8,7 +8,8 @@ export default function (state = initialState, action) {
     switch (action.type) {
        
         case CHANGE_MODAL:
-            return { visible: action.payload.visible };
+            const { visible, poll } = action.payload;
+            return { visible, poll };
 
         default:
             return state;
