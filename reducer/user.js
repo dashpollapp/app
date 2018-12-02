@@ -91,7 +91,7 @@ function deleteUserFromDb() {
 }
 
 function saveUserToDb(user) {
-    console.log("SAVEUSER");
+    console.log("[Database] Save User");
     db.get('user').then(function (doc) {
         return db.remove(doc._id, doc._rev).then(() => {
             db.put(Object.assign(user, { _id: "user", id: user._id }),

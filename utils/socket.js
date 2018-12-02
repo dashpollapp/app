@@ -6,7 +6,7 @@ let date;
 
 export function connect() {
     socket.connect();
-    console.log("SOCKET CONNECTED");
+    console.log("[Socket] Connected");
 }
 
 

@@ -19,7 +19,7 @@ class Polls extends Component {
     }
 
     render() {
-        console.log("RERENDER IN POLLS.JS")
+        console.log("[Render] Polls.js")
         return (
             <View style={style.box}>
 

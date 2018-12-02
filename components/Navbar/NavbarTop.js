@@ -12,7 +12,6 @@ import DefaultPB from "../../assets/img/pb.png";
 export default class NavbarTop extends Component {
     render() {
         const { pb } = this.props; 
-        console.log("PB IN NAVBAR:", this.props.pb)
         return (
             <View>
                 <View style={nt.box}>
