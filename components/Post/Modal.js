@@ -14,9 +14,8 @@ const PostModal = (props) => {
             animationType="fade"
             transparent={true}
             visible={props.visible}
-            onRequestClose={() => {
-                Alert.alert('Modal has been closed.');
-            }}>
+            onRequestClose={() => props.change_modal(false)}
+            >
             <BlurView tint="light" intensity={90}>
                 <View style={s.block}>
                     <View>
