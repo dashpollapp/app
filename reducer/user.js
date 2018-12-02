@@ -92,16 +92,18 @@ function deleteUserFromDb() {
 
 function saveUserToDb(user) {
     console.log("[Database] Save User");
+    let userDbFormat = { ...user, id: user._id, _id: "user" }
+
     db.get('user').then(function (doc) {
         return db.remove(doc._id, doc._rev).then(() => {
-            db.put(Object.assign(user, { _id: "user", id: user._id }),
+            db.put(userDbFormat,
                 { force: true }
             )
         })
 
     })
         .catch(e => {
-            db.put(Object.assign(user, { _id: "user", id: user._id }),
+            db.put(userDbFormat,
                 { force: true }
             )
         });

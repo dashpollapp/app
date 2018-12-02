@@ -98,9 +98,9 @@ class HomeNavigator extends React.Component {
     constructor(props) {
         super(props);
         let userObj = this.props.navigation.getParam("userObj", false);
-        if(!userObj){
+        if (!userObj) {
             //Wenns das eigene Profil ist
-            userObj = { _id: this.props.ownUserId } 
+            userObj = { _id: this.props.ownUserId }
         };
         this.state = {
             userObj
@@ -160,7 +160,7 @@ HomeNavigator.propTypes = {
 
 const mapStateToProps = state => {
     return {
-        ownUserId: state.user.user.id,
+        ownUserId: state.user.user._id,
         requestedProfile: state.other_users
     }
 }
