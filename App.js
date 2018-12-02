@@ -11,8 +11,8 @@ export default class App extends React.Component {
         return (
             <View style={css.out}>
                 <StatusBar
-                    backgroundColor="#ff0000"
-                    barStyle="light-content"
+                    backgroundColor="#000"
+                    barStyle="dark-content"
                 />
 
                 <View style={css.body}>
