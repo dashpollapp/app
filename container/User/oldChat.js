@@ -1,5 +1,5 @@
 import React from "react";
-import { Platform, StatusBar, StyleSheet, Text, View, ScrollView, TextInput, Image, KeyboardAvoidingView, ImageBackground, Dimensions, TouchableOpacity } from "react-native";
+import { Platform, StyleSheet, Text, View, ScrollView, TextInput, Image, KeyboardAvoidingView, ImageBackground, Dimensions, TouchableOpacity } from "react-native";
 import { BlurView } from "expo";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
@@ -28,11 +28,6 @@ class Chat extends React.Component {
                 <Image style={[css.cornerBR, css.corner]} source={require("../../assets/img/corner.png")} />
                 <View style={css.navTopHelp} />
                 <View style={css.body}>
-                    <StatusBar
-                        hidden={false}
-                        style={[Platform.OS === "ios" ? {} : { backgroundColor: "#ffffff" }]}
-                        barStyle="dark-content"
-                    />
 
                     {/*=Navbar top
                         <View style={css.navTop}> 

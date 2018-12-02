@@ -10,6 +10,7 @@ import { set_current_user, update_user_from_api } from "./actions";
 
 import LoginNavigator from "./navigator/LoginNavigator";
 import RootNavigator from "./navigator/RootNavigator";
+import * as socket from "./utils/socket";
 
 function loadFonts() {
     return Font.loadAsync({
@@ -52,7 +53,7 @@ function cacheResourcesAsync() {
             require('./assets/img/splash.png'),
             require('./assets/img/corner.png'),
             require('./assets/img/hide.png'),
-            require('./assets/img/pb.png'),
+            require('./assets/img/pb.jpg'),
 
             //Create
             require('./assets/img/create/copy.png'),
@@ -98,12 +99,13 @@ class RootApp extends React.Component {
     }
 
     componentDidMount() {
+        socket.connect()
         //APP Start
         Promise.all([loadFonts(), getUserFromDb(), cacheResourcesAsync()])
             .then(results => {
                 const [, user] = results;
 
-                if ((user)) this.props.set_current_user(user);
+                if (user) this.props.set_current_user(user);
 
                 this.setState({ isAppReady: true }, () => { SplashScreen.hide() })
             });

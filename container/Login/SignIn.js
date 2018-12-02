@@ -57,40 +57,39 @@ class Login extends React.Component {
 
 
                 <View style={css.body}>
-                    <StatusBar hidden={false} style={[{ backgroundColor: "#ffffff" }]} barStyle="dark-content" />
-                   
-                        <View hidden={true} style={login.body}>
 
-                            <Text style={login.Text}>Suche deinen Account</Text>
+                    <View hidden={true} style={login.body}>
 
-                            <TextInput
-                                underlineColorAndroid={"transparent"}
-                                style={login.Input}
-                                placeholder={"Account Suchen"}
-                                placeholderTextColor={"#aaa"}
-                                onChangeText={text => this._onUserInputChange(text)}
-                                ref={input => {
-                                    this.inputs["two"] = input;
-                                }}
-                                onSubmitEditing={() => {
-                                    this.focusNextField("two");
-                                }}
-                            />
+                        <Text style={login.Text}>Suche deinen Account</Text>
 
-                            
+                        <TextInput
+                            underlineColorAndroid={"transparent"}
+                            style={login.Input}
+                            placeholder={"Account Suchen"}
+                            placeholderTextColor={"#aaa"}
+                            onChangeText={text => this._onUserInputChange(text)}
+                            ref={input => {
+                                this.inputs["two"] = input;
+                            }}
+                            onSubmitEditing={() => {
+                                this.focusNextField("two");
+                            }}
+                        />
 
-                            <FlatList
-                                data={this.props.foundUsers}
-                                extraData={this.state}
-                                style={login.userList}
-                                ref={ref => {
-                                    this.flatListRef = ref;
-                                }}
-                                showsHorizontalScrollIndicator={false}
-                                keyExtractor={(x, i) => i.toString()}
-                                horizontal={true}
-                                renderItem={({ item, index }) => {
-                                    return (
+
+
+                        <FlatList
+                            data={this.props.foundUsers}
+                            extraData={this.state}
+                            style={login.userList}
+                            ref={ref => {
+                                this.flatListRef = ref;
+                            }}
+                            showsHorizontalScrollIndicator={false}
+                            keyExtractor={(x, i) => i.toString()}
+                            horizontal={true}
+                            renderItem={({ item, index }) => {
+                                return (
                                     <TouchableOpacity
                                         horizontal={"true"}
                                         onPress={() => {
@@ -108,74 +107,74 @@ class Login extends React.Component {
                                         }}
                                     >
                                         <View style={[
-                                                        login.foundUser,
-                                                        this.state.markered === item.username
-                                                            ? login.userBox
-                                                            : login.userBox
-                                                    ]}>
+                                            login.foundUser,
+                                            this.state.markered === item.username
+                                                ? login.userBox
+                                                : login.userBox
+                                        ]}>
 
-                                            <Image 
-                                            style={login.userImg} 
-                                            source={DefaultPB}/>
-            
-                                            <Text 
-                                            style={login.userFullname}
-                                            numberOfLines={1} 
-                                            ellipsizeMode ={'tail'} 
+                                            <Image
+                                                style={login.userImg}
+                                                source={DefaultPB} />
+
+                                            <Text
+                                                style={login.userFullname}
+                                                numberOfLines={1}
+                                                ellipsizeMode={'tail'}
                                             >
                                                 {item.fullname}
                                             </Text>
-            
-                                            <Text  
-                                            numberOfLines={1} 
-                                            ellipsizeMode ={'tail'} 
-                                            style={login.userName}>
+
+                                            <Text
+                                                numberOfLines={1}
+                                                ellipsizeMode={'tail'}
+                                                style={login.userName}>
                                                 @{item.username}
                                             </Text>
-            
-                                        </View>    
+
+                                        </View>
                                     </TouchableOpacity>
 
-                                    );
-                                }}
-                            />
+                                );
+                            }}
+                        />
 
 
-                            {
-                                this.state.markered === "" ? null : (
-                                    <View>
-                                        <Text style={login.Text}>Gebe dein Passwort ein</Text>
+                        {
+                            this.state.markered === "" ? null : (
+                                <View>
+                                    <Text style={login.Text}>Gebe dein Passwort ein</Text>
 
-                                        <View style={login.PasswordInputBox}>
-                                            <TextInput
-                                                underlineColorAndroid={"transparent"}
-                                                style={login.PasswordInput}
-                                                placeholder={"Passwort"}
-                                                secureTextEntry={this.state.passwordImg}
-                                                onChangeText={pw => this._onPasswordInputChange(pw)}
-                                                ref={input => {
-                                                    this.inputs["two"] = input;
-                                                }}
-                                            />
-                                            <TouchableOpacity
-                                                style={login.PasswordInputToggle}
-                                                onPress={() => {
-                                                    this.setState({ passwordImg: !this.state.passwordImg });
-                                                }}
-                                            >
-                                                {this.state.passwordImg ? (
-                                                    <Image style={login.PasswordInputToggleImg} source={pwShow} />
-                                                ) : (
-                                                        <Image style={login.PasswordInputToggleImg} source={pwHide} />
-                                                    )}
-                                            </TouchableOpacity>
-                                        </View>
+                                    <View style={login.PasswordInputBox}>
+                                        <TextInput
+                                            underlineColorAndroid={"transparent"}
+                                            style={login.PasswordInput}
+                                            placeholder={"Passwort"}
+                                            secureTextEntry={this.state.passwordImg}
+                                            onChangeText={pw => this._onPasswordInputChange(pw)}
+                                            ref={input => {
+                                                this.inputs["two"] = input;
+                                            }}
+                                        />
+                                        <TouchableOpacity
+                                            style={login.PasswordInputToggle}
+                                            onPress={() => {
+                                                this.setState({ passwordImg: !this.state.passwordImg });
+                                            }}
+                                        >
+                                            {this.state.passwordImg ? (
+                                                <Image style={login.PasswordInputToggleImg} source={pwShow} />
+                                            ) : (
+                                                    <Image style={login.PasswordInputToggleImg} source={pwHide} />
+                                                )}
+                                        </TouchableOpacity>
                                     </View>
-                                )
-                            }
+                                </View>
+                            )
+                        }
 
-                            <View style={css.navTopPush} />
-                        </View>
+                        <View style={css.navTopPush} />
+                    </View>
 
                 </View>
 

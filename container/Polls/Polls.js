@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { View, Modal, TouchableOpacity, ScrollView, Text, } from "react-native";
+import { View, Modal, TouchableOpacity, ScrollView, Text, StatusBar } from "react-native";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 
@@ -22,6 +22,7 @@ class Polls extends Component {
         console.log("RERENDER IN POLLS.JS")
         return (
             <View style={style.box}>
+
                 <PollsFlatlist vote={this.props.vote} navigation={this.props.navigation} />
             </View>
         );

@@ -1,6 +1,6 @@
 import React from "react";
 import { Provider } from "react-redux";
-import { Image, StyleSheet, View, Platform } from "react-native";
+import { Image, StyleSheet, View, Platform, StatusBar } from "react-native";
 
 import corner from "./assets/img/corner.png";
 
@@ -10,9 +10,14 @@ export default class App extends React.Component {
     render() {
         return (
             <View style={css.out}>
+                <StatusBar
+                    backgroundColor="#ff0000"
+                    barStyle="light-content"
+                />
+
                 <View style={css.body}>
                     <Provider store={store}>
-                        <RootApp />             
+                        <RootApp />
                     </Provider >
                 </View>
                 <Image style={[css.cornerTL, css.corner]} source={corner} />

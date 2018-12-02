@@ -49,7 +49,6 @@ export default class Profile extends React.Component {
         return (
             <View style={css.out}>
                 {/* Expo/RN Einstellungen */}
-                <StatusBar hidden={false} backgroundColor="#ffffff" barStyle="dark-content" />
 
                 <View style={css.navTopHelp} />
                 <View style={[css.body]}>

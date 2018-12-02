@@ -29,8 +29,10 @@ export default function (state = initialState, action) {
             return { loading: false, user: ifUserFromDb };
 
         case UPDATE_USER_FROM_API_SUCCESS:
-            let userFromApi = action.payload.user;
-            return { loading: false, user: { ...userFromApi, token: state.user.token } };
+            let userFromApi = { ...action.payload.user, token: state.user.token }
+            if (userFromApi.meta.pb !== state.user.meta.pb) console.log("PB VERÄNDERT", true);
+            saveUserToDb(userFromApi);
+            return { loading: false, user: userFromApi };
 
         //Ganzen user updaten
         case UPLOAD_PB_SUCCESS:
