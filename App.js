@@ -12,7 +12,7 @@ export default class App extends React.Component {
             <View style={css.out}>
                 <StatusBar
                     backgroundColor="#000"
-                    barStyle="dark-content"
+                    barStyle={(Platform.OS === "ios") ? "dark-content" : "light-content"}
                 />
 
                 <View style={css.body}>
