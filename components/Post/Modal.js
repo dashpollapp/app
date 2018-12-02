@@ -1,19 +1,11 @@
 import React from 'react';
-import { View, TouchableOpacity, Image, Text, FlatList, Share, Modal } from "react-native";
+import { View, TouchableOpacity, Text, Modal } from "react-native";
 import { BlurView } from 'expo';
-
-//Functions
-import sharePoll from '../../utils/share';
-
 import { connect } from 'react-redux';
-
-import * as screenNames from '../../constants/screenNames';
-
+import { change_modal } from '../../actions';
 import s from '../../container/Polls/PollStyle';
 
 const PostModal = (props) => {
-
-    console.log(props.visible);
 
     return (
         <Modal
@@ -71,8 +63,7 @@ const PostModal = (props) => {
                             </View>
                         </TouchableOpacity>
 
-                        <TouchableOpacity
-                            style={s.blockHideButton}>
+                        <TouchableOpacity style={s.blockHideButton} onPress={() => props.change_modal(false)} >
                             <Text style={s.blockHideText}>Abbrechen</Text>
                         </TouchableOpacity>
                     </View>
@@ -88,4 +79,12 @@ const mapStateToProps = state => {
     }
 }
 
-export default connect(mapStateToProps)(PostModal);
+const mapDispatchToProps = dispatch => {
+    return {
+        change_modal: visible => {
+            dispatch(change_modal(visible));
+        }
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(PostModal);
