@@ -29,7 +29,11 @@ export default function (state = initialState, action) {
             return { loading: false, user: ifUserFromDb };
 
         case UPDATE_USER_FROM_API_SUCCESS:
+
             let userFromApi = { ...action.payload.user, token: state.user.token }
+
+            db.get("pb_" + userFromApi._id).then(doc => {console.log(doc)});
+
             if (userFromApi.meta.pb !== state.user.meta.pb) {
                 let user = { _id: userFromApi._id, newPB: userFromApi.meta.pb, oldPB: state.user.meta.pb };
                 savePbToDb(user);
@@ -89,14 +93,24 @@ export default function (state = initialState, action) {
 
 function savePbToDb(user) {
 
-    Expo.FileSystem.downloadAsync("https://api.dashpoll.net/pb/" + user.newPB, Expo.FileSystem.cacheDirectory + user.newPB + ".jpeg", {md5: true})
+    Expo.FileSystem.downloadAsync("https://api.dashpoll.net/pb/" + user.newPB, Expo.FileSystem.cacheDirectory + user.newPB + ".jpg", {md5: true})
     .then(file => {
-        console.log(file);
-    })
+        
+        let pbDbFormat = { _id: "pb_" + user._id, uri: user.newPB, id: user._id, md5: file.md5 }
+        db.get('pb_' + user._id).then(function (doc) {
+            return db.remove(doc._id, doc._rev).then(() => {
+                db.put(pbDbFormat,
+                    { force: true }
+                )
+            })
+    
+        })
+        .catch(e => {
+            db.put(pbDbFormat,
+                { force: true }
+            )
+        });
 
-    Expo.FileSystem.getInfoAsync(Expo.FileSystem.cacheDirectory + user.oldPB + ".jpeg", {md5: true})
-    .then(file => {
-        console.log(file);
     })
 
 }
