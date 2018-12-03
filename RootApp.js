@@ -8,7 +8,7 @@ import db from "./utils/db";
 import { set_current_user, update_user_from_api } from "./actions";
 
 
-import LoginNavigator from "./navigator/LoginNavigator";
+import AuthNavigator from "./navigator/AuthNavigator";
 import RootNavigator from "./navigator/RootNavigator";
 import * as socket from "./utils/socket";
 
@@ -145,7 +145,7 @@ class RootApp extends React.Component {
             <View style={styles.containerWraper}>
                 {isLoggedIn
                     ? <RootNavigator />
-                    : <LoginNavigator />
+                    : <AuthNavigator />
                 }
             </View>
         )
