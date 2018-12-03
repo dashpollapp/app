@@ -70,8 +70,10 @@ class Login extends React.Component {
                     </TouchableOpacity>
                 </View>
 
-                <Text style={login.welcomeText}>Wie heißt dein Dashpoll Account 😄</Text>
-
+                <TouchableOpacity>
+                    <Text style={login.welcomeText}>Wie heißt dein Dashpoll Account 😄</Text>
+                </TouchableOpacity>
+                
                 <TextInput
                     placeholder="Dashpoll-Name"
                     placeholderTextColor="#666"
@@ -97,10 +99,17 @@ class Login extends React.Component {
                 </View>
 
                 
-                <TouchableOpacity style={D.kiBox}>
-                    <Image style={D.kiImg} source={KiImg}/>
-                    <Text style={D.kiText}>Name vergessen?</Text>
-                </TouchableOpacity>
+
+                <View style={D.kiBoxes}>
+                    <TouchableOpacity style={D.kiBox}>
+                        <Image style={D.kiImg} source={KiImg}/>
+                        <Text style={D.kiText}>Name vergessen</Text>
+                    </TouchableOpacity>
+                    <TouchableOpacity style={D.kiBox}>
+                        <Image style={D.kiImg} source={KiImg}/>
+                        <Text style={D.kiText}>Acctount erstellen</Text>
+                    </TouchableOpacity>
+                </View>
 
                 <Text style={login.welcomeText}>Bitte gebe dein Passwort ein 🤫</Text>
 
@@ -118,10 +127,12 @@ class Login extends React.Component {
                     style={login.input}
                 />
 
-                <TouchableOpacity style={D.kiBox}>
-                    <Image style={D.kiImg} source={KiImg}/>
-                    <Text style={D.kiText}>Passwort vergessen?</Text>
-                </TouchableOpacity>
+                <View style={D.kiBoxes}>
+                    <TouchableOpacity style={D.kiBox}>
+                        <Image style={D.kiImg} source={KiImg}/>
+                        <Text style={D.kiText}>Passwort vergessen</Text>
+                    </TouchableOpacity>
+                </View>
 
                 <View style={{height: 64,}}></View>
             </ScrollView>
