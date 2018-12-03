@@ -35,7 +35,7 @@ class Password extends React.Component {
 
                 <TouchableOpacity onPress={() => this.props.navigation.navigate(screenNames.LOGIN_SELECT_USER)}>
                     <View style={login.userSelected}>
-                        <Image style={login.userPB} source={DefaultPB}/>
+                        <Image style={login.userPB} source={(user && user.meta.pb) ? {uri: "https://api.dashpoll.net/pb/" + user.meta.pb} : DefaultPB}/>
                         <Text style={login.userFullname}>{user.fullname}</Text>
                         <Text style={login.userName}>Account ändern</Text>
                     </View>
