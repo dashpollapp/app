@@ -7,6 +7,8 @@ import { connect } from "react-redux";
 
 import { auth_login } from "../../../actions"
 
+import * as screenNames from "../../../constants/screenNames";
+
 //Images
 import DefaultPB from "../../../assets/img/pb.png"
 import KiImg from "../../../assets/img/ki.png"
@@ -31,7 +33,7 @@ class Password extends React.Component {
 
                 <Text style={login.welcomeText}>Bitte gebe dein Passwort ein 🤫</Text>
 
-                <TouchableOpacity>
+                <TouchableOpacity onPress={() => this.props.navigation.navigate(screenNames.LOGIN_SELECT_USER)}>
                     <View style={login.userSelected}>
                         <Image style={login.userPB} source={DefaultPB}/>
                         <Text style={login.userFullname}>{user.fullname}</Text>
