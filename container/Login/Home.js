@@ -12,10 +12,10 @@ class Home extends React.Component {
                     <Text style={login.welcomeText}>Hast du einen Dashpoll Account? 🤔</Text>
 
                     <View style={login.loginOrRegister}>
-                        <TouchableOpacity style={login.button} onPress={() => this.props.navigation.navigate(screenNames.LOGIN_SELECT_USER)}>
+                        <TouchableOpacity style={login.button} onPress={() => this.props.navigation.navigate(screenNames.SIGN_IN)}>
                             <Text style={login.buttonText}>Ja</Text>
                         </TouchableOpacity>
-                        <TouchableOpacity style={login.button}>
+                        <TouchableOpacity style={login.button} onPress={() => this.props.navigation.navigate(screenNames.SIGN_UP)}>
                             <Text style={login.buttonText}>Nein</Text>
                         </TouchableOpacity>
                     </View>

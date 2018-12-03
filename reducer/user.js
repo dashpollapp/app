@@ -89,7 +89,16 @@ export default function (state = initialState, action) {
 
 function savePbToDb(user) {
 
-    
+    Expo.FileSystem.downloadAsync("https://api.dashpoll.net/pb/" + user.newPB, Expo.FileSystem.cacheDirectory + user.newPB + ".jpeg", {md5: true})
+    .then(file => {
+        console.log(file);
+    })
+
+    Expo.FileSystem.getInfoAsync(Expo.FileSystem.cacheDirectory + user.oldPB + ".jpeg", {md5: true})
+    .then(file => {
+        console.log(file);
+    })
+
 }
 
 function deleteUserFromDb() {
