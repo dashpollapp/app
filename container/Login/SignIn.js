@@ -78,6 +78,7 @@ class Login extends React.Component {
                     placeholder="Dashpoll-Name"
                     placeholderTextColor="#666"
                     style={login.input}
+                    onChangeText={(text) => this.setState({markered: text})}
                 />
 
 
@@ -125,6 +126,7 @@ class Login extends React.Component {
                     placeholder="Passwort"
                     placeholderTextColor="#666"
                     style={login.input}
+                    onChangeText={(text) => this._onPasswordInputChange(text)}
                 />
 
                 <View style={D.kiBoxes}>
