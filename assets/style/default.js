@@ -2,6 +2,37 @@ import { StyleSheet, Platform,Dimensions } from "react-native";
 
 export default StyleSheet.create({
 
+    img: {
+        width: 320,
+        height: 40,
+        alignSelf: "center",
+    },
+
+    /*
+    <TouchableOpacity style={D.kiBox}>
+        <Image style={D.kiImg} source={KiImg}/>
+        <Text style={D.kiText}>Account erstellen</Text>
+    </TouchableOpacity>
+    */ 
+    kiBox: {
+        backgroundColor: "#333",
+        padding: 6,
+        borderRadius: 12,
+        flexDirection: "row",
+        alignSelf: "center",
+    },
+    kiText: {
+        fontFamily: "GS2",
+        color: "#fff",
+        marginHorizontal: 8,
+    },
+    kiImg: {
+        height: 18,
+        width: 18,
+        marginHorizontal: 8,
+    },
+
+
 
 
     heading: {

@@ -2,772 +2,88 @@ import { StyleSheet } from "react-native";
 import { Dimensions, Platform } from "react-native";
 import { totalSize } from "react-native-dimension";
 
-/* Creative Board */
 
 export var login = StyleSheet.create({
 
-    //User
-    userList: {
-        paddingVertical: 32,
+    loginOrRegister: {
         flexDirection: "row",
-        height: 100,
     },
-    userBox: {
-        paddingHorizontal: 2,
-        width: 108,
-        alignItems: "center",
+    button: {
+        flex: 1,
+        padding: 16,
+    },
+    buttonText:{
+        fontFamily: "GS2",
+        color: "#333",
+        fontSize: 18,
         textAlign: "center",
     },
-    userImg: {
+
+
+
+
+    box: {
+        backgroundColor: "#fff",
+    },
+    scroll: {
+        height: "100%",
+        padding: 16,
+    },
+    input: {
+        backgroundColor: "rgba(0,0,0,0.05)",
+        marginVertical: 12,
+        paddingVertical: 8,
+        paddingHorizontal: 12,
+        borderRadius: 12,
+        textAlign: "left",
+        fontFamily: "GS2",
+        color: "#333",
+    },
+
+    welcomeText: {
+        fontFamily: "GS2",
+        color: "#333",
+        textAlign: "center",
+        marginVertical: 32,
+        fontSize: 18,
+    },
+
+    userSelected: {
+        padding: 16,
+        textAlign: "center",
+        alignItems: "center",
+        backgroundColor: "rgba(0,0,0,0.04)",
+        borderRadius: 16,
+    },
+    users: {
+        flexDirection: "row",
+        marginBottom: 24,
+    },
+    user: {
+        padding: 16,
+        borderRadius: 16,
+    },
+    userPB: {
         height: 64,
         width: 64,
-        borderRadius: 26,
-        marginVertical: 4,
+        borderRadius: 28,
+        marginVertical: 8,
     },
     userFullname: {
-        color: "#111",
+        fontSize: 12,
+        color: "#333",
         fontFamily: "GS3",
-        fontSize: 13,
+        textAlign: "center",
     },
     userName: {
-        color: "#aaa",
-        fontFamily: "GS1",
-        fontSize: 12,
-    },
-
-
-
-
-    PasswordInputBox: {
-        backgroundColor: "#dfe6e9",
-        paddingHorizontal: 8,
-        paddingVertical: 8,
-        borderRadius: 4,
-        marginBottom: 16,
-        flexDirection: "row",
-        justifyContent: "space-between"
-    },
-    PasswordInput: {
-        flex: 1,
-        color: "#333",
-        fontFamily: "Poppins300",
-        fontSize: 15
-    },
-    PasswordInputToggle: {},
-    PasswordInputToggleImg: {
-        height: 24,
-        width: 24
-    },
-    foundUserSelected: {
-        backgroundColor: "#74b9ff"
-    },
-
-
-    /* Beschreibung */
-    Text: {
-        textAlign: "center",
-        color: "#444",
+        fontSize: 10,
+        color: "#0984e3",
         fontFamily: "GS2",
-        fontSize: 18,
-        marginBottom: 16
-    },
-    focus: {
-        backgroundColor: "rgba(0,0,0,0.065)",
-    },
-    /* Input für: Username, */
-    Input: {
-        backgroundColor: "rgba(0,0,0,0.035)",
-        paddingHorizontal: 14,
-        paddingVertical: 10,
-        borderRadius: 12,
-        marginBottom: 16,
-
-        color: "#444",
-        fontFamily: "GS2",
-        fontSize: 15
-    },
-    /* Die View um den Login bereich*/
-    body: {
-        flexDirection: "column",
-        justifyContent: "flex-start",
-        height: "100%",
-        padding: 16,
-        paddingVertical: 32
-    }
-});
-export var loader = StyleSheet.create({
-    tipp: {
-        position: "absolute",
-        bottom: 50,
-        color: "#898989",
-        fontFamily: "Poppins300",
-        paddingVertical: 24,
-        paddingHorizontal: 52,
-        alignItems: "center",
         textAlign: "center",
-        fontSize: 14
-    },
-    centerAll: {
-        alignItems: "center",
-        justifyContent: "center"
-    },
-    logo: {
-        marginTop: -128,
-        height: 167,
-        width: 452
-    }
-});
-export var cc = StyleSheet.create({
-    ror: {
-        flexDirection: "row",
-        minHeight: 44
-    },
-    col1: {
-        width: "25%",
-        minHeight: 1
-    },
-    col2: {
-        width: "50%",
-        minHeight: 1
-    },
-    col3: {
-        width: "75%",
-        minHeight: 1
-    },
-    col4: {
-        width: "100%",
-        minHeight: 1
-    },
-    color: {
-        backgroundColor: "blue"
-    }
-});
-export var profile = StyleSheet.create({
-    imporantInfos: {
-        padding: 16
-    },
-    tetxBio: {
-        color: "#ccc",
-        fontFamily: "Poppins500"
     },
 
-    optionPriority4: {
-        backgroundColor: "rgba(242, 53, 53, 0.65)"
-    },
-    optionPriority3: {
-        backgroundColor: "rgba(234, 164, 42, 0.65)"
-    },
-    optionPriority2: {
-        backgroundColor: "rgba(234, 216, 18, 0.65)"
-    },
-    optionPriority1: {
-        backgroundColor: "rgba(83, 188, 54, 0.65)"
-    },
-    optionPriorityText: {
-        fontFamily: "Poppins600",
-        color: "#111",
-        fontSize: 16
-    },
-    optionPriority: {
-        width: "25%",
-        minHeight: 44,
-        color: "#111",
-        alignItems: "center",
-        justifyContent: "center",
-        borderWidth: 2,
-        borderColor: "#fff",
-        borderRightColor: "#fff"
-    },
-    optionPrioritySelector: {
-        height: 52,
-        backgroundColor: "rgba(200,200,200,0.25)",
-        borderRadius: 4,
-        borderWidth: 2,
-        borderColor: "#fff",
-        flexDirection: "row",
-        marginTop: 8
-    },
-    followOff: {
-        fontFamily: "Poppins500",
-        fontSize: 15,
-        color: "#333"
-    },
-    followOn: {
-        fontFamily: "Poppins600",
-        fontSize: 15,
-        color: "#111"
-    },
-    followerInfo: {
-        fontFamily: "Poppins300",
-        fontSize: 14,
-        color: "#555"
-    },
-    infoName: {
-        fontFamily: "Poppins500",
-        fontSize: 14,
-        color: "rgba(220,220,220,0.9)",
-        textShadowColor: "rgba(0, 0, 0, 0.75)",
-        textShadowOffset: { width: 0.0001, height: 0.0001 },
-        textShadowRadius: 4,
-        paddingLeft: 4
-    },
-    infoContent: {
-        fontFamily: "Poppins500",
-        fontSize: 20,
-        color: "rgba(255,255,255,1)",
-        textShadowColor: "rgba(0, 0, 0, 0.75)",
-        textShadowOffset: { width: 0, height: 0 },
-        textShadowRadius: 4,
-        paddingLeft: 4
-    },
-    info: {
-        paddingHorizontal: 16,
-        paddingVertical: 12
-    },
-    followBox: {
-        alignItems: "center"
-    },
-    pal: {
-        fontFamily: "Poppins500",
-        fontSize: 18
-    },
-    followerInfos: {
-        padding: 16,
-        backgroundColor: "rgba(255,255,255,0.8)",
-        flexDirection: "row",
-        alignItems: "center",
-        justifyContent: "space-around"
-    },
-    infos: {},
-    banner: {
-        padding: 16,
-        backgroundColor: "#aaa",
-        flexDirection: "row",
-        alignItems: "center"
-    },
-    pb: {
-        width: 192,
-        height: 192,
-        borderRadius: 180 / 2,
-        borderColor: "#fff"
-    }
-});
-/* Poll Create */
-export var pc = StyleSheet.create({
-    p1Bar: {
-        height: 12,
-        width: "50%",
-        borderRadius: 4,
-        marginBottom: 8
-    },
-    p1Answer: {
-        color: "#111",
-        fontFamily: "Poppins500",
-        marginBottom: 4
-    },
-    p1AddAnswer: {
-        color: "#b2bec3",
-        fontFamily: "Poppins400",
-        marginTop: 8
-    },
-    polltype: {
-        marginBottom: 12
-    },
-    polltypeCat: {
-        fontSize: 14,
-        fontFamily: "Poppins500",
-        color: "#6c5ce7"
-    },
-    polltypeName: {
-        fontSize: 14,
-        fontFamily: "Poppins500",
-        color: "#111"
-    },
-    polltypeDescription: {
-        fontSize: 12,
-        fontFamily: "Poppins400",
-        color: "#636e72"
-    },
 
-    textContinue: {
-        fontSize: 12,
-        fontFamily: "Poppins400",
-        color: "#636e72"
+    user_save: {
+        backgroundColor: "rgba(0,0,0,0.03)",
     },
-    textPublic: {
-        fontSize: 12,
-        fontFamily: "Poppins500",
-        color: "#2d3436"
-    },
-    sendButton: {},
-
-    mediaItem: {
-        height: 52,
-        width: 52,
-        opacity: 0.65
-    },
-    addMedia: {
-        justifyContent: "space-around",
-        alignItems: "center",
-        flexDirection: "row",
-        height: 200,
-        borderRadius: 4,
-        marginTop: 12,
-        marginBottom: 24
-    },
-    inputDescription: {
-        color: "#6d6d6d",
-        fontSize: 16,
-        fontFamily: "Poppins400"
-    },
-    inputTitle: {
-        color: "#111",
-        fontSize: 22,
-        fontFamily: "Poppins700"
-    },
-    description: {
-        marginTop: 12,
-        fontFamily: "Poppins500",
-        color: "#383838",
-        fontSize: 16
-    },
-    create: {
-        padding: 12
-    }
-});
-export var css = StyleSheet.create({
-    navTopPush: {
-        width: "100%",
-        height: 50,
-        borderRadius: 12
-    },
-    chatSelected: {
-        backgroundColor: "#efefef"
-    },
-
-    //Wetter
-    chatWeather: {},
-    //Ersmal so
-    chatWeatherCrad: {
-        fontFamily: "Poppins600",
-        fontSize: 20
-    },
-
-    sendTime: {
-        alignSelf: "center",
-        justifyContent: "flex-end",
-        color: "#929684",
-        marginRight: 4,
-        fontSize: 14,
-        fontFamily: "Poppins300",
-        minWidth: 32
-    },
-    sendTimeNew: {
-        fontFamily: "Poppins600",
-        color: "#36c187"
-    },
-    lastMessage: {
-        fontSize: 15,
-        color: "#55574e",
-        margin: 0,
-        padding: 0,
-        fontFamily: "Poppins400",
-        marginTop: -2
-    },
-    lastMessageBold: {
-        color: "#55574e",
-        fontFamily: "Poppins500",
-        flex: 1,
-        flexDirection: "row"
-    },
-    name: {
-        fontSize: 17,
-        color: "#000",
-        margin: 0,
-        padding: 0,
-        fontFamily: "Poppins600"
-    },
-    text: {
-        fontFamily: "Poppins500",
-        alignSelf: "center",
-        marginLeft: 12,
-        flex: 1
-    },
-    pb: {
-        height: 52,
-        width: 52,
-        borderRadius: 26,
-
-        //für Inhalt
-        justifyContent: "center",
-        alignItems: "center"
-    },
-    chat: {
-        width: "100%",
-        backgroundColor: "#fff",
-        paddingVertical: 9,
-        paddingHorizontal: 9,
-
-        flexDirection: "row",
-        alignItems: "center"
-    },
-    chatNew: {
-        borderLeftWidth: 8,
-        borderColor: "#36c187",
-        backgroundColor: "#f2f2f2"
-    },
-    corner: {
-        position: "absolute",
-        zIndex: 4000,
-        height: 5,
-        width: 5
-    },
-    cornerTL: {
-        top: 0,
-        left: 0
-    },
-    cornerTR: {
-        top: 0,
-        right: 0,
-        transform: [{ rotate: "90deg" }]
-    },
-    cornerBL: {
-        bottom: 0,
-        left: 0,
-        transform: [{ rotate: "-90deg" }]
-    },
-    cornerBR: {
-        bottom: 0,
-        right: 0,
-        transform: [{ rotate: "180deg" }]
-    },
-
-    bottomImage: {
-        height: 24,
-        width: 24,
-        flex: 1
-    },
-
-    bottomPosition: {
-        marginTop: -4,
-        height: 8,
-        width: Dimensions.get("window").width / 4 - 32,
-        marginLeft: Dimensions.get("window").width * 0.045,
-
-        /* polls: 0.29; chats: 0.045;   */
-
-        backgroundColor: "#000",
-        borderRadius: 3,
-        position: "absolute",
-        bottom: 46
-    },
-
-    bottom: {
-        position: "absolute",
-        flex: 1,
-        flexDirection: "row",
-        width: "100%",
-        height: 50,
-
-        bottom: 0,
-        justifyContent: "space-around",
-        alignItems: "center",
-        shadowOpacity: 0.5,
-        shadowRadius: 4,
-        shadowOffset: {
-            height: 0,
-            width: 0
-        },
-        elevation: 5,
-        backgroundColor: "#fff"
-    },
-
-    /**/
-
-    close: {
-        transform: [{ rotate: "45deg" }]
-    },
-    create: {
-        height: 32,
-        width: 32,
-        margin: 12
-    },
-    navTopCenter: {
-        flex: 1
-    },
-    logo: {
-        height: "100%",
-        width: 150,
-        marginLeft: 8,
-        alignSelf: "center"
-    },
-    windowTitle: {
-        fontSize: 16,
-        marginLeft: 4,
-        fontFamily: "Poppins300",
-        color: "#444"
-    },
-    myPB: {
-        height: 36,
-        width: 36,
-        margin: 7,
-        borderRadius: 36 / 2,
-        justifyContent: "center",
-        alignItems: "center",
-        alignSelf: "flex-start",
-        alignItems: "flex-start"
-    },
-    navTopBack: {
-        opacity: 0.75,
-        height: 18,
-        width: 18,
-        marginHorizontal: 12
-    },
-    navTop: {
-        position: "absolute",
-        flexDirection: "row",
-        alignItems: "center",
-        width: "100%",
-        height: 50,
-        shadowOpacity: 0.5,
-        shadowRadius: 4,
-        shadowOffset: {
-            height: 0,
-            width: 0
-        },
-        elevation: 5,
-        backgroundColor: "#fff"
-    },
-
-    navTopHelp: {
-        position: "absolute",
-        width: "100%",
-        height: 24,
-        zIndex: 1008,
-        backgroundColor: "#fff"
-    },
-
-    navTopItem: {
-        position: "absolute",
-        height: "100%",
-        width: "25%"
-    },
-    navTopItemOn: {
-        borderBottomColor: "#333",
-        borderBottomWidth: 4
-    },
-    navTopImg: {},
-
-    p4: {},
-    p4Toutch: {
-        flexDirection: "row",
-        alignSelf: "flex-end",
-
-        alignItems: "center",
-        justifyContent: "center"
-    },
-    p4Img: {
-        height: 32,
-        width: 32
-    },
-
-    p3: {},
-    p3ImageOn: {
-        opacity: 1,
-        transform: [{ scale: 1.0 }],
-        borderWidth: 4,
-        borderColor: "#2f393e"
-    },
-    p3ImageOff: {
-        opacity: 0.8,
-        transform: [{ scale: 0.95 }]
-    },
-    p3Image: {
-        opacity: 0.9,
-        width: Dimensions.get("window").width / 2 - 20,
-        aspectRatio: 1,
-        margin: 4,
-        borderRadius: 4
-    },
-    p3Images: {
-        flex: 1,
-        flexDirection: "row"
-    },
-    p3Percent: {
-        marginTop: 4,
-        flexDirection: "row",
-        justifyContent: "space-around"
-    },
-
-    p2thumbDislike: {
-        transform: [{ rotate: "180deg" }]
-    },
-    p2thumbImg: {
-        height: 32,
-        width: 32,
-        margin: 8
-    },
-    p2thumb: {
-        flexDirection: "row",
-        alignItems: "center"
-    },
-    p2thumbs: {
-        flex: 1,
-        flexDirection: "row",
-        justifyContent: "space-between"
-    },
-    p2: {},
-    p2Bar: {
-        height: 12,
-        width: "100%",
-        backgroundColor: "#868e89",
-        borderRadius: 4,
-        overflow: "hidden"
-    },
-    p2BarInner: {
-        height: "100%",
-        backgroundColor: "#21C192"
-    },
-
-    description: {
-        fontFamily: "Poppins400",
-        color: "#797A75",
-        flex: 1
-    },
-    postFakeShadow: {
-        marginTop: 16,
-        width: Dimensions.get("window").width + 24,
-        marginLeft: -12,
-        height: 6
-    },
-    p1More: {
-        marginTop: 12,
-        fontFamily: "Poppins400",
-        color: "#797A75"
-    },
-    p1Row: {
-        width: "100%",
-        flex: 1,
-        flexDirection: "row",
-        alignItems: "center"
-    },
-    p1: {},
-    p1Answer: {
-        width: "100%",
-        paddingBottom: 8
-    },
-    p1BarOn: {
-        backgroundColor: "#21C192"
-    },
-    p1Bar: {
-        minWidth: 4,
-        height: 12,
-        backgroundColor: "#6D736F",
-        borderRadius: 4
-    },
-    p1AnswerText: {
-        fontFamily: "Poppins500"
-    },
-
-    /* Der Teil einer Umfrage*/
-
-    PercentText: {
-        fontFamily: "Poppins700",
-        marginLeft: 8,
-        marginRight: 8
-    },
-    VotesAmountText: {
-        fontFamily: "Poppins300",
-        color: "#888",
-        fontSize: 12,
-        alignSelf: "flex-end",
-        marginLeft: 8,
-        marginRight: 8,
-        marginTop: 4
-    },
-    poll: {
-        paddingTop: 4
-    },
-    post: {
-        padding: 12,
-        marginBottom: -8,
-        backgroundColor: "#fff"
-    },
-    postImage: {
-        width: "100%",
-        height: 200,
-        borderRadius: 8,
-        marginBottom: 8,
-        marginTop: 4
-    },
-    sendTime: {
-        justifyContent: "flex-end",
-        color: "#929684",
-        marginRight: 4,
-        fontSize: 14,
-        fontFamily: "Poppins300",
-        minWidth: 32,
-        marginTop: 12
-    },
-    lastMessage: {
-        fontSize: 14,
-        margin: 0,
-        padding: 0,
-        fontFamily: "Poppins300",
-        color: "#969191"
-    },
-    title: {
-        color: "#1c1f21",
-        margin: 0,
-        padding: 0,
-        fontFamily: "Poppins600",
-        fontSize: 16,
-        marginBottom: 0,
-
-        lineHeight: 18
-    },
-    text: {
-        fontFamily: "Poppins500",
-        alignSelf: "center",
-        marginLeft: 12,
-        flex: 1,
-        marginTop: 6
-    },
-    pb: {
-        height: 52,
-        width: 52,
-        borderRadius: 26,
-
-        //für Inhalt (zB Wetter-°C)
-        justifyContent: "center",
-        alignItems: "center"
-    },
-
-    //Umfragen-Header (aka. AuthorBox)
-    postInfo: {
-        backgroundColor: "#fff",
-        flexDirection: "row",
-        marginBottom: 12
-    },
-    polls: {
-        height: "100%",
-        borderRadius: 12
-    },
-    row: {
-        width: "100%",
-        flex: 1,
-        flexDirection: "row"
-    },
-    body: {
-        width: "100%",
-        height: "100%",
-        backgroundColor: "#fff"
-    },
-    out: {
-        backgroundColor: "#fff",
-        width: "100%",
-        height: "100%",
-
-        paddingTop: Platform.OS === "ios" ? 22 : 24
-    }
 });

@@ -1,11 +1,12 @@
 import React from "react";
-import { StatusBar, FlatList, Text, View, Alert, TextInput, Image, KeyboardAvoidingView, TouchableOpacity } from "react-native";
+import { ScrollView, StatusBar, FlatList, Text, View, Alert, TextInput, Image, KeyboardAvoidingView, TouchableOpacity } from "react-native";
 import { LinearGradient } from "expo";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
 
 import { user_search, auth_login } from "../../actions";
-import { login, pc, css } from "./SignInStyle";
+import { login } from "./SignInStyle";
+import D from "../../assets/style/default"
 import * as screenNames from "../../constants/screenNames";
 
 import NavTopWithoutIcons from "../../components/Navbar/NavTopWithoutIcons"
@@ -15,6 +16,8 @@ import pwShow from "../../assets/img/login/PWshow.png";
 import pwHide from "../../assets/img/login/PWhide.png";
 import corner from "../../assets/img/corner.png";
 import DefaultPB from "../../assets/img/pb.png"
+import KiImg from "../../assets/img/ki.png"
+import SplashImg from "../../assets/img/splash.png"
 
 class Login extends React.Component {
     constructor(props) {
@@ -46,154 +49,84 @@ class Login extends React.Component {
 
 
     render() {
-        //Bitte KeyboardAvoidingView einbinden. 
-        //Wo ist der Button zum Registrieren?
         return (
-            <View style={css.out}>
+        <KeyboardAvoidingView
+            style={login.box}
+            behavior="padding"
+            keyboardVerticalOffset={22}
+            >   
+            <ScrollView style={login.scroll}>
 
-                {/*=Navbar top*/}
-                {/* Wenn die Navbar da ist ist die Bottombar weg.. */}
-                <NavTopWithoutIcons />
+                {/*Stäter ein Bild was immer sichtbar ist: <Image style={login.img} source={SplashImg}></Image>*/}
 
+                <Text style={login.welcomeText}>Hast du einen Dashpoll Account? 🤔</Text>
 
-                <View style={css.body}>
+                <View style={login.loginOrRegister}>
+                    <TouchableOpacity style={login.button}>
+                        <Text style={login.buttonText}>Ja</Text>
+                    </TouchableOpacity>
+                    <TouchableOpacity style={login.button}>
+                        <Text style={login.buttonText}>Nein</Text>
+                    </TouchableOpacity>
+                </View>
 
-                    <View hidden={true} style={login.body}>
+                <Text style={login.welcomeText}>Wie heißt dein Dashpoll Account 😄</Text>
 
-                        <Text style={login.Text}>Suche deinen Account</Text>
-
-                        <TextInput
-                            underlineColorAndroid={"transparent"}
-                            style={login.Input}
-                            placeholder={"Account Suchen"}
-                            placeholderTextColor={"#aaa"}
-                            onChangeText={text => this._onUserInputChange(text)}
-                            ref={input => {
-                                this.inputs["two"] = input;
-                            }}
-                            onSubmitEditing={() => {
-                                this.focusNextField("two");
-                            }}
-                        />
-
-
-
-                        <FlatList
-                            data={this.props.foundUsers}
-                            extraData={this.state}
-                            style={login.userList}
-                            ref={ref => {
-                                this.flatListRef = ref;
-                            }}
-                            showsHorizontalScrollIndicator={false}
-                            keyExtractor={(x, i) => i.toString()}
-                            horizontal={true}
-                            renderItem={({ item, index }) => {
-                                return (
-                                    <TouchableOpacity
-                                        horizontal={"true"}
-                                        onPress={() => {
-                                            this.state.markered === item.username
-                                                ? this.setState({ markered: "" }) &
-                                                this.flatListRef.scrollToIndex({
-                                                    animated: true,
-                                                    index: 0
-                                                })
-                                                : this.setState({ markered: item.username }) &
-                                                this.flatListRef.scrollToIndex({
-                                                    animated: true,
-                                                    index: index > 0 ? index - 0.2 : index
-                                                });
-                                        }}
-                                    >
-                                        <View style={[
-                                            login.foundUser,
-                                            this.state.markered === item.username
-                                                ? login.userBox
-                                                : login.userBox
-                                        ]}>
-
-                                            <Image
-                                                style={login.userImg}
-                                                source={DefaultPB} />
-
-                                            <Text
-                                                style={login.userFullname}
-                                                numberOfLines={1}
-                                                ellipsizeMode={'tail'}
-                                            >
-                                                {item.fullname}
-                                            </Text>
-
-                                            <Text
-                                                numberOfLines={1}
-                                                ellipsizeMode={'tail'}
-                                                style={login.userName}>
-                                                @{item.username}
-                                            </Text>
-
-                                        </View>
-                                    </TouchableOpacity>
-
-                                );
-                            }}
-                        />
+                <TextInput
+                    placeholder="Dashpoll-Name"
+                    placeholderTextColor="#666"
+                    style={login.input}
+                />
 
 
-                        {
-                            this.state.markered === "" ? null : (
-                                <View>
-                                    <Text style={login.Text}>Gebe dein Passwort ein</Text>
+                <View style={login.users}>
+                    <TouchableOpacity>
+                        <View style={[login.user_saves, login.user]}>
+                            <Image style={login.userPB} source={DefaultPB}/>
+                            <Text style={login.userFullname}>Max Baier</Text>
+                            <Text style={login.userName}>@max</Text>
+                        </View>
+                    </TouchableOpacity>
+                    <TouchableOpacity>
+                        <View style={login.user}>
+                            <Image style={login.userPB} source={DefaultPB}/>
+                            <Text style={login.userFullname}>Max Baier</Text>
+                            <Text style={login.userName}>@max</Text>
+                        </View>
+                    </TouchableOpacity>
+                </View>
 
-                                    <View style={login.PasswordInputBox}>
-                                        <TextInput
-                                            underlineColorAndroid={"transparent"}
-                                            style={login.PasswordInput}
-                                            placeholder={"Passwort"}
-                                            secureTextEntry={this.state.passwordImg}
-                                            onChangeText={pw => this._onPasswordInputChange(pw)}
-                                            ref={input => {
-                                                this.inputs["two"] = input;
-                                            }}
-                                        />
-                                        <TouchableOpacity
-                                            style={login.PasswordInputToggle}
-                                            onPress={() => {
-                                                this.setState({ passwordImg: !this.state.passwordImg });
-                                            }}
-                                        >
-                                            {this.state.passwordImg ? (
-                                                <Image style={login.PasswordInputToggleImg} source={pwShow} />
-                                            ) : (
-                                                    <Image style={login.PasswordInputToggleImg} source={pwHide} />
-                                                )}
-                                        </TouchableOpacity>
-                                    </View>
-                                </View>
-                            )
-                        }
+                
+                <TouchableOpacity style={D.kiBox}>
+                    <Image style={D.kiImg} source={KiImg}/>
+                    <Text style={D.kiText}>Name vergessen?</Text>
+                </TouchableOpacity>
 
-                        <View style={css.navTopPush} />
+                <Text style={login.welcomeText}>Bitte gebe dein Passwort ein 🤫</Text>
+
+                <TouchableOpacity>
+                    <View style={login.userSelected}>
+                        <Image style={login.userPB} source={DefaultPB}/>
+                        <Text style={login.userFullname}>Konrad Mayer</Text>
+                        <Text style={login.userName}>Account ändern</Text>
                     </View>
+                </TouchableOpacity>
 
-                </View>
+                <TextInput
+                    placeholder="Passwort"
+                    placeholderTextColor="#666"
+                    style={login.input}
+                />
 
-                {/*=Navbar unten*/}
-                <View style={css.bottom}>
-                    <TouchableOpacity
-                        onPress={() => {
-                            Alert.alert("GIBT KEINE HILFE DU HUND");
-                        }}
-                    >
-                        <Text style={pc.textContinue}>Hilfe</Text>
-                    </TouchableOpacity>
-                    <TouchableOpacity onPress={() => this.props.navigation.navigate(screenNames.SIGN_UP)}>
-                        <Text style={pc.textPublic}>Account erstellen</Text>
-                    </TouchableOpacity>
-                </View>
+                <TouchableOpacity style={D.kiBox}>
+                    <Image style={D.kiImg} source={KiImg}/>
+                    <Text style={D.kiText}>Passwort vergessen?</Text>
+                </TouchableOpacity>
 
-            </View>
-        );
+                <View style={{height: 64,}}></View>
+            </ScrollView>
+        </KeyboardAvoidingView>
+        )
     }
 }
 

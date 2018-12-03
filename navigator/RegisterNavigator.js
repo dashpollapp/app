@@ -1,5 +1,5 @@
 import React from "react";
-import { View } from "react-native";
+import { View, Text, KeyboardAvoidingView } from "react-native";
 import { createMaterialTopTabNavigator } from "react-navigation";
 import * as screenName from "../constants/screenNames";
 
@@ -29,6 +29,9 @@ export default class RegisterNavigator extends React.Component {
     render() {
         return (
             <View style={{ flex: 1, backgroundColor: "#fff" }}>
+                <View style={{ padding: 8, marginTop: 44, backgroundColor: "#fff", }}>
+                    <Text style={{ fontSize: 20, color: "#333", fontFamily: "GS2", textAlign: "center" }}>Wilkommen</Text>
+                </View>
                 <Navigator navigation={this.props.navigation} />
             </View>
         )
