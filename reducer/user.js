@@ -30,7 +30,10 @@ export default function (state = initialState, action) {
 
         case UPDATE_USER_FROM_API_SUCCESS:
             let userFromApi = { ...action.payload.user, token: state.user.token }
-            if (userFromApi.meta.pb !== state.user.meta.pb) console.log("PB VERÄNDERT", true);
+            if (userFromApi.meta.pb !== state.user.meta.pb) {
+                let user = { _id: userFromApi._id, newPB: userFromApi.meta.pb, oldPB: state.user.meta.pb };
+                savePbToDb(user);
+            };
             saveUserToDb(userFromApi);
             return { loading: false, user: userFromApi };
 
@@ -84,6 +87,11 @@ export default function (state = initialState, action) {
     }
 }
 
+function savePbToDb(user) {
+
+    
+}
+
 function deleteUserFromDb() {
     db.get('user').then(function (doc) {
         return db.remove(doc._id, doc._rev);
@@ -102,10 +110,10 @@ function saveUserToDb(user) {
         })
 
     })
-        .catch(e => {
-            db.put(userDbFormat,
-                { force: true }
-            )
-        });
+    .catch(e => {
+        db.put(userDbFormat,
+            { force: true }
+        )
+    });
 
 }
