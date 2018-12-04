@@ -9,12 +9,10 @@ export default StyleSheet.create({
         right: 0,
 
         padding: 12,
-        paddingBottom: 22 +  (isIPhoneX()) ? 28 : 0,
+        paddingBottom: 12 + (isIPhoneX()) ? 38 : 0, //BUGG!
         backgroundColor: "#fff",
         borderTopWidth: 1,
         borderColor: "#eee",
-
-        minHeight: 52,
 
         flex: 1,
         flexDirection: "row",

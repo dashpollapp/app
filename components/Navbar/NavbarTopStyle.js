@@ -1,5 +1,5 @@
 import { StyleSheet, Platform } from "react-native";
-import { ifIPhoneX } from "../../utils/iphoneX"
+import { ifIPhoneX, isIPhoneX } from "../../utils/iphoneX"
 
 export default StyleSheet.create({
     backImg: {
@@ -64,7 +64,7 @@ export default StyleSheet.create({
         borderBottomWidth: 1, //0
         borderColor: "#eee",
         width: "100%",
-        minHeight: 54 + 28,
+        minHeight: 67 + (isIPhoneX()) ? 28 : 0,
 
         /*
         shadowColor: "#000",
@@ -94,7 +94,7 @@ export default StyleSheet.create({
     },
     push: {
         zIndex: 0,
-        height: 54 + 28, // 
+        height: 67, // 
         width: "100%",
     }
 });
