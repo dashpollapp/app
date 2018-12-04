@@ -14,9 +14,10 @@ export default StyleSheet.create({
         <Text style={D.kiText}>Account erstellen</Text>
     </TouchableOpacity>
     */ 
-    kiBoxes: {
+   kiBoxes: {
         flexDirection: "row",
         alignItems:"center",
+        marginVertical: 8,
     },
     kiBox: {
         backgroundColor: "#333",

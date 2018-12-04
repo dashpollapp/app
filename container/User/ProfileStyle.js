@@ -57,12 +57,54 @@ export default StyleSheet.create({
         paddingVertical: 16,
         marginTop: 32,
     },
-    map: {
-        marginVertical: 32,
-        width: PBSize,
-        height: PBSize * 0.625,
-        margin: PBMargin,
+
+
+    //Zitat
+    quote: {
+        textAlign: "center",
+        fontFamily: "GS2",
+        fontSize: 18,
+        marginVertical: 44,
+        color: "#444",
     },
+    addQuote: {
+        textAlign: "center",
+        fontFamily: "GS3",
+        fontSize: 15,
+        marginVertical: 44,
+        color: "#0984e3",
+    },
+
+
+    profileInfo: {
+        textAlign: "center",
+        fontFamily: "GS2",
+        fontSize: 14,
+        marginTop: 32,
+        color: "#444", 
+    },
+    profileInfoAnsw: {
+        textAlign: "center",
+        fontFamily: "GS1",
+        fontSize: 18,
+        marginTop: 4,
+        color: "#888", 
+    },
+    profileInfoAnswURL: {
+        color: "#0984e3",
+        fontSize: 16,
+    },
+
+
+
+    paddingBox: {
+        padding: 16,
+        alignItems: "center",
+    },
+
+
+
+
     fullname: {
         textAlign: "center",
         fontFamily: "GS3",

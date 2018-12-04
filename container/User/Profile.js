@@ -3,11 +3,13 @@ import React from "react";
 
 import DefaultPB from "../../assets/img/pb.png"
 import mapImage from "../../assets/img/map.png"
+import KiImg from "../../assets/img/ki.png"
 
-import s from './ProfileStyle';
+import s from "./ProfileStyle";
+import D from "../../assets/style/default"
 
 import { connect } from "react-redux";
-import { follow_user } from '../../actions'
+import { follow_user } from "../../actions"
 
 class Profile extends React.Component {
     constructor(props) {
@@ -56,7 +58,39 @@ class Profile extends React.Component {
                     </View>
                 </View>
 
-                <Image style={s.map} source={mapImage} />
+
+                <View style={[s.paddingBox]}>  
+
+                    <Text style={[s.profileInfo]}>Website</Text>
+                    <TouchableOpacity>
+                        <Text style={[s.profileInfoAnsw, s.profileInfoAnswURL]}>dashpoll.net</Text>
+                    </TouchableOpacity>
+
+                    <Text style={[s.profileInfo]}>Wohnort</Text>
+                    <Text style={[s.profileInfoAnsw]}>Frankfurt, Germany</Text>
+
+                    <View style={D.kiBoxes}>
+                        <TouchableOpacity style={D.kiBox}>
+                            <Image style={D.kiImg} source={KiImg}/>
+                            <Text style={D.kiText}>Neue Info</Text>
+                        </TouchableOpacity>
+                    </View>
+        
+
+
+
+                    <Text style={[s.quote]}>„Jedes Mädchen hat einen Spruch, wenn Jungs einen Spruch haben sind Sie Schwul.“</Text>
+                    
+                    <View style={D.kiBoxes}>
+                        <TouchableOpacity style={D.kiBox}>
+                            <Image style={D.kiImg} source={KiImg}/>
+                            <Text style={D.kiText}>Zitat hinzufügen</Text>
+                        </TouchableOpacity>
+                    </View>
+                
+                </View>
+
+
 
             </ScrollView>
         );
