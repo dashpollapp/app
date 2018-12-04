@@ -68,7 +68,7 @@ function NavigatorClass(props) {
                     width: 26
                 },
                 indicatorStyle: {
-                    opacity: (isIPhoneX) ? 0 : 1,
+                    opacity: (isIPhoneX()) ? 0 : 1,
                     marginTop: -4,
                     height: 8,
                     width: Dimensions.get("window").width / 2 - 145,
@@ -83,7 +83,7 @@ function NavigatorClass(props) {
                     borderColor: "#eee",
                     minHeight: 52,
                     backgroundColor: "#fff",
-                    paddingBottom: (isIPhoneX) ? 8 : 0, //ipHoneX
+                    paddingBottom: (isIPhoneX()) ? 8 : 0, //ipHoneX
                 }
             }
         })
