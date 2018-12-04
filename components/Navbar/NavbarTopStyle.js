@@ -1,5 +1,4 @@
-import { StyleSheet, Platform } from "react-native";
-import { ifIPhoneX } from "../../utils/iphoneX"
+import { StyleSheet } from "react-native";
 
 export default StyleSheet.create({
     backImg: {
@@ -42,6 +41,8 @@ export default StyleSheet.create({
         opacity: 0.5,
     },
 
+
+
     // Alter Code
     box: {
         position: "absolute",
@@ -49,22 +50,18 @@ export default StyleSheet.create({
         left: 0,
         right: 0,
         zIndex: 1000,
+        maxHeight: 52 + 24,
         backgroundColor: "#fff",
         flex: 1,
         padding: 8,
         paddingLeft: 18,
-        ...ifIPhoneX({
-            paddingTop: 8 + 28
-        }, {
-            paddingTop: 8 + (Platform.OS === "ios") ? 22 : 24
-        }), 
         flexDirection: "row",
         justifyContent: "space-between",
         alignItems: "center",
         borderBottomWidth: 1, //0
         borderColor: "#eee",
         width: "100%",
-        minHeight: 54 + 28,
+        minHeight: 54,
 
         /*
         shadowColor: "#000",
@@ -94,7 +91,7 @@ export default StyleSheet.create({
     },
     push: {
         zIndex: 0,
-        height: 54 + 28, // 
+        height: 54, // 
         width: "100%",
     }
 });

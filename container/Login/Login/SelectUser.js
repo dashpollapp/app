@@ -50,10 +50,10 @@ class SelectUser extends React.Component {
 
                         return (
                             <TouchableOpacity onPress={() => this.props.navigation.navigate(screenNames.LOGIN_PASSWORD, {user: item})}>
-                                <View style={[D.user_saves, D.user]}>
-                                    <Image style={D.userPB} source={(item.meta.pb !== "default") ? {uri: "https://api.dashpoll.net/pb/" + item.meta.pb} : DefaultPB}/>
-                                    <Text style={D.userFullname}>{item.fullname}</Text>
-                                    <Text style={D.userName}>@{item.username}</Text>
+                                <View style={[login.user_saves, login.user]}>
+                                    <Image style={login.userPB} source={(item.meta.pb !== "default") ? {uri: "https://api.dashpoll.net/pb/" + item.meta.pb} : DefaultPB}/>
+                                    <Text style={login.userFullname}>{item.fullname}</Text>
+                                    <Text style={login.userName}>@{item.username}</Text>
                                 </View>
                             </TouchableOpacity>
                         )

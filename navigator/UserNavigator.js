@@ -14,7 +14,7 @@ import Posts from "../container/User/Posts";
 import Profile from "../container/User/Profile";
 import OwnProfile from "../container/Profile/Profile";
 
-import { isIPhoneX } from "../utils/iphoneX"
+import { store } from "../utils"
 
 //Images
 import chatImg from "../assets/img/navbar/bottom/chat.png";
@@ -68,7 +68,6 @@ function NavigatorClass(props) {
                     width: 26
                 },
                 indicatorStyle: {
-                    opacity: (isIPhoneX) ? 0 : 1,
                     marginTop: -4,
                     height: 8,
                     width: Dimensions.get("window").width / 2 - 145,
@@ -80,10 +79,9 @@ function NavigatorClass(props) {
                 },
                 style: {
                     borderTopWidth: 1,
-                    borderColor: "#eee",
+                    borderColor: "#d8d8d8",
                     minHeight: 52,
                     backgroundColor: "#fff",
-                    paddingBottom: (isIPhoneX) ? 8 : 0, //ipHoneX
                 }
             }
         })

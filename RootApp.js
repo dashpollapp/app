@@ -99,7 +99,7 @@ class RootApp extends React.Component {
     }
 
     componentDidMount() {
-        //socket.connect()
+        socket.connect()
         //APP Start
         Promise.all([loadFonts(), getUserFromDb(), cacheResourcesAsync()])
             .then(results => {
