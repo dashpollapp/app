@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { View, TouchableOpacity, Image, Text, FlatList, Linking, Share, Modal } from "react-native";
+import { View, TouchableOpacity, Image, Text, FlatList, Linking, Share, Alert } from "react-native";
 import { BlurView } from 'expo';
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
@@ -55,6 +55,28 @@ class PollsFlatlist extends Component {
         )
     }
 
+    openUrl(url) {
+
+        let newUrl;
+
+        if(url.split(":")[0] === "https" || url.split(":")[0] === "http") {
+            newUrl = url;
+        } else {
+            newUrl = "http://" + url;
+        }
+
+        Alert.alert(
+            'Weiterleitung',
+            'Du wirst auf dein Internet Browser weitergeleitet.',
+            [
+                {text: 'Abbrechen', style: 'cancel'},
+                {text: 'OK', onPress: () => Linking.openURL(newUrl)},
+            ],
+            { cancelable: false }
+        )
+
+    }
+
     render() {
         return (
             <View style={s.box}>
@@ -104,14 +126,7 @@ class PollsFlatlist extends Component {
                                     showHashtag={true}
 
                                     //Events
-                                    urlClick={(url) => {
-                                        if(url.split(":")[0] === "https" || url.split(":")[0] === "http") {
-                                            Linking.openURL(url)
-                                        } else {
-                                            Linking.openURL("http://" + url)
-                                        }
-                                        
-                                    }}
+                                    urlClick={(url) => this.openUrl(url)}
                                     usernameClick={(username) => console.log("Username", username)}
                                     hashtagClick={(hashtag) => console.log("Hashtag", hashtag)}
                                 />
