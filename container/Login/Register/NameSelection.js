@@ -8,7 +8,7 @@ import * as screenNames from '../../../constants/screenNames';
 class NameSelection extends React.Component {
     render() {
         return (
-            <View style={reg.box}>
+            <KeyboardAvoidingView  behavior="padding" enabled style={reg.box}>
 
                 <Text style={reg.subTitle}>Name wählen</Text>
 
@@ -18,9 +18,10 @@ class NameSelection extends React.Component {
                         placeholder="Vorname Nachname"
                         style={reg.input}
                     />
+                    <Text style={reg.error}>Dies scheint kein gültiger Name zu sein</Text>
                 </View>
 
-                <Text style={reg.error}></Text>
+                
 
                 
                 <View style={reg.inputBox}>
@@ -29,15 +30,15 @@ class NameSelection extends React.Component {
                         placeholder="@Koni"
                         style={reg.input}
                     />
+                    <Text style={reg.error}>Der Benutzername muss 4 Zeichen lang sein</Text>
                 </View>
 
-                <Text style={reg.error}></Text>
 
 
-                <TouchableOpacity style={{padding: 32, opacity: 0}} onPress={() => this.props.navigation.navigate(screenNames.REGISTER_PASSWORD)} >  
-                    <Text>(Weiter)</Text>
+                <TouchableOpacity onPress={() => this.props.navigation.navigate(screenNames.REGISTER_PASSWORD)} >  
+                    <Text style={reg.nextText}>Weiter</Text>
                 </TouchableOpacity>
-            </View>
+            </KeyboardAvoidingView>
         );
     }
 }

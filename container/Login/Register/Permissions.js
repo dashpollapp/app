@@ -12,6 +12,7 @@ class Permissions extends React.Component {
 
                 <TouchableOpacity onPress={() => this.props.navigation.navigate(screenNames.REGISTER_NAMESELECTION)} >
                     <Text style={reg.subTitle}>Gleich geht's los</Text>
+                    <Text style={reg.subTitle}>(Seite folgt später)</Text>
                 </TouchableOpacity>
 
 

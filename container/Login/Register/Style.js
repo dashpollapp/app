@@ -6,13 +6,18 @@ export var reg = StyleSheet.create({
 
     box: {
         flex: 1, 
+        flexDirection: "column",
+        justifyContent: "space-around",
+        height: "100%",
+        
     },
 
     subTitle: { 
         fontSize: 14, 
         color: "#aaa", 
         fontFamily: "GS2", 
-        textAlign: "center" 
+        textAlign: "center",
+        marginBottom: 64,
     },
 
 
@@ -24,8 +29,7 @@ export var reg = StyleSheet.create({
         textAlign: "center" 
     },
     inputBox: {
-        marginTop: 108,
-        marginBottom: 8,
+        flex: 1,
     },
     input: {
         fontSize: 19, 
@@ -43,4 +47,14 @@ export var reg = StyleSheet.create({
         textAlign: "center" 
     },
 
+
+
+    nextText: {
+        fontSize: 16,
+        color: "#0984e3", 
+        fontFamily: "GS2", 
+        textAlign: "right",   
+
+        padding: 24,
+    },
 })

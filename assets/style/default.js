@@ -1,6 +1,7 @@
 import { StyleSheet, Platform,Dimensions } from "react-native";
 
 export default StyleSheet.create({
+    //import D from "../../../assets/style/default"
 
     img: {
         width: 320,
@@ -9,6 +10,16 @@ export default StyleSheet.create({
     },
 
     /*
+    import { View, TouchableOpacity, Text, Image } from "react-native";
+    import KiImg from "../../../assets/img/ki.png"
+    <View style={D.kiBoxes}>
+        <TouchableOpacity style={D.kiBox}>
+            <Image style={D.kiImg} source={KiImg}/>
+            <Text style={D.kiText}>Passwort wiederholen?</Text>
+        </TouchableOpacity>
+    </View>
+
+
     <TouchableOpacity style={D.kiBox}>
         <Image style={D.kiImg} source={KiImg}/>
         <Text style={D.kiText}>Account erstellen</Text>
@@ -17,6 +28,7 @@ export default StyleSheet.create({
    kiBoxes: {
         flexDirection: "row",
         alignItems:"center",
+        justifyContent: "center",
         marginVertical: 8,
     },
     kiBox: {
