@@ -24,6 +24,8 @@ class Description extends React.Component {
             hashtagStyle
         } = this.props;
 
+        if((typeof text) === "undefined") return;
+
         let urlRegex = /\b^(?:http(s)?:\/\/)?[\w.-]+(?:\.[\w\.-]+)+[\w\-\._~:/?#[\]@!\$&'\(\)\*\+,;=.]+$/gi;
         let usernameRegex = /\B\@\w\w+\b/g;
         let hashtagRegex = /\B\#\w\w+\b/g;
