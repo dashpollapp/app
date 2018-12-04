@@ -94,7 +94,7 @@ export default StyleSheet.create({
     },
     push: {
         zIndex: 0,
-        height: 67, // 
+        height: 67 + (isIPhoneX()) ? 28 : 0,
         width: "100%",
     }
 });
