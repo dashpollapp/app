@@ -98,6 +98,11 @@ class RootApp extends React.Component {
         }
     }
 
+    shouldComponentUpdate(nextProps, nextState) {
+        if (this.props.user._id === nextProps.user._id) return false;
+        return true;
+    }
+
     componentDidMount() {
         //socket.connect()
         //APP Start
