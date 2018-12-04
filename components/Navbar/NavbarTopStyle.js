@@ -56,7 +56,7 @@ export default StyleSheet.create({
         ...ifIPhoneX({
             paddingTop: 8 + 28
         }, {
-            paddingTop: 8 + (Platform.OS === "ios") ? 22 : 24
+            paddingTop: 8 + ((Platform.OS === "ios") ? 22 : 24)
         }), 
         flexDirection: "row",
         justifyContent: "space-between",
@@ -67,7 +67,7 @@ export default StyleSheet.create({
         ...ifIPhoneX({
             maxHeight: 52 + 28,
         }, {
-            maxHeight: 52 + (Platform.OS === "ios") ? 22 : 24
+            maxHeight: 52 + ((Platform.OS === "ios") ? 22 : 24)
         })
 
         /*
@@ -102,7 +102,7 @@ export default StyleSheet.create({
         ...ifIPhoneX({
             height: 52 + 28,
         }, {
-            height: 52 + (Platform.OS === "ios") ? 22 : 24
+            height: 52 + ((Platform.OS === "ios") ? 22 : 24)
         }),
     }
 });
