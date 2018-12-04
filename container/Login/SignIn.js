@@ -82,19 +82,19 @@ class Login extends React.Component {
                 />
 
 
-                <View style={login.users}>
+                <View style={D.users}>
                     <TouchableOpacity>
-                        <View style={[login.user_saves, login.user]}>
-                            <Image style={login.userPB} source={DefaultPB}/>
-                            <Text style={login.userFullname}>Max Baier</Text>
-                            <Text style={login.userName}>@max</Text>
+                        <View style={[D.user_saves, D.user]}>
+                            <Image style={D.userPB} source={DefaultPB}/>
+                            <Text style={D.userFullname}>Max Baier</Text>
+                            <Text style={D.userName}>@max</Text>
                         </View>
                     </TouchableOpacity>
                     <TouchableOpacity>
-                        <View style={login.user}>
-                            <Image style={login.userPB} source={DefaultPB}/>
-                            <Text style={login.userFullname}>Max Baier</Text>
-                            <Text style={login.userName}>@max</Text>
+                        <View style={D.user}>
+                            <Image style={D.userPB} source={DefaultPB}/>
+                            <Text style={D.userFullname}>Max Baier</Text>
+                            <Text style={D.userName}>@max</Text>
                         </View>
                     </TouchableOpacity>
                 </View>

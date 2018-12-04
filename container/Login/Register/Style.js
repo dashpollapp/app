@@ -53,8 +53,24 @@ export var reg = StyleSheet.create({
         fontSize: 16,
         color: "#0984e3", 
         fontFamily: "GS2", 
-        textAlign: "right",   
+        textAlign: "right",
 
         padding: 24,
     },
+
+
+
+    followPeopleText: {
+        fontSize: 16,
+        color: "#555", 
+        fontFamily: "GS2", 
+        textAlign: "center",  
+    },
+    followPeopleTextBETA: { //Kann später weg
+        fontSize: 14,
+        color: "#aaa", 
+        fontFamily: "GS2", 
+        textAlign: "center",    
+    },
+
 })

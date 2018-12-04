@@ -1,7 +1,9 @@
 import React from "react";
-import { View } from "react-native";
+import { View, Image } from "react-native";
 import { createMaterialTopTabNavigator } from "react-navigation";
 import * as screenName from "../constants/screenNames";
+
+import SplashImg from "../assets/img/splash.png"
 
 //Container
 import { SelectUser, Password } from "../container/Login/Login";
@@ -27,6 +29,7 @@ export default class LoginNavigator extends React.Component {
     render() {
         return (
             <View style={{ flex: 1, backgroundColor: "#fff" }}>
+                <Image style={{ width: 160, height: 60, alignSelf: "center", }} source={SplashImg}/>
                 <Navigator navigation={this.props.navigation} />
             </View>
         )

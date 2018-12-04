@@ -53,6 +53,62 @@ export default StyleSheet.create({
 
 
 
+    //Benutzerboxen
+    /*
+    <View style={login.users}>
+        <TouchableOpacity>
+            <View style={[login.user_saves, login.user]}>
+                <Image style={login.userPB} source={DefaultPB}/>
+                <Text style={login.userFullname}>Max Baier</Text>
+                <Text style={login.userName}>@max</Text>
+            </View>
+        </TouchableOpacity>
+        <TouchableOpacity>
+            <View style={login.user}>
+                <Image style={login.userPB} source={DefaultPB}/>
+                <Text style={login.userFullname}>Max Baier</Text>
+                <Text style={login.userName}>@max</Text>
+            </View>
+        </TouchableOpacity>
+    </View>
+    */
+    users: {
+        flexDirection: "row",
+        marginBottom: 24,
+    },
+    user: {
+        padding: 16,
+        borderRadius: 16,
+    },
+    userPB: {
+        height: 64,
+        width: 64,
+        borderRadius: 28,
+        marginVertical: 8,
+    },
+    userFullname: {
+        fontSize: 12,
+        color: "#333",
+        fontFamily: "GS3",
+        textAlign: "center",
+    },
+    userName: {
+        fontSize: 10,
+        color: "#0984e3",
+        fontFamily: "GS2",
+        textAlign: "center",
+    },
+
+
+    user_save: {
+        backgroundColor: "rgba(0,0,0,0.03)",
+    },
+
+
+
+
+
+
     heading: {
         fontFamily: "GS1",
         fontSize: 13,

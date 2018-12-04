@@ -55,35 +55,5 @@ export var login = StyleSheet.create({
         backgroundColor: "rgba(0,0,0,0.04)",
         borderRadius: 16,
     },
-    users: {
-        flexDirection: "row",
-        marginBottom: 24,
-    },
-    user: {
-        padding: 16,
-        borderRadius: 16,
-    },
-    userPB: {
-        height: 64,
-        width: 64,
-        borderRadius: 28,
-        marginVertical: 8,
-    },
-    userFullname: {
-        fontSize: 12,
-        color: "#333",
-        fontFamily: "GS3",
-        textAlign: "center",
-    },
-    userName: {
-        fontSize: 10,
-        color: "#0984e3",
-        fontFamily: "GS2",
-        textAlign: "center",
-    },
-
-
-    user_save: {
-        backgroundColor: "rgba(0,0,0,0.03)",
-    },
+   
 });
