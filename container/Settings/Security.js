@@ -33,7 +33,7 @@ class Security extends React.Component {
                             <Text style={s.description} numberOfLines={1}>geplant</Text>
                         </View>
 
-                        <View> style={[s.item, { opacity: 0.66 }]}>
+                        <View style={[s.item, { opacity: 0.66 }]}>
                             <Text style={s.name}>Automatisch abmelden</Text>
                             <Text style={s.description} numberOfLines={1}>geplant</Text>
                         </View>

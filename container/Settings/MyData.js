@@ -51,12 +51,6 @@ class MyData extends React.Component {
                         geplant: Problem oder Fehler melden, Tipps geben,...
                     </Text>
                 </View>
-                <View style={[s.item, {opacity: 0.66}]}>
-                    <Text style={s.name}>Feedback geben</Text>
-                    <Text style={s.description} numberOfLines={1}>
-                        geplant: Problem oder Fehler melden, Tipps geben,...
-                    </Text>
-                </View>
 
             </ScrollView>
         );
