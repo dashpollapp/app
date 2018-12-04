@@ -9,7 +9,7 @@ export default StyleSheet.create({
         right: 0,
 
         padding: 12,
-        paddingBottom: 12 + (isIPhoneX()) ? 38 : 0, //BUGG!
+        paddingBottom: 12 + ((isIPhoneX()) ? 16 : 0), //BUGG!
         backgroundColor: "#fff",
         borderTopWidth: 1,
         borderColor: "#eee",
