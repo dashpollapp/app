@@ -32,7 +32,7 @@ export default class RegisterNavigator extends React.Component {
         return (
             <View style={{ flex: 1, backgroundColor: "#fff" }}>
                 <View style={{ paddingHorizontal: 8, backgroundColor: "#fff", alignItems: "center", }}>
-                    <Image style={{ width: 160, height: 60,  }} source={SplashImg}/>
+                    <Image style={{ width: 160, height: 60, marginTop: 32,  }} source={SplashImg}/>
                     <Text style={{ fontSize: 20, color: "#333", fontFamily: "GS2", textAlign: "center" }}>Wilkommen</Text>
                 </View>
                 <Navigator navigation={this.props.navigation} />
