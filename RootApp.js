@@ -99,8 +99,12 @@ class RootApp extends React.Component {
     }
 
     shouldComponentUpdate(nextProps, nextState) {
-        if (this.props.user._id === nextProps.user._id) return false;
-        return true;
+        console.log("RERENDER TRUE");
+        if (this.state.isAppReady !== nextState.isAppReady) return true;
+        if (this.state.isSplashReady !== nextState.isSplashReady) return true;
+        if (!(this.props.user._id) || this.props.user._id !== nextProps.user._id) return true;
+        console.log("RERENDER FALSE");
+        return false;
     }
 
     componentDidMount() {
