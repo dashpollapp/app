@@ -117,8 +117,8 @@ class PollsFlatlist extends Component {
 
                                     //Style
                                     urlStyle={s.url}
-                                    usernameStyle={{color: "red"}}
-                                    hashtagStyle={{color: "yellow"}}
+                                    usernameStyle={s.url}
+                                    hashtagStyle={s.url}
 
                                     //Visible
                                     showUrl={true}
