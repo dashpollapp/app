@@ -1,7 +1,7 @@
 import React from "react";
 import { View, Image, Dimensions } from "react-native";
 import { createMaterialTopTabNavigator } from "react-navigation";
-
+import { isIPhoneX } from "../utils/iphoneX"
 import PropTypes from "prop-types";
 
 import * as screenName from "../constants/screenNames";
@@ -53,6 +53,7 @@ const Navigator = createMaterialTopTabNavigator(
                 width: 26
             },
             indicatorStyle: {
+                opacity: (isIPhoneX) ? 0 : 1,
                 marginTop: -4,
                 height: 8,
                 width: Dimensions.get("window").width / 2 - 145,
@@ -64,9 +65,10 @@ const Navigator = createMaterialTopTabNavigator(
             },
             style: {
                 borderTopWidth: 1,
-                borderColor: "#d8d8d8",
+                borderColor: "#eee",
                 minHeight: 52,
                 backgroundColor: "#fff",
+                paddingBottom: 8,
             }
         }
     }

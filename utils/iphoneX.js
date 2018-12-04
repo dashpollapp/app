@@ -12,7 +12,7 @@ export function isIPhoneX() {
 }
 
 export function ifIPhoneX(iphoneXStyle, regularStyle) {
-    if (isIphoneX()) {
+    if (isIPhoneX()) {
         return iphoneXStyle;
     }
     return regularStyle;

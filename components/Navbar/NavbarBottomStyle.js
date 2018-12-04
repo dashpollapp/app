@@ -1,4 +1,5 @@
 import { StyleSheet } from "react-native";
+import { isIPhoneX } from "../../utils/iphoneX";
 
 export default StyleSheet.create({
     box: {
@@ -8,8 +9,9 @@ export default StyleSheet.create({
         right: 0,
 
         padding: 12,
+        paddingBottom: 22 +  (isIPhoneX) ? 28 : 0,
         backgroundColor: "#fff",
-        borderTopWidth: 4,
+        borderTopWidth: 1,
         borderColor: "#eee",
 
         minHeight: 52,

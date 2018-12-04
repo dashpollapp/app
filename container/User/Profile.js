@@ -79,7 +79,7 @@ class Profile extends React.Component {
 
 
 
-                    <Text style={[s.quote]}>„Jedes Mädchen hat einen Spruch, wenn Jungs einen Spruch haben sind Sie Schwul.“</Text>
+                    <Text style={[s.quote]}>{user.meta.bio}</Text>
                     
                     <View style={D.kiBoxes}>
                         <TouchableOpacity style={D.kiBox}>
