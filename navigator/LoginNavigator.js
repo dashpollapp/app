@@ -29,7 +29,7 @@ export default class LoginNavigator extends React.Component {
     render() {
         return (
             <View style={{ flex: 1, backgroundColor: "#fff" }}>
-                <Image style={{ width: 160, height: 60, alignSelf: "center", }} source={SplashImg}/>
+                <Image style={{ width: 160, height: 60, alignSelf: "center", marginTop: 32, }} source={SplashImg}/>
                 <Navigator navigation={this.props.navigation} />
             </View>
         )

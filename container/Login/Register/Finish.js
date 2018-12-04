@@ -23,7 +23,7 @@ class Finish extends React.Component {
                             <View style={[D.user_saves, D.user]}>
                                 <Image style={D.userPB} source={DefaultPB}/>
                                 <Text style={D.userFullname}>Maxi</Text>
-                                <Text style={D.userName}>CTO & Api</Text>
+                                <Text style={D.userName}>CTO+ & Api</Text>
                             </View>
                         </TouchableOpacity>
                         <TouchableOpacity>
