@@ -8,6 +8,8 @@ import s from "./PollStyle";
 
 import * as screenNames from '../../constants/screenNames';
 
+import Description from "../../components/Description";
+
 import Option from '../../components/Post/Option';
 import Author from '../../components/Post/authorBox';
 import PostModal from '../../components/Post/Modal';
@@ -53,8 +55,6 @@ class PollsFlatlist extends Component {
         )
     }
 
-
-
     render() {
         return (
             <View style={s.box}>
@@ -89,7 +89,8 @@ class PollsFlatlist extends Component {
 
                                 </View>
 
-                                {item.text ? <Text style={s.description}>{item.text}</Text> : null}
+
+                                {item.text ? <Description urlClick={(url) => console.log(url)} style={s.description} url={true} urlStyle={s.url} text={item.text} /> : null}
 
                                 {/* Media */}
                                 {item.media ? <LoadMedia poll={item} /> : null}

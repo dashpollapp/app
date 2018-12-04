@@ -20,10 +20,12 @@ export default class App extends React.Component {
                         <RootApp />
                     </Provider >
                 </View>
+
                 <Image style={[css.cornerTL, css.corner]} source={corner} />
                 <Image style={[css.cornerTR, css.corner]} source={corner} />
                 <Image style={[css.cornerBL, css.corner]} source={corner} />
                 <Image style={[css.cornerBR, css.corner]} source={corner} />
+                
             </View>
         );
     }
@@ -38,8 +40,6 @@ export var css = StyleSheet.create({
         backgroundColor: "#fff",
         width: "100%",
         height: "100%",
-
-        paddingTop: Platform.OS === "ios" ? 22 : 24
     },
 
 
