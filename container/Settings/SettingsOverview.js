@@ -19,40 +19,29 @@ class Settings extends React.Component {
 
     render() {
         return (
-
-            <View style={[s.box]}>
-                {/* Expo/RN Einstellungen */}
-                <ScrollView>
-
-                    <TouchableOpacity onPress={() => this.navigation("AccountSettings")} style={s.item}>
-                        <Text style={s.name}>Accounteinllungen</Text>
-                        <Text style={s.description} numberOfLines={1}>
-                            Accounts verwalten, Abmelden, Account Löschen
-                            </Text>
-                    </TouchableOpacity>
-
-                    <TouchableOpacity onPress={() => this.navigation("Legal")} style={s.item}>
-                        <Text style={s.name}>Rechtliches</Text>
-                        <Text style={s.description} numberOfLines={1}>
-                            Nutzungsbedingungen, Impressum, Datenschutzrichtlinien,…
-                            </Text>
-                    </TouchableOpacity>
+                <ScrollView style={[s.box]}>
+                    <View style={[s.item, {opacity: 0.66}]}>
+                        <Text style={s.name}>Persönliche Einstellungen</Text>
+                        <Text style={s.description} numberOfLines={1}>Folgen bald</Text>
+                    </View>
 
                     <TouchableOpacity onPress={() => this.navigation("Security")} style={[s.item,]}>
                         <Text style={s.name}>Account & Sicherheit</Text>
                         <Text style={s.description}>Anmeldung, Passwort, Sicherheits-Optionen…</Text>
                     </TouchableOpacity>
 
+                    <TouchableOpacity onPress={() => this.navigation("MyData")} style={[s.item,]}>
+                        <Text style={s.name}>Über Dashpoll</Text>
+                        <Text style={s.description}>Hilfe, Melden, Feedback, Infos,... </Text>
+                    </TouchableOpacity>
 
 
-
-
-                    <TouchableOpacity onPress={() => this.navigation("Performance")} style={[s.item, { opacity: 0.33 }]}>
+                    <TouchableOpacity onPress={() => this.navigation("Performance")} style={[s.item, { opacity: 0 }]}>
                         <Text style={s.name}>Performance</Text>
                         <Text style={s.description}>Mobile Daten, Speicherverbrauch, Performance</Text>
                     </TouchableOpacity>
 
-                    <TouchableOpacity onPress={() => this.navigation("MyData")} style={[s.item, { opacity: 0.33 }]}>
+                    <TouchableOpacity onPress={() => this.navigation("MyData")} style={[s.item, { display: "none" }]}>
                         <Text style={s.name}>Meine Daten</Text>
                         <Text style={s.description}>Persönliche Daten, Privatsphäre, Datenschutz,… </Text>
                     </TouchableOpacity>
@@ -60,18 +49,14 @@ class Settings extends React.Component {
                     <View style={s.itemBar} />
 
 
-                    <TouchableOpacity onPress={() => this.navigation("ReportProblem")} style={[s.item, { opacity: 0.33 }]}>
+                    <TouchableOpacity onPress={() => this.navigation("ReportProblem")} style={[s.item, { display: "none" }]}>
                         <Text style={s.name}>Problem Melden</Text>
-                        <Text style={s.description} numberOfLines={1}>
-                            Inhalt Melden, Fehler Melden, Frage, Feature vorschlagen,…
-                            </Text>
+                        <Text style={s.description} numberOfLines={1}>Inhalt Melden, Fehler Melden, Frage, Feature vorschlagen,…</Text>
                     </TouchableOpacity>
 
-                    <TouchableOpacity onPress={() => this.navigation("Help")} style={[s.item, { opacity: 0.33 }]}>
+                    <TouchableOpacity onPress={() => this.navigation("Help")} style={[s.item, { display: "none"}]}>
                         <Text style={s.name}>Hilfe</Text>
-                        <Text style={s.description} numberOfLines={1}>
-                            FAQ, Support, Updateinfos,…
-                            </Text>
+                        <Text style={s.description} numberOfLines={1}>FAQ, Support, Updateinfos,…</Text>
                     </TouchableOpacity>
 
                     <View style={s.itemBar} />
@@ -91,8 +76,7 @@ class Settings extends React.Component {
                         </View>
                     </View>
 
-                </ScrollView>
-            </View>
+            </ScrollView>
         );
     }
 }

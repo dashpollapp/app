@@ -22,27 +22,21 @@ class Security extends React.Component {
                     <View style={s.section}>
                         <Text style={s.heading}>Sicherheit</Text>
 
-                        <TouchableOpacity onPress={() => this.navigation("AccountSettings")} style={[s.item, { opacity: 0.33 }]}>
+                        <View style={[s.item, { opacity: 0.66 }]}>
                             <Text style={s.name}>Passwort ändern</Text>
-                            <Text style={s.description} numberOfLines={1}>
-                                zul. vor 13
-                            </Text>
-                        </TouchableOpacity>
+                            <Text style={s.description} numberOfLines={1}>geplant</Text>
+                        </View>
 
 
-                        <TouchableOpacity onPress={() => this.navigation("AccountSettings")} style={[s.item, { opacity: 0.33 }]}>
+                        <View style={[s.item, { opacity: 0.66 }]}>
                             <Text style={s.name}>Sichere Anmeldung</Text>
-                            <Text style={s.description} numberOfLines={1}>
-                                PIN, 2A oder Fingerabdruck hinzufügen
-                            </Text>
-                        </TouchableOpacity>
+                            <Text style={s.description} numberOfLines={1}>geplant</Text>
+                        </View>
 
-                        <TouchableOpacity onPress={() => this.navigation("AccountSettings")} style={[s.item, { opacity: 0.33 }]}>
+                        <View> style={[s.item, { opacity: 0.66 }]}>
                             <Text style={s.name}>Automatisch abmelden</Text>
-                            <Text style={s.description} numberOfLines={1}>
-                                Nach 30 Tagen
-                            </Text>
-                        </TouchableOpacity>
+                            <Text style={s.description} numberOfLines={1}>geplant</Text>
+                        </View>
                     </View>
 
 
