@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { View, TouchableOpacity, Image, Text, FlatList, Share, Modal } from "react-native";
+import { View, TouchableOpacity, Image, Text, FlatList, Linking, Share, Modal } from "react-native";
 import { BlurView } from 'expo';
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
@@ -89,8 +89,32 @@ class PollsFlatlist extends Component {
 
                                 </View>
 
+                                <Description 
+                                    style={s.description}
+                                    text={item.text}
 
-                                {item.text ? <Description urlClick={(url) => console.log(url)} style={s.description} url={true} urlStyle={s.url} text={item.text} /> : null}
+                                    //Style
+                                    urlStyle={s.url}
+                                    usernameStyle={{color: "red"}}
+                                    hashtagStyle={{color: "yellow"}}
+
+                                    //Visible
+                                    showUrl={true}
+                                    showUsername={true}
+                                    showHashtag={true}
+
+                                    //Events
+                                    urlClick={(url) => {
+                                        if(url.split(":")[0] === "https" || url.split(":")[0] === "http") {
+                                            Linking.openURL(url)
+                                        } else {
+                                            Linking.openURL("http://" + url)
+                                        }
+                                        
+                                    }}
+                                    usernameClick={(username) => console.log("Username", username)}
+                                    hashtagClick={(hashtag) => console.log("Hashtag", hashtag)}
+                                />
 
                                 {/* Media */}
                                 {item.media ? <LoadMedia poll={item} /> : null}
