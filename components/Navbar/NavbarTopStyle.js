@@ -64,8 +64,7 @@ export default StyleSheet.create({
         borderBottomWidth: 1, //0
         borderColor: "#eee",
         width: "100%",
-        minHeight: 67 + (isIPhoneX()) ? 28 : 0,
-
+        maxHeight: 52 + 24,
         /*
         shadowColor: "#000",
         shadowOffset: {
@@ -94,7 +93,7 @@ export default StyleSheet.create({
     },
     push: {
         zIndex: 0,
-        height: 67 + (isIPhoneX()) ? 28 : 0,
+        height: 67, // 
         width: "100%",
     }
 });
