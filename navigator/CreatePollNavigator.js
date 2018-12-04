@@ -38,16 +38,24 @@ class CreatePollNavigator extends React.Component {
 
     state = {
         heading: "",
-        text: ""
+        text: "",
+        answers: []
     }
 
-    changeValues(heading, text) {
-        this.setState({ heading, text });
+    changeValues(heading, text, answers = false) {
+        let changes = {};
+        if (heading) changes.heading = heading;
+        if (text) changes.text = text;
+        if (answers) changes.answers = answers;
+        this.setState(Object.assign(this.state, changes));
     }
 
     shouldComponentUpdate(nextProps, nextState) {
-        console.log(nextProps.haspollcreated);
-        if (nextState.heading !== this.state.heading || nextState.text !== this.state.text) return false;
+        if (nextState.heading !== this.state.heading
+            || nextState.text !== this.state.text
+            || !(nextState.answers.equals(this.state.answers))
+
+        ) return false;
         return true;
     }
 
@@ -94,3 +102,31 @@ const mapDispatchToProps = dispatch => {
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(CreatePollNavigator);
+
+
+//https://stackoverflow.com/questions/7837456/how-to-compare-arrays-in-javascript
+Array.prototype.equals = function (array) {
+    // if the other array is a falsy value, return
+    if (!array)
+        return false;
+
+    // compare lengths - can save a lot of time 
+    if (this.length != array.length)
+        return false;
+
+    for (var i = 0, l = this.length; i < l; i++) {
+        // Check if we have nested arrays
+        if (this[i] instanceof Array && array[i] instanceof Array) {
+            // recurse into the nested arrays
+            if (!this[i].equals(array[i]))
+                return false;
+        }
+        else if (this[i] != array[i]) {
+            // Warning - two different object instances will never be equal: {x:20} != {x:20}
+            return false;
+        }
+    }
+    return true;
+}
+// Hide method from for-in loops
+Object.defineProperty(Array.prototype, "equals", { enumerable: false });

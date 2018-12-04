@@ -36,6 +36,7 @@ class CreatePage extends React.Component {
 
     render() {
         let currentPolltype;
+        let change
 
         switch (this.props.selectedPollType) {
             case 11:
@@ -45,7 +46,7 @@ class CreatePage extends React.Component {
                 currentPolltype = <Normal />;
                 break;
             case 20:
-                currentPolltype = <Classic />;
+                currentPolltype = <Classic changeValues={this.props.screenProps} />;
                 break;
             default:
                 break;
@@ -54,7 +55,7 @@ class CreatePage extends React.Component {
         return (
             <View style={{ backgroundColor: "#fff", height: "100%" }}>
 
-                <ScrollView style={{height: "100%", padding: 16, }}>
+                <ScrollView style={{ height: "100%", padding: 16, }}>
                     {/*Titel*/}
                     <TextInput
                         multiline

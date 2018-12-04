@@ -2,6 +2,13 @@ import { CREATE_POLL, CREATE_POLL_SUCCESS, CREATE_POLL_FAIL } from "../constants
 
 export default function (poll, user) {
     const httpClient = require('../utils/store').httpClient;
+
+    if (poll.polltype === 20) {
+        poll.maxVotes = 1;
+        poll.answers = poll.answers.filter(answer => answer !== "");
+    }
+
+    console.log(poll.answers)
     return dispatch => {
 
         dispatch({ type: CREATE_POLL });
@@ -13,7 +20,7 @@ export default function (poll, user) {
                 ...poll
             }
         }).then(res => {
-            dispatch({ type: CREATE_POLL_SUCCESS, payload: { user, poll: {...res.data.poll, iliUrl: res.data.iliUrl}} })
+            dispatch({ type: CREATE_POLL_SUCCESS, payload: { user, poll: { ...res.data.poll, iliUrl: res.data.iliUrl } } })
         }).catch(err => console.log(err) & dispatch({ type: CREATE_POLL_FAIL, payload: { err } }));
 
 
