@@ -64,7 +64,12 @@ export default StyleSheet.create({
         borderBottomWidth: 1, //0
         borderColor: "#eee",
         width: "100%",
-        maxHeight: 52 + 24,
+        ...ifIPhoneX({
+            maxHeight: 52 + 28,
+        }, {
+            maxHeight: 52 + (Platform.OS === "ios") ? 22 : 24
+        })
+
         /*
         shadowColor: "#000",
         shadowOffset: {
@@ -93,7 +98,11 @@ export default StyleSheet.create({
     },
     push: {
         zIndex: 0,
-        height: 67, // 
         width: "100%",
+        ...ifIPhoneX({
+            height: 52 + 28,
+        }, {
+            height: 52 + (Platform.OS === "ios") ? 22 : 24
+        }),
     }
 });
