@@ -65,7 +65,7 @@ const Navigator = createMaterialTopTabNavigator(
             },
             style: {
                 borderTopWidth: 1,
-                borderColor: "#eee",
+                borderColor: "#999",
                 minHeight: 52,
                 backgroundColor: "#fff",
                 paddingBottom: (isIPhoneX()) ? 8 : 0,

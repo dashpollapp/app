@@ -62,7 +62,7 @@ export default StyleSheet.create({
         justifyContent: "space-between",
         alignItems: "center",
         borderBottomWidth: 1, //0
-        borderColor: "#eee",
+        borderColor: "#999",
         width: "100%",
         ...ifIPhoneX({
             maxHeight: 52 + 28,
