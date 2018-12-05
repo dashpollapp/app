@@ -1,5 +1,5 @@
 import React from "react";
-import { Alert, TouchableOpacity, Text, View, ScrollView, TextInput, Image, } from "react-native";
+import { Alert, TouchableOpacity, Text, View, ScrollView, TextInput, Image, KeyboardAvoidingView, } from "react-native";
 import { LinearGradient } from "expo";
 import PropTypes from 'prop-types';
 
@@ -53,52 +53,54 @@ class CreatePage extends React.Component {
         }
 
         return (
-            <View style={{ backgroundColor: "#fff", height: "100%" }}>
+            <ScrollView>
+                <KeyboardAvoidingView style={{ backgroundColor: "#fff", height: "100%", padding: 16, flexDirection:"column",  }} behavior="padding" enabled>
+            
+                        {/*Titel*/}
+                        <TextInput
+                            multiline
+                            textAlignVertical={"top"}
+                            underlineColorAndroid={"transparent"}
+                            style={create.inputTitle}
+                            placeholder={"Titel"}
+                            placeholderTextColor={"#111"}
+                            onChangeText={heading => this.setState({ heading })}
+                        />
 
-                <ScrollView style={{ height: "100%", padding: 16, }}>
-                    {/*Titel*/}
-                    <TextInput
-                        multiline
-                        textAlignVertical={"top"}
-                        underlineColorAndroid={"transparent"}
-                        style={create.inputTitle}
-                        placeholder={"Titel"}
-                        placeholderTextColor={"#111"}
-                        onChangeText={heading => this.setState({ heading })}
-                    />
+                        {/*Beschreibung*/}
+                        <TextInput
+                            multiline
+                            textAlignVertical={"top"}
+                            underlineColorAndroid={"transparent"}
+                            style={create.inputDescription}
+                            placeholder={"Du kannst eine Beschreibung eingeben"}
+                            placeholderTextColor={"#938f8f"}
+                            onChangeText={text => this.setState({ text })}
+                        />
 
-                    {/*Beschreibung*/}
-                    <TextInput
-                        multiline
-                        textAlignVertical={"top"}
-                        underlineColorAndroid={"transparent"}
-                        style={create.inputDescription}
-                        placeholder={"Du kannst eine Beschreibung eingeben"}
-                        placeholderTextColor={"#938f8f"}
-                        onChangeText={text => this.setState({ text })}
-                    />
+                        <TouchableOpacity onPress={() => this.props.navigation.navigate(screenNames.POLLTYPES)} >
+                            <View>
+                                <Text style={create.polltypeText}>+ Block aussuchen</Text>
+                            </View>
+                        </TouchableOpacity>
 
-                    <TouchableOpacity onPress={() => this.props.navigation.navigate(screenNames.POLLTYPES)} >
-                        <View>
-                            <Text style={create.polltypeText}>+ Block hinzufügen (nice)</Text>
-                        </View>
-                    </TouchableOpacity>
-
-                    <TextInput
-                        multiline
-                        textAlignVertical={"top"}
-                        underlineColorAndroid={"transparent"}
-                        style={create.inputURL}
-                        placeholder={"YouTube oder Spotify URL eingeben"}
-                        placeholderTextColor={"#938f8f"}
-                        onChangeText={text => this.setState({ text })}
-                    />
+                        <TextInput
+                            multiline
+                            textAlignVertical={"top"}
+                            underlineColorAndroid={"transparent"}
+                            style={create.inputURL}
+                            placeholder={"YouTube oder Spotify URL eingeben"}
+                            placeholderTextColor={"#938f8f"}
+                            onChangeText={text => this.setState({ text })}
+                        />
 
 
-                    {currentPolltype}
+                        {currentPolltype}
 
-                </ScrollView>
-            </View >
+                        <View style={{height: 180}}></View>
+        
+                </KeyboardAvoidingView>
+            </ScrollView>
         );
     }
 }

@@ -1,10 +1,10 @@
-import React from 'react';
-import { TouchableOpacity, Text, View, TextInput, StyleSheet, Platform, Dimensions } from 'react-native';
-import { LinearGradient } from 'expo';
+import React from "react";
+import { TouchableOpacity, Text, View, TextInput, StyleSheet, } from "react-native";
+import { LinearGradient } from "expo";
 
-import { connect } from 'react-redux';
+import { connect } from "react-redux";
 
-import { pc, css } from '../Style';
+import { pc, css } from "../Style";
 import s from "../../Polls/PollStyle";
 
 class ClassicType extends React.Component {
@@ -40,16 +40,15 @@ class ClassicType extends React.Component {
             return (
                 <View key={index}>
                     <TextInput
-                        //Sinlose Returns sollen Abgefangen werden!!!
                         multiline
                         underlineColorAndroid={'transparent'}
-                        style={[{ height: 20, marginBottom: 0, flex: 1, }, s.pollAnswerTitle,]}
+                        style={[{ height: 20, marginBottom: 8, }, s.pollAnswerTitle,]}
                         placeholder={"Antwort ..."}
                         placeholderTextColor={"#111"}
                         onChangeText={(text) => this.changeAnswerText(text, index)}
                         value={this.state.answersArray[index]}
                     />
-                    <View style={[s.pt1Bar, { marginBottom: 24, flex: 1, }]}>
+                    <View style={[s.pt1Bar, { marginBottom: 24, }]}>
                         <LinearGradient
                             style={[s.pt1BarInner, { width: "75%", height: 16, }]}
                             colors={['#ae4768', '#3386cd']}
@@ -66,20 +65,17 @@ class ClassicType extends React.Component {
         })
 
         return (
-            <View style={{ flex: 1, marginTop: 24, }}>
+            <View style={{  marginTop: 24, }}>
 
-                <View style={[pc.polltype, { flex: 1, }]}>
+                <View style={[pc.polltype, {  marginBottom: 24, }]}>
                     <Text style={type.title}>Klassische Umfrage: <Text style={pc.polltypeCat}>(Auswahl)</Text></Text>
                     <Text style={type.subtitle}>Verschiede Antwortmöglichkeiten als Text. Benutzer können sich für 1 Antwortmöglichkeit entscheiden.</Text>
                 </View>
 
                 {answersJsx}
 
-
-
-
                 <TouchableOpacity onPress={() => this.addAnswer()}>
-                    <Text style={type.addAnswer}>+ Antwort hinzufügen</Text>
+                    <Text style={[type.addAnswer,]}>+ Antwort hinzufügen</Text>
                 </TouchableOpacity>
 
             </View>
