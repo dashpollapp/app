@@ -88,7 +88,7 @@ class PollsFlatlist extends Component {
         return (
             <View style={s.box}>
 
-                <PostModal />
+                <PostModal navigation={this.props.navigation} />
 
                 <FlatList
                     style={s.posts}
