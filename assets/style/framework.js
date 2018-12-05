@@ -1,6 +1,13 @@
 import { StyleSheet, Platform,Dimensions } from "react-native";
+import authorBox from "../../components/Post/authorBox";
+
+
+const blockSize = 4
+
+
 
 export default StyleSheet.create({
+
 
     // 1. Page Styles & Allgemeines
     page: {
@@ -59,9 +66,34 @@ export default StyleSheet.create({
 
 
 
+    // 3 Spaces / Abstände
+    p1: {
+        padding: blockSize * 1,
+    },
+    p2: {
+        padding: blockSize * 2,
+    },
+    p3: {
+        padding: blockSize * 3,
+    },
+    p4: {
+        padding: blockSize * 4,
+    },
+    p5: {
+        padding: blockSize * 5,
+    },
+    p6: {
+        padding: blockSize * 6,
+    },
+    mla: {
+        marginLeft: "auto",
+        textAlign: "right",
+    },
+    
+    // 4. Grid ?
+    // 5. Images ?
 
-    // 3. Grid ?
-    // 4. Images ?
+    // 6. Formen & Geometrie
     br8: {
         borderRadius: 8,
     },

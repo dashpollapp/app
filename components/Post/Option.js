@@ -41,16 +41,16 @@ const css = StyleSheet.create({
     },
     postOption: {
         flex: 1,
-        backgroundColor: "rgba(0,0,0,0.05)",
+        backgroundColor: "rgba(0,0,0,0.033)",
         alignItems: "center",
-        marginHorizontal: 4,
+        marginRight: 8,
         borderRadius: 12,
         padding: 8,
     },
     postOptionImg: {
         height: 24,
         width: 24,
-        opacity: 0.5,
+        opacity: 0.9,
     },
 })
 

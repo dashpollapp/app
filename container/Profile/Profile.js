@@ -9,6 +9,8 @@ import { ImagePicker, Permissions } from "expo";
 import { upload_pb } from "../../actions"
 
 import s from '../User/ProfileStyle';
+import FW from "../../assets/style/framework"
+import D from "../../assets/style/default"
 
 class Profile extends React.Component {
     constructor(props) {
@@ -52,15 +54,17 @@ class Profile extends React.Component {
             <ScrollView>
 
                 <TouchableOpacity onPress={() => this._uploadProfilePB()}>
-                    <Image style={s.pb} source={(user.meta.pb) ? { uri: "https://api.dashpoll.net/pb/" + user.meta.pb } : profileImage} />
+                    <Image style={[s.pb]} source={(user.meta.pb) ? { uri: "https://api.dashpoll.net/pb/" + user.meta.pb } : profileImage} />
                 </TouchableOpacity>
 
-                <Text style={s.fullname}>{user.fullname}</Text>
-                <Text style={s.name}>@{user.username}</Text>
+                <Text style={[s.fullname]}>{user.fullname}</Text>
+                <Text style={[s.name]}>@{user.username}</Text>
 
-                <Text>Follower: {user.num.follower}</Text>
-                <Text>Following: {user.num.following}</Text>
-                <Text>Polls: {user.num.polls}</Text>
+                <View style={[FW.p4]}>
+                    <Text style={[D.h3]}>Dir folgen: <Text style={[D.b]}>{user.num.follower}</Text></Text>
+                    <Text style={[D.h3]}>Du folgst: <Text style={[D.b]}>{user.num.following}</Text></Text>
+                    <Text style={[D.h3]}>Beiträge: <Text style={[D.b]}>{user.num.polls}</Text></Text>
+                </View>
 
             </ScrollView>
         );

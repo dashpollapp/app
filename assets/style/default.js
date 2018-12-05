@@ -1,6 +1,20 @@
 import { StyleSheet, Platform,Dimensions } from "react-native";
 
 export default StyleSheet.create({
+
+
+    h3: {
+        fontFamily: "GS2",
+        fontSize: 16,
+        color: "#666",
+        opacity: 0.8, //für b
+    },
+    b: {
+        fontFamily: "GS3",
+        opacity: 1,
+    },
+
+
     //import D from "../../../assets/style/default"
 
     img: {

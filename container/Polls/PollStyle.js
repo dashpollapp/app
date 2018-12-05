@@ -190,9 +190,9 @@ export default StyleSheet.create({
 
     //*Später in eigener CSS (polls)
     pTitle: {
-        fontSize: 20,
-        fontFamily: "GS3",
-        color: "#000",
+        fontSize: 24,
+        fontFamily: "GS2",
+        color: "#111",
         fontWeight: "500",
     },
 
@@ -200,7 +200,7 @@ export default StyleSheet.create({
     post: {
         paddingTop: 12,
         paddingBottom: 32,
-        marginHorizontal: 16,
+        marginHorizontal: 16, //Rand bei Umfragen
     },
     posts: {
         //paddingTop: 32, -> Finde ohne Besser?
@@ -235,8 +235,8 @@ export default StyleSheet.create({
     pPostHeader: {
         flex: 1,
         //center: alignItems: "center",       
-        marginBottom: 16,
-        padding: 4,
+        marginBottom: 22,
+        marginTop: 4,
     },
 
 

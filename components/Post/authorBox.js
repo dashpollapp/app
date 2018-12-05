@@ -25,13 +25,13 @@ const css = StyleSheet.create({
     pSubtitle: {
         color: "#aaa",
         fontFamily: "GS2",
-        fontSize: 14,
-        marginHorizontal: 8,
+        fontSize: 15,
+        marginHorizontal: 12,
     },
     pPB: {
-        height: 24,
-        width: 24,
-        borderRadius: 24 / 2.35,
+        height: 32,
+        width: 32,
+        borderRadius: 32 / 2.35,
         backgroundColor: "#aaa",
     },
     authorBox: {
