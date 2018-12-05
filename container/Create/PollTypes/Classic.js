@@ -10,7 +10,7 @@ import s from "../../Polls/PollStyle";
 class ClassicType extends React.Component {
 
     state = {
-        answersArray: ["", "", ""]
+        answersArray: ["", "", ],
     }
 
     componentDidUpdate() {
@@ -23,7 +23,6 @@ class ClassicType extends React.Component {
 
     removeAnswer = index => {
         let { answersArray } = this.state;
-        if (answersArray.length <= 2) return;
         answersArray = answersArray.filter((a, indexToFilter) => index !== indexToFilter);
         this.setState({ answersArray });
     }
@@ -35,8 +34,10 @@ class ClassicType extends React.Component {
     }
 
     render() {
+        let answersArray = this.state.answersArray
+        let isErasable = !(answersArray.length <= 2) //löschbar / nicht löschbar (mindestens 2 Antworten)
 
-        const answersJsx = this.state.answersArray.map((answer, index) => {
+        const answersJsx = answersArray.map((answer, index) => {
             return (
                 <View key={index}>
                     <TextInput
@@ -55,10 +56,16 @@ class ClassicType extends React.Component {
                             start={{ x: 0.0, y: 0.0 }}
                             end={{ x: 0.9, y: 0.1 }}
                         />
+  
+                        {
+                        (isErasable) ? //mindestens 2 Antworten
                         <TouchableOpacity onPress={() => this.removeAnswer(index)}>
-                            <Text style={s.pollPercentText}>löschen</Text>
+                            <Text style={[s.pollPercentText,]}>löschen</Text>
                         </TouchableOpacity>
-
+                        :
+                        <Text style={[s.pollPercentText, { opacity: 0.5, }]}>(löschen)</Text>
+                        }
+        
                     </View>
                 </View>
             )
