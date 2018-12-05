@@ -37,7 +37,8 @@ const Option = (props) => {
 const css = StyleSheet.create({
     postOptions: {
         flexDirection: "row",
-        marginBottom: 4,
+        marginBottom: 8,
+        marginTop: 8,
     },
     postOption: {
         flex: 1,

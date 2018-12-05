@@ -68,7 +68,11 @@ export default StyleSheet.create({
 
     // 3 Spaces / Abstände
 
-    // Padding
+
+
+    // | Padding
+
+    // Padding - in alle Richtungen
     p1: {
         padding: blockSize * 1,
     },
@@ -88,7 +92,7 @@ export default StyleSheet.create({
         padding: blockSize * 6,
     },
 
-    // Margin Top
+    //   Padding - Top
     pt1: {
         paddingTop: blockSize * 1,
     },
@@ -101,6 +105,13 @@ export default StyleSheet.create({
     pt4: {
         paddingTop: blockSize * 4,
     },
+    pt5: {
+        paddingTop: blockSize * 5,
+    },
+    pt6: {
+        paddingTop: blockSize * 6,
+    },
+
 
     // Margin Top
     mt1: {
