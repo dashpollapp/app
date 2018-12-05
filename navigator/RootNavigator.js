@@ -9,7 +9,8 @@ import SettingsNavigator from "./SettingsNavigator";
 import SearchNavigator from "./SearchNavigator";
 import ProfileNavigator from "./ProfileNavigator";
 import PostFilterNavigator from "./PostFilterNavigator";
-import PollStatsNavigator from './PollStatsNavigator';
+import PollStatsNavigator from "./PollStatsNavigator";
+import DelevoperNavigator from "./DelevoperNavigator"
 
 export default createStackNavigator(
     {
@@ -20,7 +21,8 @@ export default createStackNavigator(
         [screenName.SEARCH]: SearchNavigator,
         [screenName.PROFILE]: ProfileNavigator,
         [screenName.POLLSTATS]: PollStatsNavigator,
-        [screenName.POSTFILTER]: PostFilterNavigator
+        [screenName.POSTFILTER]: PostFilterNavigator,
+        [screenName.DEVELOPER]: DelevoperNavigator
     },
     {
         initialRouteName: screenName.HOME,

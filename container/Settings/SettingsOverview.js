@@ -35,6 +35,10 @@ class Settings extends React.Component {
                         <Text style={s.description}>Hilfe, Melden, Feedback, Infos,... </Text>
                     </TouchableOpacity>
 
+                    <TouchableOpacity onPress={() => this.navigation("DEVELOPER")} style={[s.item,]}>
+                        <Text style={s.name}>Developer</Text>
+                        <Text style={s.description}>Entwicklung... </Text>
+                    </TouchableOpacity>
 
                     <TouchableOpacity onPress={() => this.navigation("Performance")} style={[s.item, { opacity: 0 }]}>
                         <Text style={s.name}>Performance</Text>
