@@ -7,7 +7,6 @@ export default StyleSheet.create({
     statsPage: {
         backgroundColor: "#fff",
         height: "100%",
-        padding: 8,
     },
     statsHeading: {
         fontFamily: "GS2",
@@ -16,9 +15,11 @@ export default StyleSheet.create({
     },
     statsShowPost: {
         marginBottom: 24,
-        backgroundColor: "rgba(0,0,0,0.035)",
-        padding: 8,
-        borderRadius: 16,
+        backgroundColor: "rgba(0,0,0,0.03)",
+        padding: 16,
+        borderTopWidth: 6,
+        borderBottomWidth: 6,
+        borderColor: "#333",
     },
 
 
@@ -27,7 +28,7 @@ export default StyleSheet.create({
     //Statboxen oben
     stats: {
         flexDirection: "row",
-        margin: 18,
+        margin: 22,
     },
     stat: {
         backgroundColor: "rgba(0,0,0,0.0)",

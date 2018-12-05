@@ -11,13 +11,20 @@ export const se = StyleSheet.create({
     input: {
         width: "100%",
         backgroundColor: "rgba(0,0,0,0)",
-        paddingVertical: 12,
+        paddingVertical: 32,
         paddingHorizontal: 32,
 
         fontFamily: "GS2",
         color: "#666",
         textAlign: "center",
         fontSize: 18,
+    },
+    closeImg: {
+        height: 18,
+        width: 18,
+        position: "absolute",
+        right: 0,
+        top: 8,
     },
 
 

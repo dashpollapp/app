@@ -10,6 +10,7 @@ import { user_search, } from "../../actions";
 import { se, } from "./SearchStyle"
 
 import DefaultPB from "../../assets/img/pb.png"
+import CloseImg from "../../assets/img/close.png"
 
 class SearchPage extends React.Component {
     constructor(props) {
@@ -24,10 +25,20 @@ class SearchPage extends React.Component {
     render() {
         return (
             <View style={se.box} >
+
+                {/*Zurück*/}
+                <TouchableOpacity>
+                    <Image style={se.closeImg} source={CloseImg} />
+                </TouchableOpacity>
                 
-                <TextInput placeholder="Entdecke Dashpoll" style={se.input} onChangeText={(username) => this._onChangeText(username)} />
+                <TextInput 
+                placeholder="Entdecke Dashpoll" 
+                style={se.input} 
+                onChangeText={(username) => this._onChangeText(username)} />
 
                 <View style={se.results}>
+
+                    {/*
                     <View style={se.hashtagList}>
                         <TouchableOpacity>
                             <View style={se.hashtag}>
@@ -51,6 +62,7 @@ class SearchPage extends React.Component {
                             </View>
                         </TouchableOpacity>
                     </View>
+                    */}
 
                     <FlatList 
                         style={se.userList}
