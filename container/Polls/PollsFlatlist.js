@@ -1,9 +1,11 @@
 import React, { Component } from "react";
-import { View, TouchableOpacity, Text, FlatList, Linking, Alert } from "react-native";
+import { View, TouchableHighlight,TouchableOpacity, Text, FlatList, Linking, Alert } from "react-native";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 
 import s from "./PollStyle";
+import D from "../../assets/style/default";
+import FW from "../../assets/style/framework";
 
 import * as screenNames from '../../constants/screenNames';
 
@@ -46,12 +48,16 @@ class PollsFlatlist extends Component {
     loadHeader = () => {
         return (
             <View style={s.boxHeader}>
-                <TouchableOpacity onPress={() => this.props.navigation.push(screenNames.POSTFILTER)}>
-                    <Text style={s.h1}>Beiträge:</Text>
+                <TouchableOpacity style={FW.mt2} onPress={() => this.props.navigation.push(screenNames.POSTFILTER)}>
+                    <Text style={D.h1}>Beiträge für dich:</Text>
                 </TouchableOpacity>
-                <TouchableOpacity onPress={() => this.props.navigation.push(screenNames.CREATE)}>
-                    <Text style={s.link}>+ Neue Umfrage</Text>
-                </TouchableOpacity>
+                
+                <TouchableHighlight 
+                style={[D.linkBtn, FW.mt2,]} 
+                underlayColor={"#0984e3"}
+                onPress={() => this.props.navigation.push(screenNames.CREATE)}>
+                    <Text style={[D.linkBtnText]}>Neuer Beitrag</Text>
+                </TouchableHighlight >
             </View>
         )
     }

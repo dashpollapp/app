@@ -171,19 +171,8 @@ export default StyleSheet.create({
 
 
 
-    h1: {
-        fontSize: 26,
-        fontFamily: "GS3",
-        color: "#000",
-        fontWeight: "500",
-    },
-    link: {
-        fontSize: 18,
-        fontFamily: "GS1",
-        color: "#000",
-        fontWeight: "500",
-        color: "#0984e3",
-    },
+
+    
 
 
 

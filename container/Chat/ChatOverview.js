@@ -48,7 +48,7 @@ export default class ChatOverview extends React.Component {
             <View style={{ backgroundColor: "#fff", height: "100%", opacity: 1, }}>
                 <ScrollView style={{ height: "100%", }}>
                 <View style={D.boxHeader}>
-                    <Text style={D.h1}>Freunde:</Text>
+                    <Text style={D.h1}>Deine Freunde:</Text>
                 </View>
 
                     <ChatItem data={chat[0]} />

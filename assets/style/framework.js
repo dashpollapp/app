@@ -111,7 +111,12 @@ export default StyleSheet.create({
     pt6: {
         paddingTop: blockSize * 6,
     },
-
+    pt7: {
+        paddingTop: blockSize * 7,
+    },
+    pt8: {
+        paddingTop: blockSize * 8,
+    },
 
     // Margin Top
     mt1: {

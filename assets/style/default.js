@@ -3,6 +3,32 @@ import { StyleSheet, Platform,Dimensions } from "react-native";
 export default StyleSheet.create({
 
 
+    linkBtn: {
+        backgroundColor: "#0984e3",
+        paddingHorizontal: 8,
+        paddingVertical: 4,
+        borderRadius: 10,
+        alignSelf: "center",
+    },
+    linkBtnText: {
+        fontSize: 13,
+        fontFamily: "GS2",
+        color: "#000",
+        fontWeight: "500",
+        color: "#fff",
+    },
+
+
+
+    h1: {
+        fontSize: 32,
+        fontFamily: "GS1",
+        color: "#333",
+        textAlign: "center",
+    },
+    h2: {
+        //waaass
+    },
     h3: {
         fontFamily: "GS2",
         fontSize: 16,
@@ -152,12 +178,5 @@ export default StyleSheet.create({
         padding: 24,
         paddingHorizontal: 18,
     },
-    h1: {
-        fontFamily: "GS3",
-        color: "#000",
-        fontSize: 24,
-    },
-
-
 
 })
