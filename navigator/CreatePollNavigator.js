@@ -30,7 +30,7 @@ const Navigator = createMaterialTopTabNavigator(
     }
 );
 
-//CreatePost*
+//CreatePost* !!!
 class CreatePollNavigator extends React.Component {
 
     //Wird gebraucht, um den Focus auf SettingsNavigator zu stellen, falls man in SETTINGS ist (this.props.navigation)
@@ -62,7 +62,7 @@ class CreatePollNavigator extends React.Component {
 
     render() {
         return (
-            <View style={{ flex: 1 }}>
+            <View style={{ flex: 1, backgroundColor: "#fff", }}>
                 <NavbarTopBack title="Beitrag erstellen" navigation={this.props.navigation} />
                 {(this.props.haspollcreated) ?
                     <CreateAfter iliUrl={this.props.haspollcreated.iliUrl} navigation={this.props.navigation} />

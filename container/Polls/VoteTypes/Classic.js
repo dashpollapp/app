@@ -1,5 +1,5 @@
 import React from 'react';
-import { TouchableOpacity, Text, View } from 'react-native';
+import { TouchableWithoutFeedback, Text, View } from 'react-native';
 import { LinearGradient } from 'expo';
 import PropTypes from "prop-types";
 
@@ -38,7 +38,7 @@ export default class ClassicType extends React.Component {
             }*/
 
             answers.push(
-                <TouchableOpacity key={index} onPress={() => this.props.vote("", poll, answer.id)}>
+                <TouchableWithoutFeedback key={index} onPress={() => this.props.vote("", poll, answer.id)}>
                     <View style={s.pt1Answer}>
                         <View>
                             <Text style={s.pollAnswerTitle}>{answer.text}</Text>
@@ -55,7 +55,7 @@ export default class ClassicType extends React.Component {
                             <Text style={s.pollPercentText}>{percent}%</Text>
                         </View>
                     </View>
-                </TouchableOpacity>
+                </TouchableWithoutFeedback>
             )
 
         });
