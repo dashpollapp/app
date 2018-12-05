@@ -23,7 +23,7 @@ const authorBox = (props) => {
 
 const css = StyleSheet.create({
     pSubtitle: {
-        color: "#aaa",
+        color: "#555",
         fontFamily: "GS2",
         fontSize: 15,
         marginHorizontal: 12,

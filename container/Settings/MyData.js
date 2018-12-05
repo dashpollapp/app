@@ -27,9 +27,11 @@ class MyData extends React.Component {
                 </TouchableOpacity>
                 <View style={[s.item, {opacity: 1}]}>
                     <Text style={s.name}>Dashpoll-Version</Text>
-                    <Text style={s.description} numberOfLines={1}>
-                        v0.1 (Entwicklerversion)
-                    </Text>
+                    <TouchableOpacity onPress={() =>  this.props.navigation.navigate("Test")}>
+                        <Text style={s.description} numberOfLines={1}>
+                            v0.1 (Entwicklerversion)
+                        </Text>
+                    </TouchableOpacity>
                 </View>
 
 
