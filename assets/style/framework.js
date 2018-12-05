@@ -67,6 +67,8 @@ export default StyleSheet.create({
 
 
     // 3 Spaces / Abstände
+
+    // Padding
     p1: {
         padding: blockSize * 1,
     },
@@ -85,9 +87,33 @@ export default StyleSheet.create({
     p6: {
         padding: blockSize * 6,
     },
-    mla: {
-        marginLeft: "auto",
-        textAlign: "right",
+
+    // Margin Top
+    pt1: {
+        paddingTop: blockSize * 1,
+    },
+    pt2: {
+        paddingTop: blockSize * 2,
+    },
+    pt3: {
+        paddingTop: blockSize * 3,
+    },
+    pt4: {
+        paddingTop: blockSize * 4,
+    },
+
+    // Margin Top
+    mt1: {
+        marginTop: blockSize * 1,
+    },
+    mt2: {
+        marginTop: blockSize * 2,
+    },
+    mt3: {
+        marginTop: blockSize * 3,
+    },
+    mt4: {
+        marginTop: blockSize * 4,
     },
     
     // 4. Grid ?

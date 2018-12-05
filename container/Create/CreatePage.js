@@ -5,9 +5,12 @@ import PropTypes from 'prop-types';
 
 import { Classic, Like, Normal } from "./PollTypes";
 import { connect } from "react-redux";
-import { c, create, pc, css } from "./Style"; //(create ist die neue Style)
 import { create_poll } from "../../actions";
 import * as screenNames from "../../constants/screenNames";
+
+import { c, create, pc, css } from "./Style"; //(create ist die neue Style)
+import D from "../../assets/style/default";
+import FW from "../../assets/style/framework";
 
 //Images
 import CamImg from "../../assets/img/media/cam.png";
@@ -92,6 +95,20 @@ class CreatePage extends React.Component {
                             placeholder={"YouTube oder Spotify URL eingeben"}
                             placeholderTextColor={"#938f8f"}
                             onChangeText={text => this.setState({ text })}
+                        />
+
+                        <Text style={[D.h3, FW.pt4]}>Maximale Auswahlmöglichkeiten:</Text>
+                        <TextInput
+                            multiline
+                            textAlignVertical={"top"}
+                            underlineColorAndroid={"transparent"}
+                            style={create.inputCounter}
+                            placeholder={"1"}
+                            placeholderTextColor={"#777"}
+                            onChangeText={text => this.setState({ text })}
+                            keyboardType={"numeric"}
+                            multiline={false}
+                            maxLength={1} //erstmal
                         />
 
 
