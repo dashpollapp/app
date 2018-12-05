@@ -35,3 +35,5 @@ export const AUTH_HOME = "AUTH_HOME";
 
 export const LOGIN_SELECT_USER = "LOGIN_SELECT_USER";
 export const LOGIN_PASSWORD = "LOGIN_PASSWORD";
+
+export const DEVELOPER = "DEVELOPER";
