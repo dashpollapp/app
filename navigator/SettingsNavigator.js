@@ -16,7 +16,8 @@ import {
     MyData,
     Performance,
     ReportProblem,
-    Security
+    Security,
+    Test,
 } from "../container/Settings";
 
 const Navigator = createStackNavigator(
@@ -29,7 +30,8 @@ const Navigator = createStackNavigator(
         MyData,
         Performance,
         ReportProblem,
-        Security
+        Security,
+        Test,
     },
     {
         initialRouteName: "SettingsOverview",

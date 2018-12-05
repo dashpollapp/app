@@ -7,5 +7,6 @@ import Performance from "./Performance";
 import ReportProblem from "./ReportProblem";
 import Security from "./Security";
 import SettingsOverview from "./SettingsOverview";
+import Test from "./Test";
 
-export { AccountSettings, EditProfile, Help, Legal, MyData, Performance, ReportProblem, Security, SettingsOverview }
+export { Test, AccountSettings, EditProfile, Help, Legal, MyData, Performance, ReportProblem, Security, SettingsOverview }
