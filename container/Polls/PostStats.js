@@ -38,9 +38,9 @@ class PostStats extends Component {
                 <TouchableOpacity style={s.statsShowPost}>
                     <View style={s.pPostHeader}>
                         <Author poll={item} navigation={this.props.navigation} />
-                        <Text style={s.pTitle}>Ich bin eine tolle Umfrgae</Text>
+                        <Text style={s.pTitle}>{poll.heading}</Text>
                     </View>
-                    <Description style={s.description} text={"Jaja!"}/>
+                    <Description style={s.description} text={poll.text}/>
                 </TouchableOpacity> 
 
                 {/* 
