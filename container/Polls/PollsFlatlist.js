@@ -1,6 +1,5 @@
 import React, { Component } from "react";
-import { View, TouchableOpacity, Image, Text, FlatList, Linking, Share, Alert } from "react-native";
-import { BlurView } from 'expo';
+import { View, TouchableOpacity, Text, FlatList, Linking, Alert } from "react-native";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 
@@ -15,8 +14,10 @@ import Author from '../../components/Post/authorBox';
 import PostModal from '../../components/Post/Modal';
 
 import PollTypes from "./PollTypes";
-import LoadMedia from './LoadMedia';
-import { load_home_polls, vote } from "../../actions";
+import LoadMedia from "./LoadMedia";
+import { load_home_polls, } from "../../actions";
+
+
 class PollsFlatlist extends Component {
 
     constructor(props) {

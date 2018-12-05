@@ -3,6 +3,54 @@ import { StyleSheet, Platform,Dimensions } from "react-native";
 export default StyleSheet.create({
 
 
+// < Stats >
+    statsPage: {
+        backgroundColor: "#fff",
+        height: "100%",
+        padding: 8,
+    },
+    statsHeading: {
+        fontFamily: "GS2",
+        color: "#777",
+        fontSize: 16,
+    },
+    statsShowPost: {
+        marginBottom: 24,
+        backgroundColor: "rgba(0,0,0,0.035)",
+        padding: 8,
+        borderRadius: 16,
+    },
+
+
+
+
+    //Statboxen oben
+    stats: {
+        flexDirection: "row",
+        margin: 18,
+    },
+    stat: {
+        backgroundColor: "rgba(0,0,0,0.0)",
+        borderRadius: 8,
+        marginRight: 12,
+        paddingVertical: 8,
+        paddingHorizontal: 8,
+    },
+    statAmount: {
+        fontFamily: "GS3",
+        color: "#111",
+        fontSize: 19,
+    },
+    statTitle: {
+        fontFamily: "GS2",
+        color: "#666",
+        fontSize: 11,
+    },
+
+
+// < / Stats >
+
+
     postOptions: {
         flexDirection: "row",
         marginBottom: 4,
@@ -239,7 +287,7 @@ export default StyleSheet.create({
     pt1Bar: {
         height: 16,
         marginTop: 2,
-        marginRight: 26,
+        marginRight: 44,
 
         alignItems: "center",
         display: "flex",

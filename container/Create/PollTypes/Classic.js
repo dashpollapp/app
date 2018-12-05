@@ -1,5 +1,5 @@
 import React from "react";
-import { TouchableOpacity, Text, View, TextInput, StyleSheet, } from "react-native";
+import { TouchableOpacity, Text, View, TextInput, StyleSheet, Keyboard, } from "react-native";
 import { LinearGradient } from "expo";
 
 import { connect } from "react-redux";
@@ -33,6 +33,12 @@ class ClassicType extends React.Component {
         this.setState({ answersArray })
     }
 
+    handleKeyPress = (e) => {
+        if(e.nativeEvent.key == "Enter"){
+            Keyboard.dismiss()
+        }
+    }
+
     render() {
         let answersArray = this.state.answersArray
         let isErasable = !(answersArray.length <= 2) //löschbar / nicht löschbar (mindestens 2 Antworten)
@@ -46,6 +52,8 @@ class ClassicType extends React.Component {
                         style={[{ height: 20, marginBottom: 8, }, s.pollAnswerTitle,]}
                         placeholder={"Antwort ..."}
                         placeholderTextColor={"#111"}
+                        //onSubmitEditing={}?
+                        onKeyPress={this.handleKeyPress}
                         onChangeText={(text) => this.changeAnswerText(text, index)}
                         value={this.state.answersArray[index]}
                     />
