@@ -68,7 +68,7 @@ function NavigatorClass(props) {
                     width: 26
                 },
                 indicatorStyle: {
-                    opacity: (isIPhoneX()) ? 0 : 1,
+                    opacity: 0,
                     marginTop: -4,
                     height: 8,
                     width: Dimensions.get("window").width / 2 - 145,

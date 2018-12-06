@@ -1,4 +1,4 @@
-import { ScrollView, View, Text, Image, TouchableOpacity } from "react-native";
+import { ScrollView, View, Text, Image, TouchableOpacity, TouchableWithoutFeedback } from "react-native";
 import React from "react";
 
 import DefaultPB from "../../assets/img/pb.png"
@@ -39,18 +39,17 @@ class Profile extends React.Component {
         const { following } = user;
         return (
             <ScrollView>
-
                 <Image style={s.pb} source={(user.meta.pb !== "default") ? { uri: "https://api.dashpoll.net/pb/" + user.meta.pb } : DefaultPB} />
 
                 <Text style={s.fullname}>{user.fullname}</Text>
                 <Text style={s.name}>@{user.username}</Text>
 
                 <View style={[s.followBox]}>
-                    <TouchableOpacity onPress={() => this.followButton(user)}> 
+                    <TouchableWithoutFeedback onPress={() => this.followButton(user)}> 
                         <View style={(following) ? s.followButton_on : s.followButton}>
                             <Text style={(following) ? s.followButtonText_on : s.followButtonText}>{(following) ? "Folgst du" : "Folgen"}</Text>
                         </View>
-                    </TouchableOpacity>
+                    </TouchableWithoutFeedback>
 
                     <View style={s.followTextBox}>
                         <Text style={[s.followerConterText]}>{user.num.follower} Follower</Text>
@@ -69,7 +68,7 @@ class Profile extends React.Component {
                     <Text style={[s.profileInfo]}>Wohnort</Text>
                     <Text style={[s.profileInfoAnsw]}>Frankfurt, Germany</Text>
 
-                    <View style={D.kiBoxes}>
+                    <View style={[D.kiBoxes, {opacity: 0,}]}>
                         <TouchableOpacity style={D.kiBox}>
                             <Image style={D.kiImg} source={KiImg}/>
                             <Text style={D.kiText}>Neue Info</Text>
@@ -81,7 +80,7 @@ class Profile extends React.Component {
 
                     <Text style={[s.quote]}>{user.meta.bio}</Text>
                     
-                    <View style={D.kiBoxes}>
+                    <View style={[D.kiBoxes, {opacity: 0,}]}>
                         <TouchableOpacity style={D.kiBox}>
                             <Image style={D.kiImg} source={KiImg}/>
                             <Text style={D.kiText}>Zitat hinzufügen</Text>
