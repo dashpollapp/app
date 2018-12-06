@@ -13,6 +13,22 @@ class PostStats extends Component {
 
     render() {
         const poll = this.props.navigation.getParam("poll", false);
+
+        let totalVoter;
+        switch(poll.polltype) {
+            case 10:
+                totalVoter = poll.vote.totalVotes;
+                break;
+            case 11:
+                totalVoter = (poll.vote.likes + poll.vote.dislikes);
+                break;
+            case 20:
+                totalVoter = poll.vote.totalVoter;
+                break;
+            default:
+                totalVoter = "-"
+        }
+
         return(
             <ScrollView style={s.statsPage}>
 
@@ -26,7 +42,7 @@ class PostStats extends Component {
                         <Text style={s.statTitle}>Nutzer</Text>
                     </View>
                     <View style={s.stat}>
-                        <Text style={s.statAmount}>{poll.vote.totalVoter}</Text>
+                        <Text style={s.statAmount}>{totalVoter}</Text>
                         <Text style={s.statTitle}>Abgestimmt</Text>
                     </View>
                     <View style={s.stat}>
