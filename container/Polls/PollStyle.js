@@ -16,7 +16,7 @@ export default StyleSheet.create({
     statsShowPost: {
         marginBottom: 24,
         backgroundColor: "rgba(0,0,0,0.03)",
-        padding: 16,
+        //padding: 16,
         borderTopWidth: 6,
         borderBottomWidth: 6,
         borderColor: "#333",
