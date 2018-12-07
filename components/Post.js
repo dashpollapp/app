@@ -1,21 +1,29 @@
 import React from "react";
 
-import { Text, View, FlatList } from "react-native";
+import { Text, View, FlatList, TouchableOpacity } from "react-native";
 import PropTypes from "prop-types";
 
 import s from "../container/Polls/PollStyle";
 import Author from "./Post/authorBox";
 import Description from "./Description";
 import PostTypes from "../container/Polls/PollTypes";
+import Option from "./Post/Option";
 
 class Post extends React.Component {
 
     constructor(props) {
         super(props);
+        this.state = {
+            visible: ""
+        }
     }
 
     checkFirst(index) {
         if(index !== 0) return { borderTopWidth: 1, borderColor: "#eee" }
+    }
+
+    option = (item) => {
+        console.log(this.state.visible)
     }
 
     render() {
@@ -31,7 +39,7 @@ class Post extends React.Component {
             onEndReached,
             header,
             footer,
-            empty
+            empty,
         } = this.props;
 
         if(!Array.isArray(post)) post = [post];
@@ -40,7 +48,7 @@ class Post extends React.Component {
             <FlatList 
                 style={style}
                 data={post}
-                extraData={extraData}
+                extraData={[extraData, this.props]}
                 scrollEnabled={scroll}
 
                 //Refresh
@@ -62,10 +70,13 @@ class Post extends React.Component {
                         <View style={[s.post, this.checkFirst(index)]}>
                             <View style={s.pPostHeader}>
                                 <Author poll={item} clickable={clickable} navigation={this.props.navigation} />
+                                <Option poll={item} visible={this.state.visible} />
+                                <TouchableOpacity onPress={() => this.setState({visible: item._id})}>
                                 <Text style={s.pTitle}>{item.heading}</Text>
+                                </TouchableOpacity>
                             </View>
                             <Description style={s.description} text={item.text} />
-                            <PostTypes poll={item} clickable={clickable} />
+                            <PostTypes poll={item} vote={this.props.vote} clickable={clickable} />
                         </View>
                     )
                 }}
@@ -87,6 +98,11 @@ Post.propTypes = {
     style: PropTypes.object,
     scroll: PropTypes.bool,
     clickable: PropTypes.bool,
+    refreshing: PropTypes.bool,
+    onRefresh: PropTypes.func,
+    onEndReached: PropTypes.func,
+    navigation: PropTypes.object
+    
 }
 
 export default Post;
