@@ -41,8 +41,8 @@ class Post extends React.Component {
                     return(
                         <View style={[s.post, this.checkFirst(index)]}>
                             <View style={s.pPostHeader}>
-                                <Text style={s.pTitle}>{item.heading}</Text>
                                 <Author poll={item} clickable={clickable} navigation={this.props.navigation} />
+                                <Text style={s.pTitle}>{item.heading}</Text>
                             </View>
                             <Description style={s.description} text={item.text} />
                             <PostTypes poll={item} clickable={clickable} />
