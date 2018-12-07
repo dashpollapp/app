@@ -11,19 +11,19 @@ class PollTypes extends Component {
 
     render() {
 
-        let poll = this.props.poll;
+        let { poll, vote, clickable = true } = this.props;
 
         switch (poll.polltype) {
             case 11:
-                return <Thumb vote={this.props.vote} poll={poll} />
+                return <Thumb vote={vote} poll={poll} clickable={clickable} />
 
             case 10:
 
-                return <Like vote={this.props.vote} poll={poll} />;
+                return <Like vote={vote} poll={poll} clickable={clickable} />;
 
             case 20:
 
-                return <Classic vote={this.props.vote} poll={poll} />;
+                return <Classic vote={vote} poll={poll} clickable={clickable} />;
 
             default:
                 return null;

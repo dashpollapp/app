@@ -7,6 +7,8 @@ import Author from "../../components/Post/authorBox";
 
 import PollTypes from "./PollTypes";
 
+import PostList from "../../components/Post";
+
 import s from "./PollStyle";
 
 class PostStats extends Component {
@@ -52,15 +54,21 @@ class PostStats extends Component {
                 </View>
 
                 {/* Umfrage einzeln öffnen?  */}
+
+                <TouchableOpacity style={s.statsShowPost}>
+                    <PostList post={poll} clickable={false} />
+                </TouchableOpacity> 
+
+                {/*
                 <TouchableOpacity style={s.statsShowPost}>
                     <View style={s.pPostHeader}>
                         <Author poll={poll} navigation={this.props.navigation} />
                         <Text style={s.pTitle}>{poll.heading}</Text>
                     </View>
                     <Description style={s.description} text={poll.text}/>
-                    {/* Nicht Voten!!! */}
                     <View style={s.poll}><PollTypes poll={poll} /></View>
                 </TouchableOpacity> 
+                */}
 
                 {/* 
 

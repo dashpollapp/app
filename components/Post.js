@@ -70,10 +70,7 @@ class Post extends React.Component {
                         <View style={[s.post, this.checkFirst(index)]}>
                             <View style={s.pPostHeader}>
                                 <Author poll={item} clickable={clickable} navigation={this.props.navigation} />
-                                <Option poll={item} visible={this.state.visible} />
-                                <TouchableOpacity onPress={() => this.setState({visible: item._id})}>
                                 <Text style={s.pTitle}>{item.heading}</Text>
-                                </TouchableOpacity>
                             </View>
                             <Description style={s.description} text={item.text} />
                             <PostTypes poll={item} vote={this.props.vote} clickable={clickable} />
