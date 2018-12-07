@@ -25,7 +25,13 @@ class Post extends React.Component {
             extraData,
             clickable,
             scroll,
-            style
+            style,
+            refreshing,
+            onRefresh,
+            onEndReached,
+            header,
+            footer,
+            empty
         } = this.props;
 
         if(!Array.isArray(post)) post = [post];
@@ -36,6 +42,20 @@ class Post extends React.Component {
                 data={post}
                 extraData={extraData}
                 scrollEnabled={scroll}
+
+                //Refresh
+                refreshing={refreshing}
+                onRefresh={onRefresh}
+
+                //onEndReached
+                onEndReachedThreshold={0.4}
+                onEndReached={onEndReached}
+
+                //Render Footer / Header / Empty
+                ListHeaderComponent={header}
+                ListFooterComponent={footer}
+                ListEmptyComponent={empty}
+
                 keyExtractor={(item) => item._id}
                 renderItem={({ item, index }) => {
                     return(
