@@ -31,13 +31,13 @@ export default class ThumbType extends React.Component {
             <View style={thumb.box}>
                 <View style={thumb.inner}>
                     <View style={thumb.thumbBoxes}>
-                        <TouchableOpacity onPress={() => this.props.vote("", poll, 1)}>
+                        <TouchableOpacity disabled={!this.props.clickable} onPress={() => this.props.vote("", poll, 1)}>
                             <View style={thumb.thumbBox}>
                                 <Image style={[thumb.img, { marginTop: 8, transform: [{ rotate: "180deg" }] }]} source={(poll.vote.hasVoted === 1) ? LikeImg_on : LikeImg} />
                                 <Text style={thumb.amount}>{poll.vote.likes}</Text>
                             </View>
                         </TouchableOpacity>
-                        <TouchableOpacity onPress={() => this.props.vote("", poll, 0)}>
+                        <TouchableOpacity disabled={!this.props.clickable} onPress={() => this.props.vote("", poll, 0)}>
                             <View style={thumb.thumbBox}>
                                 <Image style={thumb.img} source={(poll.vote.hasVoted === 0) ? LikeImg_on : LikeImg} />
                                 <Text style={thumb.amount}>{poll.vote.dislikes}</Text>

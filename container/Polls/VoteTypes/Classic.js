@@ -38,7 +38,7 @@ export default class ClassicType extends React.Component {
             }*/
 
             answers.push(
-                <TouchableWithoutFeedback key={index} onPress={() => this.props.vote("", poll, answer.id)}>
+                <TouchableWithoutFeedback disabled={!this.props.clickable} key={index} onPress={() => this.props.vote("", poll, answer.id)}>
                     <View style={s.pt1Answer}>
                         <View>
                             <Text style={s.pollAnswerTitle}>{answer.text}</Text>

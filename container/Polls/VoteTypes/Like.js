@@ -13,7 +13,7 @@ export default class LikeType extends React.Component {
         let poll = this.props.poll;
         return (
             <View>
-               <TouchableOpacity onPress={() => this.props.vote("", poll, 1)}>
+               <TouchableOpacity disabled={!this.props.clickable} onPress={() => this.props.vote("", poll, 1)}>
                     <View style={like.box}>
                         <View style={like.inner}>
                             <Text style={like.amount}>{poll.vote.totalVotes}</Text>
