@@ -9,7 +9,7 @@ export default class ClassicType extends React.Component {
 
     render() {
 
-        let poll = this.props.poll;
+        let { poll, clickable } = this.props;
 
         let answers = [];
 
@@ -37,6 +37,8 @@ export default class ClassicType extends React.Component {
                 if(poll.vote.hasVoted === answer.id) votedForThis = true;
             }*/
 
+            let color = (votedForThisAnswer) ? (clickable) ? ['#ae4768', '#3386cd'] : ['#aaa', '#888'] : ['#aaa', '#888'];
+
             answers.push(
                 <TouchableWithoutFeedback disabled={!this.props.clickable} key={index} onPress={() => this.props.vote("", poll, answer.id)}>
                     <View style={s.pt1Answer}>
@@ -46,7 +48,7 @@ export default class ClassicType extends React.Component {
                         <View style={s.pt1Bar}>
                             <LinearGradient
                                 style={[s.pt1BarInner, { width: percent + "%" }]}
-                                colors={votedForThisAnswer ? ['#ae4768', '#3386cd'] : ['#aaa', '#888']}
+                                colors={color}
                                 //colors={['#aaa', '#888']}
                                 //colors={['#ae4768', '#3386cd']}
                                 start={{ x: 0.0, y: 0.0 }}

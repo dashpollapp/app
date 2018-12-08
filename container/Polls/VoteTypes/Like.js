@@ -6,18 +6,17 @@ import PropTypes from "prop-types";
 import LikeImg from "../../../assets/img/post/polltypes/like/like_off.png"
 import LikeImg_on from "../../../assets/img/post/polltypes/like/like_on.png"
 
-import DefaultPB from "../../../assets/img/pb.png"
-
 export default class LikeType extends React.Component {
     render() {
-        let poll = this.props.poll;
+        let { poll, clickable } = this.props;
+        let img = (poll.vote.hasVoted) ? (clickable) ? LikeImg_on : LikeImg : LikeImg; 
         return (
             <View>
-               <TouchableOpacity disabled={!this.props.clickable} onPress={() => this.props.vote("", poll, 1)}>
+               <TouchableOpacity disabled={!clickable} onPress={() => this.props.vote("", poll, 1)}>
                     <View style={like.box}>
                         <View style={like.inner}>
                             <Text style={like.amount}>{poll.vote.totalVotes}</Text>
-                            <Image style={like.img} source={(poll.vote.hasVoted) ? LikeImg_on : LikeImg} />
+                            <Image style={like.img} source={img} />
                         </View>
                     </View>
                 </TouchableOpacity>

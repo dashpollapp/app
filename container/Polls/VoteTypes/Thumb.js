@@ -19,7 +19,7 @@ import LikeImg_on from "../../../assets/img/post/polltypes/thumb/thumb_on.png"
 export default class ThumbType extends React.Component {
     render() {
 
-        let poll = this.props.poll;
+        let { poll, clickable } = this.props;
 
 
         let allVotes = poll.vote.likes + poll.vote.dislikes;
@@ -27,19 +27,22 @@ export default class ThumbType extends React.Component {
 
         (poll.vote.likes == 0 && poll.vote.dislikes == 0) ? likePercent = 50 : null;
 
+        let ThumbUpImg = (poll.vote.hasVoted === 1) ? (clickable) ? LikeImg_on : LikeImg : LikeImg;
+        let ThumbDownImg = (poll.vote.hasVoted === 0) ? (clickable) ? LikeImg_on : LikeImg : LikeImg;
+
         return (
             <View style={thumb.box}>
                 <View style={thumb.inner}>
                     <View style={thumb.thumbBoxes}>
-                        <TouchableOpacity disabled={!this.props.clickable} onPress={() => this.props.vote("", poll, 1)}>
+                        <TouchableOpacity disabled={!clickable} onPress={() => this.props.vote("", poll, 1)}>
                             <View style={thumb.thumbBox}>
-                                <Image style={[thumb.img, { marginTop: 8, transform: [{ rotate: "180deg" }] }]} source={(poll.vote.hasVoted === 1) ? LikeImg_on : LikeImg} />
+                                <Image style={[thumb.img, { marginTop: 8, transform: [{ rotate: "180deg" }] }]} source={ThumbUpImg} />
                                 <Text style={thumb.amount}>{poll.vote.likes}</Text>
                             </View>
                         </TouchableOpacity>
-                        <TouchableOpacity disabled={!this.props.clickable} onPress={() => this.props.vote("", poll, 0)}>
+                        <TouchableOpacity disabled={!clickable} onPress={() => this.props.vote("", poll, 0)}>
                             <View style={thumb.thumbBox}>
-                                <Image style={thumb.img} source={(poll.vote.hasVoted === 0) ? LikeImg_on : LikeImg} />
+                                <Image style={thumb.img} source={ThumbDownImg} />
                                 <Text style={thumb.amount}>{poll.vote.dislikes}</Text>
                             </View>
                         </TouchableOpacity>
