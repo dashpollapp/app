@@ -93,7 +93,7 @@ class SearchPage extends React.Component {
                                             numberOfLines={1}
                                             ellipsizeMode={"tail"}
                                             style={se.userName}>
-                                            @ {item.username}
+                                            @{item.username}
                                         </Text>
 
                                     </View>

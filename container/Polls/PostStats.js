@@ -36,11 +36,11 @@ class PostStats extends Component {
 
                 <View style={s.stats}>
                     <View style={s.stat}>
-                        <Text style={s.statAmount}>161</Text>
+                        <Text style={s.statAmount}>-</Text>
                         <Text style={s.statTitle}>Aufrufe</Text>
                     </View>
                     <View style={s.stat}>
-                        <Text style={s.statAmount}>54</Text>
+                        <Text style={s.statAmount}>-</Text>
                         <Text style={s.statTitle}>Nutzer</Text>
                     </View>
                     <View style={s.stat}>
@@ -48,7 +48,7 @@ class PostStats extends Component {
                         <Text style={s.statTitle}>Abgestimmt</Text>
                     </View>
                     <View style={s.stat}>
-                        <Text style={s.statAmount}>12</Text>
+                        <Text style={s.statAmount}>-</Text>
                         <Text style={s.statTitle}>Geteilt</Text>
                     </View>
                 </View>
