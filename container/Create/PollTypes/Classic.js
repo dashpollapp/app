@@ -50,7 +50,7 @@ class ClassicType extends React.Component {
                         multiline={false}
                         underlineColorAndroid={"transparent"}
                         style={[{ height: 20, marginBottom: 8, }, s.pollAnswerTitle,]}
-                        placeholder={"Antwort ..." + (index + 1)}
+                        placeholder={"Antwort " + (index + 1)}
                         placeholderTextColor={"#111"}
                         //onSubmitEditing={}?
                         onKeyPress={this.handleKeyPress}
