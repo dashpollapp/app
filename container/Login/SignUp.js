@@ -6,7 +6,7 @@ import PropTypes from "prop-types";
 // Stylesheets
 import { login, pc, css } from "./SignUpStyle";
 import { connect } from "react-redux";
-import * as screenNames from "../../constants/screenNames";
+import screenNames from "../../constants/screenNames";
 import { auth_register } from "../../actions"
 
 // Images

@@ -1,14 +1,4 @@
-import { 
-    VOTE_FROM_HOME,
-    VOTE_FROM_HOME_SUCCESS,
-    VOTE_FROM_HOME_FAIL,
-    CREATE_POLL_SUCCESS,
-    LOAD_POLLS_HOME,
-    LOAD_POLLS_HOME_SUCCESS,
-    AUTH_LOGOUT,
-    AUTH_LOGOUT_ALL_SUCCESS,
-    LOAD_POLLS_HOME_FAIL
-} from "../constants/actionTypes";
+import { actionTypes } from "../constants";
 
 import uniqueArray from "../utils/uniqueIdArray";
 
@@ -17,14 +7,14 @@ const initialState = { loading: false, polls: { home: [] } }
 export default function (state = initialState, action) {
     switch (action.type) {
 
-        case CREATE_POLL_SUCCESS:
+        case actionTypes.CREATE_POLL_SUCCESS:
             return { loading: !state.loading, polls: { ...state.polls, home: [action.payload.poll, ...state.polls.home] } };
 
-        case LOAD_POLLS_HOME:
+        case actionTypes.LOAD_POLLS_HOME:
 
             return { ...state, loading: true }
 
-        case LOAD_POLLS_HOME_SUCCESS:
+        case actionTypes.LOAD_POLLS_HOME_SUCCESS:
             if (Array.isArray(action.payload.data)) {
                 let uniquePolls = action.payload.refresh
                     ? uniqueArray([...action.payload.data, ...state.polls.home])
@@ -33,10 +23,10 @@ export default function (state = initialState, action) {
             }
             return state;
 
-        case LOAD_POLLS_HOME_FAIL:
+        case actionTypes.LOAD_POLLS_HOME_FAIL:
             return { ...state, loading: false }
 
-        case VOTE_FROM_HOME:
+        case actionTypes.VOTE_FROM_HOME:
             const { poll, choice } = action.payload;
             const indexOfPoll = state.polls.home.map(e => e._id).indexOf(poll._id);
             let method;
@@ -120,15 +110,15 @@ export default function (state = initialState, action) {
             state.polls.home[indexOfPoll] = poll;
             return { ...state, loading: true }
 
-        case VOTE_FROM_HOME_SUCCESS:
+        case actionTypes.VOTE_FROM_HOME_SUCCESS:
 
             return { ...state, loading: false }
 
-        case VOTE_FROM_HOME_FAIL:
+        case actionTypes.VOTE_FROM_HOME_FAIL:
             return { ...state, loading: false }
 
-        case AUTH_LOGOUT:
-        case AUTH_LOGOUT_ALL_SUCCESS:
+        case actionTypes.AUTH_LOGOUT:
+        case actionTypes.AUTH_LOGOUT_ALL_SUCCESS:
             return initialState;
 
         default:

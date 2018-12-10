@@ -50,8 +50,8 @@ export default class ThumbType extends React.Component {
                     <View style={[thumb.bar,]}>
                         <LinearGradient
                             style={[thumb.inner, { width: likePercent + "%" }]}
-                            colors={['#b8596e', '#739dd5']}
-                            start={{ x: 0.0, y: 0.0 }}
+                            colors={["#b8596e", "#739dd5"]}
+                            start = {{ x: 0.0, y: 0.0 }}
                             end={{ x: 0.9, y: 0.1 }}
                         />
                     </View>

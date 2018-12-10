@@ -3,7 +3,7 @@ import { View, Modal, TouchableOpacity, ScrollView, Text, StatusBar } from "reac
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 
-import * as screenNames from "../../constants/screenNames";
+import screenNames from "../../constants/screenNames";
 import style from "./PollStyle";
 import PollsFlatlist from "./PollsFlatlist";
 import { load_home_polls, vote, update_user_from_api } from "../../actions";

@@ -1,8 +1,8 @@
-import { CREATE_POLL_CHANGE_POLLTYPE } from "../constants/actionTypes";
+import { actionTypes } from "../constants";
 
 export default function (polltype) {
     return {
-        type: CREATE_POLL_CHANGE_POLLTYPE,
+        type: actionTypes.CREATE_POLL_CHANGE_POLLTYPE,
         payload: polltype
     }
 }

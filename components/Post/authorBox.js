@@ -1,14 +1,14 @@
-import React from 'react';
+import React from "react";
 import { View, TouchableOpacity, Image, Text, StyleSheet } from "react-native";
 
-import formatTime from '../../utils/formatTime';
-import * as screenNames from '../../constants/screenNames';
+import formatTime from "../../utils/formatTime";
+import screenNames from "../../constants/screenNames";
 import DefaultPB from "../../assets/img/pb.png";
 
 const authorBox = (props) => {
 
     const { poll, clickable = true } = props;
-    const pb = (poll.author.meta && poll.author.meta.pb !== "default") ? { uri: "https://api.dashpoll.net/pb/" + poll.author.meta.pb} : DefaultPB;
+    const pb = (poll.author.meta && poll.author.meta.pb !== "default") ? { uri: "https://api.dashpoll.net/pb/" + poll.author.meta.pb } : DefaultPB;
 
     return (
         <TouchableOpacity disabled={!clickable} onPress={() => props.navigation.push(screenNames.USER, { userObj: poll.author })}>

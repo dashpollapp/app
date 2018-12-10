@@ -5,7 +5,7 @@ import { connect } from "react-redux";
 import PropTypes from "prop-types";
 
 import { create_poll } from "../actions";
-import * as screenName from "../constants/screenNames";
+import screenName from "../constants/screenNames";
 
 //Components
 import NavbarTopBack from "../components/Navbar/NavbarTopBack";

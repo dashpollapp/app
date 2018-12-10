@@ -5,6 +5,8 @@ import polls from "./polls";
 import create_poll from "./create_poll";
 import other_users from "./other_users";
 import change_modal from "./change_modal";
+import friends from "./friends";
+import register from "./register";
 
 export default combineReducers({
     user,
@@ -12,5 +14,7 @@ export default combineReducers({
     create_poll,
     polls,
     other_users,
-    change_modal
+    change_modal,
+    friends,
+    register
 });

@@ -1,5 +1,5 @@
-import { StyleSheet } from 'react-native';
-import { Dimensions, Platform } from 'react-native';
+import { StyleSheet } from "react-native";
+import { Dimensions, Platform } from "react-native";
 
 
 
@@ -52,7 +52,7 @@ export var ca = StyleSheet.create({
 
 
 
-   
+
     shareBox: {
         flex: 1,
         flexDirection: "row",

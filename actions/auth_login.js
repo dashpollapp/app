@@ -1,8 +1,8 @@
-import { AUTH_LOGIN } from "../constants/actionTypes";
+import { actionTypes } from "../constants";
 
 export default function (username, password) {
     return {
-        type: AUTH_LOGIN,
+        type: actionTypes.AUTH_LOGIN,
         payload: {
             request: {
                 url: "/login",

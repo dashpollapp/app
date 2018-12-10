@@ -5,7 +5,7 @@ import PropTypes from "prop-types";
 
 import { createBlocks, pc, css } from "./Style";
 import { create_poll_change_polltype } from "../../actions";
-import * as screenNames from "../../constants/screenNames";
+import screenNames from "../../constants/screenNames";
 
 class Types extends React.Component {
 
@@ -101,7 +101,7 @@ class Types extends React.Component {
                     </TouchableOpacity>
 
 
-<TouchableOpacity
+                    <TouchableOpacity
                         onPress={() => {
                             this._handleTypeChange(0);
                         }}
@@ -117,7 +117,7 @@ class Types extends React.Component {
                     </TouchableOpacity>
 
 
-<TouchableOpacity
+                    <TouchableOpacity
                         onPress={() => {
                             this._handleTypeChange(0);
                         }}

@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { View, TouchableHighlight,TouchableOpacity, Text, FlatList, Linking, Alert } from "react-native";
+import { View, TouchableHighlight, TouchableOpacity, Text, FlatList, Linking, Alert } from "react-native";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 
@@ -7,13 +7,13 @@ import s from "./PollStyle";
 import D from "../../assets/style/default";
 import FW from "../../assets/style/framework";
 
-import * as screenNames from '../../constants/screenNames';
+import screenNames from "../../constants/screenNames";
 
 import Description from "../../components/Description";
 
-import Option from '../../components/Post/Option';
-import Author from '../../components/Post/authorBox';
-import PostModal from '../../components/Post/Modal';
+import Option from "../../components/Post/Option";
+import Author from "../../components/Post/authorBox";
+import PostModal from "../../components/Post/Modal";
 
 import PollTypes from "./PollTypes";
 import LoadMedia from "./LoadMedia";
@@ -51,11 +51,11 @@ class PollsFlatlist extends Component {
                 <TouchableOpacity style={FW.mt2} onPress={() => this.props.navigation.push(screenNames.POSTFILTER)}>
                     <Text style={D.h1}>Beiträge für dich:</Text>
                 </TouchableOpacity>
-                
-                <TouchableHighlight 
-                style={[D.linkBtn, FW.mt2,]} 
-                underlayColor={"#0984e3"}
-                onPress={() => this.props.navigation.push(screenNames.CREATE)}>
+
+                <TouchableHighlight
+                    style={[D.linkBtn, FW.mt2,]}
+                    underlayColor={"#0984e3"}
+                    onPress={() => this.props.navigation.push(screenNames.CREATE)}>
                     <Text style={[D.linkBtnText]}>Neuer Beitrag</Text>
                 </TouchableHighlight >
             </View>
@@ -66,18 +66,18 @@ class PollsFlatlist extends Component {
 
         let newUrl;
 
-        if(url.split(":")[0] === "https" || url.split(":")[0] === "http") {
+        if (url.split(":")[0] === "https" || url.split(":")[0] === "http") {
             newUrl = url;
         } else {
             newUrl = "http://" + url;
         }
 
         Alert.alert(
-            'Weiterleitung',
-            'Du wirst auf dein Internet Browser weitergeleitet.',
+            "Weiterleitung",
+            "Du wirst auf dein Internet Browser weitergeleitet.",
             [
-                {text: 'Abbrechen', style: 'cancel'},
-                {text: 'OK', onPress: () => Linking.openURL(newUrl)},
+                { text: "Abbrechen", style: "cancel" },
+                { text: "OK", onPress: () => Linking.openURL(newUrl) },
             ],
             { cancelable: false }
         )
@@ -106,7 +106,7 @@ class PollsFlatlist extends Component {
                         return (
                             <View style={[s.post, (index !== 0) ? { borderTopWidth: 1, borderColor: "#eee" } : null]}>
 
-                             
+
                                 <View style={s.pPostHeader}>
 
                                     <Author poll={item} navigation={this.props.navigation} />
@@ -120,7 +120,7 @@ class PollsFlatlist extends Component {
 
                                 </View>
 
-                                <Description 
+                                <Description
                                     style={s.description}
                                     text={item.text}
 

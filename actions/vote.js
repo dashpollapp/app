@@ -1,4 +1,4 @@
-import { VOTE_FROM_HOME, VOTE_FROM_USER, VOTE_FROM_HOME_SUCCESS, VOTE_FROM_HOME_FAIL } from "../constants/actionTypes";
+import { actionTypes } from "../constants";
 
 export default function (initiator, poll, choice) {
 
@@ -16,7 +16,7 @@ export default function (initiator, poll, choice) {
             return;
         };
 
-        dispatch({ type: VOTE_FROM_HOME, payload: { poll, choice } });
+        dispatch({ type: actionTypes.VOTE_FROM_HOME, payload: { poll, choice } });
 
         httpClient.request({
             url: "/vote",
@@ -26,8 +26,8 @@ export default function (initiator, poll, choice) {
                 choice
             }
         }).then(res => {
-            dispatch({ type: VOTE_FROM_HOME_SUCCESS, payload: { poll, choice } })
-        }).catch(err => console.log(err) & dispatch({ type: VOTE_FROM_HOME_FAIL, err }));
+            dispatch({ type: actionTypes.VOTE_FROM_HOME_SUCCESS, payload: { poll, choice } })
+        }).catch(err => console.log(err) & dispatch({ type: actionTypes.VOTE_FROM_HOME_FAIL, err }));
 
 
     }

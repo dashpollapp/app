@@ -1,8 +1,8 @@
 import { createStackNavigator } from "react-navigation";
-import * as screenName from "../constants/screenNames";
+import screenName from "../constants/screenNames";
 
-import RegisterNavigator from './RegisterNavigator';
-import LoginNavigator from './LoginNavigator';
+import RegisterNavigator from "./RegisterNavigator";
+import LoginNavigator from "./LoginNavigator";
 
 import Home from "../container/Login/Home";
 

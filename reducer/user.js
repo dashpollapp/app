@@ -1,17 +1,4 @@
-import {
-    SET_CURRENT_USER,
-    AUTH_LOGOUT,
-    AUTH_LOGOUT_ALL_SUCCESS,
-    AUTH_LOGOUT_ALL_FAIL,
-    AUTH_LOGIN,
-    AUTH_LOGIN_SUCCESS,
-    AUTH_LOGIN_FAIL,
-    AUTH_REGISTER,
-    AUTH_REGISTER_FAIL,
-    AUTH_REGISTER_SUCCESS,
-    UPLOAD_PB_SUCCESS,
-    UPDATE_USER_FROM_API_SUCCESS
-} from "../constants/actionTypes";
+import { actionTypes } from "../constants";
 
 import db from "../utils/db";
 
@@ -20,7 +7,7 @@ const initialState = { loading: false, user: false };
 export default function (state = initialState, action) {
     switch (action.type) {
 
-        case SET_CURRENT_USER:
+        case actionTypes.SET_CURRENT_USER:
             let ifUserFromDb = action.payload;
             if (ifUserFromDb._id === "user" || (ifUserFromDb.id)) {
                 ifUserFromDb._id = ifUserFromDb.id;
@@ -28,7 +15,7 @@ export default function (state = initialState, action) {
             }
             return { loading: false, user: ifUserFromDb };
 
-        case UPDATE_USER_FROM_API_SUCCESS:
+        case actionTypes.UPDATE_USER_FROM_API_SUCCESS:
             let userFromApi = { ...action.payload.user, token: state.user.token }
             if (userFromApi.meta.pb !== state.user.meta.pb) {
                 let user = { _id: userFromApi._id, newPB: userFromApi.meta.pb, oldPB: state.user.meta.pb };
@@ -38,49 +25,49 @@ export default function (state = initialState, action) {
             return { loading: false, user: userFromApi };
 
         //Ganzen user updaten
-        case UPLOAD_PB_SUCCESS:
+        case actionTypes.UPLOAD_PB_SUCCESS:
             let userPbUpdated = { ...state.user, meta: { ...state.user.meta, pb: action.payload.msg } }
             saveUserToDb(userPbUpdated);
             return { ...state, user: userPbUpdated }
 
-        case AUTH_LOGIN:
+        case actionTypes.AUTH_LOGIN:
             return { ...state, loading: true };
-        case AUTH_LOGIN_SUCCESS:
+        case actionTypes.AUTH_LOGIN_SUCCESS:
             let user = { ...action.payload.data.user, token: action.payload.data.token, loading: false }
             saveUserToDb(user);
             return { loading: false, user };
-        case AUTH_LOGIN_FAIL:
+        case actionTypes.AUTH_LOGIN_FAIL:
             return {
                 user: false,
                 loading: false,
-                error: 'Error while login in',
+                error: "Error while login in",
             };
 
-        case AUTH_REGISTER:
+        case actionTypes.AUTH_REGISTER:
             return { ...state, loading: true };
 
-        case AUTH_REGISTER_SUCCESS:
-            let registeredUser = { ...action.payload.data.user, token: action.payload.data.token, loading: false }
+        case actionTypes.AUTH_REGISTER_SUCCESS:
+            let registeredUser = action.payload.user
             saveUserToDb(registeredUser);
             return { loading: false, user: registeredUser };
 
-        case AUTH_REGISTER_FAIL:
+        case actionTypes.AUTH_REGISTER_FAIL:
             return {
                 user: false,
                 loading: false,
-                error: 'Error while login in',
+                error: "Error while login in",
             };
 
-        case AUTH_LOGOUT:
+        case actionTypes.AUTH_LOGOUT:
             deleteUserFromDb();
             return { loading: false, user: false };
 
-        case AUTH_LOGOUT_ALL_SUCCESS:
+        case actionTypes.AUTH_LOGOUT_ALL_SUCCESS:
             deleteUserFromDb();
             return { loading: false, user: false };
 
-        case AUTH_LOGOUT_ALL_FAIL:
-            return { ...state, loading: false, error: 'error while logout' }
+        case actionTypes.AUTH_LOGOUT_ALL_FAIL:
+            return { ...state, loading: false, error: "error while logout" }
 
         default:
             return state;
@@ -89,30 +76,30 @@ export default function (state = initialState, action) {
 
 function savePbToDb(user) {
 
-    Expo.FileSystem.downloadAsync("https://api.dashpoll.net/pb/" + user.newPB, Expo.FileSystem.cacheDirectory + user.newPB + ".jpg", {md5: true})
-    .then(file => {
-        
-        let pbDbFormat = { _id: "pb_" + user._id, uri: user.newPB, id: user._id, md5: file.md5 }
-        db.get('pb_' + user._id).then(function (doc) {
-            return db.remove(doc._id, doc._rev).then(() => {
-                db.put(pbDbFormat,
-                    { force: true }
-                )
-            })
-    
-        })
-        .catch(e => {
-            db.put(pbDbFormat,
-                { force: true }
-            )
-        });
+    Expo.FileSystem.downloadAsync("https://api.dashpoll.net/pb/" + user.newPB, Expo.FileSystem.cacheDirectory + user.newPB + ".jpg", { md5: true })
+        .then(file => {
 
-    })
+            let pbDbFormat = { _id: "pb_" + user._id, uri: user.newPB, id: user._id, md5: file.md5 }
+            db.get("pb_" + user._id).then(function (doc) {
+                return db.remove(doc._id, doc._rev).then(() => {
+                    db.put(pbDbFormat,
+                        { force: true }
+                    )
+                })
+
+            })
+                .catch(e => {
+                    db.put(pbDbFormat,
+                        { force: true }
+                    )
+                });
+
+        })
 
 }
 
 function deleteUserFromDb() {
-    db.get('user').then(function (doc) {
+    db.get("user").then(function (doc) {
         return db.remove(doc._id, doc._rev);
     });
 }
@@ -121,7 +108,7 @@ function saveUserToDb(user) {
     console.log("[Database] Save User");
     let userDbFormat = { ...user, id: user._id, _id: "user" }
 
-    db.get('user').then(function (doc) {
+    db.get("user").then(function (doc) {
         return db.remove(doc._id, doc._rev).then(() => {
             db.put(userDbFormat,
                 { force: true }
@@ -129,10 +116,10 @@ function saveUserToDb(user) {
         })
 
     })
-    .catch(e => {
-        db.put(userDbFormat,
-            { force: true }
-        )
-    });
+        .catch(e => {
+            db.put(userDbFormat,
+                { force: true }
+            )
+        });
 
 }

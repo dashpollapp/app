@@ -1,8 +1,8 @@
 import { ScrollView } from "react-native";
 import React from "react";
 
-import style from '../Polls/PollStyle';
-import PollsFlatlist from '../Polls/PollsFlatlist';
+import style from "../Polls/PollStyle";
+import PollsFlatlist from "../Polls/PollsFlatlist";
 
 
 class Posts extends React.Component {

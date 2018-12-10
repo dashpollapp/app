@@ -1,12 +1,12 @@
-import React from 'react';
+import React from "react";
 import { View, TouchableOpacity, Image, StyleSheet } from "react-native";
 
 //Functions
-import sharePoll from '../../utils/share';
+import sharePoll from "../../utils/share";
 
-import { connect } from 'react-redux';
+import { connect } from "react-redux";
 
-import * as screenNames from '../../constants/screenNames';
+import screenNames from "../../constants/screenNames";
 
 import { change_modal } from "../../actions"
 
@@ -22,14 +22,14 @@ const Option = (props) => {
     return (
         <View style={css.postOptions}>
             <TouchableOpacity style={css.postOption} onPress={() => props.change_modal(true, poll)} >
-                <Image style={css.postOptionImg} source={optionsBlock} />          
-            </TouchableOpacity>  
-            <TouchableOpacity style={css.postOption} onPress={() => props.navigation.push(screenNames.POLLSTATS, {poll})}>
-                <Image style={css.postOptionImg} source={optionsStats} />          
-            </TouchableOpacity>  
+                <Image style={css.postOptionImg} source={optionsBlock} />
+            </TouchableOpacity>
+            <TouchableOpacity style={css.postOption} onPress={() => props.navigation.push(screenNames.POLLSTATS, { poll })}>
+                <Image style={css.postOptionImg} source={optionsStats} />
+            </TouchableOpacity>
             <TouchableOpacity style={css.postOption} onPress={() => sharePoll(poll)}>
-                <Image style={css.postOptionImg} source={optionsShare} />          
-            </TouchableOpacity>  
+                <Image style={css.postOptionImg} source={optionsShare} />
+            </TouchableOpacity>
         </View>
     );
 }

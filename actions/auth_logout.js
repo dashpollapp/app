@@ -1,8 +1,8 @@
-import { AUTH_LOGOUT } from "../constants/actionTypes";
+import { actionTypes } from "../constants";
 
 export default function (user) {
     return {
-        type: AUTH_LOGOUT,
+        type: actionTypes.AUTH_LOGOUT,
         payload: user
     }
 }

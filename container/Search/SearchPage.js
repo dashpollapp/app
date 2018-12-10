@@ -1,10 +1,10 @@
 import { View, TextInput, FlatList, StyleSheet, Text, TouchableOpacity, Image, } from "react-native";
 import React from "react";
 
-import PropTypes from 'prop-types';
+import PropTypes from "prop-types";
 
 import { connect, } from "react-redux";
-import * as screenNames from "../../constants/screenNames";
+import screenNames from "../../constants/screenNames";
 import { user_search, } from "../../actions";
 
 import { se, } from "./SearchStyle"
@@ -30,11 +30,11 @@ class SearchPage extends React.Component {
                 <TouchableOpacity>
                     <Image style={se.closeImg} source={CloseImg} />
                 </TouchableOpacity>
-                
-                <TextInput 
-                placeholder="Entdecke Dashpoll" 
-                style={se.input} 
-                onChangeText={(username) => this._onChangeText(username)} />
+
+                <TextInput
+                    placeholder="Entdecke Dashpoll"
+                    style={se.input}
+                    onChangeText={(username) => this._onChangeText(username)} />
 
                 <View style={se.results}>
 
@@ -64,7 +64,7 @@ class SearchPage extends React.Component {
                     </View>
                     */}
 
-                    <FlatList 
+                    <FlatList
                         style={se.userList}
                         horizontal={true}
                         data={this.props.foundUsers}
@@ -72,27 +72,27 @@ class SearchPage extends React.Component {
                         renderItem={({ item, index }) => {
 
                             console.log(item)
-                    
+
                             return (
-                                <TouchableOpacity onPress={() => this.props.navigation.navigate(screenNames.USER, {userObj: item})} >
+                                <TouchableOpacity onPress={() => this.props.navigation.navigate(screenNames.USER, { userObj: item })} >
                                     <View style={se.userBox}>
 
-                                        <Image 
-                                        style={se.userImg} 
-                                        source={(item.meta.pb !== "default") ? { uri: "https://api.dashpoll.net/pb/" + item.meta.pb } : DefaultPB}/>
+                                        <Image
+                                            style={se.userImg}
+                                            source={(item.meta.pb !== "default") ? { uri: "https://api.dashpoll.net/pb/" + item.meta.pb } : DefaultPB} />
 
-                                        <Text 
-                                        style={se.userFullname}
-                                        numberOfLines={1} 
-                                        ellipsizeMode ={'tail'} 
+                                        <Text
+                                            style={se.userFullname}
+                                            numberOfLines={1}
+                                            ellipsizeMode={"tail"}
                                         >
                                             {item.fullname}
                                         </Text>
 
-                                        <Text  
-                                        numberOfLines={1} 
-                                        ellipsizeMode ={'tail'} 
-                                        style={se.userName}>
+                                        <Text
+                                            numberOfLines={1}
+                                            ellipsizeMode={"tail"}
+                                            style={se.userName}>
                                             @ {item.username}
                                         </Text>
 

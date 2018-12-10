@@ -1,6 +1,6 @@
 import { StyleSheet, Dimensions } from "react-native";
 
-var screenWidth = Dimensions.get('window').width
+var screenWidth = Dimensions.get("window").width
 var PBSize = screenWidth - 84
 var PBMargin = (screenWidth - PBSize) / 2
 
@@ -81,14 +81,14 @@ export default StyleSheet.create({
         fontFamily: "GS2",
         fontSize: 14,
         marginTop: 32,
-        color: "#444", 
+        color: "#444",
     },
     profileInfoAnsw: {
         textAlign: "center",
         fontFamily: "GS1",
         fontSize: 18,
         marginTop: 4,
-        color: "#888", 
+        color: "#888",
     },
     profileInfoAnswURL: {
         color: "#0984e3",

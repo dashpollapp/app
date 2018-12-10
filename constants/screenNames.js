@@ -1,40 +1,47 @@
-//LoginNavigator
-export const SIGN_IN = "SIGN_IN";
-export const SIGN_UP = "SIGN_UP";
+import Enum from "../utils/enumProxy";
 
-//HomeNavigator
-export const CHAT = "CHAT";
-export const POLLS = "POLLS";
+export default new Enum({
 
-//RootNavigator
-export const HOME = "HOME";
-export const USER = "USER";
-export const CREATE = "CREATE";
-export const SETTINGS = "SETTINGS";
-export const SEARCH = "SEARCH";
-export const PROFILE = "PROFILE";
+    //LoginNavigator
+    SIGN_IN: "SIGN_IN",
+    SIGN_UP: "SIGN_UP",
 
-//CreatePollNavigator
-export const CREATEPOLL = "CREATEPOLL";
-export const POLLTYPES = "POLLTYPES";
-export const POLLSTATS = "POLLSTATS";
-export const POSTFILTER = "POSTFILTER";
-export const POSTREPORT = "POSTREPORT";
+    //HomeNavigator
+    CHAT: "CHAT",
+    POLLS: "POLLS",
 
-//UserNavigator
-export const USER_POSTS = "USER_POSTS";
-export const USER_PROFILE = "USER_PROFILE";
-export const USER_CHAT = "USER_CHAT";
+    //RootNavigator
+    HOME: "HOME",
+    USER: "USER",
+    CREATE: "CREATE",
+    SETTINGS: "SETTINGS",
+    SEARCH: "SEARCH",
+    PROFILE: "PROFILE",
 
-//RegisterNavigator
-export const REGISTER_PERMISSIONS = "REGISTER_PERMISSIONS";
-export const REGISTER_NAMESELECTION = "REGISTER_NAMESELECTION";
-export const REGISTER_PASSWORD = "REGISTER_PASSWORD";
-export const REGISTER_FINISH = "REGISTER_FINISH";
+    //CreatePollNavigator
+    CREATEPOLL: "CREATEPOLL",
+    POLLTYPES: "POLLTYPES",
+    POLLSTATS: "POLLSTATS",
+    POSTFILTER: "POSTFILTER",
+    POSTREPORT: "POSTREPORT",
 
-export const AUTH_HOME = "AUTH_HOME";
+    //UserNavigator
+    USER_POSTS: "USER_POSTS",
+    USER_PROFILE: "USER_PROFILE",
+    USER_CHAT: "USER_CHAT",
 
-export const LOGIN_SELECT_USER = "LOGIN_SELECT_USER";
-export const LOGIN_PASSWORD = "LOGIN_PASSWORD";
+    //RegisterNavigator
+    REGISTER_PERMISSIONS: "REGISTER_PERMISSIONS",
+    REGISTER_NAMESELECTION: "REGISTER_NAMESELECTION",
+    REGISTER_PASSWORD: "REGISTER_PASSWORD",
+    REGISTER_FINISH: "REGISTER_FINISH",
 
-export const DEVELOPER = "DEVELOPER";
+    AUTH_HOME: "AUTH_HOME",
+
+    LOGIN_SELECT_USER: "LOGIN_SELECT_USER",
+    LOGIN_PASSWORD: "LOGIN_PASSWORD",
+
+    DEVELOPER: "DEVELOPER"
+
+
+});

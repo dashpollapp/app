@@ -7,7 +7,7 @@ import { connect } from "react-redux";
 
 import { user_search } from "../../../actions"
 
-import * as screenNames from "../../../constants/screenNames";
+import screenNames from "../../../constants/screenNames";
 
 //Images
 import DefaultPB from "../../../assets/img/pb.png"
@@ -22,58 +22,58 @@ class SelectUser extends React.Component {
     render() {
         return (
             <KeyboardAvoidingView
-            style={login.box}
-            behavior="padding"
-            keyboardVerticalOffset={22}
-            >   
-            <ScrollView style={login.scroll}>
+                style={login.box}
+                behavior="padding"
+                keyboardVerticalOffset={22}
+            >
+                <ScrollView style={login.scroll}>
 
-                {/*Stäter ein Bild was immer sichtbar ist: <Image style={login.img} source={SplashImg}></Image>*/}
+                    {/*Stäter ein Bild was immer sichtbar ist: <Image style={login.img} source={SplashImg}></Image>*/}
 
-                <TouchableOpacity>
-                    <Text style={login.welcomeText}>Wie heißt dein Dashpoll Account 😄</Text>
-                </TouchableOpacity>
-                
-                <TextInput
-                    placeholder="Dashpoll-Name"
-                    placeholderTextColor="#666"
-                    style={login.input}
-                    onChangeText={(text) => this._onUserInputChange(text)}
-                />
-
-                <FlatList
-                    horizontal={true}
-                    style={login.users}
-                    data={this.props.foundUsers}
-                    keyExtractor={(item) => item._id}
-                    renderItem={({ item }) => {
-
-                        return (
-                            <TouchableOpacity onPress={() => this.props.navigation.navigate(screenNames.LOGIN_PASSWORD, {user: item})}>
-                                <View style={[D.user_saves, D.user]}>
-                                    <Image style={D.userPB} source={(item.meta.pb !== "default") ? {uri: "https://api.dashpoll.net/pb/" + item.meta.pb} : DefaultPB}/>
-                                    <Text style={D.userFullname}>{item.fullname}</Text>
-                                    <Text style={D.userName}>@{item.username}</Text>
-                                </View>
-                            </TouchableOpacity>
-                        )
-                    }}
-                />
-
-                <View style={D.kiBoxes}>
-                    <TouchableOpacity style={D.kiBox}>
-                        <Image style={D.kiImg} source={KiImg}/>
-                        <Text style={D.kiText}>Name vergessen</Text>
+                    <TouchableOpacity>
+                        <Text style={login.welcomeText}>Wie heißt dein Dashpoll Account 😄</Text>
                     </TouchableOpacity>
-                    <TouchableOpacity style={D.kiBox}>
-                        <Image style={D.kiImg} source={KiImg}/>
-                        <Text style={D.kiText}>Acctount erstellen</Text>
-                    </TouchableOpacity>
-                </View>
 
-                <View style={{height: 64,}}></View>
-            </ScrollView>
-        </KeyboardAvoidingView>
+                    <TextInput
+                        placeholder="Dashpoll-Name"
+                        placeholderTextColor="#666"
+                        style={login.input}
+                        onChangeText={(text) => this._onUserInputChange(text)}
+                    />
+
+                    <FlatList
+                        horizontal={true}
+                        style={login.users}
+                        data={this.props.foundUsers}
+                        keyExtractor={(item) => item._id}
+                        renderItem={({ item }) => {
+
+                            return (
+                                <TouchableOpacity onPress={() => this.props.navigation.navigate(screenNames.LOGIN_PASSWORD, { user: item })}>
+                                    <View style={[D.user_saves, D.user]}>
+                                        <Image style={D.userPB} source={(item.meta.pb !== "default") ? { uri: "https://api.dashpoll.net/pb/" + item.meta.pb } : DefaultPB} />
+                                        <Text style={D.userFullname}>{item.fullname}</Text>
+                                        <Text style={D.userName}>@{item.username}</Text>
+                                    </View>
+                                </TouchableOpacity>
+                            )
+                        }}
+                    />
+
+                    <View style={D.kiBoxes}>
+                        <TouchableOpacity style={D.kiBox}>
+                            <Image style={D.kiImg} source={KiImg} />
+                            <Text style={D.kiText}>Name vergessen</Text>
+                        </TouchableOpacity>
+                        <TouchableOpacity style={D.kiBox}>
+                            <Image style={D.kiImg} source={KiImg} />
+                            <Text style={D.kiText}>Acctount erstellen</Text>
+                        </TouchableOpacity>
+                    </View>
+
+                    <View style={{ height: 64, }}></View>
+                </ScrollView>
+            </KeyboardAvoidingView>
         );
     }
 }

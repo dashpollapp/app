@@ -1,5 +1,5 @@
 import { createStackNavigator } from "react-navigation";
-import * as screenName from "../constants/screenNames";
+import screenName from "../constants/screenNames";
 
 import Develope from "../temp/Develope";
 

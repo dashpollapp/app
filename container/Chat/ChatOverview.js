@@ -1,7 +1,7 @@
-import React from 'react';
-import { StatusBar, StyleSheet, Text, View, ScrollView, TouchableOpacity, Image, KeyboardAvoidingView, ImageBackground, Dimensions } from 'react-native';
-import { LinearGradient } from 'expo';
-import PropTypes from 'prop-types';
+import React from "react";
+import { StatusBar, StyleSheet, Text, View, ScrollView, TouchableOpacity, Image, KeyboardAvoidingView, ImageBackground, Dimensions } from "react-native";
+import { LinearGradient } from "expo";
+import PropTypes from "prop-types";
 
 import ChatItem from "./ChatOverviewItem"
 import D from "../../assets/style/default"
@@ -47,9 +47,9 @@ export default class ChatOverview extends React.Component {
         return (
             <View style={{ backgroundColor: "#fff", height: "100%", opacity: 1, }}>
                 <ScrollView style={{ height: "100%", }}>
-                <View style={D.boxHeader}>
-                    <Text style={D.h1}>Deine Freunde:</Text>
-                </View>
+                    <View style={D.boxHeader}>
+                        <Text style={D.h1}>Deine Freunde:</Text>
+                    </View>
 
                     <ChatItem data={chat[0]} />
                     <ChatItem data={chat[1]} />

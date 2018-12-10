@@ -10,7 +10,7 @@ import s from "../../Polls/PollStyle";
 class ClassicType extends React.Component {
 
     state = {
-        answersArray: ["", "", ],
+        answersArray: ["", ""],
     }
 
     componentDidUpdate() {
@@ -34,7 +34,7 @@ class ClassicType extends React.Component {
     }
 
     handleKeyPress = (e) => {
-        if(e.nativeEvent.key == "Enter"){
+        if (e.nativeEvent.key == "Enter") {
             Keyboard.dismiss()
         }
     }
@@ -47,10 +47,10 @@ class ClassicType extends React.Component {
             return (
                 <View key={index}>
                     <TextInput
-                        multiline
-                        underlineColorAndroid={'transparent'}
+                        multiline={false}
+                        underlineColorAndroid={"transparent"}
                         style={[{ height: 20, marginBottom: 8, }, s.pollAnswerTitle,]}
-                        placeholder={"Antwort ..."}
+                        placeholder={"Antwort ..." + (index + 1)}
                         placeholderTextColor={"#111"}
                         //onSubmitEditing={}?
                         onKeyPress={this.handleKeyPress}
@@ -60,29 +60,29 @@ class ClassicType extends React.Component {
                     <View style={[s.pt1Bar, { marginBottom: 24, }]}>
                         <LinearGradient
                             style={[s.pt1BarInner, { width: "75%", height: 16, }]}
-                            colors={['#ae4768', '#3386cd']}
+                            colors={["#ae4768", "#3386cd"]}
                             start={{ x: 0.0, y: 0.0 }}
                             end={{ x: 0.9, y: 0.1 }}
                         />
-  
+
                         {
-                        (isErasable) ? //mindestens 2 Antworten
-                        <TouchableOpacity onPress={() => this.removeAnswer(index)}>
-                            <Text style={[s.pollPercentText,]}>löschen</Text>
-                        </TouchableOpacity>
-                        :
-                        <Text style={[s.pollPercentText, { opacity: 0.5, }]}>(löschen)</Text>
+                            (isErasable) ? //mindestens 2 Antworten
+                                <TouchableOpacity onPress={() => this.removeAnswer(index)}>
+                                    <Text style={[s.pollPercentText,]}>löschen</Text>
+                                </TouchableOpacity>
+                                :
+                                <Text style={[s.pollPercentText, { opacity: 0.5, }]}>(löschen)</Text>
                         }
-        
+
                     </View>
                 </View>
             )
         })
 
         return (
-            <View style={{  marginTop: 24, }}>
+            <View style={{ marginTop: 24, }}>
 
-                <View style={[pc.polltype, {  marginBottom: 24, }]}>
+                <View style={[pc.polltype, { marginBottom: 24, }]}>
                     <Text style={type.title}>Klassische Umfrage: <Text style={pc.polltypeCat}>(Auswahl)</Text></Text>
                     <Text style={type.subtitle}>Verschiede Antwortmöglichkeiten als Text. Benutzer können sich für 1 Antwortmöglichkeit entscheiden.</Text>
                 </View>

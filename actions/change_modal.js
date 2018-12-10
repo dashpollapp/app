@@ -1,8 +1,8 @@
-import { CHANGE_MODAL } from "../constants/actionTypes";
+import { actionTypes } from "../constants";
 
 export default function (visible, poll) {
     return {
-        type: CHANGE_MODAL,
+        type: actionTypes.CHANGE_MODAL,
         payload: {
             visible,
             poll

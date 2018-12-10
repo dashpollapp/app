@@ -1,5 +1,5 @@
 //https://gist.github.com/sqren/780ae8ca1e2cf59050b0695c901b5aa3
-import React, { Component } from 'react';
+import React, { Component } from "react";
 
 export default function withPropsChecker(WrappedComponent) {
     return class PropsChecker extends Component {
@@ -10,11 +10,11 @@ export default function withPropsChecker(WrappedComponent) {
                 })
                 .map(key => {
                     console.log(
-                        'changed property:',
+                        "changed property:",
                         key,
-                        'from',
+                        "from",
                         this.props[key],
-                        'to',
+                        "to",
                         nextProps[key]
                     );
                 });

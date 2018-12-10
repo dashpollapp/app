@@ -48,16 +48,16 @@ class Chat extends React.Component {
                     {/*=Navbar unten
                         <View style={css.bottom} > 
                             <TouchableOpacity style={css.bottomItem} >
-                                <Image style={css.bottomImage} source={require('../../assets/images/navbar/bottom/chat.png')} />
+                                <Image style={css.bottomImage} source={require("../../assets/images/navbar/bottom/chat.png")} />
                             </TouchableOpacity>
                             <TouchableOpacity style={css.bottomItem}>
-                                <Image style={css.bottomImage} source={require('../../assets/images/navbar/bottom/poll.png')} />
+                                <Image style={css.bottomImage} source={require("../../assets/images/navbar/bottom/poll.png")} />
                             </TouchableOpacity>
                             <TouchableOpacity style={css.bottomItem} >
-                                <Image style={css.bottomImage} source={require('../../assets/images/navbar/bottom/info.png')} />
+                                <Image style={css.bottomImage} source={require("../../assets/images/navbar/bottom/info.png")} />
                             </TouchableOpacity>
                             <TouchableOpacity style={css.bottomItem}>
-                                <Image style={css.bottomImage} source={require('../../assets/images/navbar/bottom/gear.png')} />
+                                <Image style={css.bottomImage} source={require("../../assets/images/navbar/bottom/gear.png")} />
                             </TouchableOpacity>
                         </View>
                         <View style={css.bottomPosition}></View>*/}

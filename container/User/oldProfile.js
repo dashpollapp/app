@@ -5,7 +5,7 @@ import { BlurView } from "expo";
 const scrollDownPosition = Dimensions.get("window").width - 72;
 
 export default class Profile extends React.Component {
-    //height: Platform.OS === 'ios' ? 200 : 100,
+    //height: Platform.OS === "ios" ? 200 : 100,
     constructor(props) {
         super(props);
         this.state = {

@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { View, TouchableOpacity, Image } from "react-native";
-import * as screenNames from "../../constants/screenNames";
-import PropTypes from 'prop-types';
+import screenNames from "../../constants/screenNames";
+import PropTypes from "prop-types";
 import nt from "./NavbarTopStyle";
 
 import logoImg from "../../assets/img/navbar/top/logo.png";
@@ -11,7 +11,7 @@ import DefaultPB from "../../assets/img/pb.png";
 
 export default class NavbarTop extends Component {
     render() {
-        const { pb } = this.props; 
+        const { pb } = this.props;
         return (
             <View>
                 <View style={nt.box}>
@@ -22,10 +22,10 @@ export default class NavbarTop extends Component {
                         <Image style={nt.mainItemLogoImg} source={logoImg} />
                     </TouchableOpacity>
                     <TouchableOpacity onPress={() => this.props.navigation.push(screenNames.USER)} style={nt.mainItem}>
-                        <Image style={nt.mainItemPbImg} source={(pb !== "default") ? { uri: "https://api.dashpoll.net/pb/"+pb } : DefaultPB} />
+                        <Image style={nt.mainItemPbImg} source={(pb !== "default") ? { uri: "https://api.dashpoll.net/pb/" + pb } : DefaultPB} />
                     </TouchableOpacity>
 
-                </View> 
+                </View>
                 <View style={nt.push}></View>
             </View>
         );

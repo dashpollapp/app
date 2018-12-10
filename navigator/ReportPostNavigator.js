@@ -1,17 +1,17 @@
 import React from "react";
 import { View } from "react-native";
 import { createStackNavigator } from "react-navigation";
-import * as screenName from "../constants/screenNames";
+import { screenNames } from "../constants";
 import NavbarTopBack from "../components/Navbar/NavbarTopBack";
 import Report from "../container/Polls/ReportPost";;
 
 const Navigator = createStackNavigator(
     {
-        [screenName.POSTREPORT]: Report,
+        [screenNames.POSTREPORT]: Report,
     },
     {
         headerMode: "none",
-        initialRouteName: screenName.POSTREPORT
+        initialRouteName: screenNames.POSTREPORT
     }
 );
 

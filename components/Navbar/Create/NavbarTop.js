@@ -1,9 +1,9 @@
 import React from "react";
 import { TouchableOpacity, Text, View, Image } from "react-native";
-import PropTypes from 'prop-types';
+import PropTypes from "prop-types";
 
 import { css } from "../../../container/Create/Style";
-import * as screenNames from "../../../constants/screenNames";
+import screenNames from "../../../constants/screenNames";
 import nt from "../NavbarTopStyle";
 
 import PlusImg from "../../../assets/img/navbar/top/plus.png";
@@ -12,6 +12,7 @@ import BackImg from "../../../assets/img/navbar/top/back.png";
 class NavbarTop extends React.Component {
     constructor(props) {
         super(props);
+        console.log(screenNames.HOME)
     }
 
     render() {
@@ -54,7 +55,7 @@ export default NavbarTop;
 
 /*
 import React from "react";
-import PropTypes from 'prop-types';
+import PropTypes from "prop-types";
 import { css } from "../../../container/User/Style";
 import { View, TouchableOpacity, Image, Text } from "react-native";
 

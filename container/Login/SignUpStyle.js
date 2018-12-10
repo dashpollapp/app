@@ -1,16 +1,16 @@
-import { StyleSheet } from 'react-native';
-import { Dimensions, Platform } from 'react-native';
-import { totalSize } from 'react-native-dimension';
+import { StyleSheet } from "react-native";
+import { Dimensions, Platform } from "react-native";
+import { totalSize } from "react-native-dimension";
 
 /* Creative Board */
 export var login = StyleSheet.create({
- 
- 
+
+
     button: {
         paddingVertical: 12,
         paddingHorizontal: 12,
         borderRadius: 12,
-   
+
         borderWidth: 2,
         borderColor: "#000",
     },
@@ -32,7 +32,7 @@ export var login = StyleSheet.create({
         fontFamily: "Poppins400",
         fontSize: 14,
     },
- 
+
     RegisterAlphaHeadingText: {
         color: "#777",
         fontFamily: "Poppins300",
@@ -46,7 +46,7 @@ export var login = StyleSheet.create({
         textAlign: "center",
         marginBottom: 64,
     },
- 
+
     PasswordInputBox: {
         backgroundColor: "#dfe6e9",
         paddingHorizontal: 8,
@@ -55,7 +55,7 @@ export var login = StyleSheet.create({
         marginBottom: 16,
         flexDirection: "row",
         justifyContent: "space-between"
-       
+
     },
     PasswordInput: {
         flex: 1,
@@ -67,22 +67,22 @@ export var login = StyleSheet.create({
     PasswordInputToggle: {},
     PasswordInputToggleImg: {
         height: 32,
-        width:  32,
+        width: 32,
         margin: 4,
     },
- 
- 
+
+
     space: {
         width: "100%",
         height: 32,
     },
     foundUserSelected: {
-        backgroundColor: "#74b9ff",  
+        backgroundColor: "#74b9ff",
     },
- 
+
     /* Ergebnisse beim Username eingeben */
     foundUsers: {
-        flexDirection: "row",        
+        flexDirection: "row",
         maxHeight: 170,
         overflow: "hidden",
         borderRadius: 8,
@@ -111,7 +111,7 @@ export var login = StyleSheet.create({
         color: "#2d3436",
         textAlign: "center",
     },
- 
+
     /* Genauere Fehlerbeschreibung*/
     TextErrorDescription: {
         color: "#636e72",
@@ -128,7 +128,7 @@ export var login = StyleSheet.create({
     },
     /* Beschreibung */
     Text: {
- 
+
         color: "#444",
         fontFamily: "Poppins400",
         fontSize: 18,
@@ -141,12 +141,12 @@ export var login = StyleSheet.create({
         paddingVertical: 8,
         borderRadius: 4,
         marginBottom: 44,
- 
+
         color: "#333",
         fontFamily: "Poppins300",
         fontSize: 15,
- 
-       
+
+
     },
     /* Die View um den Login bereich*/
     body: {
@@ -177,7 +177,7 @@ export var loader = StyleSheet.create({
     },
 })
 export var cc = StyleSheet.create({
- 
+
     ror: {
         flexDirection: "row",
         minHeight: 44,
@@ -201,27 +201,27 @@ export var cc = StyleSheet.create({
     color: {
         backgroundColor: "blue",
     }
- 
- 
- 
+
+
+
 });
 export var profile = StyleSheet.create({
- 
- 
+
+
     imporantInfos: {
         padding: 16,
     },
     tetxBio: {
- 
+
         color: "#ccc",
         fontSize: 18,
         fontFamily: "Poppins500",
- 
+
     },
- 
- 
- 
- 
+
+
+
+
     optionPriority4: {
         backgroundColor: "rgba(242, 53, 53, 0.65)",
     },
@@ -271,14 +271,14 @@ export var profile = StyleSheet.create({
     followerInfo: {
         fontFamily: "Poppins300",
         fontSize: 14,
-        color: "#555",  
+        color: "#555",
     },
     infoName: {
         fontFamily: "Poppins500",
         fontSize: 14,
         color: "rgba(220,220,220,0.9)",
-        textShadowColor: 'rgba(0, 0, 0, 0.75)',
-        textShadowOffset: {width: 0.0001, height: 0.0001},
+        textShadowColor: "rgba(0, 0, 0, 0.75)",
+        textShadowOffset: { width: 0.0001, height: 0.0001 },
         textShadowRadius: 4,
         paddingLeft: 4,
     },
@@ -286,8 +286,8 @@ export var profile = StyleSheet.create({
         fontFamily: "Poppins500",
         fontSize: 20,
         color: "rgba(255,255,255,1)",
-        textShadowColor: 'rgba(0, 0, 0, 0.75)',
-        textShadowOffset: {width: 0, height: 0},
+        textShadowColor: "rgba(0, 0, 0, 0.75)",
+        textShadowOffset: { width: 0, height: 0 },
         textShadowRadius: 4,
         paddingLeft: 4,
     },
@@ -310,8 +310,8 @@ export var profile = StyleSheet.create({
         justifyContent: "space-around",
     },
     infos: {
- 
- 
+
+
     },
     banner: {
         padding: 16,
@@ -325,8 +325,8 @@ export var profile = StyleSheet.create({
         borderRadius: 180 / 2,
         borderColor: "#fff",
     },
- 
- 
+
+
 });
 /* Poll Create */
 export var pc = StyleSheet.create({
@@ -352,7 +352,7 @@ export var pc = StyleSheet.create({
     polltypeCat: {
         fontSize: 14,
         fontFamily: "Poppins500",
-        color: "#6c5ce7",    
+        color: "#6c5ce7",
     },
     polltypeName: {
         fontSize: 14,
@@ -364,7 +364,7 @@ export var pc = StyleSheet.create({
         fontFamily: "Poppins400",
         color: "#636e72",
     },
- 
+
     textContinue: {
         fontSize: 12,
         fontFamily: "Poppins400",
@@ -377,11 +377,11 @@ export var pc = StyleSheet.create({
     },
     sendButton: {
     },
- 
+
     mediaItem: {
-      height: 52,
-      width: 52,  
-      opacity: 0.65,
+        height: 52,
+        width: 52,
+        opacity: 0.65,
     },
     addMedia: {
         justifyContent: "space-around",
@@ -394,15 +394,15 @@ export var pc = StyleSheet.create({
     },
     inputDescription: {
         color: "#6d6d6d",
-        fontSize: 16,        
+        fontSize: 16,
         fontFamily: "Poppins400",
     },
     inputTitle: {
         color: "#111",
-        fontSize: 22,        
+        fontSize: 22,
         fontFamily: "Poppins700",
     },
-    description:{
+    description: {
         marginTop: 12,
         fontFamily: "Poppins500",
         color: "#383838",
@@ -413,7 +413,7 @@ export var pc = StyleSheet.create({
     },
 });
 export var css = StyleSheet.create({
- 
+
     navTopPush: {
         width: "100%",
         height: 50,
@@ -422,22 +422,22 @@ export var css = StyleSheet.create({
     chatSelected: {
         backgroundColor: "#efefef",
     },
- 
+
     //Wetter
     chatWeather: {
- 
+
     },
     //Ersmal so
     chatWeatherCrad: {
         fontFamily: "Poppins600",
         fontSize: 20,
     },
- 
- 
- 
- 
+
+
+
+
     sendTime: {
-        alignSelf: 'center',
+        alignSelf: "center",
         justifyContent: "flex-end",
         color: "#929684",
         marginRight: 4,
@@ -472,97 +472,97 @@ export var css = StyleSheet.create({
     },
     text: {
         fontFamily: "Poppins500",
-        alignSelf: 'center',
+        alignSelf: "center",
         marginLeft: 12,
-        flex:1,
+        flex: 1,
     },
     pb: {
         height: 52,
         width: 52,
         borderRadius: 26,
-       
+
         //für Inhalt
-        justifyContent: 'center',
-        alignItems: 'center'
+        justifyContent: "center",
+        alignItems: "center"
     },
     chat: {
         width: "100%",
         backgroundColor: "#fff",
         paddingVertical: 9,
         paddingHorizontal: 9,
- 
-        flexDirection:'row',
-        alignItems:'center',
+
+        flexDirection: "row",
+        alignItems: "center",
     },
     chatNew: {
         borderLeftWidth: 8,
         borderColor: "#36c187",
         backgroundColor: "#f2f2f2",
     },
- 
 
- 
-    corner:{
+
+
+    corner: {
         position: "absolute",
         zIndex: 4000,
         height: 5,
         width: 5,
     },
-    cornerTL:{
+    cornerTL: {
         top: 0,
         left: 0,
     },
-    cornerTR:{
+    cornerTR: {
         top: 0,
         right: 0,
-        transform: [{ rotate: '90deg'}],
+        transform: [{ rotate: "90deg" }],
     },
-    cornerBL:{
+    cornerBL: {
         bottom: 0,
         left: 0,
-        transform: [{ rotate: '-90deg'}],
+        transform: [{ rotate: "-90deg" }],
     },
-    cornerBR:{
+    cornerBR: {
         bottom: 0,
         right: 0,
-        transform: [{ rotate: '180deg'}],
+        transform: [{ rotate: "180deg" }],
     },
- 
+
     bottomImage: {
         height: 24,
         width: 24,
         flex: 1,
     },
- 
+
     bottomPosition: {
         marginTop: -4,
         height: 8,
-        width: Dimensions.get('window').width / 4 - 32,
-        marginLeft: (Dimensions.get('window').width * 0.045),
- 
+        width: Dimensions.get("window").width / 4 - 32,
+        marginLeft: (Dimensions.get("window").width * 0.045),
+
         /* polls: 0.29; chats: 0.045;   */
- 
+
         backgroundColor: "#000",
         borderRadius: 3,
-        position: "absolute",    
+        position: "absolute",
         bottom: 46,
- 
+
     },
- 
+
     bottom: {
         position: "absolute",
         flex: 1,
-        flexDirection: 'row',
+        flexDirection: "row",
         width: "100%",
         height: 50,
-     
- 
- 
+
+
+
         bottom: 0,
-        justifyContent: 'space-around',
+        justifyContent: "space-around",
         alignItems: "center",
         backgroundColor: "#fff",
- 
+
         shadowOpacity: 0.5,
         shadowRadius: 4,
         shadowOffset: {
@@ -571,24 +571,24 @@ export var css = StyleSheet.create({
         },
         elevation: 5,
     },
- 
- 
- 
+
+
+
     /**/
- 
+
     close: {
         transform: [
             { rotate: "45deg" },
-          ],
+        ],
     },
-    create: {        
+    create: {
         height: 32,
         width: 32,
         margin: 12,
- 
+
     },
     navTopCenter: {
-        flex:1,
+        flex: 1,
     },
     logo: {
         height: "100%",
@@ -606,9 +606,9 @@ export var css = StyleSheet.create({
         height: 36,
         width: 36,
         margin: 7,
-        borderRadius: 36/2,
-        justifyContent: 'center',
-        alignItems: 'center',
+        borderRadius: 36 / 2,
+        justifyContent: "center",
+        alignItems: "center",
         alignSelf: "flex-start",
         alignItems: "flex-start",
     },
@@ -619,7 +619,7 @@ export var css = StyleSheet.create({
         marginHorizontal: 12,
     },
     navTop: {
- 
+
         position: "absolute",
         flexDirection: "row",
         alignItems: "center",
@@ -633,22 +633,22 @@ export var css = StyleSheet.create({
         },
         elevation: 5,
         backgroundColor: "#fff",
- 
-       
+
+
     },
- 
+
     navTopHelp: {
- 
- 
+
+
         position: "absolute",
         width: "100%",
         height: 24,
         zIndex: 1008,
         backgroundColor: "#fff",
- 
- 
+
+
     },
- 
+
     navTopItem: {
         position: "absolute",
         height: "100%",
@@ -659,47 +659,47 @@ export var css = StyleSheet.create({
         borderBottomWidth: 4,
     },
     navTopImg: {
- 
+
     },
- 
- 
-    p4:{},
+
+
+    p4: {},
     p4Toutch: {
         flexDirection: "row",
         alignSelf: "flex-end",
- 
+
         alignItems: "center",
         justifyContent: "center",
     },
     p4Img: {
-   
+
         height: 32,
         width: 32,
     },
- 
- 
- 
- 
+
+
+
+
     p3: {
- 
+
     },
     p3ImageOn: {
         opacity: 1,
         transform: [
-            { scale: 1.00},
-          ],
-          borderWidth: 4,
-          borderColor: "#2f393e",
+            { scale: 1.00 },
+        ],
+        borderWidth: 4,
+        borderColor: "#2f393e",
     },
     p3ImageOff: {
         opacity: 0.8,
         transform: [
-            { scale: 0.95},
-          ],
+            { scale: 0.95 },
+        ],
     },
     p3Image: {
         opacity: 0.9,
-        width: (Dimensions.get('window').width / 2) - 20,
+        width: (Dimensions.get("window").width / 2) - 20,
         aspectRatio: 1,
         margin: 4,
         borderRadius: 4,
@@ -713,11 +713,11 @@ export var css = StyleSheet.create({
         flexDirection: "row",
         justifyContent: "space-around",
     },
- 
- 
-   
+
+
+
     p2thumbDislike: {
-        transform: [{ rotate: '180deg'}],
+        transform: [{ rotate: "180deg" }],
     },
     p2thumbImg: {
         height: 32,
@@ -730,11 +730,11 @@ export var css = StyleSheet.create({
     },
     p2thumbs: {
         flex: 1,
-        flexDirection: 'row',
-        justifyContent: 'space-between',
+        flexDirection: "row",
+        justifyContent: "space-between",
     },
     p2: {
- 
+
     },
     p2Bar: {
         height: 12,
@@ -747,25 +747,25 @@ export var css = StyleSheet.create({
         height: "100%",
         backgroundColor: "#21C192",
     },
- 
- 
- 
- 
+
+
+
+
     description: {
         fontFamily: "Poppins400",
         color: "#797A75",
-        flex:1,
+        flex: 1,
     },
     postFakeShadow: {
         marginTop: 16,
-        width: Dimensions.get('window').width + 24,
+        width: Dimensions.get("window").width + 24,
         marginLeft: -12,
         height: 6,
     },
     p1More: {
         marginTop: 12,
         fontFamily: "Poppins400",
-        color: "#797A75",    
+        color: "#797A75",
     },
     p1Row: {
         width: "100%",
@@ -774,14 +774,14 @@ export var css = StyleSheet.create({
         alignItems: "center",
     },
     p1: {
- 
+
     },
     p1Answer: {
         width: "100%",
         paddingBottom: 8,
     },
     p1BarOn: {
-        backgroundColor: "#21C192",      
+        backgroundColor: "#21C192",
     },
     p1Bar: {
         minWidth: 4,
@@ -792,7 +792,7 @@ export var css = StyleSheet.create({
     p1AnswerText: {
         fontFamily: "Poppins500",
     },
- 
+
     /* Der Teil einer Umfrage*/
     PercentText: {
         fontFamily: "Poppins700",
@@ -803,7 +803,7 @@ export var css = StyleSheet.create({
         fontFamily: "Poppins300",
         color: "#888",
         fontSize: 12,
-        alignSelf: 'flex-end',  
+        alignSelf: "flex-end",
         marginLeft: 8,
         marginRight: 8,
         marginTop: 4,
@@ -846,31 +846,31 @@ export var css = StyleSheet.create({
         fontFamily: "Poppins600",
         fontSize: 16,
         marginBottom: 0,
- 
+
         lineHeight: 18,
- 
+
     },
     text: {
         fontFamily: "Poppins500",
-        alignSelf: 'center',
+        alignSelf: "center",
         marginLeft: 12,
-        flex:1,
+        flex: 1,
         marginTop: 6,
     },
     pb: {
         height: 52,
         width: 52,
         borderRadius: 26,
-       
+
         //für Inhalt (zB Wetter-°C)
-        justifyContent: 'center',
-        alignItems: 'center'
+        justifyContent: "center",
+        alignItems: "center"
     },
- 
+
     //Umfragen-Header (aka. AuthorBox)
     postInfo: {
         backgroundColor: "#fff",
-        flexDirection:'row',
+        flexDirection: "row",
         marginBottom: 12,
     },
     polls: {
@@ -886,14 +886,14 @@ export var css = StyleSheet.create({
         width: "100%",
         height: "100%",
         backgroundColor: "#fff",
-       
+
     },
     out: {
-        backgroundColor: "#fff",    
+        backgroundColor: "#fff",
         width: "100%",
         height: "100%",
-       
-        paddingTop: Platform.OS === 'ios' ? 22 : 24,
+
+        paddingTop: Platform.OS === "ios" ? 22 : 24,
     },
-   
+
 });

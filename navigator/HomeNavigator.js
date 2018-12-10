@@ -4,14 +4,14 @@ import { createMaterialTopTabNavigator } from "react-navigation";
 import { isIPhoneX } from "../utils/iphoneX"
 import PropTypes from "prop-types";
 
-import * as screenName from "../constants/screenNames";
+import screenName from "../constants/screenNames";
 
 //Components
 import NavbarTop from "../components/Navbar/NavbarTop";
 
 //Container
 import Polls from "../container/Polls/Polls";
-import { ChatOverview } from "../container/Chat";
+import { FriendsOverview } from "../container/Friends";
 
 import { connect } from "react-redux";
 
@@ -24,15 +24,15 @@ import pollOffImg from "../assets/img/navbar/bottom/poll_off.png";
 const Navigator = createMaterialTopTabNavigator(
     {
         [screenName.CHAT]: {
-            screen: ChatOverview,
+            screen: FriendsOverview,
             navigationOptions: {
-                tabBarIcon: (active) => <Image style={{ height: 26, width: 26, }} source={ active.focused ? chatImg : chatOffImg } />
+                tabBarIcon: (active) => <Image style={{ height: 26, width: 26, }} source={active.focused ? chatImg : chatOffImg} />
             }
         },
         [screenName.POLLS]: {
             screen: Polls,
             navigationOptions: {
-                tabBarIcon: (active) => <Image style={{ height: 26, width: 26, }} source={ active.focused ? pollImg : pollOffImg } />
+                tabBarIcon: (active) => <Image style={{ height: 26, width: 26, }} source={active.focused ? pollImg : pollOffImg} />
             }
         },
 

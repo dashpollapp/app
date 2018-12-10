@@ -1,15 +1,15 @@
-import { LOAD_USER_PROFILE, SAVE_USER_PROFILE, SAVE_USER_PROFILE_FAIL } from "../constants/actionTypes";
+import { actionTypes } from "../constants";
 
 export default function (userId) {
     const httpClient = require("../utils/store").httpClient;
     return dispatch => {
-        dispatch({ type: LOAD_USER_PROFILE });
+        dispatch({ type: actionTypes.LOAD_USER_PROFILE });
         httpClient.request({
             url: `/user/${userId}`,
             method: "GET",
         }).then(res => {
-            dispatch({ type: SAVE_USER_PROFILE, payload: { user: res.data } })
-        }).catch(err => dispatch({ type: SAVE_USER_PROFILE_FAIL }));
+            dispatch({ type: actionTypes.SAVE_USER_PROFILE, payload: { user: res.data } })
+        }).catch(err => dispatch({ type: actionTypes.SAVE_USER_PROFILE_FAIL }));
 
     }
 

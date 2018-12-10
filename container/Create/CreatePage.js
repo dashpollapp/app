@@ -1,12 +1,12 @@
 import React from "react";
 import { Alert, TouchableOpacity, Text, View, ScrollView, TextInput, Image, KeyboardAvoidingView, } from "react-native";
 import { LinearGradient } from "expo";
-import PropTypes from 'prop-types';
+import PropTypes from "prop-types";
 
 import { Classic, Like, Normal } from "./PollTypes";
 import { connect } from "react-redux";
 import { create_poll } from "../../actions";
-import * as screenNames from "../../constants/screenNames";
+import screenNames from "../../constants/screenNames";
 
 import { c, create, pc, css } from "./Style"; //(create ist die neue Style)
 import D from "../../assets/style/default";
@@ -57,65 +57,65 @@ class CreatePage extends React.Component {
 
         return (
             <ScrollView>
-                <KeyboardAvoidingView style={{ backgroundColor: "#fff", height: "100%", padding: 16, flexDirection:"column",  }} behavior="padding" enabled>
-            
-                        {/*Titel*/}
-                        <TextInput
-                            multiline
-                            textAlignVertical={"top"}
-                            underlineColorAndroid={"transparent"}
-                            style={create.inputTitle}
-                            placeholder={"Titel"}
-                            placeholderTextColor={"#111"}
-                            onChangeText={heading => this.setState({ heading })}
-                        />
+                <KeyboardAvoidingView style={{ backgroundColor: "#fff", height: "100%", padding: 16, flexDirection: "column", }} behavior="padding" enabled>
 
-                        {/*Beschreibung*/}
-                        <TextInput
-                            multiline
-                            textAlignVertical={"top"}
-                            underlineColorAndroid={"transparent"}
-                            style={create.inputDescription}
-                            placeholder={"Du kannst eine Beschreibung eingeben"}
-                            placeholderTextColor={"#938f8f"}
-                            onChangeText={text => this.setState({ text })}
-                        />
+                    {/*Titel*/}
+                    <TextInput
+                        multiline
+                        textAlignVertical={"top"}
+                        underlineColorAndroid={"transparent"}
+                        style={create.inputTitle}
+                        placeholder={"Titel"}
+                        placeholderTextColor={"#111"}
+                        onChangeText={heading => this.setState({ heading })}
+                    />
 
-                        <TouchableOpacity onPress={() => this.props.navigation.navigate(screenNames.POLLTYPES)} >
-                            <View>
-                                <Text style={create.polltypeText}>+ Block aussuchen</Text>
-                            </View>
-                        </TouchableOpacity>
+                    {/*Beschreibung*/}
+                    <TextInput
+                        multiline
+                        textAlignVertical={"top"}
+                        underlineColorAndroid={"transparent"}
+                        style={create.inputDescription}
+                        placeholder={"Du kannst eine Beschreibung eingeben"}
+                        placeholderTextColor={"#938f8f"}
+                        onChangeText={text => this.setState({ text })}
+                    />
 
-                        <TextInput
-                            multiline
-                            textAlignVertical={"top"}
-                            underlineColorAndroid={"transparent"}
-                            style={create.inputURL}
-                            placeholder={"YouTube oder Spotify URL eingeben"}
-                            placeholderTextColor={"#938f8f"}
-                            onChangeText={text => this.setState({ text })}
-                        />
+                    <TouchableOpacity onPress={() => this.props.navigation.navigate(screenNames.POLLTYPES)} >
+                        <View>
+                            <Text style={create.polltypeText}>+ Block aussuchen</Text>
+                        </View>
+                    </TouchableOpacity>
 
-                        <Text style={[D.h3, FW.pt4]}>Maximale Auswahlmöglichkeiten:</Text>
-                        <TextInput
-                            multiline
-                            textAlignVertical={"top"}
-                            underlineColorAndroid={"transparent"}
-                            style={create.inputCounter}
-                            placeholder={"1"}
-                            placeholderTextColor={"#777"}
-                            onChangeText={text => this.setState({ text })}
-                            keyboardType={"numeric"}
-                            multiline={false}
-                            maxLength={1} //erstmal
-                        />
+                    <TextInput
+                        multiline
+                        textAlignVertical={"top"}
+                        underlineColorAndroid={"transparent"}
+                        style={create.inputURL}
+                        placeholder={"YouTube oder Spotify URL eingeben"}
+                        placeholderTextColor={"#938f8f"}
+                        onChangeText={text => this.setState({ text })}
+                    />
+
+                    <Text style={[D.h3, FW.pt4]}>Maximale Auswahlmöglichkeiten:</Text>
+                    <TextInput
+                        multiline
+                        textAlignVertical={"top"}
+                        underlineColorAndroid={"transparent"}
+                        style={create.inputCounter}
+                        placeholder={"1"}
+                        placeholderTextColor={"#777"}
+                        onChangeText={text => this.setState({ text })}
+                        keyboardType={"numeric"}
+                        multiline={false}
+                        maxLength={1} //erstmal
+                    />
 
 
-                        {currentPolltype}
+                    {currentPolltype}
 
-                        <View style={{height: 180}}></View>
-        
+                    <View style={{ height: 180 }}></View>
+
                 </KeyboardAvoidingView>
             </ScrollView>
         );

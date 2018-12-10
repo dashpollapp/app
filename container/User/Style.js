@@ -1,4 +1,4 @@
-import { StyleSheet, Dimensions, Platform } from 'react-native';
+import { StyleSheet, Dimensions, Platform } from react - native;
 
 
 const c = StyleSheet.create({
@@ -14,7 +14,7 @@ const c = StyleSheet.create({
     image: {
         borderRadius: 4,
         flex: 1,
-        alignSelf: 'stretch',
+        alignSelf: stretch,
         width: undefined,
         height: undefined,
     },
@@ -42,8 +42,8 @@ const c = StyleSheet.create({
 
     bottomInputBox: {
         flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center',
+        justifyContent: center,
+        alignItems: center,
 
         paddingHorizontal: 0,
         paddingVertical: 6,
@@ -117,7 +117,7 @@ const c = StyleSheet.create({
 const s = StyleSheet.create({
 
     popupOut: {
-        height: Dimensions.get('window').height,
+        height: Dimensions.get(window).height,
         width: "100%",
         position: "absolute",
         zIndex: 10000,
@@ -412,8 +412,8 @@ const profile = StyleSheet.create({
         backgroundColor: "#aaa",
     },
     pbPush: {
-        width: Dimensions.get('window').width,
-        height: Dimensions.get('window').width,
+        width: Dimensions.get(window).width,
+        height: Dimensions.get(window).width,
         marginBottom: -12,
     },
     followerInfos: {
@@ -439,7 +439,7 @@ const profile = StyleSheet.create({
     pbBox: {
         overflow: "hidden",
         top: 50,
-        width: Dimensions.get('window').width,
+        width: Dimensions.get(window).width,
         position: "absolute",
         textAlign: "center",
         backgroundColor: "#aaa",
@@ -512,7 +512,7 @@ const profile = StyleSheet.create({
         fontFamily: "GS1",
         fontSize: 20,
         color: "rgba(255,255,255,1)",
-        textShadowColor: 'rgba(0, 0, 0, 0.75)',
+        textShadowColor: rgba(0, 0, 0, 0.75),
         textShadowOffset: { width: 0, height: 0 },
         textShadowRadius: 4,
         paddingLeft: 4,
@@ -642,7 +642,7 @@ export const css = StyleSheet.create({
 
 
     sendTime: {
-        alignSelf: 'center',
+        alignSelf: center,
         justifyContent: "flex-end",
         color: "#929684",
         marginRight: 4,
@@ -678,7 +678,7 @@ export const css = StyleSheet.create({
     },
     text: {
         fontFamily: "GS2",
-        alignSelf: 'center',
+        alignSelf: center,
         marginLeft: 12,
         flex: 1,
     },
@@ -688,8 +688,8 @@ export const css = StyleSheet.create({
         paddingVertical: 9,
         paddingHorizontal: 9,
 
-        flexDirection: 'row',
-        alignItems: 'center',
+        flexDirection: row,
+        alignItems: center,
     },
     chatNew: {
         borderLeftWidth: 8,
@@ -711,7 +711,7 @@ export const css = StyleSheet.create({
         height: 5,
         width: 5,
         /* Nur bei IOS */
-        opacity: Platform.OS === 'ios' ? 1 : 0,
+        opacity: Platform.OS === ios ? 1 : 0,
     },
     cornerTL: {
         top: 0,
@@ -720,17 +720,17 @@ export const css = StyleSheet.create({
     cornerTR: {
         top: 0,
         right: 0,
-        transform: [{ rotate: '90deg' }],
+        transform: [{ rotate: 90deg }],
     },
     cornerBL: {
         bottom: 0,
         left: 0,
-        transform: [{ rotate: '-90deg' }],
+        transform: [{ rotate: -90deg }],
     },
     cornerBR: {
         bottom: 0,
         right: 0,
-        transform: [{ rotate: '180deg' }],
+        transform: [{ rotate: 180deg }],
     },
 
     bottomImage: {
@@ -750,8 +750,8 @@ export const css = StyleSheet.create({
     bottomPosition: {
         marginTop: -4,
         height: 12,
-        width: Dimensions.get('window').width / 4 - 32,
-        marginLeft: (Dimensions.get('window').width * 0.045),
+        width: Dimensions.get(window).width / 4 - 32,
+        marginLeft: (Dimensions.get(window).width * 0.045),
 
         /* polls: 0.29; chats: 0.045;   */
 
@@ -766,7 +766,7 @@ export const css = StyleSheet.create({
     bottom: {
         position: "absolute",
         flex: 1,
-        flexDirection: 'row',
+        flexDirection: row,
         width: "100%",
         height: 50,
 
@@ -838,8 +838,8 @@ export const css = StyleSheet.create({
         width: 36,
         margin: 7,
         borderRadius: 36 / 2,
-        justifyContent: 'center',
-        alignItems: 'center',
+        justifyContent: center,
+        alignItems: center,
         alignSelf: "flex-start",
         alignItems: "flex-start",
     },
@@ -931,7 +931,7 @@ export const css = StyleSheet.create({
     },
     p3Image: {
         opacity: 0.9,
-        width: (Dimensions.get('window').width / 2) - 20,
+        width: (Dimensions.get(window).width / 2) - 20,
         aspectRatio: 1,
         margin: 4,
         borderRadius: 4,
@@ -949,7 +949,7 @@ export const css = StyleSheet.create({
 
 
     p2thumbDislike: {
-        transform: [{ rotate: '180deg' }],
+        transform: [{ rotate: 180deg }],
     },
     p2thumbImg: {
         height: 32,
@@ -962,8 +962,8 @@ export const css = StyleSheet.create({
     },
     p2thumbs: {
         flex: 1,
-        flexDirection: 'row',
-        justifyContent: 'space-between',
+        flexDirection: row,
+        justifyContent: space - between,
     },
     p2: {
 
@@ -990,7 +990,7 @@ export const css = StyleSheet.create({
     },
     postFakeShadow: {
         marginTop: 16,
-        width: Dimensions.get('window').width + 24,
+        width: Dimensions.get(window).width + 24,
         marginLeft: -12,
         height: 6,
     },
@@ -1035,7 +1035,7 @@ export const css = StyleSheet.create({
         fontFamily: "GS1",
         color: "#888",
         fontSize: 12,
-        alignSelf: 'flex-end',
+        alignSelf: flex - end,
         marginLeft: 8,
         marginRight: 8,
         marginTop: 4,
@@ -1085,7 +1085,7 @@ export const css = StyleSheet.create({
     },
     text: {
         fontFamily: "GS1",
-        alignSelf: 'center',
+        alignSelf: center,
         marginLeft: 8,
         flex: 1,
         marginTop: 6,
@@ -1096,14 +1096,14 @@ export const css = StyleSheet.create({
         borderRadius: 6,
 
         //für Inhalt (zB Wetter-°C)
-        justifyContent: 'center',
-        alignItems: 'center'
+        justifyContent: center,
+        alignItems: center
     },
 
     //Umfragen-Header (aka. AuthorBox)
     postInfo: {
         backgroundColor: "#fff",
-        flexDirection: 'row',
+        flexDirection: row,
         marginBottom: 12,
     },
     polls: {
@@ -1126,7 +1126,7 @@ export const css = StyleSheet.create({
         width: "100%",
         height: "100%",
 
-        paddingTop: Platform.OS === 'ios' ? 22 : 24,
+        paddingTop: Platform.OS === ios ? 22 : 24,
     },
 
 });

@@ -1,15 +1,15 @@
 import { createStackNavigator } from "react-navigation";
-import * as screenName from "../constants/screenNames";
+import { screenNames } from "../constants";
 
 //Container
 import Profile from "../container/Profile/Profile";
 
 export default createStackNavigator(
     {
-        [screenName.PROFILE]: Profile,
+        [screenNames.PROFILE]: Profile,
     },
     {
         headerMode: "none",
-        initialRouteName: screenName.PROFILE
+        initialRouteName: screenNames.PROFILE
     }
 );

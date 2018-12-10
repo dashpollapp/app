@@ -8,8 +8,8 @@ import CopyImg from "../../assets/img/create/copy.png";
 
 import PropTypes from "prop-types";
 
-import * as screenNames from '../../constants/screenNames';
-import { CREATE_POLL_INITIALSTATE } from "../../constants/actionTypes";
+import screenNames from "../../constants/screenNames";
+import { actionTypes } from "../../constants";
 
 import WhatsappImg from "../../assets/img/create/whatsapp.png";
 import SnapchatImg from "../../assets/img/create/snapchat.png";
@@ -32,7 +32,7 @@ class CreateAfter extends React.Component {
                     <Text style={ca.h2}>Teile ihn doch mit Freunden.</Text>
 
 
-                    <TouchableOpacity onPress={() => Clipboard.setString('https://ili.pw/' + iliUrl)}>
+                    <TouchableOpacity onPress={() => Clipboard.setString("https://ili.pw/" + iliUrl)}>
                         <View style={ca.copyBox}>
                             <Text style={ca.postURL}>ili.pw/{iliUrl}</Text>
                             <Image style={ca.copyImg} source={CopyImg} />
@@ -69,7 +69,7 @@ class CreateAfter extends React.Component {
 
                     <TouchableOpacity onPress={() => {
                         this.props.navigation.navigate(screenNames.HOME);
-                        this.props.dispatch({ type: CREATE_POLL_INITIALSTATE }) // <- des mach ich noch sauber, lg max
+                        this.props.dispatch({ type: actionTypes.CREATE_POLL_INITIALSTATE }) // <- des mach ich noch sauber, lg max
 
                     }}>
                         <View style={ca.skipButton}>

@@ -3,7 +3,7 @@ import { View, Image, Dimensions } from "react-native";
 import { createMaterialTopTabNavigator } from "react-navigation";
 import PropTypes from "prop-types";
 
-import * as screenName from "../constants/screenNames";
+import { screenNames } from "../constants";
 
 //Components
 import NavbarTopBack from "../components/Navbar/NavbarTopBack";
@@ -31,19 +31,19 @@ function NavigatorClass(props) {
     const { pb, isOwnProfile } = props;
     const Navigator = createMaterialTopTabNavigator(
         {
-            [screenName.USER_CHAT]: {
+            [screenNames.USER_CHAT]: {
                 screen: Chat,
                 navigationOptions: {
                     tabBarIcon: (active) => <Image style={{ height: 26, width: 26, }} source={active.focused ? chatImg : chatOffImg} />
                 }
             },
-            [screenName.USER_PROFILE]: {
+            [screenNames.USER_PROFILE]: {
                 screen: isOwnProfile ? OwnProfile : Profile,
                 navigationOptions: {
                     tabBarIcon: (active) => <Image style={{ height: 44, width: 44, borderRadius: 18, marginTop: -3 }} source={(pb !== "default") ? { uri: "https://api.dashpoll.net/pb/" + pb } : DefaultPB} />
                 }
             },
-            [screenName.USER_POSTS]: {
+            [screenNames.USER_POSTS]: {
                 screen: Posts,
                 navigationOptions: {
                     tabBarIcon: (active) => <Image style={{ height: 26, width: 26, }} source={active.focused ? pollImg : pollOffImg} />
@@ -53,7 +53,7 @@ function NavigatorClass(props) {
         },
         {
             headerMode: "none",
-            initialRouteName: screenName.USER_PROFILE,
+            initialRouteName: screenNames.USER_PROFILE,
             lazy: true,
             tabBarPosition: "bottom",
             swipeEnabled: true,

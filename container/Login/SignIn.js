@@ -7,7 +7,7 @@ import PropTypes from "prop-types";
 import { user_search, auth_login } from "../../actions";
 import { login } from "./SignInStyle";
 import D from "../../assets/style/default"
-import * as screenNames from "../../constants/screenNames";
+import screenNames from "../../constants/screenNames";
 
 import NavTopWithoutIcons from "../../components/Navbar/NavTopWithoutIcons"
 
@@ -50,95 +50,95 @@ class Login extends React.Component {
 
     render() {
         return (
-        <KeyboardAvoidingView
-            style={login.box}
-            behavior="padding"
-            keyboardVerticalOffset={22}
-            >   
-            <ScrollView style={login.scroll}>
+            <KeyboardAvoidingView
+                style={login.box}
+                behavior="padding"
+                keyboardVerticalOffset={22}
+            >
+                <ScrollView style={login.scroll}>
 
-                {/*Stäter ein Bild was immer sichtbar ist: <Image style={login.img} source={SplashImg}></Image>*/}
+                    {/*Stäter ein Bild was immer sichtbar ist: <Image style={login.img} source={SplashImg}></Image>*/}
 
-                <Text style={login.welcomeText}>Hast du einen Dashpoll Account? 🤔</Text>
+                    <Text style={login.welcomeText}>Hast du einen Dashpoll Account? 🤔</Text>
 
-                <View style={login.loginOrRegister}>
-                    <TouchableOpacity style={login.button}>
-                        <Text style={login.buttonText}>Ja</Text>
-                    </TouchableOpacity>
-                    <TouchableOpacity style={login.button}>
-                        <Text style={login.buttonText}>Nein</Text>
-                    </TouchableOpacity>
-                </View>
-
-                <TouchableOpacity>
-                    <Text style={login.welcomeText}>Wie heißt dein Dashpoll Account 😄</Text>
-                </TouchableOpacity>
-                
-                <TextInput
-                    placeholder="Dashpoll-Name"
-                    placeholderTextColor="#666"
-                    style={login.input}
-                    onChangeText={(text) => this.setState({markered: text})}
-                />
-
-
-                <View style={D.users}>
-                    <TouchableOpacity>
-                        <View style={[D.user_saves, D.user]}>
-                            <Image style={D.userPB} source={DefaultPB}/>
-                            <Text style={D.userFullname}>Max Baier</Text>
-                            <Text style={D.userName}>@max</Text>
-                        </View>
-                    </TouchableOpacity>
-                    <TouchableOpacity>
-                        <View style={D.user}>
-                            <Image style={D.userPB} source={DefaultPB}/>
-                            <Text style={D.userFullname}>Max Baier</Text>
-                            <Text style={D.userName}>@max</Text>
-                        </View>
-                    </TouchableOpacity>
-                </View>
-
-                
-
-                <View style={D.kiBoxes}>
-                    <TouchableOpacity style={D.kiBox}>
-                        <Image style={D.kiImg} source={KiImg}/>
-                        <Text style={D.kiText}>Name vergessen</Text>
-                    </TouchableOpacity>
-                    <TouchableOpacity style={D.kiBox}>
-                        <Image style={D.kiImg} source={KiImg}/>
-                        <Text style={D.kiText}>Acctount erstellen</Text>
-                    </TouchableOpacity>
-                </View>
-
-                <Text style={login.welcomeText}>Bitte gebe dein Passwort ein 🤫</Text>
-
-                <TouchableOpacity>
-                    <View style={login.userSelected}>
-                        <Image style={login.userPB} source={DefaultPB}/>
-                        <Text style={login.userFullname}>Konrad Mayer</Text>
-                        <Text style={login.userName}>Account ändern</Text>
+                    <View style={login.loginOrRegister}>
+                        <TouchableOpacity style={login.button}>
+                            <Text style={login.buttonText}>Ja</Text>
+                        </TouchableOpacity>
+                        <TouchableOpacity style={login.button}>
+                            <Text style={login.buttonText}>Nein</Text>
+                        </TouchableOpacity>
                     </View>
-                </TouchableOpacity>
 
-                <TextInput
-                    placeholder="Passwort"
-                    placeholderTextColor="#666"
-                    style={login.input}
-                    onChangeText={(text) => this._onPasswordInputChange(text)}
-                />
-
-                <View style={D.kiBoxes}>
-                    <TouchableOpacity style={D.kiBox}>
-                        <Image style={D.kiImg} source={KiImg}/>
-                        <Text style={D.kiText}>Passwort vergessen</Text>
+                    <TouchableOpacity>
+                        <Text style={login.welcomeText}>Wie heißt dein Dashpoll Account 😄</Text>
                     </TouchableOpacity>
-                </View>
 
-                <View style={{height: 64,}}></View>
-            </ScrollView>
-        </KeyboardAvoidingView>
+                    <TextInput
+                        placeholder="Dashpoll-Name"
+                        placeholderTextColor="#666"
+                        style={login.input}
+                        onChangeText={(text) => this.setState({ markered: text })}
+                    />
+
+
+                    <View style={D.users}>
+                        <TouchableOpacity>
+                            <View style={[D.user_saves, D.user]}>
+                                <Image style={D.userPB} source={DefaultPB} />
+                                <Text style={D.userFullname}>Max Baier</Text>
+                                <Text style={D.userName}>@max</Text>
+                            </View>
+                        </TouchableOpacity>
+                        <TouchableOpacity>
+                            <View style={D.user}>
+                                <Image style={D.userPB} source={DefaultPB} />
+                                <Text style={D.userFullname}>Max Baier</Text>
+                                <Text style={D.userName}>@max</Text>
+                            </View>
+                        </TouchableOpacity>
+                    </View>
+
+
+
+                    <View style={D.kiBoxes}>
+                        <TouchableOpacity style={D.kiBox}>
+                            <Image style={D.kiImg} source={KiImg} />
+                            <Text style={D.kiText}>Name vergessen</Text>
+                        </TouchableOpacity>
+                        <TouchableOpacity style={D.kiBox}>
+                            <Image style={D.kiImg} source={KiImg} />
+                            <Text style={D.kiText}>Acctount erstellen</Text>
+                        </TouchableOpacity>
+                    </View>
+
+                    <Text style={login.welcomeText}>Bitte gebe dein Passwort ein 🤫</Text>
+
+                    <TouchableOpacity>
+                        <View style={login.userSelected}>
+                            <Image style={login.userPB} source={DefaultPB} />
+                            <Text style={login.userFullname}>Konrad Mayer</Text>
+                            <Text style={login.userName}>Account ändern</Text>
+                        </View>
+                    </TouchableOpacity>
+
+                    <TextInput
+                        placeholder="Passwort"
+                        placeholderTextColor="#666"
+                        style={login.input}
+                        onChangeText={(text) => this._onPasswordInputChange(text)}
+                    />
+
+                    <View style={D.kiBoxes}>
+                        <TouchableOpacity style={D.kiBox}>
+                            <Image style={D.kiImg} source={KiImg} />
+                            <Text style={D.kiText}>Passwort vergessen</Text>
+                        </TouchableOpacity>
+                    </View>
+
+                    <View style={{ height: 64, }}></View>
+                </ScrollView>
+            </KeyboardAvoidingView>
         )
     }
 }

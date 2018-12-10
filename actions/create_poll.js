@@ -1,7 +1,7 @@
-import { CREATE_POLL, CREATE_POLL_SUCCESS, CREATE_POLL_FAIL } from "../constants/actionTypes";
+import { actionTypes } from "../constants";
 
 export default function (poll, user) {
-    const httpClient = require('../utils/store').httpClient;
+    const httpClient = require("../utils/store").httpClient;
 
     if (poll.polltype === 20) {
         poll.maxVotes = 1;
@@ -11,7 +11,7 @@ export default function (poll, user) {
     console.log(poll.answers)
     return dispatch => {
 
-        dispatch({ type: CREATE_POLL });
+        dispatch({ type: actionTypes.CREATE_POLL });
 
         httpClient.request({
             url: "/polls",
@@ -20,8 +20,8 @@ export default function (poll, user) {
                 ...poll
             }
         }).then(res => {
-            dispatch({ type: CREATE_POLL_SUCCESS, payload: { user, poll: { ...res.data.poll, iliUrl: res.data.iliUrl } } })
-        }).catch(err => console.log(err) & dispatch({ type: CREATE_POLL_FAIL, payload: { err } }));
+            dispatch({ type: actionTypes.CREATE_POLL_SUCCESS, payload: { user, poll: { ...res.data.poll, iliUrl: res.data.iliUrl } } })
+        }).catch(err => console.log(err) & dispatch({ type: actionTypes.CREATE_POLL_FAIL, payload: { err } }));
 
 
     }

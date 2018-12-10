@@ -1,7 +1,7 @@
-import io from 'socket.io-client';
+import io from "socket.io-client";
 import store from "./store";
 
-const socket = io("https://api.dashpoll.net", { autoConnect: false, transports: ['websocket'] });
+const socket = io("https://api.dashpoll.net", { autoConnect: false, transports: ["websocket"] });
 
 export function connect() {
     socket.connect();

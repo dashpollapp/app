@@ -1,7 +1,7 @@
 import React from "react";
 import { View, Image } from "react-native";
 import { createMaterialTopTabNavigator } from "react-navigation";
-import * as screenName from "../constants/screenNames";
+import screenName from "../constants/screenNames";
 
 import SplashImg from "../assets/img/splash.png"
 
@@ -23,13 +23,12 @@ const Navigator = createMaterialTopTabNavigator(
 
 export default class LoginNavigator extends React.Component {
 
-    //Wird gebraucht, um den Focus auf SettingsNavigator zu stellen, falls man in SETTINGS ist (this.props.navigation)
     static router = Navigator.router;
 
     render() {
         return (
             <View style={{ flex: 1, backgroundColor: "#fff" }}>
-                <Image style={{ width: 160, height: 60, alignSelf: "center", marginTop: 32, }} source={SplashImg}/>
+                <Image style={{ width: 160, height: 60, alignSelf: "center", marginTop: 32, }} source={SplashImg} />
                 <Navigator navigation={this.props.navigation} />
             </View>
         )

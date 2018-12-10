@@ -1,7 +1,7 @@
-import React from 'react';
-import { Text, View } from 'react-native';
+import React from "react";
+import { Text, View } from "react-native";
 
-import { css } from '../Style';
+import { css } from "../Style";
 
 export default class NormalType extends React.Component {
 

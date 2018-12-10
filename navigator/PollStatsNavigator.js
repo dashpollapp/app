@@ -2,7 +2,7 @@ import React from "react";
 import { View } from "react-native";
 import { createStackNavigator } from "react-navigation";
 import PropTypes from "prop-types";
-import * as screenName from "../constants/screenNames";
+import screenName from "../constants/screenNames";
 
 //Components
 import NavbarTopBack from "../components/Navbar/NavbarTopBack";
@@ -24,10 +24,10 @@ const Navigator = createStackNavigator(
 export default class PollStatsNavigator extends React.Component {
 
     static router = Navigator.router;
-    
+
     render() {
         return (
-            <View style={{ flex: 1}}>
+            <View style={{ flex: 1 }}>
                 <NavbarTopBack title="Statistiken" navigation={this.props.navigation} />
                 <Navigator navigation={this.props.navigation} />
             </View>

@@ -1,5 +1,5 @@
-import { StyleSheet } from 'react-native';
-import { Dimensions, Platform } from 'react-native';
+import { StyleSheet } from "react-native";
+import { Dimensions, Platform } from "react-native";
 
 //Create vom 1.12.2018
 export var c = StyleSheet.create({
@@ -42,7 +42,7 @@ export var createBlocks = StyleSheet.create({
 
 
 
- 
+
     h2: {
         fontSize: 16,
         fontFamily: "GS2",
@@ -77,16 +77,16 @@ export var create = StyleSheet.create({
     },
     inputDescription: {
         fontSize: 16,
-        fontFamily: "GS2", 
+        fontFamily: "GS2",
     },
     inputURL: {
         fontSize: 16,
-        fontFamily: "GS1", 
+        fontFamily: "GS1",
         marginTop: 24,
     },
     inputCounter: {
         fontSize: 28,
-        fontFamily: "GS2", 
+        fontFamily: "GS2",
         color: "#333",
         marginTop: 2,
         width: "100%",
@@ -232,8 +232,8 @@ export var profile = StyleSheet.create({
     },
 
     pbPush: {
-        width: Dimensions.get('window').width,
-        height: Dimensions.get('window').width,
+        width: Dimensions.get("window").width,
+        height: Dimensions.get("window").width,
         marginBottom: -12,
     },
     followerInfos: {
@@ -256,8 +256,8 @@ export var profile = StyleSheet.create({
     pbBox: {
         overflow: "hidden",
         top: 50,
-        width: Dimensions.get('window').width,
-        height: Dimensions.get('window').width,
+        width: Dimensions.get("window").width,
+        height: Dimensions.get("window").width,
         position: "absolute",
         textAlign: "center",
         backgroundColor: "#aaa",
@@ -325,7 +325,7 @@ export var profile = StyleSheet.create({
         fontFamily: "Poppins500",
         fontSize: 14,
         color: "rgba(220,220,220,0.9)",
-        textShadowColor: 'rgba(0, 0, 0, 0.75)',
+        textShadowColor: "rgba(0, 0, 0, 0.75)",
         textShadowOffset: { width: 0.0001, height: 0.0001 },
         textShadowRadius: 4,
         paddingLeft: 4,
@@ -334,7 +334,7 @@ export var profile = StyleSheet.create({
         fontFamily: "Poppins500",
         fontSize: 20,
         color: "rgba(255,255,255,1)",
-        textShadowColor: 'rgba(0, 0, 0, 0.75)',
+        textShadowColor: "rgba(0, 0, 0, 0.75)",
         textShadowOffset: { width: 0, height: 0 },
         textShadowRadius: 4,
         paddingLeft: 4,
@@ -585,7 +585,7 @@ export var css = StyleSheet.create({
 
 
     sendTime: {
-        alignSelf: 'center',
+        alignSelf: "center",
         justifyContent: "flex-end",
         color: "#929684",
         marginRight: 4,
@@ -620,7 +620,7 @@ export var css = StyleSheet.create({
     },
     text: {
         fontFamily: "Poppins500",
-        alignSelf: 'center',
+        alignSelf: "center",
         marginLeft: 12,
         flex: 1,
     },
@@ -630,8 +630,8 @@ export var css = StyleSheet.create({
         borderRadius: 26,
 
         //für Inhalt 
-        justifyContent: 'center',
-        alignItems: 'center'
+        justifyContent: "center",
+        alignItems: "center"
     },
     chat: {
         width: "100%",
@@ -639,8 +639,8 @@ export var css = StyleSheet.create({
         paddingVertical: 9,
         paddingHorizontal: 9,
 
-        flexDirection: 'row',
-        alignItems: 'center',
+        flexDirection: "row",
+        alignItems: "center",
     },
     chatNew: {
         borderLeftWidth: 8,
@@ -656,7 +656,7 @@ export var css = StyleSheet.create({
         height: 5,
         width: 5,
         /* Nur bei IOS */
-        opacity: Platform.OS === 'ios' ? 1 : 0,
+        opacity: Platform.OS === "ios" ? 1 : 0,
     },
     cornerTL: {
         top: 0,
@@ -665,17 +665,17 @@ export var css = StyleSheet.create({
     cornerTR: {
         top: 0,
         right: 0,
-        transform: [{ rotate: '90deg' }],
+        transform: [{ rotate: "90deg" }],
     },
     cornerBL: {
         bottom: 0,
         left: 0,
-        transform: [{ rotate: '-90deg' }],
+        transform: [{ rotate: "-90deg" }],
     },
     cornerBR: {
         bottom: 0,
         right: 0,
-        transform: [{ rotate: '180deg' }],
+        transform: [{ rotate: "180deg" }],
     },
 
     bottomImage: {
@@ -688,8 +688,8 @@ export var css = StyleSheet.create({
     bottomPosition: {
         marginTop: -4,
         height: 8,
-        width: Dimensions.get('window').width / 4 - 32,
-        marginLeft: (Dimensions.get('window').width * 0.045),
+        width: Dimensions.get("window").width / 4 - 32,
+        marginLeft: (Dimensions.get("window").width * 0.045),
 
         /* polls: 0.29; chats: 0.045;   */
 
@@ -703,7 +703,7 @@ export var css = StyleSheet.create({
     bottom: {
         /*position: "absolute",
         flex: 1, 
-        flexDirection: 'row',
+        flexDirection: "row",
         width: "100%",
         height: 50,
      
@@ -720,12 +720,12 @@ export var css = StyleSheet.create({
         backgroundColor: "#fff",*/
         position: "absolute",
         flex: 1,
-        flexDirection: 'row',
+        flexDirection: "row",
         width: "100%",
         height: 50,
 
         bottom: 0,
-        justifyContent: 'space-around',
+        justifyContent: "space-around",
         alignItems: "center",
         shadowOpacity: 0.25,
         shadowRadius: 4,
@@ -786,8 +786,8 @@ export var css = StyleSheet.create({
         width: 36,
         margin: 7,
         borderRadius: 36 / 2,
-        justifyContent: 'center',
-        alignItems: 'center',
+        justifyContent: "center",
+        alignItems: "center",
         alignSelf: "flex-start",
         alignItems: "flex-start",
     },
@@ -878,7 +878,7 @@ export var css = StyleSheet.create({
     },
     p3Image: {
         opacity: 0.9,
-        width: (Dimensions.get('window').width / 2) - 20,
+        width: (Dimensions.get("window").width / 2) - 20,
         aspectRatio: 1,
         margin: 4,
         borderRadius: 4,
@@ -896,7 +896,7 @@ export var css = StyleSheet.create({
 
 
     p2thumbDislike: {
-        transform: [{ rotate: '180deg' }],
+        transform: [{ rotate: "180deg" }],
     },
     p2thumbImg: {
         height: 32,
@@ -909,8 +909,8 @@ export var css = StyleSheet.create({
     },
     p2thumbs: {
         flex: 1,
-        flexDirection: 'row',
-        justifyContent: 'space-between',
+        flexDirection: "row",
+        justifyContent: "space-between",
     },
     p2: {
 
@@ -937,7 +937,7 @@ export var css = StyleSheet.create({
     },
     postFakeShadow: {
         marginTop: 16,
-        width: Dimensions.get('window').width + 24,
+        width: Dimensions.get("window").width + 24,
         marginLeft: -12,
         height: 6,
     },
@@ -982,7 +982,7 @@ export var css = StyleSheet.create({
         fontFamily: "Poppins300",
         color: "#888",
         fontSize: 12,
-        alignSelf: 'flex-end',
+        alignSelf: "flex-end",
         marginLeft: 8,
         marginRight: 8,
         marginTop: 4,
@@ -1031,7 +1031,7 @@ export var css = StyleSheet.create({
     },
     text: {
         fontFamily: "Poppins500",
-        alignSelf: 'center',
+        alignSelf: "center",
         marginLeft: 12,
         flex: 1,
         marginTop: 6,
@@ -1042,14 +1042,14 @@ export var css = StyleSheet.create({
         borderRadius: 26,
 
         //für Inhalt (zB Wetter-°C)
-        justifyContent: 'center',
-        alignItems: 'center'
+        justifyContent: "center",
+        alignItems: "center"
     },
 
     //Umfragen-Header (aka. AuthorBox)
     postInfo: {
         backgroundColor: "#fff",
-        flexDirection: 'row',
+        flexDirection: "row",
         marginBottom: 12,
     },
     polls: {
@@ -1069,7 +1069,7 @@ export var css = StyleSheet.create({
         backgroundColor: "#fff",
         width: "100%",
         height: "100%",
-        paddingTop: Platform.OS === 'ios' ? 22 : 24,
+        paddingTop: Platform.OS === "ios" ? 22 : 24,
     },
 
 });

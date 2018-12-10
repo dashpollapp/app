@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { View, TouchableOpacity, Image, Text } from "react-native";
-import * as screenNames from "../../constants/screenNames";
-import PropTypes from 'prop-types';
+import screenNames from "../../constants/screenNames";
+import PropTypes from "prop-types";
 import nt from "./NavbarTopStyle";
 
 import backImg from "../../assets/img/navbar/top/back.png";

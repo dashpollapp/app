@@ -1,12 +1,11 @@
 import React from "react";
 import { Font, AppLoading, Asset, SplashScreen } from "expo";
-import PropTypes from 'prop-types';
+import PropTypes from "prop-types";
 import { View, StyleSheet, Dimensions, Image } from "react-native";
 import { connect } from "react-redux";
 
 import db from "./utils/db";
 import { set_current_user, update_user_from_api } from "./actions";
-
 
 import AuthNavigator from "./navigator/AuthNavigator";
 import RootNavigator from "./navigator/RootNavigator";
@@ -34,41 +33,41 @@ function cacheResourcesAsync() {
         //const images = getAllImagePaths().map(imgPath => console.log(imgPath));
         const images = [
             //Login
-            require('./assets/img/login/PWhide.png'),
-            require('./assets/img/login/PWshow.png'),
+            require("./assets/img/login/PWhide.png"),
+            require("./assets/img/login/PWshow.png"),
 
             //Navbar Bottom
-            require('./assets/img/navbar/bottom/chat_off.png'),
-            require('./assets/img/navbar/bottom/chat.png'),
-            require('./assets/img/navbar/bottom/poll_off.png'),
-            require('./assets/img/navbar/bottom/poll.png'),
+            require("./assets/img/navbar/bottom/chat_off.png"),
+            require("./assets/img/navbar/bottom/chat.png"),
+            require("./assets/img/navbar/bottom/poll_off.png"),
+            require("./assets/img/navbar/bottom/poll.png"),
 
             //Navbar Top
-            require('./assets/img/navbar/top/logo.png'),
-            require('./assets/img/navbar/top/logo2.png'),
-            require('./assets/img/navbar/top/back.png'),
-            require('./assets/img/navbar/top/options.png'),
+            require("./assets/img/navbar/top/logo.png"),
+            require("./assets/img/navbar/top/logo2.png"),
+            require("./assets/img/navbar/top/back.png"),
+            require("./assets/img/navbar/top/options.png"),
 
             //Other
-            require('./assets/img/splash.png'),
-            require('./assets/img/corner.png'),
-            require('./assets/img/hide.png'),
-            require('./assets/img/pb.jpg'),
+            require("./assets/img/splash.png"),
+            require("./assets/img/corner.png"),
+            require("./assets/img/hide.png"),
+            require("./assets/img/pb.jpg"),
 
             //Create
-            require('./assets/img/create/copy.png'),
+            require("./assets/img/create/copy.png"),
 
             //PollTypes
-            require('./assets/img/post/polltypes/like/like_on.png'),
-            require('./assets/img/post/polltypes/like/like_off.png'),
+            require("./assets/img/post/polltypes/like/like_on.png"),
+            require("./assets/img/post/polltypes/like/like_off.png"),
 
             //Posts
-            require('./assets/img/post/options/block.png'),
-            require('./assets/img/post/options/share.png'),
-            require('./assets/img/post/options/stats.png'),
+            require("./assets/img/post/options/block.png"),
+            require("./assets/img/post/options/share.png"),
+            require("./assets/img/post/options/stats.png"),
 
             //Erstmal 
-            require('./assets/img/map.png')
+            require("./assets/img/map.png")
         ]
         const cacheImages = images.map(image => Asset.fromModule(image).downloadAsync());
         Promise.all(cacheImages)
@@ -121,7 +120,7 @@ class RootApp extends React.Component {
     }
 
     _cacheSplashResourcesAsync = async () => {
-        const png = require('./assets/img/splash.png');
+        const png = require("./assets/img/splash.png");
         return Asset.fromModule(png).downloadAsync()
     }
 
@@ -143,7 +142,7 @@ class RootApp extends React.Component {
             return (
                 <View style={{ flex: 1 }}>
                     <Image
-                        source={require('./assets/img/splash.png')}
+                        source={require("./assets/img/splash.png")}
                     />
                 </View>
             );

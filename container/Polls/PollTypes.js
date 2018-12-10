@@ -3,9 +3,9 @@ import { View, Text } from "react-native";
 import PropTypes from "prop-types";
 
 //PollTypes
-import Classic from './VoteTypes/Classic';
-import Like from './VoteTypes/Like';
-import Thumb from './VoteTypes/Thumb'
+import Classic from "./VoteTypes/Classic";
+import Like from "./VoteTypes/Like";
+import Thumb from "./VoteTypes/Thumb"
 
 class PollTypes extends Component {
 

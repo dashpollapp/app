@@ -2,13 +2,13 @@ import React from "react";
 import { ScrollView, View, Text, Image, TouchableOpacity } from "react-native";
 import { connect } from "react-redux";
 
-import profileImage from "../../assets/img/dev/pp3.jpg"
+import DefaultPB from "../../assets/img/pb.png"
 
 import { ImagePicker, Permissions } from "expo";
 
 import { upload_pb } from "../../actions"
 
-import s from '../User/ProfileStyle';
+import s from "../User/ProfileStyle";
 import FW from "../../assets/style/framework"
 import D from "../../assets/style/default"
 
@@ -18,23 +18,23 @@ class Profile extends React.Component {
         this.state = {};
     }
 
-    _uploadProfilePB  = async () => {
+    _uploadProfilePB = async () => {
 
         const { status: cameraRollPerm } = await Permissions.askAsync(Permissions.CAMERA_ROLL);
 
-        if (cameraRollPerm === 'granted') {
+        if (cameraRollPerm === "granted") {
 
             let result = await ImagePicker.launchImageLibraryAsync({
                 allowsEditing: true,
                 mediaTypes: "Images",
                 aspect: [1, 1],
             });
-        
-            if(!result.cancelled) {
+
+            if (!result.cancelled) {
                 this.props.upload_pb(result);
             }
 
-        }   
+        }
 
     }
 
@@ -42,7 +42,6 @@ class Profile extends React.Component {
     render() {
         const { screenProps } = this.props;
         const { userId } = screenProps;
-
 
         const user = this.props.currentUserProfile[userId];
 
@@ -54,7 +53,7 @@ class Profile extends React.Component {
             <ScrollView>
 
                 <TouchableOpacity onPress={() => this._uploadProfilePB()}>
-                    <Image style={[s.pb]} source={(user.meta.pb) ? { uri: "https://api.dashpoll.net/pb/" + user.meta.pb } : profileImage} />
+                    <Image style={[s.pb]} source={(user.meta.pb && user.meta.pb !== "default") ? { uri: "https://api.dashpoll.net/pb/" + user.meta.pb } : DefaultPB} />
                 </TouchableOpacity>
 
                 <Text style={[s.fullname]}>{user.fullname}</Text>
@@ -73,7 +72,7 @@ class Profile extends React.Component {
 
 const mapStateToProps = state => {
     return {
-        currentUserProfile: state.other_users, 
+        currentUserProfile: state.other_users,
     }
 }
 

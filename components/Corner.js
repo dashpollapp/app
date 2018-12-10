@@ -2,9 +2,9 @@ import React from "react";
 import { View, Image, StyleSheet, Platform, Dimensions } from "react-native";
 import cornerImg from "../assets/img/corner.png";
 
-export default function(props) {
+export default function (props) {
     return (
-        <View  style={[css.cornerBox]}  >
+        <View style={[css.cornerBox]}  >
             <Image style={[css.cornerBL, css.corner]} source={cornerImg} />
             <Image style={[css.cornerBR, css.corner]} source={cornerImg} />
             <Image style={[css.cornerTL, css.corner]} source={cornerImg} />
@@ -17,8 +17,8 @@ const css = StyleSheet.create({
     cornerBox: {
         zIndex: 10000,
         position: "absolute",
-        width: Dimensions.get('window').width,
-        height: Dimensions.get('window').height
+        width: Dimensions.get("window").width,
+        height: Dimensions.get("window").height
     },
     corner: {
         position: "absolute",

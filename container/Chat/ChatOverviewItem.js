@@ -1,7 +1,7 @@
-import React, { Component } from 'react';
-import { StatusBar, StyleSheet, Text, View, ScrollView, TouchableOpacity, Image, KeyboardAvoidingView, ImageBackground, Dimensions } from 'react-native';
-import { LinearGradient } from 'expo';
-import PropTypes from 'prop-types';
+import React, { Component } from "react";
+import { StatusBar, StyleSheet, Text, View, ScrollView, TouchableOpacity, Image, KeyboardAvoidingView, ImageBackground, Dimensions } from "react-native";
+import { LinearGradient } from "expo";
+import PropTypes from "prop-types";
 
 import { css } from "./ChatOverviewStyle"
 
@@ -13,8 +13,8 @@ export default class ChatOverviewItem extends Component {
         let lastMessage = data.lastMessage.text
         let title = data.title
 
-        let showAsNew   = data.lastMessage.from != 0 && data.lastMessage.readed == 0
-        let chatTime    = data.lastMessage.time
+        let showAsNew = data.lastMessage.from != 0 && data.lastMessage.readed == 0
+        let chatTime = data.lastMessage.time
         let priorityColor
 
         switch (data.priority) {
@@ -40,7 +40,7 @@ export default class ChatOverviewItem extends Component {
 
         return (
             <TouchableOpacity>
-                <View style={[css.chat, showAsNew ? css.chatNew : null ]}>
+                <View style={[css.chat, showAsNew ? css.chatNew : null]}>
 
                     {showAsNew ? <View style={[css.chatNewBox, { backgroundColor: priorityColor }]}></View> : null}
 

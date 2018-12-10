@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { View, TouchableOpacity, ScrollView, Image, Text, } from "react-native";
 
-import * as screenNames from "../constants/screenNames";
+import { screenNames } from "../constants";
 import s from "./TempStyle";
 
 class Temp extends Component {
@@ -24,7 +24,7 @@ class Temp extends Component {
                 <View style={s.pPost}>
                     <View style={s.pPostHeader}>
                         <TouchableOpacity>
-                            <Image style={s.pPB} source={require('../assets/img/pb.jpg')} />
+                            <Image style={s.pPB} source={require("../assets/img/pb.jpg")} />
                         </TouchableOpacity>
                         <View style={s.pPostHeaderText}>
                             <Text style={s.pTitle}>Titel der Umfrage</Text>

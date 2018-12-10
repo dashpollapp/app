@@ -1,9 +1,9 @@
-import { StyleSheet, Platform,Dimensions } from "react-native";
+import { StyleSheet, Platform, Dimensions } from "react-native";
 
 export default StyleSheet.create({
 
 
-// < Stats >
+    // < Stats >
     statsPage: {
         backgroundColor: "#fff",
         height: "100%",
@@ -49,7 +49,7 @@ export default StyleSheet.create({
     },
 
 
-// < / Stats >
+    // < / Stats >
 
 
     postOptions: {
@@ -74,20 +74,20 @@ export default StyleSheet.create({
         fontFamily: "GS2",
         fontSize: 16,
         color: "#aaa",
-        textAlign:"center",
+        textAlign: "center",
         marginVertical: 32,
     },
 
 
 
     // < Mordal/Popup: Nicht mehr anzeigen >
-    block:{
+    block: {
         backgroundColor: "rgba(0,0,0,0.1)",
         height: "100%",
         width: "100%",
         padding: 32,
     },
-    blockHeading:{
+    blockHeading: {
         fontFamily: "GS3",
         color: "#222",
         fontSize: 22,
@@ -127,7 +127,7 @@ export default StyleSheet.create({
 
     // < / ENDE!: Mordal/Popup: Nicht mehr anzeigen >
 
-    
+
 
 
 
@@ -142,7 +142,7 @@ export default StyleSheet.create({
         height: 200, //Die höhe muss berechnet werden 
 
         //Breite:
-        width: Dimensions.get('window').width - 40,
+        width: Dimensions.get("window").width - 40,
         //Abrundung
         borderRadius: 12,
         //Hör auf meine CSS zu lesen
@@ -151,7 +151,7 @@ export default StyleSheet.create({
     },
 
     spotify: {
-        width: Dimensions.get('window').width - 40,
+        width: Dimensions.get("window").width - 40,
         borderRadius: 12,
         //Hör auf meine CSS zu lesen
         marginBottom: 16,
@@ -172,7 +172,7 @@ export default StyleSheet.create({
 
 
 
-    
+
 
 
 
@@ -249,7 +249,7 @@ export default StyleSheet.create({
 
     // < Poll - Anfang (Umfrageteil) ->
     poll: {
-        
+
     },
     pollAnswerTitle: {
         fontFamily: "GS2",
@@ -282,10 +282,10 @@ export default StyleSheet.create({
         alignItems: "center",
         display: "flex",
         flex: 1,
-        flexDirection: 'row',
+        flexDirection: "row",
     },
     pt1BarInner: {
-        borderRadius: 6,   
+        borderRadius: 6,
         height: "100%",
         minWidth: 4,
         marginRight: 4,

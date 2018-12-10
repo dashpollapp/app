@@ -1,8 +1,8 @@
-import { USER_SEARCH } from "../constants/actionTypes";
+import { actionTypes } from "../constants";
 
 export default function (username, limit = 4) {
     return {
-        type: USER_SEARCH,
+        type: actionTypes.USER_SEARCH,
         payload: {
             request: {
                 url: `/search?query=${username}&limit=${limit}`,
