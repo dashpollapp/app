@@ -54,7 +54,7 @@ export default class ChatOverviewItem extends Component {
                         <Text style={css.name}>{title}</Text>
                         <Text numberOfLines={1} style={css.lastMessage}>{lastMessage}</Text>
                     </View>
-                    <Text style={[css.sendTime, css.sendTimeNew, { color: priorityColor }]}>{chatTime}</Text>
+                    {/*<Text style={[css.sendTime, css.sendTimeNew, { color: priorityColor }]}>{chatTime}</Text>*/}
                 </View>
             </TouchableOpacity>
         )
