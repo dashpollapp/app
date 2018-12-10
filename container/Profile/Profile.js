@@ -40,10 +40,7 @@ class Profile extends React.Component {
 
 
     render() {
-        const { screenProps } = this.props;
-        const { userId } = screenProps;
-
-        const user = this.props.currentUserProfile[userId];
+        const { user } = this.props;
 
         if (!user) {
             return (<View></View>)
@@ -73,6 +70,7 @@ class Profile extends React.Component {
 const mapStateToProps = state => {
     return {
         currentUserProfile: state.other_users,
+        user: state.user.user
     }
 }
 
