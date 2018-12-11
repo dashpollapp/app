@@ -14,6 +14,8 @@ import Posts from "../container/User/Posts";
 import Profile from "../container/User/Profile";
 import OwnProfile from "../container/Profile/Profile";
 
+import ImageCache from "../components/ImageCache";
+
 import { isIPhoneX } from "../utils/iphoneX"
 
 //Images
@@ -40,7 +42,7 @@ function NavigatorClass(props) {
             [screenNames.USER_PROFILE]: {
                 screen: isOwnProfile ? OwnProfile : Profile,
                 navigationOptions: {
-                    tabBarIcon: (active) => <Image style={{ height: 44, width: 44, borderRadius: 18, marginTop: -3 }} source={(pb !== "default") ? { uri: "https://api.dashpoll.net/pb/" + pb } : DefaultPB} />
+                    tabBarIcon: (active) => <ImageCache style={{ height: 44, width: 44, borderRadius: 18, marginTop: -3 }} source={pb} />
                 }
             },
             [screenNames.USER_POSTS]: {

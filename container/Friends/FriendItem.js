@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { StatusBar, StyleSheet, Text, View, ScrollView, TouchableOpacity, Image, KeyboardAvoidingView, ImageBackground, Dimensions } from "react-native";
 import { LinearGradient } from "expo";
 import PropTypes from "prop-types";
-
+import ImageCache from "../../components/ImageCache";
 import { css } from "./FriendStyle"
 
 export default class ChatOverviewItem extends Component {
@@ -49,7 +49,7 @@ export default class ChatOverviewItem extends Component {
 
                     {/*showAsNew ? <View style={[css.chatNewBox, { backgroundColor: priorityColor }]}></View> : null*/}
 
-                    <Image style={css.pb} source={(pb !== "default") ? { uri: "https://api.dashpoll.net/pb/" + pb } : require("../../assets/img/pb.png")} />
+                    <ImageCache style={css.pb} source={pb} />
                     <View style={css.text}>
                         <Text style={css.name}>{title}</Text>
                         <Text numberOfLines={1} style={css.lastMessage}>{lastMessage}</Text>
