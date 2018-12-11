@@ -72,6 +72,9 @@ export default new Enum({
 
     CHANGE_MODAL: "CHANGE_MODAL",
 
+    IMAGE_CACHE: "IMAGE_CACHE",
+    IMAGE_CACHE_SUCCESS: "IMAGE_CACHE_SUCCESS"
+
 })
 
 

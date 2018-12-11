@@ -8,6 +8,8 @@ import KiImg from "../../assets/img/ki.png"
 import s from "./ProfileStyle";
 import D from "../../assets/style/default"
 
+import PB from "../../components/ImageCache";
+
 import { connect } from "react-redux";
 import { follow_user } from "../../actions"
 
@@ -39,7 +41,7 @@ class Profile extends React.Component {
         const { following } = user;
         return (
             <ScrollView>
-                <Image style={s.pb} source={(user.meta.pb !== "default") ? { uri: "https://api.dashpoll.net/pb/" + user.meta.pb } : DefaultPB} />
+                <PB style={s.pb} source={user.meta.pb} />
 
                 <Text style={s.fullname}>{user.fullname}</Text>
                 <Text style={s.name}>@{user.username}</Text>

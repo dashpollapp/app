@@ -18,6 +18,7 @@ import check_username from "./check_username";
 import check_fullname from "./check_fullname";
 import check_password from "./check_password";
 import auth_pre_register from "./auth_pre_register";
+import image_cache from "./image_cache";
 
 export {
     set_current_user,
@@ -39,5 +40,6 @@ export {
     check_username,
     check_fullname,
     check_password,
-    auth_pre_register
+    auth_pre_register,
+    image_cache
 }

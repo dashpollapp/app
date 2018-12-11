@@ -7,6 +7,7 @@ import other_users from "./other_users";
 import change_modal from "./change_modal";
 import friends from "./friends";
 import register from "./register";
+import image from "./image";
 
 export default combineReducers({
     user,
@@ -16,5 +17,6 @@ export default combineReducers({
     other_users,
     change_modal,
     friends,
-    register
+    register,
+    image
 });

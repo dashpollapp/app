@@ -9,6 +9,8 @@ import optionsImg from "../../assets/img/navbar/top/options.png";
 
 import DefaultPB from "../../assets/img/pb.png";
 
+import ImageCache from "../ImageCache";
+
 export default class NavbarTop extends Component {
     render() {
         const { pb } = this.props;
@@ -22,7 +24,7 @@ export default class NavbarTop extends Component {
                         <Image style={nt.mainItemLogoImg} source={logoImg} />
                     </TouchableOpacity>
                     <TouchableOpacity onPress={() => this.props.navigation.push(screenNames.USER)} style={nt.mainItem}>
-                        <Image style={nt.mainItemPbImg} source={(pb !== "default") ? { uri: "https://api.dashpoll.net/pb/" + pb } : DefaultPB} />
+                        <ImageCache style={nt.mainItemPbImg} source={pb} />
                     </TouchableOpacity>
 
                 </View>

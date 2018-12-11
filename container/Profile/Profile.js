@@ -12,6 +12,8 @@ import s from "../User/ProfileStyle";
 import FW from "../../assets/style/framework"
 import D from "../../assets/style/default"
 
+import ImageCache from "../../components/ImageCache";
+
 class Profile extends React.Component {
     constructor(props) {
         super(props);
@@ -42,6 +44,8 @@ class Profile extends React.Component {
     render() {
         const { user } = this.props;
 
+        console.log(user.meta.pb)
+
         if (!user) {
             return (<View></View>)
         }
@@ -50,7 +54,7 @@ class Profile extends React.Component {
             <ScrollView>
 
                 <TouchableOpacity onPress={() => this._uploadProfilePB()}>
-                    <Image style={[s.pb]} source={(user.meta.pb && user.meta.pb !== "default") ? { uri: "https://api.dashpoll.net/pb/" + user.meta.pb } : DefaultPB} />
+                    <ImageCache style={[s.pb]} source={user.meta.pb} />
                 </TouchableOpacity>
 
                 <Text style={[s.fullname]}>{user.fullname}</Text>

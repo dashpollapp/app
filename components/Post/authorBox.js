@@ -5,6 +5,8 @@ import formatTime from "../../utils/formatTime";
 import screenNames from "../../constants/screenNames";
 import DefaultPB from "../../assets/img/pb.png";
 
+import PB from "../ImageCache";
+
 const authorBox = (props) => {
 
     const { poll, clickable = true } = props;
@@ -13,7 +15,7 @@ const authorBox = (props) => {
     return (
         <TouchableOpacity disabled={!clickable} onPress={() => props.navigation.push(screenNames.USER, { userObj: poll.author })}>
             <View style={css.authorBox}>
-                <Image style={css.pPB} source={pb} />
+                <PB style={css.pPB} source={poll.author.meta.pb} />
                 <Text style={css.pSubtitle}>{poll.author.username} {formatTime(poll.createdAt)}</Text>
             </View>
         </TouchableOpacity>
