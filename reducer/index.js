@@ -21,6 +21,6 @@ export default combineReducers({
     friends,
     register,
     image,
-    //cache,
-    //post_stats
+    cache,
+    post_stats
 });

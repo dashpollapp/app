@@ -7,7 +7,12 @@ import { image_cache } from "../actions";
 class ImageCache extends React.Component {
 
     componentWillMount() {
-        this.props.image_cache(this.props.source, this.props.loading);
+        this.props.image_cache(this.props.source);
+    }
+
+    componentWillUpdate() {
+
+        this.props.image_cache(this.props.source);
     }
 
     //shouldComponentUpdate(next) {
