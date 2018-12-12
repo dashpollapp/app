@@ -10,11 +10,11 @@ export default function (state = initialState, action) {
         case "IMAGE_CACHE":
             let addLoading = [...state.loading, action.payload.uri];
             addLoading = addLoading.filter(onlyUnique)
-            return { ...state, loading };
+            return { ...state, loading: addLoading };
 
         case "IMAGE_CACHE_SUCCESS":
             const loading = state.loading.filter(uri => uri !== action.payload.uri);
-            return { ...state, loaded: { ...state.loaded, [action.payload.id]: action.payload.uri }, loading: addLoading }
+            return { ...state, loaded: { ...state.loaded, [action.payload.id]: action.payload.uri }, loading }
 
         default:
             return state;
