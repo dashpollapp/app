@@ -7,7 +7,7 @@ import { image_cache } from "../actions";
 class ImageCache extends React.Component {
 
     componentWillMount() {
-        this.props.image_cache(this.props.source);
+        this.props.image_cache(this.props.source, this.props.loading);
     }
 
     //shouldComponentUpdate(next) {
@@ -16,7 +16,7 @@ class ImageCache extends React.Component {
 
     getSource() {
         if (!this.props.localUri) return require("../assets/img/pb.png");
-        return {uri: this.props.localUri}
+        return { uri: this.props.localUri }
     }
 
     render() {
@@ -39,8 +39,8 @@ const mapStateToProps = (state, componentProps) => {
 
 const mapDispatchToProps = dispatch => {
     return {
-        image_cache: source => {
-            dispatch(image_cache(source));
+        image_cache: (source, loading) => {
+            dispatch(image_cache(source, loading));
         }
     }
 }
