@@ -1,22 +1,14 @@
 import React from "react";
-import { Alert, TouchableOpacity, Text, View, ScrollView, TextInput, Image, KeyboardAvoidingView, } from "react-native";
-import { LinearGradient } from "expo";
+import { TouchableOpacity, Text, View, ScrollView, TextInput, Image, KeyboardAvoidingView, } from "react-native";
 import PropTypes from "prop-types";
-
 import { Classic, Like, Normal } from "./PollTypes";
 import { connect } from "react-redux";
-import { create_poll } from "../../actions";
+
+//Styles
+import { create } from "./Style"; //(create ist die neue Style)
+
+//Constants
 import screenNames from "../../constants/screenNames";
-
-import { c, create, pc, css } from "./Style"; //(create ist die neue Style)
-import D from "../../assets/style/default";
-import FW from "../../assets/style/framework";
-
-//Images
-import CamImg from "../../assets/img/media/cam.png";
-import SpotifyImg from "../../assets/img/media/spotify.png";
-import YoutubeImg from "../../assets/img/media/youtube.png";
-
 
 class CreatePage extends React.Component {
     constructor(props) {
