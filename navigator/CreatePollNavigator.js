@@ -42,11 +42,12 @@ class CreatePollNavigator extends React.Component {
         answers: []
     }
 
-    changeValues(heading, text, answers = false) {
+    changeValues(heading, text, answers = false, maxVotes = false) {
         let changes = {};
         if (heading) changes.heading = heading;
         if (text) changes.text = text;
         if (answers) changes.answers = answers;
+        if(maxVotes) changes.maxVotes = parseInt(maxVotes);
         this.setState(Object.assign(this.state, changes));
     }
 

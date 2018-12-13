@@ -3,18 +3,20 @@ import { TouchableOpacity, Text, View, TextInput, StyleSheet, Keyboard, } from "
 import { LinearGradient } from "expo";
 
 import { connect } from "react-redux";
-
-import { pc, css } from "../Style";
+import D from "../../../assets/style/default";
+import FW from "../../../assets/style/framework";
+import { pc, css, create } from "../Style";
 import s from "../../Polls/PollStyle";
 
 class ClassicType extends React.Component {
 
     state = {
         answersArray: ["", ""],
+        maxVotes: 1,
     }
 
     componentDidUpdate() {
-        this.props.changeValues(false, false, this.state.answersArray);
+        this.props.changeValues(false, false, this.state.answersArray, this.state.maxVotes);
     }
 
     addAnswer = () => {
@@ -46,6 +48,7 @@ class ClassicType extends React.Component {
         const answersJsx = answersArray.map((answer, index) => {
             return (
                 <View key={index}>
+
                     <TextInput
                         multiline={false}
                         underlineColorAndroid={"transparent"}
@@ -86,6 +89,23 @@ class ClassicType extends React.Component {
                     <Text style={type.title}>Klassische Umfrage: <Text style={pc.polltypeCat}>(Auswahl)</Text></Text>
                     <Text style={type.subtitle}>Verschiede Antwortmöglichkeiten als Text. Benutzer können sich für 1 Antwortmöglichkeit entscheiden.</Text>
                 </View>
+
+                <Text style={[D.h3, FW.pt4]}>Maximale Auswahlmöglichkeiten:</Text>
+                <TextInput
+                    multiline
+                    textAlignVertical={"top"}
+                    underlineColorAndroid={"transparent"}
+                    style={create.inputCounter}
+                    placeholder={"1"}
+                    placeholderTextColor={"#777"}
+                    onChangeText={(text) => this.setState({maxVotes: text})}
+                    keyboardType={"numeric"}
+                    multiline={false}
+                    maxLength={1} //erstmal
+                />
+
+                {/* von ll kp ob das so muss xD*/}
+                <View style={{paddingBottom: 25}} />
 
                 {answersJsx}
 

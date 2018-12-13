@@ -97,21 +97,6 @@ class CreatePage extends React.Component {
                         onChangeText={text => this.setState({ text })}
                     />
 
-                    <Text style={[D.h3, FW.pt4]}>Maximale Auswahlmöglichkeiten:</Text>
-                    <TextInput
-                        multiline
-                        textAlignVertical={"top"}
-                        underlineColorAndroid={"transparent"}
-                        style={create.inputCounter}
-                        placeholder={"1"}
-                        placeholderTextColor={"#777"}
-                        onChangeText={text => this.setState({ text })}
-                        keyboardType={"numeric"}
-                        multiline={false}
-                        maxLength={1} //erstmal
-                    />
-
-
                     {currentPolltype}
 
                     <View style={{ height: 180 }}></View>

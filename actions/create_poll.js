@@ -4,11 +4,10 @@ export default function (poll, user) {
     const httpClient = require("../utils/store").httpClient;
 
     if (poll.polltype === 20) {
-        poll.maxVotes = 1;
         poll.answers = poll.answers.filter(answer => answer !== "");
     }
 
-    console.log(poll.answers)
+    //console.log(poll)
     return dispatch => {
 
         dispatch({ type: actionTypes.CREATE_POLL });
