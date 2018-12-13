@@ -20,7 +20,6 @@ class Develope extends Component {
         return (
             <View style={[FW.page]}>
 
-
                 <View style={[S.navTopBox]}>
                     <View style={[S.navTopPerson]}>
                         <Image style={[S.navTopPB]} source={DefaultPB} />
@@ -31,7 +30,6 @@ class Develope extends Component {
                     </View>
                     <Image style={[S.navTopCloseImg]} source={CloseImg}/>
                 </View>
-
 
                 <Image source={BackgroundImg} style={[S.BackgroundImg]}/>
                 <ScrollView style={[S.chatScroll]}>
