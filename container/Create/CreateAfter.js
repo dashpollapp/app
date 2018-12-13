@@ -1,20 +1,23 @@
 import React from "react";
 import { TouchableOpacity, Text, View, ScrollView, Image, Clipboard } from "react-native";
-import { ca } from "./CreateAfterStyle"; //Create After Style
+import PropTypes from "prop-types";
 import { connect } from "react-redux";
+
+//Styles
+import { ca } from "./CreateAfterStyle"; //Create After Style
 
 //Images Crate After
 import CopyImg from "../../assets/img/create/copy.png";
-
-import PropTypes from "prop-types";
-
-import screenNames from "../../constants/screenNames";
-import { actionTypes } from "../../constants";
-
 import WhatsappImg from "../../assets/img/create/whatsapp.png";
 import SnapchatImg from "../../assets/img/create/snapchat.png";
 import InstaImg from "../../assets/img/create/insta.png";
 import DashchatImg from "../../assets/img/media/spotify.png"; // ACHTUNG ERSMAL SPOTiFY
+
+
+//Constants
+import screenNames from "../../constants/screenNames";
+import { actionTypes } from "../../constants";
+
 
 
 class CreateAfter extends React.Component {

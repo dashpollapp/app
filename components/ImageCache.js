@@ -10,13 +10,18 @@ class ImageCache extends React.Component {
         this.props.image_cache(this.props.source);
     }
 
+    componentWillUpdate() {
+
+        this.props.image_cache(this.props.source);
+    }
+
     //shouldComponentUpdate(next) {
     //    return true;
     //}
 
     getSource() {
         if (!this.props.localUri) return require("../assets/img/pb.png");
-        return {uri: this.props.localUri}
+        return { uri: this.props.localUri }
     }
 
     render() {
@@ -39,8 +44,8 @@ const mapStateToProps = (state, componentProps) => {
 
 const mapDispatchToProps = dispatch => {
     return {
-        image_cache: source => {
-            dispatch(image_cache(source));
+        image_cache: (source, loading) => {
+            dispatch(image_cache(source, loading));
         }
     }
 }

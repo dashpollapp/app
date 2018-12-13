@@ -8,6 +8,8 @@ import change_modal from "./change_modal";
 import friends from "./friends";
 import register from "./register";
 import image from "./image";
+import cache from "./cache";
+import post_stats from "./post_stats";
 
 export default combineReducers({
     user,
@@ -18,5 +20,7 @@ export default combineReducers({
     change_modal,
     friends,
     register,
-    image
+    image,
+    cache,
+    post_stats
 });
